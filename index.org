@@ -1,2 +1,3 @@
 [[file:img/ja2.png]]
-[[file:blog.org][Blog]]
+- [[file:blog.org][Blog]]
+- [[file:notlar.org][Notlar]]
