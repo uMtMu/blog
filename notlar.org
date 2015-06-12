@@ -1,2 +1,1 @@
-[[
-file:index.org]]
+- [[file:index.org]]
