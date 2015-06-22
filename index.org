@@ -1,8 +1,6 @@
-* COMMENT html style specifications
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-# Local Variables:
-# org-export-html-style: "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\" />"
-# End:
-[[file:img/ja2.png]]
+
+  [[file:img/ja2.png]]
 - [[file:blog.org][Blog]]
 - [[file:notlar.org][Notlar]]

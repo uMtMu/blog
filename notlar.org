@@ -1,3 +1,4 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css" />
 * [[http://www.maketistan.com/kendin-yap-kit-diy/tamiya-ucan-marti-robot-kiti.html?sort=p.price&order=ASC][Martý]]
 * [[http://teknoseyir.com/maketcilige-baslarken-gerekli-olan-malzemeler][Makete giriþ]]
 - [[file:index.org]]

@@ -1,3 +1,4 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css" />
 [[file:img/ja2.png]]
 * Ýstiyorum - 2
   Yazar olmak istiyorum. Köþe yazýlarý, kitaplar yazmak istiyorum. Ama ortalýkta
