@@ -2,3 +2,18 @@ body {
   background: #eeeeee;
   font-family: “Trebuchet MS”, Verdana, Arial, serif;
 }
+div.outline-2 {
+    margin: 1.5em 1em;
+    padding: 0.5em 1em;
+    background: #bbbbbb;
+}
+
+p.validation {
+    display: none;
+}
+
+#postamble {
+    margin: 1.5em 1em;
+    padding: 0.5em 1em;
+    background: #bbbbbb;
+}
