@@ -1,6 +1,14 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css" />
 [[file:img/ja2.png]]
 * Yazýlar
+** Kadýn ve Erkek
+   Karýsýný döve döve öldüren adam, 13 ay ceza alýp yattýðý süre göz önünde
+   bulundurularak serbest býrakýlmýþ. Tecavüzcüsünü öldüren kadýna müebbet hapis
+   cezasý verilmiþ. 
+
+   Burada iki nokta var.
+   1. Kadýn ve Erkek konusunda eþitsizlik
+   2. Elde edilen bilgiye olan güvensizlik
 ** Ýstiyorum - 2
    Yazar olmak istiyorum. Köþe yazýlarý, kitaplar yazmak istiyorum. Ama ortalýkta
    olma istemiyorum. Yüzüm görünsün istemiyorum.
