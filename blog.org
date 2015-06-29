@@ -1,7 +1,11 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css" />
 [[file:img/ja2.png]]
 * Yazýlar
+** Ýnsanlýðýn son bulacaðý nokta
+   Bence insanlýðýn son bulacaðý nokta dikkatini tamamen faydasýz olan þeylere
+   odakladýðý noktadýr. O anda insanlýk fiilen olmasa da zihnen yok olacaktýr.
 ** Kadýn ve Erkek
+** 
    Karýsýný döve döve öldüren adam, 13 ay ceza alýp yattýðý süre göz önünde
    bulundurularak serbest býrakýlmýþ. Tecavüzcüsünü öldüren kadýna müebbet hapis
    cezasý verilmiþ. 
