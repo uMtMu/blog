@@ -1,8 +1,16 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css" />
+#+HTML_HEAD: <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+#+HTML_HEAD: <script src="js/test.js" type="text/javascript"></script>
+
+
+
+
 [[file:img/ja2.png]]
 * Yazýlar
+** Her þeyden týrsar oldum
+   O kadar düþünemiyorum ki her þeyden týrsar oldum. Acaba her þey ayrý mý yazýlýyordu?
 ** Ýnsanlýðýn son bulacaðý nokta
-   Bence insanlýðýn son bulacaðý nokta dikkatini tamamen faydasýz olan þeylere
+   Bence insanlýðýn son bulacaðý nokta, dikkatini tamamen faydasýz olan þeylere
    odakladýðý noktadýr. O anda insanlýk fiilen olmasa da zihnen yok olacaktýr.
 ** Kadýn ve Erkek
    Karýsýný döve döve öldüren adam, 13 ay ceza alýp yattýðý süre göz önünde
