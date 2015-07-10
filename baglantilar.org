@@ -1,0 +1,4 @@
+  [[file:blog.org][Blog]]
+  [[file:bash.org][Bash]]
+  [[file:notlar.org][Notlar]]
+  [[file:index.org][Ana Sayfa]]
