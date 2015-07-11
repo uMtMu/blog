@@ -1,6 +1,9 @@
+html * {
+  font-size: 1em !important;
+  font-family: “Trebuchet MS”, Verdana, Arial, serif;
+}
 body {
   background: #eeeeee;
-  font-family: “Trebuchet MS”, Verdana, Arial, serif;
 }
 div.outline-3 {
     margin: 1.5em 1em;
