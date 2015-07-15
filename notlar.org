@@ -1,6 +1,12 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css" />
 #+HTML_HEAD: <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 * Baþlýklar
+** Netbook'hda aranan özellikler
+   + Batarya ömrü > 3 saat
+   + Ekran boyutu < 12"
+   + Ram >= 1 GB
+   + HDD >= 60 GB
+   + Aðýrlýk < 1.5 KG
 ** [[http://www.maketistan.com/kendin-yap-kit-diy/tamiya-ucan-marti-robot-kiti.html?sort=p.price&order=ASC][Martý]]
 ** [[http://teknoseyir.com/maketcilige-baslarken-gerekli-olan-malzemeler][Makete giriþ]]
 * Baðlantýlar
