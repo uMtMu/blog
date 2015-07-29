@@ -4,3 +4,4 @@
 - [[file:blog.org][Blog]]
 - [[file:notlar.org][Notlar]]
 - [[file:bash.org][Bash]]
+- [[file:projeler.org][Projeler]]
