@@ -1,4 +1,4 @@
-#+INCLUDE: "baslik.org"
+
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css" />
 #+HTML_HEAD: </script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 #+HTML_HEAD: </script src="js/test.js" type="text/javascript"></script>
@@ -20,5 +20,5 @@
 ** yildizz_crawler
    [[https://github.com/uMtMu/yildizz_crawler][Yildiz_Crawler]]
 
-* Baðlantýlar
+* Bağlantılar
 #+INCLUDE: "baglantilar.org"
