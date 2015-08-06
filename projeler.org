@@ -18,5 +18,6 @@
    [[https://github.com/uMtMu/post_install_script][Post_Install_Script]]
 ** yildizz_crawler
    [[https://github.com/uMtMu/yildizz_crawler][Yildiz_Crawler]]
-* Baðlantýlar
+
+* BaÃ°lantÃ½lar
 #+INCLUDE: "baglantilar.org"
