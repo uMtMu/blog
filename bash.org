@@ -1,50 +1,50 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css" />
 
 [[file:img/ja2.png]]
-* Yazılar
+* YazÄ±lar
 ** Komut: alias
-   #Kullanışlı kısa Ubuntu aliasları
+   #KullanÄ±ÅŸlÄ± kÄ±sa Ubuntu aliaslarÄ±
 
-   alias e=”exit”
+   alias e='exit'
 
-   alias c=”clear”
+   alias c='clear'
    
-   alias 1.=”cd ..”
+   alias 1.='cd ..'
 
-   alias 2.=”1.; 1.”
+   alias 2.='1.; 1.'
 
-   alias 3.=”1.;2.”
+   alias 3.='1.;2.'
    
-   alias ag=”sudo apt-get”
+   alias ag='sudo apt-get'
 
-   alias agi=”ag install”
+   alias agi='ag install'
 
-   alias agu=”ag update”
+   alias agu='ag update'
 
-   alias agr=”ag remove –purge”
+   alias agr='ag remove -purge'
 ** Komut: cd
-   cd –  #bir önceki çalışılan dizine geri döner
+   cd -  #bir Ã¶nceki Ã§alÄ±ÅŸÄ±lan dizine geri dÃ¶ner
 
-   cd ~  #kullanici adi “kullanıcı adının ev dizinine gider
+   cd ~  #kullanici adi  adÄ±nÄ±n ev dizinine gider
 ** Komut: ls
-   ls ~ /usr #birden fazla dizinin içi listelenebilir
-| -a | --all           | tümünü listele                        |
-| -r | -reverse        | sıralamayı ters yap                   |
-| -d | -directory      | dizinin kendisini işaret eder         |
-| -F | -classify       | dizinlerin başına slash işareti koyar |
+   ls ~ /usr #birden fazla dizinin iÃ§i listelenebilir
+| -a | --all           | tÃ¼mÃ¼nÃ¼ listele                        |
+| -r | -reverse        | sÄ±ralamayÄ± ters yap                   |
+| -d | -directory      | dizinin kendisini iÅŸaret eder         |
+| -F | -classify       | dizinlerin baÅŸÄ±na slash iÅŸareti koyar |
 | -h | -human-readable |                                       |
-| -t |                 | zamana göre sıralar                   |
+| -t |                 | zamana gÃ¶re sÄ±ralar                   |
 |    |                 |                                       |
 
 ** Komut: chmod
    chmod g+s directory #alt dizinlerinin grubunu sabitleme
-** İzin ve sahiplik bilgilerini koruyarak dosya transferi
+** Ä±zin ve sahiplik bilgilerini koruyarak dosya transferi
    1. tar czf - | ssh user@host "cd; tar xzf -"
    2. scp -rp sourcedir user@dest:/dir
-** Veri içindeki eşsiz satırları ve sayılarını bulmak
-   sort data | uniq -u #Eşsiz satırlar
-   sort data | uniq -c #Satırların tekrar sayıları
+** Veri iÃ§indeki eÅŸsiz satÄ±rlarÄ± ve sayÄ±larÄ±nÄ± bulmak
+   sort data | uniq -u #EÅŸsiz satÄ±rlar
+   sort data | uniq -c #SatÄ±rlarÄ±n tekrar sayÄ±larÄ±
 
-* Bağlantılar
+* BaÄŸlantÄ±lar
 #+INCLUDE: "baglantilar.org"
 
