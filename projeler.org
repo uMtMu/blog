@@ -9,5 +9,14 @@
 
 * Projeler
 ** Torrent(???)
+* Github
+** bash_tools
+   [[https://github.com/uMtMu/bash_tools][Bash_tools]]
+** learnyouahaskell-tr
+   [[https://github.com/uMtMu/learnyouahaskell-tr][LearnYouAHaskell-TR]]
+** post_install_script
+   [[https://github.com/uMtMu/post_install_script][Post_Install_Script]]
+** yildizz_crawler
+   [[https://github.com/uMtMu/yildizz_crawler][Yildiz_Crawler]]
 * Baðlantýlar
 #+INCLUDE: "baglantilar.org"
