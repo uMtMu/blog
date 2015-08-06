@@ -1,6 +1,6 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-  [[file:img/ja2.png]]
+  [[file:img/dans.renk.jpg]]
 - [[file:blog.org][Blog]]
 - [[file:notlar.org][Notlar]]
 - [[file:bash.org][Bash]]
