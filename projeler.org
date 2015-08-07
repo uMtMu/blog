@@ -1,19 +1,23 @@
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css" />
-#+HTML_HEAD: </script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-#+HTML_HEAD: </script src="js/test.js" type="text/javascript"></script>
+
+#+TITLE: uMtMu
+#+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
+#+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+#+BEGIN_CENTER
 [[file:img/ja2.png]]
+#+END_CENTER
 
 * Projeler
 ** Torrent(???)
 * Github
-** bash_tools
-   [[https://github.com/uMtMu/bash_tools][Bash_tools]]
+** bashtools
+   [[https://github.com/uMtMu/bash_tools][Bashtools]]
 ** learnyouahaskell-tr
    [[https://github.com/uMtMu/learnyouahaskell-tr][LearnYouAHaskell-TR]]
-** post_install_script
-   [[https://github.com/uMtMu/post_install_script][Post_Install_Script]]
-** yildizz_crawler
-   [[https://github.com/uMtMu/yildizz_crawler][Yildiz_Crawler]]
+** postinstallscript
+   [[https://github.com/uMtMu/post_install_script][PostInstallScript]]
+** yildizzcrawler
+   [[https://github.com/uMtMu/yildizz_crawler][YildizCrawler]]
 
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"

@@ -1,1 +1,3 @@
-#+HTML_HEAD: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+#+TITLE: uMtMu
+#+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
+#+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">

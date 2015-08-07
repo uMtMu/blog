@@ -1,12 +1,17 @@
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css" />
-#+HTML_HEAD: </script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-#+HTML_HEAD: </script src="js/test.js" type="text/javascript"></script>
-
-
-
-
+#+TITLE: uMtMu
+#+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
+#+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+#+BEGIN_CENTER
 [[file:img/ja2.png]]
+#+END_CENTER
 * Yazılar
+** Öküz evlatları
+   #+BEGIN_CENTER
+   [[file:img/fuckyou.jpg]]
+   #+END_CENTER
+   Evrim teorisine inanıyorum ama insanın atasının maymun olduğunu
+   düşünmüyorum. Bence insan doğrudan öküzden evrilmiş. Bazı insanlar evrim
+   geçirip maymuna evriliyor.
 ** Ne yaptığım hakkında bir fikrim yok
    Cidden 3 haftadır ne yaptığım konusunda neredeyse hiç bir fikrim yok. Sanırım
    beynim "Yeter amk!" sinyalleri veriyor. İşin kötüsü ne yapmam gerekiyor onu
