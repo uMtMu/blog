@@ -4,3 +4,5 @@
 
 * Öteki kafa
 ** Nine Inch Nails - Every Day Is Exactly The Same
+* Baðlantýlar
+#+INCLUDE: "baglantilar.org"
