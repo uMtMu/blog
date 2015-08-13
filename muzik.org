@@ -4,5 +4,8 @@
 
 * Öteki kafa
 ** Nine Inch Nails - Every Day Is Exactly The Same
+* Gaz
+** Frank Klepacki - Red Alert C&C Soundtrack: Hell March
+** C&C Red Alert 3 Theme - Soviet March
 * Baðlantýlar
 #+INCLUDE: "baglantilar.org"
