@@ -16,7 +16,7 @@
    [[https://github.com/uMtMu/learnyouahaskell-tr][LearnYouAHaskell-TR]]
 ** postinstallscript
    [[https://github.com/uMtMu/post_install_script][PostInstallScript]]
-** yildizzcrawler
+** yildizzhcrawler
    [[https://github.com/uMtMu/yildizz_crawler][YildizCrawler]]
 
 * Bağlantılar

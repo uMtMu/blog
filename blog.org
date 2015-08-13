@@ -5,7 +5,7 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
-** Saygı, Saygısızlık, Saygılılık [Doldurulacak]
+** Saygı, Saygısızlık, Saygılılık [Doldurulacak]1
 ** Öküz evlatları
    #+BEGIN_CENTER
    [[file:img/fuckyou.jpg]]
