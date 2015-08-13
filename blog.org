@@ -5,7 +5,25 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
+<<<<<<< HEAD
 ** Saygı, Saygısızlık, Saygılılık [Doldurulacak]1
+=======
+** Bilmezlik
+   [[file:img/labyrinth_by_snugsomeone.jpg]]
+
+   Bir bilmezlik hali içindeyim. Şu anda nasıl bir konumda olduğumu
+   bilmiyorum. 
+   Aslında bir çok insan bilmezlik halinde. Kendimizi ne kadar
+   biliyoruz. Belki de kullandığım bilgisayarı, kendimi bildiğimden daha iyi
+   biliyorum. İnsanın ucunu bucağını bilmek mümkün mü? 
+   Sınırlı varlıklar olduğumuzu düşünüyorum. Aslına bakarsanız çoğu şey
+   sınırlı. Sadece gezip göremediğimiz yerleri var insanın. Orada insan
+   kalmayana kadar yürüyemedik belki de. İnsandan aşağı ya da yukarı
+   bakamadık. İnsanın ötesinde ne var? Insan sürekli genişleyen bir varlık mı?
+   Yoksa sadece yeni şeyler öğrendiğimiz için genişlediğimizi mi
+   düşünüyoruz. Belki de insan, içinde sonsuza değin dönüp duracağın bir labirent...
+** Saygı, Saygısızlık, Saygılılık [Doldurulacak]
+>>>>>>> 56206809bd165c46188bf6882e5b82bef019612e
 ** Öküz evlatları
    #+BEGIN_CENTER
    [[file:img/fuckyou.jpg]]
@@ -37,7 +55,7 @@
    2. Elde edilen bilgiye olan güvensizlik
 ** İstiyorum - 2
    Yazar olmak istiyorum. Köşe yazıları, kitaplar yazmak istiyorum. Ama ortalıkta
-   olma istemiyorum. Yüzüm görünsün istemiyorum.
+   olmak istemiyorum. Yüzüm görünsün istemiyorum.
 ** Jump To Hyperspace
    Sanırım böyle bir atlayışa ihtiyacım var. Kafamdaki sorunları çözemiyorum. 
 ** İstiyorum - 1

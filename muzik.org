@@ -1,0 +1,11 @@
+#+TITLE: uMtMu
+#+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
+#+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+* Öteki kafa
+** Nine Inch Nails - Every Day Is Exactly The Same
+* Gaz
+** Frank Klepacki - Red Alert C&C Soundtrack: Hell March
+** C&C Red Alert 3 Theme - Soviet March
+* Baðlantýlar
+#+INCLUDE: "baglantilar.org"
