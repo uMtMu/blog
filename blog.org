@@ -5,9 +5,6 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
-<<<<<<< HEAD
-** Saygı, Saygısızlık, Saygılılık [Doldurulacak]1
-=======
 ** Bilmezlik
    [[file:img/labyrinth_by_snugsomeone.jpg]]
 
