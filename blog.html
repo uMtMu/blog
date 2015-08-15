@@ -1,90 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>uMtMu</title>
-<!-- 2015-08-11 Sal 11:24 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="generator" content="Org-mode" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="uMtMu"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2015-08-15T18:22+0300"/>
+<meta name="author" content="umut"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
   .title  { text-align: center; }
-  .todo   { font-family: monospace; color: red; }
+  .todo   { color: red; }
   .done   { color: green; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
   }
-  pre.src {
-    position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
-    padding: 3px;
-    border: 1px solid black;
-  }
-  pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
     background: #ffffcc;
   }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
   textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
   /*]]>*/-->
 </style>
 <script type="text/javascript">
@@ -133,252 +106,299 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+
 </head>
 <body>
+
+<div id="preamble">
+
+</div>
+
 <div id="content">
 <h1 class="title">uMtMu</h1>
+
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+<div style="text-align: center">
+<p><img src="img/ja2.png"  alt="img/ja2.png" />
+</p>
+</div>
+
+
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. Yazılar</a>
+<li><a href="#sec-1">1 Yazılar</a>
 <ul>
-<li><a href="#sec-1-1">1.1. Bilmezlik</a></li>
-<li><a href="#sec-1-2">1.2. Saygı, Saygısızlık, Saygılılık [Doldurulacak]</a></li>
-<li><a href="#sec-1-3">1.3. Öküz evlatları</a></li>
-<li><a href="#sec-1-4">1.4. Ne yaptığım hakkında bir fikrim yok</a></li>
-<li><a href="#sec-1-5">1.5. Where is my mind?</a></li>
-<li><a href="#sec-1-6">1.6. Her şeyden tırsar oldum</a></li>
-<li><a href="#sec-1-7">1.7. ınsanlığın son bulacağı nokta</a></li>
-<li><a href="#sec-1-8">1.8. Kadın ve Erkek</a></li>
-<li><a href="#sec-1-9">1.9. İstiyorum - 2</a></li>
-<li><a href="#sec-1-10">1.10. Jump To Hyperspace</a></li>
-<li><a href="#sec-1-11">1.11. İstiyorum - 1</a></li>
-<li><a href="#sec-1-12">1.12. Düşünceler</a></li>
-<li><a href="#sec-1-13">1.13. Ne yapsam bilmiyorum?</a></li>
-<li><a href="#sec-1-14">1.14. Yalnızlığın yüzleri</a></li>
-<li><a href="#sec-1-15">1.15. Oh ne ala memleket?</a></li>
-<li><a href="#sec-1-16">1.16. Ben niye buradayım?</a></li>
+<li><a href="#sec-1-1">1.1 Hayat akıp gidiyor</a></li>
+<li><a href="#sec-1-2">1.2 Bilmezlik</a></li>
+<li><a href="#sec-1-3">1.3 Saygı, Saygısızlık, Saygılılık [Doldurulacak]</a></li>
+<li><a href="#sec-1-4">1.4 Öküz evlatları</a></li>
+<li><a href="#sec-1-5">1.5 Ne yaptığım hakkında bir fikrim yok</a></li>
+<li><a href="#sec-1-6">1.6 Where is my mind?</a></li>
+<li><a href="#sec-1-7">1.7 Her şeyden tırsar oldum</a></li>
+<li><a href="#sec-1-8">1.8 ınsanlığın son bulacağı nokta</a></li>
+<li><a href="#sec-1-9">1.9 Kadın ve Erkek</a></li>
+<li><a href="#sec-1-10">1.10 İstiyorum - 2</a></li>
+<li><a href="#sec-1-11">1.11 Jump To Hyperspace</a></li>
+<li><a href="#sec-1-12">1.12 İstiyorum - 1</a></li>
+<li><a href="#sec-1-13">1.13 Düşünceler</a></li>
+<li><a href="#sec-1-14">1.14 Ne yapsam bilmiyorum?</a></li>
+<li><a href="#sec-1-15">1.15 Yalnızlığın yüzleri</a></li>
+<li><a href="#sec-1-16">1.16 Oh ne ala memleket?</a></li>
+<li><a href="#sec-1-17">1.17 Ben niye buradayım?</a></li>
 </ul>
 </li>
-<li><a href="#sec-2">2. Bağlantılar</a></li>
+<li><a href="#sec-2">2 Bağlantılar</a></li>
 </ul>
 </div>
 </div>
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<div class="center">
 
-<div class="figure">
-<p><img src="img/ja2.png" alt="ja2.png" />
-</p>
-</div>
-</div>
-<div id="outline-container-sec-1" class="outline-2">
+<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1"><span class="section-number-2">1</span> Yazılar</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Bilmezlik</h3>
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Hayat akıp gidiyor</h3>
 <div class="outline-text-3" id="text-1-1">
 
-<div class="figure">
-<p><img src="img/labyrinth_by_snugsomeone.jpg" alt="labyrinth_by_snugsomeone.jpg" />
-</p>
+<p>   Hayat akıp gidiyor. Her an içimizde bir sürü ölüm ve doğum
+   oluyor. Çevremizdeki büyük ölümler bizi çok üzüyor ama içimizdeki ölümlere
+   karşı daha umursamaz davranıyoruz. Kimi farkında değil, kimi farkında ama
+   umursamıyor. Hücreler ölüyor, duygular ölüyor, düşünceler ölüyor. 
+</p></div>
+
 </div>
 
-<p>
-Bir bilmezlik hali içindeyim. Şu anda nasıl bir konumda olduğumu
-bilmiyorum. 
-Aslında bir çok insan bilmezlik halinde. Kendimizi ne kadar
-biliyoruz. Belki de kullandığım bilgisayarı, kendimi bildiğimden daha iyi
-biliyorum. İnsanın ucunu bucağını bilmek mümkün mü? 
-Sınırlı varlıklar olduğumuzu düşünüyorum. Aslına bakarsanız çoğu şey
-sınırlı. Sadece gezip göremediğimiz yerleri var insanın. Orada insan
-kalmayana kadar yürüyemedik belki de. İnsandan aşağı ya da yukarı
-bakamadık. İnsanın ötesinde ne var? Insan sürekli genişleyen bir varlık mı?
-Yoksa sadece yeni şeyler öğrendiğimiz için genişlediğimizi mi
-düşünüyoruz. Belki de insan, içinde sonsuza değin dönüp duracağın bir labirent&#x2026;
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Bilmezlik</h3>
+<div class="outline-text-3" id="text-1-2">
+
+<p>   <img src="img/labyrinth_by_snugsomeone.jpg"  alt="img/labyrinth_by_snugsomeone.jpg" />
 </p>
+<p>
+   Bir bilmezlik hali içindeyim. Şu anda nasıl bir konumda olduğumu
+   bilmiyorum. 
+   Aslında bir çok insan bilmezlik halinde. Kendimizi ne kadar
+   biliyoruz. Belki de kullandığım bilgisayarı, kendimi bildiğimden daha iyi
+   biliyorum. İnsanın ucunu bucağını bilmek mümkün mü? 
+   Sınırlı varlıklar olduğumuzu düşünüyorum. Aslına bakarsanız çoğu şey
+   sınırlı. Sadece gezip göremediğimiz yerleri var insanın. Orada insan
+   kalmayana kadar yürüyemedik belki de. İnsandan aşağı ya da yukarı
+   bakamadık. İnsanın ötesinde ne var? Insan sürekli genişleyen bir varlık mı?
+   Yoksa sadece yeni şeyler öğrendiğimiz için genişlediğimizi mi
+   düşünüyoruz. Belki de insan, içinde sonsuza değin dönüp duracağın bir labirent&hellip;
+</p></div>
+
 </div>
-</div>
-<div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Saygı, Saygısızlık, Saygılılık [Doldurulacak]</h3>
-</div>
-<div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Öküz evlatları</h3>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Saygı, Saygısızlık, Saygılılık [Doldurulacak]</h3>
 <div class="outline-text-3" id="text-1-3">
-<div class="center">
 
-<div class="figure">
-<p><img src="img/fuckyou.jpg" alt="fuckyou.jpg" />
-</p>
+<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; 56206809bd165c46188bf6882e5b82bef019612e
+</p></div>
+
 </div>
-</div>
-<p>
-Evrim teorisine inanıyorum ama insanın atasının maymun olduğunu
-düşünmüyorum. Bence insan doğrudan öküzden evrilmiş. Bazı insanlar evrim
-geçirip maymuna evriliyor.
-</p>
-</div>
-</div>
-<div id="outline-container-sec-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Ne yaptığım hakkında bir fikrim yok</h3>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Öküz evlatları</h3>
 <div class="outline-text-3" id="text-1-4">
-<p>
-Cidden 3 haftadır ne yaptığım konusunda neredeyse hiç bir fikrim yok. Sanırım
-beynim "Yeter amk!" sinyalleri veriyor. İşin kötüsü ne yapmam gerekiyor onu
-da bilmiyorum. Bir süredir, hiç bir şey yapmamayı deniyorum. Lakin bunda da
-pek başarılı olduğum söylenemez. Kurtarıcı olarak gördüğüm ve dört gözle
-beklediğim hafta sonları yardımcı olmuyor. Ne yapacağımı
-bilmiyorum. Bilgisayarım nerede kaldı?
+
+
+<div style="text-align: center">
+<p><img src="img/fuckyou.jpg"  alt="img/fuckyou.jpg" />
 </p>
 </div>
-</div>
-<div id="outline-container-sec-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Where is my mind?</h3>
-<div class="outline-text-3" id="text-1-5">
-<p>
-<a href="http://pre11.deviantart.net/ff26/th/pre/f/2010/231/d/5/fight_club___where_is_my_mind_by_menco.jpg">Where is my mind?</a>
-</p>
-</div>
-</div>
-<div id="outline-container-sec-1-6" class="outline-3">
-<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Her şeyden tırsar oldum</h3>
-<div class="outline-text-3" id="text-1-6">
-<p>
-O kadar düşünemiyorum ki her şeyden tırsar oldum. Acaba her şey ayrı mı yazılıyordu?
-</p>
-</div>
-</div>
-<div id="outline-container-sec-1-7" class="outline-3">
-<h3 id="sec-1-7"><span class="section-number-3">1.7</span> ınsanlığın son bulacağı nokta</h3>
-<div class="outline-text-3" id="text-1-7">
-<p>
-Bence insanlığın son bulacağı nokta, dikkatini tamamen faydasız olan şeylere
-odakladığı noktadır. O anda insanlık fiilen olmasa da zihnen yok olacaktır.
-</p>
-</div>
-</div>
-<div id="outline-container-sec-1-8" class="outline-3">
-<h3 id="sec-1-8"><span class="section-number-3">1.8</span> Kadın ve Erkek</h3>
-<div class="outline-text-3" id="text-1-8">
-<p>
-Karısını döve döve öldüren adam, 13 ay ceza alıp yattığı süre göz önünde
-bulundurularak serbest bırakılmış. Tecavüzcüsünü öldüren kadına müebbet hapis
-cezası verilmiş. 
-</p>
 
 <p>
-Burada iki nokta var.
+   Evrim teorisine inanıyorum ama insanın atasının maymun olduğunu
+   düşünmüyorum. Bence insan doğrudan öküzden evrilmiş. Bazı insanlar evrim
+   geçirip maymuna evriliyor.
+</p></div>
+
+</div>
+
+<div id="outline-container-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Ne yaptığım hakkında bir fikrim yok</h3>
+<div class="outline-text-3" id="text-1-5">
+
+<p>   Cidden 3 haftadır ne yaptığım konusunda neredeyse hiç bir fikrim yok. Sanırım
+   beynim "Yeter amk!" sinyalleri veriyor. İşin kötüsü ne yapmam gerekiyor onu
+   da bilmiyorum. Bir süredir, hiç bir şey yapmamayı deniyorum. Lakin bunda da
+   pek başarılı olduğum söylenemez. Kurtarıcı olarak gördüğüm ve dört gözle
+   beklediğim hafta sonları yardımcı olmuyor. Ne yapacağımı
+   bilmiyorum. Bilgisayarım nerede kaldı?
+</p></div>
+
+</div>
+
+<div id="outline-container-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Where is my mind?</h3>
+<div class="outline-text-3" id="text-1-6">
+
+<p>   <a href="http://pre11.deviantart.net/ff26/th/pre/f/2010/231/d/5/fight_club___where_is_my_mind_by_menco.jpg">Where is my mind?</a>
+</p></div>
+
+</div>
+
+<div id="outline-container-1-7" class="outline-3">
+<h3 id="sec-1-7"><span class="section-number-3">1.7</span> Her şeyden tırsar oldum</h3>
+<div class="outline-text-3" id="text-1-7">
+
+<p>   O kadar düşünemiyorum ki her şeyden tırsar oldum. Acaba her şey ayrı mı yazılıyordu?
+</p></div>
+
+</div>
+
+<div id="outline-container-1-8" class="outline-3">
+<h3 id="sec-1-8"><span class="section-number-3">1.8</span> ınsanlığın son bulacağı nokta</h3>
+<div class="outline-text-3" id="text-1-8">
+
+<p>   Bence insanlığın son bulacağı nokta, dikkatini tamamen faydasız olan şeylere
+   odakladığı noktadır. O anda insanlık fiilen olmasa da zihnen yok olacaktır.
+</p></div>
+
+</div>
+
+<div id="outline-container-1-9" class="outline-3">
+<h3 id="sec-1-9"><span class="section-number-3">1.9</span> Kadın ve Erkek</h3>
+<div class="outline-text-3" id="text-1-9">
+
+<p>   Karısını döve döve öldüren adam, 13 ay ceza alıp yattığı süre göz önünde
+   bulundurularak serbest bırakılmış. Tecavüzcüsünü öldüren kadına müebbet hapis
+   cezası verilmiş. 
 </p>
-<ol class="org-ol">
+<p>
+   Burada iki nokta var.
+</p><ol>
 <li>Kadın ve Erkek konusunda eşitsizlik
 </li>
 <li>Elde edilen bilgiye olan güvensizlik
 </li>
 </ol>
+
 </div>
+
 </div>
-<div id="outline-container-sec-1-9" class="outline-3">
-<h3 id="sec-1-9"><span class="section-number-3">1.9</span> İstiyorum - 2</h3>
-<div class="outline-text-3" id="text-1-9">
-<p>
-Yazar olmak istiyorum. Köşe yazıları, kitaplar yazmak istiyorum. Ama ortalıkta
-olmak istemiyorum. Yüzüm görünsün istemiyorum.
-</p>
-</div>
-</div>
-<div id="outline-container-sec-1-10" class="outline-3">
-<h3 id="sec-1-10"><span class="section-number-3">1.10</span> Jump To Hyperspace</h3>
+
+<div id="outline-container-1-10" class="outline-3">
+<h3 id="sec-1-10"><span class="section-number-3">1.10</span> İstiyorum - 2</h3>
 <div class="outline-text-3" id="text-1-10">
-<p>
-Sanırım böyle bir atlayışa ihtiyacım var. Kafamdaki sorunları çözemiyorum. 
-</p>
+
+<p>   Yazar olmak istiyorum. Köşe yazıları, kitaplar yazmak istiyorum. Ama ortalıkta
+   olmak istemiyorum. Yüzüm görünsün istemiyorum.
+</p></div>
+
 </div>
-</div>
-<div id="outline-container-sec-1-11" class="outline-3">
-<h3 id="sec-1-11"><span class="section-number-3">1.11</span> İstiyorum - 1</h3>
+
+<div id="outline-container-1-11" class="outline-3">
+<h3 id="sec-1-11"><span class="section-number-3">1.11</span> Jump To Hyperspace</h3>
 <div class="outline-text-3" id="text-1-11">
-<p>
-Programlama dilleri ile ilgilenmek, farklı paradigmaları araştırmak kullanmak
-istiyorum. 
-Avcılar ve atıcılar derneğine Atıcı olarak kayıt olmak, ara sıra atıcılık
-yapmak istiyorum.
-</p>
+
+<p>   Sanırım böyle bir atlayışa ihtiyacım var. Kafamdaki sorunları çözemiyorum. 
+</p></div>
+
 </div>
-</div>
-<div id="outline-container-sec-1-12" class="outline-3">
-<h3 id="sec-1-12"><span class="section-number-3">1.12</span> Düşünceler</h3>
+
+<div id="outline-container-1-12" class="outline-3">
+<h3 id="sec-1-12"><span class="section-number-3">1.12</span> İstiyorum - 1</h3>
 <div class="outline-text-3" id="text-1-12">
-<p>
-Bu sabah işe 1030 gitmem gerekirken 0830 da gitti. Bunu iskelede fark
-ettim. Bari güzel bir kahvaltı yapayım dedim. Kahvaltımı alıp kasaya yakın bir
-masaya oturdum. Tabi bilinçli olarak değil. Sadece dışarıda yer olmadığı
-için. ıçeri giren iki kişi dikkatimi çekti. Giyimleri ve duruşları diğerlerine
-göre farklıydı. ılk düşüncem giyimlerinden dolayı kasıntı olduklarını
-düşünmemdi. Asıl ilgimi çeken adamlardan birisinin nasıl sipariş verdiği
-idi. "2 boyoz istiyorum" dedi. Diğerleri nasıl sipariş veriyor diye
-dinledim. Neredeyse herkes "2 boyoz alayım" dedi. Sonra dükkana geldim. Dün
-akşamdan beri düşündüğüm bir konuya programlama dili paradigmalarına tekrar
-bakayım dedi. ışte o an ne "istediğimi" ve ne "aldığımı" anladım. 
-</p>
+
+<p>   Programlama dilleri ile ilgilenmek, farklı paradigmaları araştırmak kullanmak
+   istiyorum. 
+   Avcılar ve atıcılar derneğine Atıcı olarak kayıt olmak, ara sıra atıcılık
+   yapmak istiyorum.
+</p></div>
+
 </div>
-</div>
-<div id="outline-container-sec-1-13" class="outline-3">
-<h3 id="sec-1-13"><span class="section-number-3">1.13</span> Ne yapsam bilmiyorum?</h3>
+
+<div id="outline-container-1-13" class="outline-3">
+<h3 id="sec-1-13"><span class="section-number-3">1.13</span> Düşünceler</h3>
 <div class="outline-text-3" id="text-1-13">
-<p>
-Hayatımda ne yapacağımı bilmediğim bir sürü zaman oldu. Şimdi ne yapacağımı
-düşünüyorum. Şu anda ne olduğunu da bilmiyorum. Tek bildiğim şey şu gibi bir
-şey de söyleyemiyorum.
-</p>
+
+<p>   Bu sabah işe 1030 gitmem gerekirken 0830 da gitti. Bunu iskelede fark
+   ettim. Bari güzel bir kahvaltı yapayım dedim. Kahvaltımı alıp kasaya yakın bir
+   masaya oturdum. Tabi bilinçli olarak değil. Sadece dışarıda yer olmadığı
+   için. ıçeri giren iki kişi dikkatimi çekti. Giyimleri ve duruşları diğerlerine
+   göre farklıydı. ılk düşüncem giyimlerinden dolayı kasıntı olduklarını
+   düşünmemdi. Asıl ilgimi çeken adamlardan birisinin nasıl sipariş verdiği
+   idi. "2 boyoz istiyorum" dedi. Diğerleri nasıl sipariş veriyor diye
+   dinledim. Neredeyse herkes "2 boyoz alayım" dedi. Sonra dükkana geldim. Dün
+   akşamdan beri düşündüğüm bir konuya programlama dili paradigmalarına tekrar
+   bakayım dedi. ışte o an ne "istediğimi" ve ne "aldığımı" anladım. 
+</p></div>
+
 </div>
-</div>
-<div id="outline-container-sec-1-14" class="outline-3">
-<h3 id="sec-1-14"><span class="section-number-3">1.14</span> Yalnızlığın yüzleri</h3>
+
+<div id="outline-container-1-14" class="outline-3">
+<h3 id="sec-1-14"><span class="section-number-3">1.14</span> Ne yapsam bilmiyorum?</h3>
 <div class="outline-text-3" id="text-1-14">
-<p>
-  Bazen yalnız olmanın güzel olduğu zamanlar oluyor. Sizi tutan birisi
+
+<p>   Hayatımda ne yapacağımı bilmediğim bir sürü zaman oldu. Şimdi ne yapacağımı
+   düşünüyorum. Şu anda ne olduğunu da bilmiyorum. Tek bildiğim şey şu gibi bir
+   şey de söyleyemiyorum.
+</p></div>
+
+</div>
+
+<div id="outline-container-1-15" class="outline-3">
+<h3 id="sec-1-15"><span class="section-number-3">1.15</span> Yalnızlığın yüzleri</h3>
+<div class="outline-text-3" id="text-1-15">
+
+<p>  Bazen yalnız olmanın güzel olduğu zamanlar oluyor. Sizi tutan birisi
   olmasındansa yalnızlığın özgürlüğünü hissetmek.
 (Cum Haz 12 10:35:17 Türkiye Yaz Saati 2015)
-</p>
+</p></div>
+
 </div>
-</div>
-<div id="outline-container-sec-1-15" class="outline-3">
-<h3 id="sec-1-15"><span class="section-number-3">1.15</span> Oh ne ala memleket?</h3>
-<div class="outline-text-3" id="text-1-15">
-<p>
-Sen düşün düşün, sonra eyleme geçen alıp gitsin. Ne ala memleket!!
-</p>
-</div>
-</div>
-<div id="outline-container-sec-1-16" class="outline-3">
-<h3 id="sec-1-16"><span class="section-number-3">1.16</span> Ben niye buradayım?</h3>
+
+<div id="outline-container-1-16" class="outline-3">
+<h3 id="sec-1-16"><span class="section-number-3">1.16</span> Oh ne ala memleket?</h3>
 <div class="outline-text-3" id="text-1-16">
-<p>
-Adamı olmayacak yere koyarsan o da sana sorar.
-</p>
+
+<p>   Sen düşün düşün, sonra eyleme geçen alıp gitsin. Ne ala memleket!!
+</p></div>
+
 </div>
+
+<div id="outline-container-1-17" class="outline-3">
+<h3 id="sec-1-17"><span class="section-number-3">1.17</span> Ben niye buradayım?</h3>
+<div class="outline-text-3" id="text-1-17">
+
+<p>   Adamı olmayacak yere koyarsan o da sana sorar.
+</p></div>
 </div>
+
 </div>
-<div id="outline-container-sec-2" class="outline-2">
+
+<div id="outline-container-2" class="outline-2">
 <h2 id="sec-2"><span class="section-number-2">2</span> Bağlantılar</h2>
 <div class="outline-text-2" id="text-2">
-<p>
-<a href="blog.html">Blog</a>
-<a href="bash.html">Bash</a>
-<a href="notlar.html">Notlar</a>
-<a href="projeler.html">Projeler</a>
-<a href="muzik.html">Müzik</a>
-<a href="index.html">Ana Sayfa</a>
+
+<p>  <a href="blog.html">Blog</a>
+  <a href="bash.html">Bash</a>
+  <a href="notlar.html">Notlar</a>
+  <a href="projeler.html">Projeler</a>
+  <a href="muzik.html">Müzik</a>
+  <a href="index.html">Ana Sayfa</a>
 </p>
 </div>
 </div>
 </div>
-<div id="postamble" class="status">
-<p class="date">Created: 2015-08-11 Sal 11:24</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+
+<div id="postamble">
+<p class="date">Date: 2015-08-15T18:22+0300</p>
+<p class="author">Author: umut</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
 </div>
 </body>
 </html>

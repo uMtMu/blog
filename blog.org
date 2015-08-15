@@ -5,6 +5,11 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
+** Hayat akıp gidiyor
+   Hayat akıp gidiyor. Her an içimizde bir sürü ölüm ve doğum
+   oluyor. Çevremizdeki büyük ölümler bizi çok üzüyor ama içimizdeki ölümlere
+   karşı daha umursamaz davranıyoruz. Kimi farkında değil, kimi farkında ama
+   umursamıyor. Hücreler ölüyor, duygular ölüyor, düşünceler ölüyor. 
 ** Bilmezlik
    [[file:img/labyrinth_by_snugsomeone.jpg]]
 
