@@ -25,7 +25,6 @@
    Yoksa sadece yeni şeyler öğrendiğimiz için genişlediğimizi mi
    düşünüyoruz. Belki de insan, içinde sonsuza değin dönüp duracağın bir labirent...
 ** Saygı, Saygısızlık, Saygılılık [Doldurulacak]
->>>>>>> 56206809bd165c46188bf6882e5b82bef019612e
 ** Öküz evlatları
    #+BEGIN_CENTER
    [[file:img/fuckyou.jpg]]
