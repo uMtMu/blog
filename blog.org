@@ -5,6 +5,7 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
+** İsteksizlik -> Gereklilik -> Kararsızlık -> Geçici Felç!
 ** Hayat akıp gidiyor
    Hayat akıp gidiyor. Her an içimizde bir sürü ölüm ve doğum
    oluyor. Çevremizdeki büyük ölümler bizi çok üzüyor ama içimizdeki ölümlere
