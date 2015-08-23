@@ -18,9 +18,13 @@
    dosyaların sembolik bağlantılarını oluşturur
    
    cp -u * bak # Dizindeki dosyaları eğer kaynak daha yeni ise günceller
+   
+   cp -v *.txt dir # kopyalama işleminin durumunu gösterir
 
+   cp -p file.txt file.txt.bak # sahiplik ve izin bilgileri ile kopyalar
 ** Komut: > ve 2>
    >  # stdout
+
    2> # stderr
 ** Komut: alias
    #Kullanışlı kısa Ubuntu aliasları
