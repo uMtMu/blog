@@ -1,7 +1,7 @@
 #+TITLE: uMtMu
 #+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
 #+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-
+#+OPTIONS: ^:nil \n:t
 * Öteki kafa
 ** Nine Inch Nails - Every Day Is Exactly The Same
 * Gaz
