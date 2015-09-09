@@ -2,12 +2,13 @@
 #+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
 #+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 #+OPTIONS: ^:nil \n:t
+#+OPTIONS: with-timestamps
 #+BEGIN_CENTER
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
-** İsteksizlik -> Gereklilik -> Kararsızlık -> Geçici Felç!
-** Hayat akıp gidiyor
+** İsteksizlik -> Gereklilik -> Kararsızlık -> Geçici Felç! <2015-09-06 Sun>
+** Hayat akıp gidiyor[2015-09-06 Sun]
    Hayat akıp gidiyor. Her an içimizde bir sürü ölüm ve doğum
    oluyor. Çevremizdeki büyük ölümler bizi çok üzüyor ama içimizdeki ölümlere
    karşı daha umursamaz davranıyoruz. Kimi farkında değil, kimi farkında ama

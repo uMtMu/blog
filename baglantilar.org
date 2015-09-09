@@ -2,5 +2,6 @@
   [[file:bash.org][Bash]]
   [[file:notlar.org][Notlar]]
   [[file:projeler.org][Projeler]]
+  [[file:okunacaklar.org][Okunacaklar]]
   [[file:muzik.org][Müzik]]
   [[file:index.org][Ana Sayfa]]

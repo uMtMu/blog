@@ -1,0 +1,22 @@
+#+TITLE: uMtMu
+#+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
+#+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+#+OPTIONS: ^:nil \n:t
+#+BEGIN_CENTER
+[[file:img/ja2.png]]
+#+END_CENTER
+* Okunacaklar
+1. Nasıl yapmalı?
+2. Yeraltından notlar
+3. Şibumi?
+4. Aylak adam
+5. Budist vecizler
+6. http://www.newyorker.com/magazine/2014/07/28/philby
+7. http://www.iletisim.com.tr/kitap/ikili-iliskilerde-duygusal-manipulasyon
+8. Cumhuriyetin ilk yüzyılı?
+9. Martı Jonathan Livinston
+10. Mastermind: How to Think Like Sherlock Holmes
+11. Bizim büyük çaresizliğimiz
+
+* Bağlantılar
+#+INCLUDE: "baglantilar.org"
