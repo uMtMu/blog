@@ -2,12 +2,12 @@
 #+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
 #+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 #+OPTIONS: ^:nil \n:t
-* Öteki kafa
+* Ã–teki kafa
 ** Nine Inch Nails - Every Day Is Exactly The Same
 * Gaz
 ** Frank Klepacki - Red Alert C&C Soundtrack: Hell March
 ** C&C Red Alert 3 Theme - Soviet March
-* Sýnýflandýrýlmamýþ
-** Yavuz Çetin - Kurtar Beni
-* Baðlantýlar
+* SÄ±nÄ±flandÄ±rÄ±lmamÄ±ÅŸ
+** Yavuz Ã‡etin - Kurtar Beni
+* BaÄŸlantÄ±lar
 #+INCLUDE: "baglantilar.org"
