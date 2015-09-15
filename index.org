@@ -1,4 +1,3 @@
-
 #+TITLE: uMtMu
 #+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
 #+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -11,3 +10,4 @@
 - [[file:bash.org][Bash]]
 - [[file:projeler.org][Projeler]]
 - [[file:muzik.org][Müzik]]
+- [[file:okunacaklar.org][Okunacaklar]]
