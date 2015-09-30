@@ -9,6 +9,11 @@
 
 * Projeler
 ** Torrent(???)
+** ses sistemi
+   - vlc-nox
+   - vlc remote
+   - sound2radio
+   - miniradios
 * Github
 ** bashtools
    [[https://github.com/uMtMu/bash_tools][Bashtools]]

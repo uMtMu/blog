@@ -7,21 +7,24 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
-<<<<<<< HEAD
-** İsteksizlik -> Gereklilik -> Kararsızlık -> Geçici Felç! <2015-09-06 Sun>
-** Hayat akıp gidiyor[2015-09-06 Sun]
-=======
+** Beyin uyuşması 
+   Ne yapacağımı bilmiyorum. Olduğum halden çıkmak için ne yapmak gerekir
+   bilmiyorum. Belki de bir süre böyle durmalıyım ama iş yerinden böyle durmak
+   tehlikeli olabilir.
+   <2015-09-30 Çar>
+** İsteksizlik -> Gereklilik -> Kararsızlık -> Geçici Felç!
+   <2015-09-06 Sun>
 ** Sığır seçmene, Seçme Sığır
    Başımıza yönetici, karar verici olarak öyle ahlaksız, karaktersiz
    vb. insanları seçmiş olduğumuzu görmek. Siyasetin varlığı, adeta ahlaksızlığın,
    karaktersizliğin taçlandırılması. Böyle bir dünyada nasıl yaşayabiliyoruz?
-** İsteksizlik -> Gereklilik -> Kararsızlık -> Geçici Felç!
+
 ** Hayat akıp gidiyor
->>>>>>> 33e11fc7f749a47daf44d34218fb91836a16073e
    Hayat akıp gidiyor. Her an içimizde bir sürü ölüm ve doğum
    oluyor. Çevremizdeki büyük ölümler bizi çok üzüyor ama içimizdeki ölümlere
    karşı daha umursamaz davranıyoruz. Kimi farkında değil, kimi farkında ama
    umursamıyor. Hücreler ölüyor, duygular ölüyor, düşünceler ölüyor. 
+   <2015-09-06 Paz>
 ** Bilmezlik
    [[file:img/labyrinth_by_snugsomeone.jpg]]
 
