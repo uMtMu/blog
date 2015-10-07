@@ -23,6 +23,7 @@
    [[https://github.com/uMtMu/post_install_script][PostInstallScript]]
 ** yildizzhcrawler
    [[https://github.com/uMtMu/yildizz_crawler][YildizCrawler]]
-
+* Yazmak istediklerim
+** nc ve tcpdump komutları ile ilgili örnekleri topla
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"
