@@ -7,7 +7,7 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
-** Bazen pencereden atlayasım geliyor
+** Bazen pencereden atlayasıp uçup gidesim geliyor
    #+BEGIN_CENTER
    [[file:img/window.png]]
    #+END_CENTER
