@@ -7,6 +7,17 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
+** Bazen pencereden atlayasım geliyor
+   #+BEGIN_CENTER
+   [[file:img/window.png]]
+   #+END_CENTER
+   <2015-10-13 Sal 12:54>
+** Bazen kendimden nefret ediyorum.
+   Bazen kendimden nefret ediyorum. Başka insanların yaptıklarını, tanıdığım
+   insanların ne yaptıklarını görüyorum ve kendime kızıyorum nefret ediyorum. 
+   Fuck you!!
+
+   <2015-10-08 Per 11:45>
 ** Beyin uyuşması 
    Ne yapacağımı bilmiyorum. Olduğum halden çıkmak için ne yapmak gerekir
    bilmiyorum. Belki de bir süre böyle durmalıyım ama iş yerinden böyle durmak
