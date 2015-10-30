@@ -5,6 +5,11 @@
 #+BEGIN_CENTER
 [[file:img/ja2.png]]
 #+END_CENTER
+* Araştırılacaklar
+** ErgoEmacs
+   [[http://ergoemacs.org/][ErgoEmacs]]
+** SpacEmacs
+   [[https://github.com/syl20bnr/spacemacs][SpacEmacs]]
 * Okunacaklar
 1. Nasıl yapmalı?
 2. Yeraltından notlar
