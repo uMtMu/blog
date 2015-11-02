@@ -7,6 +7,9 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
+** En kısa rüyam
+   "Hayır, imkansız" dedim ve uyandım...
+   <2015-11-02 Pzt 11:22>
 ** Bazen pencereden atlayıp uçup gidesim geliyor
    #+BEGIN_CENTER
    [[file:img/window.png]]
