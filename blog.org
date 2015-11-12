@@ -7,6 +7,23 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
+** Metod
+   - Tanımla
+   - Ayıkla
+   - Hatırla
+   - Kurgula
+   - Uygula
+   <2015-11-12 Per 10:05>
+** Tavsiyeler
+   - İhtiyacın yoksa 
+
+               ARAMA,
+               TIKLAMA,
+               SAKLAMA,
+               DİKKATİNİ HARCAMA!!
+
+   - AZ YAZ, ÇOK DÜŞÜN.
+   <2015-11-04 Çar>
 ** En kısa rüyam
    "Hayır, imkansız" dedim ve uyandım...
    <2015-11-02 Pzt 11:22>
