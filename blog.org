@@ -7,6 +7,13 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
+** Ebruli
+   Hayat bu işte, bir şarkı dinlemek için kırk takla atmak. Hayatın hiç bir
+   yere varmadığı düşüncesi. Anca yazmak. Kimseye faydası olmayan
+   yazılar. İnsana boşa kürek çektiğini hissettiriyor. Hiç ulaşılamayacak
+   güçlerin peşinden koşan küçük çocuklar gibi yaşamak. Hayat, hayallerimizdeki
+   gibi değil. Hayat gördüğümüz gibi bile değil. Hayat can çekişen bir
+   kumru. Kediler üstüne üşüşmüş. 
 ** Metod
    - Tanımla
    - Ayıkla
