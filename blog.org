@@ -7,6 +7,9 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
+** Bu yol nereye gider?
+   Yolumun götürdüğü yerden başka bir yere mi gitmek istiyorum?
+   <2015-11-26 Per 10:02>
 ** Ebruli
    Hayat bu işte, bir şarkı dinlemek için kırk takla atmak. Hayatın hiç bir
    yere varmadığı düşüncesi. Anca yazmak. Kimseye faydası olmayan
