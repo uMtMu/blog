@@ -13,6 +13,19 @@
    keşfedin. Uçun, kaçın, zengin olun vs. Bunlar gerçeklerin önündeki maddi
    kaygıların oluşturduğu bir sis bulutu. 
    <2015-12-01 Sal 17:44>
+   
+   Basit düşünmek nedir? /Hedef/ 'e odaklı olmak mı? /Hedef/ 'e giderken dikkat
+   dağıtıcılardan uzak durmak ve dikkatin dağıldığını fark edip geri dönebilmek
+   mi? Yoksa /Hedef/ 'e ulaşmak için en basit yolları mı seçmek? Sanırım son
+   söylediğim daha /Hedef/ 'e yakın.
+
+   Bir durum üzerinden gidelim. Yazı yazmayı seviyorum. Yazdıklarımı internet
+   üzerinde barındırmak kalıcılık bakımından iyi oluyor. Peki bunun için ne
+   kullanıyorum? Emacs, OrgMode, github, githubio. Peki bu yaptığım bunu yapmak
+   için en basit yöntem mi? 
+
+   <2015-12-07 Pzt 11:45>
+
 ** Bazen bilgisayardaki ok ile bileğimi kesesim geliyor
    <2015-12-01 Sal 17:44>
 ** Bu yol nereye gider?
