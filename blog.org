@@ -24,6 +24,22 @@
    kullanıyorum? Emacs, OrgMode, github, githubio. Peki bu yaptığım bunu yapmak
    için en basit yöntem mi? 
 
+   Neden github.io? Çünkü hosting ile uğraşmak istemedim. 
+   Neden emacs? İçerik hazırlamak için zaten neredeyse her gün kullandığım bir
+   uygulamayı kullanmak fazladan gereksinimleri ortadan kaldırıyor. Sadece o
+   uygulama konusunda bazı yeni şeyler öğrenmek gerekiyor.
+
+   Peki probleme geri dönelim. Yazılarımı ücret olmadan ve yenilemek ile
+   uğraşmadan basit bir şekilde yayınlamak. Daha basit nasıl yapılabilirdi.
+
+   Bedava hosting araştırıp içeriği notepad gibi bir metin editöründe html ile
+   hazırlayabilirdim. 
+   Bu olasılığın karşıma çıkartacağı sorunlar;
+   1. Hosting firması, kayıt yenileme, epostalar ile uğraşmam gerekirdi.
+   2. HTML içeriğini emacs orgmode ile yaptığım kadar rahat yapamazdım.
+
+   O zaman probleme basit ve işe yarar bir çözüm oluşturmuş oldum mu?
+
    <2015-12-07 Pzt 11:45>
 
 ** Bazen bilgisayardaki ok ile bileğimi kesesim geliyor
