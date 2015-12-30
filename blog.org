@@ -7,6 +7,23 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
+** Bugün vapur çok kalabalıktı...
+   Bugün vapur çok kalabalık. Belki de hava iyileşti sanırım. Normalde üst kısım
+   bu kadar insan, gürültü olmuyordu. Hava yeni yıl öncesi bir güzellik mi
+   yapıyor acaba. Bunlar hep edebi latifeler. Ne havanın bizi sakladığı var ne
+   de yeni yılda haberi. Apayrı bir modüldeki sınıfın, diğer bir modüldeki
+   sınıfın özel verisini bilmesi gibi bir şey bu.
+   
+   Dün patron güzel bir terim kullandı. Vagon dedi insanların konuşmalarındaki
+   tuzaklara. Sanırım iş konuşmaları, birini state'ini öğrenmek ve değiştirmeye
+   çalışmak dışında anlamsız. Zaten başka nasıl bir amacınız olabilir ki. Vagon
+   da burada da konuşmadaki karşı tarafın state'ini bir durumdan başka bir
+   duruma geçiren motivasyon ve yönlendirmeler oluyor. Yabancılar motivasyon
+   yerine leverage diyor sanırım. Hoş motivasyon da yabancı kaynaklı. Bakalım
+   türkçe karşılığı neymiş. Tdk “güdüleme, isteklendirme” diyor. Bu da bir çeşit
+   yönlendirme o zaman. Zaten karşıdakini istediğiniz duruma geçmesi için
+   sebepler veriyorsunuz.
+   
 ** Basit düşünmek
    Basit düşünmek nedir? Hep zihin programlamadan bahsederler. İlk başlarda bu
    konuya mesafeyi yaklaşıyordum. Zihninizi programlayın. Hayatınızı yeniden
