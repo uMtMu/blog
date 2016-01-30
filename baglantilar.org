@@ -1,6 +1,6 @@
   [[file:blog.org][Blog]]
   [[file:bash.org][Bash]]
-  [[file:baslangic.org][Başlangıç]]
+  [[file:baslangiclar.org][Başlangıç]]
   [[file:notlar.org][Notlar]]
   [[file:projeler.org][Projeler]]
   [[file:okunacaklar.org][Okunacaklar]]

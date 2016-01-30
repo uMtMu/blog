@@ -9,11 +9,13 @@
 
 * Projeler
 ** Torrent(???)
-** ses sistemi
-   - vlc-nox
-   - vlc remote
-   - sound2radio
-   - miniradios
+** ses sistemi [4/6]
+   - [X] kodi/vlc-nox
+   - [X] kore/vlc remote
+   - [X] sound2radio
+   - [ ] miniradios
+   - [X] raspberry pi
+   - [ ] kurulum
 * Github
 ** bashtools
    [[https://github.com/uMtMu/bash_tools][Bashtools]]
