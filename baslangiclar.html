@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-01-31 Sun 13:46 -->
+<!-- 2016-01-31 Sun 13:30 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>uMtMu</title>
@@ -148,20 +148,22 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline10">Yazılar</a>
+<li><a href="#orgheadline6">Nelere başladım ?</a>
 <ul>
-<li><a href="#orgheadline1">Komut: patch</a></li>
-<li><a href="#orgheadline2">Komut: cp</a></li>
-<li><a href="#orgheadline3">Komut: &gt; ve 2&gt;</a></li>
-<li><a href="#orgheadline4">Komut: alias</a></li>
-<li><a href="#orgheadline5">Komut: cd</a></li>
-<li><a href="#orgheadline6">Komut: ls</a></li>
-<li><a href="#orgheadline7">Komut: chmod</a></li>
-<li><a href="#orgheadline8">ızin ve sahiplik bilgilerini koruyarak dosya transferi</a></li>
-<li><a href="#orgheadline9">Veri içindeki eşsiz satırları ve sayılarını bulmak</a></li>
+<li><a href="#orgheadline3">NodeJS ödevi yapıldı.</a>
+<ul>
+<li><a href="#orgheadline1">Başlangıç <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-10 Sun 13:30&gt;</span></span></a></li>
+<li><a href="#orgheadline2">Bitiş <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-31 Sun 13:30&gt;</span></span></a></li>
 </ul>
 </li>
-<li><a href="#orgheadline11">Bağlantılar</a></li>
+<li><a href="#orgheadline5">Ses sistemi projesi</a>
+<ul>
+<li><a href="#orgheadline4">Başlandı <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-30 Sat 21:08&gt;</span></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgheadline7">Bağlantılar</a></li>
 </ul>
 </div>
 </div>
@@ -174,211 +176,30 @@ for the JavaScript code in this tag.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline10" class="outline-2">
-<h2 id="orgheadline10">Yazılar</h2>
-<div class="outline-text-2" id="text-orgheadline10">
-</div><div id="outline-container-orgheadline1" class="outline-3">
-<h3 id="orgheadline1">Komut: patch</h3>
-<div class="outline-text-3" id="text-orgheadline1">
-<p>
-İncelenenecek<br  />
-<span class="timestamp-wrapper"><span class="timestamp">&lt;2015-11-27 Fri 11:27&gt;</span></span><br  />
-</p>
-</div>
-</div>
-<div id="outline-container-orgheadline2" class="outline-3">
-<h3 id="orgheadline2">Komut: cp</h3>
-<div class="outline-text-3" id="text-orgheadline2">
-<p>
-cp -R ~/files ~/files-backup # tüm dizin alt yapısını ve içeriğini kopyala<br  />
-</p>
-
-<p>
-cp -s ~/myfiles/file*.txt ~/myfiles2 # tüm file*.txt dosyalarının sembolik<br  />
-bağlantılarını ~/myfiles2 dizini altına oluşturur. Sembolik bağlantılar,<br  />
-Windowstaki kısayollar gibidir<br  />
-</p>
-
-<p>
-cp -R -s ~/myfiles ~/myfiles2 # tüm dizinleri oluşturur ve içindeki tüm<br  />
-dosyaların sembolik bağlantılarını oluşturur<br  />
-</p>
-
-<p>
-cp -u * bak # Dizindeki dosyaları eğer kaynak daha yeni ise günceller<br  />
-</p>
-
-<p>
-cp -v *.txt dir # kopyalama işleminin durumunu gösterir<br  />
-</p>
-
-<p>
-cp -p file.txt file.txt.bak # sahiplik ve izin bilgileri ile kopyalar<br  />
-</p>
-</div>
-</div>
-<div id="outline-container-orgheadline3" class="outline-3">
-<h3 id="orgheadline3">Komut: &gt; ve 2&gt;</h3>
+<div id="outline-container-orgheadline6" class="outline-2">
+<h2 id="orgheadline6">Nelere başladım ?</h2>
+<div class="outline-text-2" id="text-orgheadline6">
+</div><div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3">NodeJS ödevi yapıldı.</h3>
 <div class="outline-text-3" id="text-orgheadline3">
-<p>
-&gt;  # stdout<br  />
-</p>
-
-<p>
-2&gt; # stderr<br  />
-</p>
+</div><div id="outline-container-orgheadline1" class="outline-4">
+<h4 id="orgheadline1">Başlangıç <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-10 Sun 13:30&gt;</span></span></h4>
 </div>
-</div>
-<div id="outline-container-orgheadline4" class="outline-3">
-<h3 id="orgheadline4">Komut: alias</h3>
-<div class="outline-text-3" id="text-orgheadline4">
-<p>
-#Kullanışlı kısa Ubuntu aliasları<br  />
-</p>
-
-<p>
-alias e='exit'<br  />
-</p>
-
-<p>
-alias c='clear'<br  />
-</p>
-
-<p>
-alias 1.='cd ..'<br  />
-</p>
-
-<p>
-alias 2.='1.; 1.'<br  />
-</p>
-
-<p>
-alias 3.='1.;2.'<br  />
-</p>
-
-<p>
-alias ag='sudo apt-get'<br  />
-</p>
-
-<p>
-alias agi='ag install'<br  />
-</p>
-
-<p>
-alias agu='ag update'<br  />
-</p>
-
-<p>
-alias agr='ag remove -purge'<br  />
-</p>
+<div id="outline-container-orgheadline2" class="outline-4">
+<h4 id="orgheadline2">Bitiş <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-31 Sun 13:30&gt;</span></span></h4>
 </div>
 </div>
 <div id="outline-container-orgheadline5" class="outline-3">
-<h3 id="orgheadline5">Komut: cd</h3>
+<h3 id="orgheadline5">Ses sistemi projesi</h3>
 <div class="outline-text-3" id="text-orgheadline5">
-<p>
-cd -  #bir önceki çalışılan dizine geri döner<br  />
-</p>
-
-<p>
-cd ~  #kullanici adi  adının ev dizinine gider<br  />
-</p>
-</div>
-</div>
-<div id="outline-container-orgheadline6" class="outline-3">
-<h3 id="orgheadline6">Komut: ls</h3>
-<div class="outline-text-3" id="text-orgheadline6">
-<p>
-ls ~ /usr #birden fazla dizinin içi listelenebilir<br  />
-</p>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<tbody>
-<tr>
-<td class="org-left">-a</td>
-<td class="org-left">&#x2013;all</td>
-<td class="org-left">tümünü listele</td>
-</tr>
-
-<tr>
-<td class="org-left">-r</td>
-<td class="org-left">-reverse</td>
-<td class="org-left">sıralamayı ters yap</td>
-</tr>
-
-<tr>
-<td class="org-left">-d</td>
-<td class="org-left">-directory</td>
-<td class="org-left">dizinin kendisini işaret eder</td>
-</tr>
-
-<tr>
-<td class="org-left">-F</td>
-<td class="org-left">-classify</td>
-<td class="org-left">dizinlerin başına slash işareti koyar</td>
-</tr>
-
-<tr>
-<td class="org-left">-h</td>
-<td class="org-left">-human-readable</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="org-left">-t</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">zamana göre sıralar</td>
-</tr>
-
-<tr>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-
-<div id="outline-container-orgheadline7" class="outline-3">
-<h3 id="orgheadline7">Komut: chmod</h3>
-<div class="outline-text-3" id="text-orgheadline7">
-<p>
-chmod g+s directory #alt dizinlerinin grubunu sabitleme<br  />
-</p>
-</div>
-</div>
-<div id="outline-container-orgheadline8" class="outline-3">
-<h3 id="orgheadline8">ızin ve sahiplik bilgilerini koruyarak dosya transferi</h3>
-<div class="outline-text-3" id="text-orgheadline8">
-<ol class="org-ol">
-<li>tar czf - | ssh user@host "cd; tar xzf -"<br  /></li>
-<li>scp -rp sourcedir user@dest:/dir<br  /></li>
-</ol>
-</div>
-</div>
-<div id="outline-container-orgheadline9" class="outline-3">
-<h3 id="orgheadline9">Veri içindeki eşsiz satırları ve sayılarını bulmak</h3>
-<div class="outline-text-3" id="text-orgheadline9">
-<p>
-sort data | uniq -u #Eşsiz satırlar<br  />
-sort data | uniq -c #Satırların tekrar sayıları<br  />
-</p>
+</div><div id="outline-container-orgheadline4" class="outline-4">
+<h4 id="orgheadline4">Başlandı <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-30 Sat 21:08&gt;</span></span></h4>
 </div>
 </div>
 </div>
-
-<div id="outline-container-orgheadline11" class="outline-2">
-<h2 id="orgheadline11">Bağlantılar</h2>
-<div class="outline-text-2" id="text-orgheadline11">
+<div id="outline-container-orgheadline7" class="outline-2">
+<h2 id="orgheadline7">Bağlantılar</h2>
+<div class="outline-text-2" id="text-orgheadline7">
 <p>
 <a href="blog.html">Blog</a><br  />
 <a href="bash.html">Bash</a><br  />
@@ -394,7 +215,7 @@ sort data | uniq -c #Satırların tekrar sayıları<br  />
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: umt</p>
-<p class="date">Created: 2016-01-31 Sun 13:46</p>
+<p class="date">Created: 2016-01-31 Sun 13:30</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

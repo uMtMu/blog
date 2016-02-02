@@ -1,0 +1,16 @@
+#+TITLE: uMtMu
+#+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
+#+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+#+OPTIONS: ^:nil \n:t
+#+OPTIONS: with-timestamps
+#+BEGIN_CENTER
+[[file:img/ja2.png]]
+#+END_CENTER
+* Nelere başladım ?
+** NodeJS ödevi yapıldı.
+*** Başlangıç <2016-01-10 Sun 13:30>
+*** Bitiş <2016-01-31 Sun 13:30>
+** Ses sistemi projesi 
+*** Başlandı <2016-01-30 Sat 21:08>
+* Bağlantılar
+#+INCLUDE: "baglantilar.org"

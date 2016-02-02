@@ -8,6 +8,7 @@
 - [[file:blog.org][Blog]]
 - [[file:notlar.org][Notlar]]
 - [[file:bash.org][Bash]]
+- [[file:baslangiclar.org][Başlangıç]]
 - [[file:projeler.org][Projeler]]
-- [[file:muzik.org][M�zik]]
+- [[file:muzik.org][Müzik]]
 - [[file:okunacaklar.org][Okunacaklar]]
