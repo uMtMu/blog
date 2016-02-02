@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
+    <script>
+      var encrypted = CryptoJS.AES.encrypt("Message", "Secret Passphrase");
+      // AABsAABkAABiAAAAAAAAAABNAABlAABPAAC0AABHAAA=
+
+      var decrypted = CryptoJS.AES.decrypt(encrypted, "Secret Passphrase");
+      // 4d657373616765
+      decrypted.toString(CryptoJS.enc.Utf8);
+      // Message
+
+      function encrypt(){
+      var text_2_enc = document.getElementById("encrypt_txt").value;
+      var key = document.getElementById("key").value;
+      var enc_txt = CryptoJS.AES.encrypt(text_2_enc, key);
+      document.getElementById("encrypted_txt").value = enc_txt;
+      }
+
+      function decrypt(){
+      var text_2_dec = document.getElementById("decrypt_txt").value;
+      console.log(text_2_dec);
+      var key = document.getElementById("key").value;
+      console.log(key);
+      var dec_txt = CryptoJS.AES.decrypt(text_2_dec, key);
+      console.log(dec_txt);
+      document.getElementById("decrypted_txt").value = dec_txt.toString(CryptoJS.enc.Utf8);
+      }
+    </script>
+  </head>
+  <body>
+    Key:<input type="text" id="key"><br>
+    Text to enc:<input type="text" id="encrypt_txt">
+    <br>
+    <input type="button" id="encrypt_btn" value="Encrypt"
+	   onclick="encrypt()"><br>
+    Encrypted Text:<input type="label" id="encrypted_txt"><br><hr>
+    Text to dec:<input type="text" id="decrypt_txt">
+    <br>
+    <input type="button" id="decrypt_btn" value="Decrypt" onclick="decrypt()"><br>
+    Decrypted Text:<input type="label" id="decrypted_txt">
+  </body>
+</html>
