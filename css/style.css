@@ -4,12 +4,17 @@ html * {
 }
 body {
     background: #eeeeee;
-    padding: 0.5em 1em;
     width: 60%;
     margin: 0 20% 2% 20%;
 }
-div.outline-3 {
+div.outline-3, .status  {
     background: #d6d6d6;
+    padding: 1em;
+    margin: 0 0 10px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
+    box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
 }
 
 p.validation {
