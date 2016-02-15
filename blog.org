@@ -172,7 +172,9 @@
    beklediğim hafta sonları yardımcı olmuyor. Ne yapacağımı
    bilmiyorum. Bilgisayarım nerede kaldı?
 ** Where is my mind?
-   [[http://pre11.deviantart.net/ff26/th/pre/f/2010/231/d/5/fight_club___where_is_my_mind_by_menco.jpg][Where is my mind?]]
+   #+attr_html: :width 90% style="align:center"
+   [[file:img/fight_club_where_is_my_mind_by_menco.jpg]]
+   [[http://pre11.deviantart.net/ff26/th/pre/f/2010/231/d/5/fight_club___where_is_my_mind_by_menco.jpg][Kaynak]]
 ** Her şeyden tırsar oldum
    O kadar düşünemiyorum ki her şeyden tırsar oldum. Acaba her şey ayrı mı yazılıyordu?
 ** ınsanlığın son bulacağı nokta
