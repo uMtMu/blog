@@ -7,6 +7,8 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
+** Fuck you!
+   #+HTML: <iframe width="560" height="315" src="https://www.youtube.com/embed/yFE6qQ3ySXE" frameborder="0" allowfullscreen></iframe>
 ** Kahve dolabındaki gizli dünya
    <2016-02-05 Cum 13:39>
    - Kahve dolabı, gizli bir dünyanın kapısı. Içerde çeşit çeşit karakter
@@ -172,7 +174,7 @@
    beklediğim hafta sonları yardımcı olmuyor. Ne yapacağımı
    bilmiyorum. Bilgisayarım nerede kaldı?
 ** Where is my mind?
-   #+attr_html: :width 90% style="align:center"
+   #+attr_html: :width 90% style="align:center;"
    [[file:img/fight_club_where_is_my_mind_by_menco.jpg]]
    [[http://pre11.deviantart.net/ff26/th/pre/f/2010/231/d/5/fight_club___where_is_my_mind_by_menco.jpg][Kaynak]]
 ** Her şeyden tırsar oldum
