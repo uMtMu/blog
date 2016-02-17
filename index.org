@@ -6,7 +6,7 @@
 # [[file:img/dans.renk.jpg]]
   [[file:img/one.punch.man.jpg]]
 #+END_CENTER
-#+INCLUDE: "baslangiclar.org"
+##+INCLUDE: "baslangiclar.org"
 - [[file:blog.org][Blog]]
 - [[file:notlar.org][Notlar]]
 - [[file:bash.org][Bash]]
