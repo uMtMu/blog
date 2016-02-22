@@ -5,8 +5,6 @@
 #+BEGIN_CENTER
   [[file:img/one.punch.man.jpg]]
 #+END_CENTER
-
-[[file:baslangiclar.org::basla]]
 - [[file:blog.org][Blog]]
 - [[file:notlar.org][Notlar]]
 - [[file:bash.org][Bash]]
