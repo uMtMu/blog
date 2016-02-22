@@ -3,10 +3,10 @@
 #+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 #+OPTIONS: ^:nil \n:t
 #+BEGIN_CENTER
-# [[file:img/dans.renk.jpg]]
   [[file:img/one.punch.man.jpg]]
 #+END_CENTER
-##+INCLUDE: "baslangiclar.org"
+
+[[file:baslangiclar.org::basla]]
 - [[file:blog.org][Blog]]
 - [[file:notlar.org][Notlar]]
 - [[file:bash.org][Bash]]

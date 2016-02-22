@@ -6,6 +6,7 @@
 #+BEGIN_CENTER
 [[file:img/ja2.png]]
 #+END_CENTER
+#+NAME: basla
 * Nelere başladım ?
 ** NodeJS ödevi yapıldı.
 *** Başlangıç <2016-01-10 Sun 13:30>
