@@ -8,6 +8,7 @@
 #+END_CENTER
 * Yazılar
 ** Ben hep, Ben hiç 
+   <2016-02-25 Per 14:07>
 ** Fuck you!
    #+HTML: <iframe width="560" height="315" src="https://www.youtube.com/embed/yFE6qQ3ySXE" frameborder="0" allowfullscreen></iframe>
 ** Kahve dolabındaki gizli dünya
