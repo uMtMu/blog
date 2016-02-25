@@ -7,6 +7,7 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
+** Ben hep, Ben hiç 
 ** Fuck you!
    #+HTML: <iframe width="560" height="315" src="https://www.youtube.com/embed/yFE6qQ3ySXE" frameborder="0" allowfullscreen></iframe>
 ** Kahve dolabındaki gizli dünya
