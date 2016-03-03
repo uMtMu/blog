@@ -7,6 +7,8 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
+** Sanırım bu halde fazla uzağa gidemeyeceğim
+   <2016-03-03 Per 09:18>
 ** Ben hep, Ben hiç 
    <2016-02-25 Per 14:07>
 ** Fuck you!

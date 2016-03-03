@@ -12,4 +12,11 @@
 ** [[http://www.maketistan.com/kendin-yap-kit-diy/tamiya-ucan-marti-robot-kiti.html?sort=p.price&order=ASC][Martı]]
 ** [[http://teknoseyir.com/maketcilige-baslarken-gerekli-olan-malzemeler][Makete giriş]]
 * Bağlantılar
-#+INCLUDE: "baglantilar.org"
+  [[file:blog.org][Blog]]
+  [[file:bash.org][Bash]]
+  [[file:baslangiclar.org][Başlangıç]]
+  [[file:notlar.org][Notlar]]
+  [[file:projeler.org][Projeler]]
+  [[file:okunacaklar.org][Okunacaklar]]
+  [[file:muzik.org][Müzik]]
+  [[file:index.org][Ana Sayfa]]
