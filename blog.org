@@ -8,6 +8,7 @@
 #+END_CENTER
 * Yazılar
 ** Hayat, bir türlü iyileşmeyen inatçı bir hastalık gibi, ölüm dışında bir çaresi yok.
+   <2016-03-06 Sun 23:31>
 ** Sanırım bu halde fazla uzağa gidemeyeceğim
    <2016-03-03 Per 09:18>
 ** Ben hep, Ben hiç 
