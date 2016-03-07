@@ -8,6 +8,12 @@
 #+END_CENTER
 #+NAME: top
 * Yazılar
+** Acımız
+   <2016-03-07 Mon 21:35>
+   Asla acının hiç gelmeyecek bir yabancı ya da hiç gitmeyecek bir akraba
+   olduğunu düşünmemeliyiz. Acımız öz kardeşimiz gibi bizden, şimdi burada
+   değilse bile gelecek, gelmişse bir gün elbet gidecek
+   [[top][Yukarı]]
 ** Hayat, bir türlü iyileşmeyen inatçı bir hastalık gibi, ölüm dışında bir çaresi yok.
    <2016-03-06 Sun 23:31>
    Ne kadar mutlu olsak da hayat bitmek zorunda. Açlıktan ya da kurşun
