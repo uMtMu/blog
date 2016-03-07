@@ -15,5 +15,5 @@
 *** Gelişme <2016-03-07 Pzt 11:22>
     Sistem kuruldu. Test yapıldı. Sanırım radyo vericisi kalitesiz olduğu için
     baş ağrısı yapıyor. Ayrıca ses kalitesi yetersiz.
-* Baglantilar
+* Bağlantılar
 #+INCLUDE: "baglantilar.org"
