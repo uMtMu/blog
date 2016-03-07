@@ -12,5 +12,8 @@
 *** Bitiş <2016-01-31 Sun 13:30>
 ** Ses sistemi projesi 
 *** Başlandı <2016-01-30 Sat 21:08>
+*** Gelişme <2016-03-07 Pzt 11:22>
+    Sistem kuruldu. Test yapıldı. Sanırım radyo vericisi kalitesiz olduğu için
+    baş ağrısı yapıyor. Ayrıca ses kalitesi yetersiz.
 * Baglantilar
 #+INCLUDE: "baglantilar.org"
