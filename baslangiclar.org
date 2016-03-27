@@ -21,5 +21,15 @@
 *** Ngix üzerinde çalıştırma
 *** Güvenlik
 **** SSL
+** Çektiğim fotoğraflar <2016-03-27 Sun 23:14>
+   Çektiğim fotoğraflarda bir kısmını bastırıp eve asmayı planlıyorum
+*** Evde nasıl ve nerede sergileyeceğim?
+    Her odada olabilir. Duvarlara çivi çakmak istemiyorum. Yumuşak hamurlar da
+    leke yapıyor. Nasıl yapsam tam bilmiyorum. Aslına bakarsan hamurlar leke
+    yapsa da temizlenmeyecek bir şey olmaz diye düşünüyorum. Belki de tek tek
+    yerine toplu bir pano yaptırmalıyım. Toplu minik panolar da olabilir. 
+*** Hangi fotoğrafları bastıracağım?
+*** Nerede bastıracağım?
+    Dükkanın karşısında bastırabilirim.
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"

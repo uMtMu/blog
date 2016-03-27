@@ -1,90 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>uMtMu</title>
-<!-- 2016-02-17 Çar 17:08 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="generator" content="Org-mode" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="uMtMu"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2016-03-27T23:13+0300"/>
+<meta name="author" content="umt"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
   .title  { text-align: center; }
-  .todo   { font-family: monospace; color: red; }
+  .todo   { color: red; }
   .done   { color: green; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
   }
-  pre.src {
-    position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
-    padding: 3px;
-    border: 1px solid black;
-  }
-  pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
     background: #ffffcc;
   }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
   textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
   /*]]>*/-->
 </style>
 <script type="text/javascript">
@@ -133,103 +106,117 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+
 </head>
 <body>
+
+<div id="preamble">
+
+</div>
+
 <div id="content">
 <h1 class="title">uMtMu</h1>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">Araştırılacaklar</a>
-<ul>
-<li><a href="#sec-1-1">SpacEmacs &amp; ErgoEmacs</a></li>
-</ul>
-</li>
-<li><a href="#sec-2">Okunacaklar</a></li>
-<li><a href="#sec-3">Linux Journal gibi bir dergiye üye olunabilir</a></li>
-<li><a href="#sec-4">Bağlantılar</a></li>
-</ul>
-</div>
-</div>
+
+
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<div class="center">
 
-<div class="figure">
-<p><img src="img/ja2.png" alt="ja2.png" /><br  />
+<div style="text-align: center">
+<p><img src="img/ja2.png"  alt="img/ja2.png" /><br/>
 </p>
 </div>
-</div>
-<div id="outline-container-sec-1" class="outline-2">
+
+<p><br/>
+</p>
+<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">Araştırılacaklar</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-sec-1-1" class="outline-3">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
 <h3 id="sec-1-1">SpacEmacs &amp; ErgoEmacs</h3>
 <div class="outline-text-3" id="text-1-1">
-<p>
-Bana fazla karışık geldi. Sıfırdan kendin kurup neyin ne olduğunu bilmek daha<br  />
-güzel geliyor. Tabi ne var ne yok görmek için iyi oldu.<br  />
-<a href="https://github.com/syl20bnr/spacemacs">SpacEmacs</a> &amp; <a href="http://ergoemacs.org/">ErgoEmacs</a><br  />
-</p>
+
+<p>   Bana fazla karışık geldi. Sıfırdan kendin kurup neyin ne olduğunu bilmek daha<br/>
+   güzel geliyor. Tabi ne var ne yok görmek için iyi oldu.<br/>
+   <a href="https://github.com/syl20bnr/spacemacs">SpacEmacs</a> &amp; <a href="http://ergoemacs.org/">ErgoEmacs</a><br/>
+</p></div>
 </div>
+
 </div>
-</div>
-<div id="outline-container-sec-2" class="outline-2">
+
+<div id="outline-container-2" class="outline-2">
 <h2 id="sec-2">Okunacaklar</h2>
 <div class="outline-text-2" id="text-2">
-<ol class="org-ol">
-<li>Nasıl yapmalı?<br  />
-Birinci kitap bitmediyse bitir.<br  />
+
+<ol>
+<li>Nasıl yapmalı?<br/>
+     Birinci kitap bitmediyse bitir.<br/>
 </li>
-<li>Yeraltından notlar<br  />
+<li>Yeraltından notlar<br/>
 </li>
-<li>Şibumi?<br  />
+<li>Şibumi?<br/>
 </li>
-<li>Aylak adam<br  />
+<li>Aylak adam<br/>
 </li>
-<li>Budist vecizler<br  />
+<li>Budist vecizler<br/>
 </li>
-<li><a href="http://www.newyorker.com/magazine/2014/07/28/philby">http://www.newyorker.com/magazine/2014/07/28/philby</a><br  />
+<li><a href="http://www.newyorker.com/magazine/2014/07/28/philby">http://www.newyorker.com/magazine/2014/07/28/philby</a><br/>
 </li>
-<li><a href="http://www.iletisim.com.tr/kitap/ikili-iliskilerde-duygusal-manipulasyon">http://www.iletisim.com.tr/kitap/ikili-iliskilerde-duygusal-manipulasyon</a><br  />
+<li><a href="http://www.iletisim.com.tr/kitap/ikili-iliskilerde-duygusal-manipulasyon">http://www.iletisim.com.tr/kitap/ikili-iliskilerde-duygusal-manipulasyon</a><br/>
 </li>
-<li>Cumhuriyetin ilk yüzyılı?<br  />
+<li>Cumhuriyetin ilk yüzyılı?<br/>
 </li>
-<li>Martı Jonathan Livinston<br  />
+<li>Martı Jonathan Livinston<br/>
 </li>
-<li>Mastermind: How to Think Like Sherlock Holmes<br  />
+<li>Mastermind: How to Think Like Sherlock Holmes<br/>
 </li>
-<li>Bizim büyük çaresizliğimiz<br  />
+<li>Bizim büyük çaresizliğimiz<br/>
 </li>
 </ol>
-</div>
+
+
+<p><br/>
+</p></div>
+
 </div>
 
-<div id="outline-container-sec-3" class="outline-2">
+<div id="outline-container-3" class="outline-2">
 <h2 id="sec-3">Linux Journal gibi bir dergiye üye olunabilir</h2>
+<div class="outline-text-2" id="text-3">
+
+
+<p><br/>
+</p></div>
+
 </div>
 
-<div id="outline-container-sec-4" class="outline-2">
+<div id="outline-container-4" class="outline-2">
 <h2 id="sec-4">Bağlantılar</h2>
 <div class="outline-text-2" id="text-4">
-<p>
-<a href="blog.html">Blog</a><br  />
-<a href="bash.html">Bash</a><br  />
-<a href="baslangiclar.html">Başlangıç</a><br  />
-<a href="notlar.html">Notlar</a><br  />
-<a href="projeler.html">Projeler</a><br  />
-<a href="okunacaklar.html">Okunacaklar</a><br  />
-<a href="muzik.html">Müzik</a><br  />
-<a href="index.html">Ana Sayfa</a><br  />
+
+<p>  <a href="blog.html">Blog</a><br/>
+  <a href="bash.html">Bash</a><br/>
+  <a href="baslangiclar.html">Başlangıç</a><br/>
+  <a href="notlar.html">Notlar</a><br/>
+  <a href="projeler.html">Projeler</a><br/>
+  <a href="okunacaklar.html">Okunacaklar</a><br/>
+  <a href="muzik.html">Müzik</a><br/>
+  <a href="index.html">Ana Sayfa</a><br/>
 </p>
+<p><br/>
+</p></div>
 </div>
 </div>
-</div>
-<div id="postamble" class="status">
-<p class="date">Created: 2016-02-17 Çar 17:08</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+
+<div id="postamble">
+<p class="date">Date: 2016-03-27T23:13+0300</p>
+<p class="author">Author: umt</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
 </div>
 </body>
 </html>
