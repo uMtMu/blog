@@ -6,9 +6,10 @@
 #+BEGIN_CENTER
 [[file:img/ja2.png]]
 #+END_CENTER
-#+NAME: top
+#+CUSTOM_ID: topamina
 * Yazılar
 ** İnsanın doğası
+   <2016-04-10 Paz 10:13>
    İnsanın doğası anarşizm olmalı. En azından insandan bir miktar önceki
    evrenin. Koyulmamış kuralların olduğu bir dünya. Kanunlar, güçlüyü
    çoğunluğa, bireyi de güçlüye karşı korur. Saygıdan, cinsel ahlaktan vb bahsederken
@@ -17,6 +18,7 @@
    derken sizin saygı anlayışını paylaşıyor ve en azından kınıyorsunuz. 
 
    Bazı şeylere kural denir, bazı şeyler adları kural olmasa da kuraldır.
+   [[top][Yukarı]]
 ** Acımız
    <2016-03-07 Mon 21:35>
    Asla acının hiç gelmeyecek bir yabancı ya da hiç gitmeyecek bir akraba
