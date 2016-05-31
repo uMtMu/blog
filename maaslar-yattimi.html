@@ -1,0 +1,28 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+		maas_durumu = ["Yattı", "Yatmadı", "Bekle yatar", "O iş yattı birader", "Yatarsa kalmaz", "Samiye sor", "Taze bitti"];
+        $("#maas_durumu").text(maas_durumu[Math.floor(Math.random()*maas_durumu.length)]);
+    });
+</script>
+<style>
+#maas_durumu {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+	font: normal normal bold 100px/1 Arial Black, Gadget, sans-serif;
+	color: black;
+}
+</style>
+</head>
+<body>
+
+<p id="maas_durumu">Maaşlar yattı mı?</p>
+
+
+</body>
+</html>
