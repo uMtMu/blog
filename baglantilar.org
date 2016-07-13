@@ -5,4 +5,5 @@
   [[file:projeler.org][Projeler]]
   [[file:okunacaklar.org][Okunacaklar]]
   [[file:muzik.org][Müzik]]
+  [[file:emacs.org][Emacs]]
   [[file:index.org][Ana Sayfa]]
