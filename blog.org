@@ -8,6 +8,8 @@
 #+END_CENTER
 #+NAME: top
 * Yazılar
+** Sakin miyim? Sakinleştiremediklerimizden misiniz?
+   [[top][Yukarı]]
 ** Üstü Kalsın
    Ölüyorum tanrım
    Bu da oldu işte.
