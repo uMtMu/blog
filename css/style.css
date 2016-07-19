@@ -27,6 +27,8 @@ div.outline-2, #table-of-contents {
     background: #e0e0e0;
     -webkit-border-radius: 5px;
     border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
 }
 
 div h2  {
@@ -38,10 +40,10 @@ div h2  {
     box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
 }
 
-p.validation {
-    display: none;
+#postamble {
+    display:none;
 }
 
-#postamble {
-    background: #d6d6d6;
+p.validation {
+    display: none;
 }
