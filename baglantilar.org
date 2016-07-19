@@ -6,4 +6,5 @@
   [[file:okunacaklar.org][Okunacaklar]]
   [[file:muzik.org][Müzik]]
   [[file:emacs.org][Emacs]]
+  [[file:tatil_rotalari.org][Tatil Rotaları]]
   [[file:index.org][Ana Sayfa]]
