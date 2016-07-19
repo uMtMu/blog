@@ -6,10 +6,4 @@
   [[file:img/one.punch.man.jpg]]
 #+END_CENTER
 
-- [[file:blog.org][Blog]]
-- [[file:notlar.org][Notlar]]
-- [[file:bash.org][Bash]]
-- [[file:baslangiclar.org][Başlangıç]]
-- [[file:projeler.org][Projeler]]
-- [[file:muzik.org][Müzik]]
-- [[file:okunacaklar.org][Okunacaklar]]
+#+INCLUDE: "baglantilar.org"
