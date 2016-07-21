@@ -2,6 +2,10 @@
 #+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
 #+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 #+OPTIONS: ^:nil \n:t
+#+OPTIONS: with-timestamps
+#+BEGIN_CENTER
+[[file:img/ja2.png]]
+#+END_CENTER
 * Başlıklar
 ** Netbook'da aranan özellikler
    + Batarya ömrü > 3 saat
@@ -12,11 +16,4 @@
 ** [[http://www.maketistan.com/kendin-yap-kit-diy/tamiya-ucan-marti-robot-kiti.html?sort=p.price&order=ASC][Martı]]
 ** [[http://teknoseyir.com/maketcilige-baslarken-gerekli-olan-malzemeler][Makete giriş]]
 * Bağlantılar
-  [[file:blog.org][Blog]]
-  [[file:bash.org][Bash]]
-  [[file:baslangiclar.org][Başlangıç]]
-  [[file:notlar.org][Notlar]]
-  [[file:projeler.org][Projeler]]
-  [[file:okunacaklar.org][Okunacaklar]]
-  [[file:muzik.org][Müzik]]
-  [[file:index.org][Ana Sayfa]]
+#+INCLUDE: "baglantilar.org"

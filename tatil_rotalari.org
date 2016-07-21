@@ -1,0 +1,32 @@
+#+TITLE: uMtMu
+#+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
+#+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+#+OPTIONS: ^:nil \n:t
+#+OPTIONS: with-timestamps
+#+BEGIN_CENTER
+[[file:img/ja2.png]]
+#+END_CENTER
+#+NAME: top
+* Özdere Ege Üniversitesi Kampı
+** Ulaşım
+   1. İzban Cumaovası İstasyonu
+   2. Eshot 775
+   3. Karafırın durağından sonra Mina durağı var. Sağda Migrosu görünce durağa
+      bakmaya başlayın. Öğleden önce gidişte şöförün arkası, Öğleden sonra
+      gidişte diğer sıra güneşsiz.
+** Konaklama ve Maliyet
+   - Bugalovlarlar gecelik indirimsiz 90 lira. 3 ögün dahil.
+   - Sanırım Ege üniversitesi öğrencilerine 55 liraydı.
+   - Günü birlik giriş
+     - Ege üniversitesi mensubuna 14 lira
+     - Dışarıdan 16 lira
+     - Öğün herkese 12 lira
+** İmkanlar
+   - Masa tenisi(iyi durumda)
+   - Voleybol sahası(Sabah ve ikindi :) )
+** Yorum
+   Baya eğlenceli zaman geçirebilirsiniz. Deniz hızlı derinleşiyor. Genelde
+   dalgasız. Alkol pahalı değil. Yemekler inanılmaz güzel ve doyurucu. 
+* Eklenmesi istediğiniz rotaları umut1010@gmail.com adresine üstteki formata uygun gönderebilirsiniz.
+* Bağlantılar
+#+INCLUDE: "baglantilar.org"

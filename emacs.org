@@ -1,0 +1,28 @@
+#+TITLE: uMtMu
+#+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
+#+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+#+OPTIONS: ^:nil \n:t
+#+OPTIONS: with-timestamps
+#+BEGIN_CENTER
+[[file:img/ja2.png]]
+#+END_CENTER
+#+NAME: top
+* .emacs
+* ipuçları
+** Template kısayolları
+| 1. | 2. | 3.  | Sonuç                             |
+| <  | s  | TAB | #+BEGIN_SRC ... #+END_SRC         |
+| <  | e  | TAB | #+BEGIN_EXAMPLE ... #+END_EXAMPLE |
+| <  | q  | TAB | #+BEGIN_QUOTE ... #+END_QUOTE     |
+| <  | v  | TAB | #+BEGIN_VERSE ... #+END_VERSE     |
+| <  | c  | TAB | #+BEGIN_CENTER ... #+END_CENTER   |
+| <  | l  | TAB | #+BEGIN_LaTeX ... #+END_LaTeX     |
+| <  | L  | TAB | #+LaTeX:                          |
+| <  | h  | TAB | #+BEGIN_HTML ... #+END_HTML       |
+| <  | H  | TAB | #+HTML:                           |
+| <  | a  | TAB | #+BEGIN_ASCII ... #+END_ASCII     |
+| <  | A  | TAB | #+ASCII:                          |
+| <  | i  | TAB | #+INDEX: line                     |
+| <  | I  | TAB | #+INCLUDE: line                   |
+* Bağlantılar
+#+INCLUDE: "baglantilar.org"

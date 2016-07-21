@@ -10,17 +10,40 @@ body {
 div.outline-3, .status  {
     background: #d6d6d6;
     padding: 1em;
-    margin: 0 0 10px;
+    margin: 20px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
     -webkit-box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
     box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
 }
 
-p.validation {
-    display: none;
+div.outline-2, #table-of-contents {
+    padding: 15px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#content  {
+    background: #e0e0e0;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+}
+
+div h2  {
+    background: #d6d6d6;
+    padding: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
+    box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
 }
 
 #postamble {
-    background: #d6d6d6;
+    display:none;
+}
+
+p.validation {
+    display: none;
 }
