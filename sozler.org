@@ -5,13 +5,30 @@
 #+BEGIN_CENTER
 [[file:img/ja2.png]]
 #+END_CENTER
+#+NAME: top
 * Sözler
+** Savunma planımızda büyük bir hedef belirlemişsek büyük bir enerjiyle ve gücümüzün son zerresine kadar bu hedefi izlemeliyiz
+   /Savunma planımızda büyük bir hedef belirlemişsek (bir düşman kolunu imha/
+   /etmek vb.) büyük bir enerjiyle ve gücümüzün son zerresine kadar bu hedefi/ 
+   /izlemeliyiz. Çoğu durumda, saldırgan, başka bir noktadan kendi amaçlarını/
+   /izleyecektir. Örneğin, onun sağ kanadına saldırdığınızda, o da sol kanadında/
+   /kesin üstünlük kazanacaktır. Sonuç olarak, düşmandan önce yavaşlarsak/
+   /düşmandan daha az bir enerjiyle kendi amacımızı izlersek, düşman tümüyle/
+   /üstünlük kazanırken, bizim kazancımız yarım olacaktır. Bu yüzden, düşman/
+   /gücünün zirvesine ulaşacak ve zafer kazanacak, biz ise kısmen kazandığımız/
+   /üstünlüklerimizi bile bırakmak zorunda kalacağız. /
+
+   *Carl von Clausewitz*
+
+   [[top][Yukarı]]
 ** Hayatınız aksilik ve yenilgilerle dolu olacak. Farkı yaratansa, bununla nasıl başa çıktığınız.
    /Sık sık ahmak insanlarla, kötü patronlarla karşılaşacaksınız ve istediğiniz/
    /her şey de gerçekleşmeyecek. Bunu kabullenip kararlı ve dirençli olmanız/
    /gerekiyor. Ve bir başarı, küçük bile olsa yine de başarıdır./
 
    *Barack Obama*
+
+   [[top][Yukarı]]
 ** Fırsatları görmeye çalışmanızın önemi büyük.
    /Google'ın ilk zamanlarıydı ve beni işe almak istediler. Burun kıvırarak, bu/
    /işin benim için yeterince iyi olmadığını söyledim. O zamanın CEO'su Eric/
@@ -19,6 +36,8 @@
    /ediyorum. Hangi koltuk diye soracağınıza, oturmanızı öneririm'./ 
 
    *Sheryl Sandberg*
+
+   [[top][Yukarı]]
 ** Hayatınızı, sanki bu size verilen ikinci şansmış gibi yaşayın.
    /Kendinizi 50 yıl sonrasında hayal edin. Dönüp baktığınızda güzel anıları da/
    /hatırlayacaksınız, geçmiş pişmanlıkları da. Ama şu kesin; keşke daha çok/
@@ -28,6 +47,8 @@
    /şimdi onu yapın./
 
    *Salman Khan*
+
+   [[top][Yukarı]]
 ** Hayal kurmayı bırakın ve hayata geçirin.
    /Dünya hayalperestlerle dolu. Birileri bir şeyleri hayal ederken başka/
    /birileri bu fikirleri hayata geçiriyor. Siz, hayata geçirenlerden/
@@ -37,6 +58,8 @@
    /zaten. Mükemmel iş, mükemmel hayat yoktur./
 
    *Shonda Rhimes*
+
+   [[top][Yukarı]]
 ** Hayatın tüm olayını, yaptığınız seçimler belirleyecek.
    /Akıl size verilmiş bir lütuftur; ama örneğin kibar olmak bir seçimdir. Ve/
    /bazen zor seçimler de yapmanız gerekebilir. Hayatınızın şeklini belirleyecek/
@@ -45,6 +68,8 @@
    /tamamı seçimleriniz olacak./ 
 
    *Jeff Bezos*
+
+   [[top][Yukarı]]
 ** Kendinize, kendinizden şüphe etmeyi yasaklayın.
    /Kendinden kuşku duymak kadar zararlı şey az vardır. Bu tutum sizi defansif/
    /ve pasif hale getirir. İnsanı tüketir; acımasızdır. Kendinize güven/
@@ -53,6 +78,8 @@
    /potansiyeliniz de aslında odur./ 
 
    *Jennifer Lee*
+
+   [[top][Yukarı]]
 ** Başarı ve başarısızlıklarınızda şansın önemini hiç unutmayın.
    /İnsanlar, özellikle de başarılı insanlar, başarılarının şansla/
    /ilişkilendirildiğini duymaktan hiç hoşlanmazlar. Sanki o başarı zaten/
@@ -62,6 +89,8 @@
    /kurtarırsınız./
 
    *Michael Lewis*
+
+   [[top][Yukarı]]
 ** Kendi dünyanızı kendiniz kurun.
    /Benim işim, sizlere 2 saatliğine başka bir dünya yaratmak. Sizin işiniz/
    /ise, kendi dünyan/ızı yaratmak olsun. Bu canavarlar kendini çok değişik/
@@ -70,6 +99,8 @@
    /karşı onlar" mantığından doğar. Sizin dünyanızda, "hepimiz" olsun./
 
    *Stephen Spielberg*
+
+   [[top][Yukarı]]
 ** Başarı, bembeyaz parlak bir smokine çok benzer.
    /Harvard mezunu olduğunuzda herkesin sizden tek beklentisi başarıdır. Ben bu/
    /baskıyı çok tehlikeli buluyorum. Başarı, bembeyaz bir smokin giymeye/
@@ -78,6 +109,8 @@
    /kirletin, düşün, kalkın. Başarısızlıklarınızdan çok şey öğrenirsiniz./ 
 
    *Conan O'Brien*
+
+   [[top][Yukarı]]
 ** Bir şey size doğru gelmiyorsa, o şeyi yapmayın.
    /Ben bunun için dünyaya gelmişim dediğiniz bir iş bulabildinizse eğer, /
    /aldığınız maaştan bağımsız olarak her yeni gün size lütuf gibidir. Peki o işi/
@@ -87,6 +120,8 @@
    /kurtarır./ 
 
    *Oprah Winfrey*
+
+   [[top][Yukarı]]
 ** Yalnızca sağa sola CV gönderip bir şeyler olsun diye beklemekle yetinmeyin.
    /Bazı insanlar CV'ler gönderir ve sessizce oturup birileri arasın diye/
    /bekler. Bazıları ise yapı gereği bekleyemez; gider ve talep ederler. Siz de o/
@@ -95,6 +130,8 @@
    /devreye sokun ve atak olun./ 
 
    *Robert Krulwich*
+
+   [[top][Yukarı]]
 ** Ancak geçmişimizin noktalarını birleştirebiliriz.
    /Eğer beni Reed'deyken okuldan atmasalardı, ben bu yola muhtemelen hiç/
    /girmeyecektim ve kişisel bilgisayarlar belki de bu yönde/
@@ -104,12 +141,16 @@
    /hayat; farketmez. Bu yaklaşım beni hayatım boyunca yanıltmadı./ 
 
    *Steve Jobs*
+
+   [[top][Yukarı]]
 ** Gelecek hepimizin sandığından çok daha kolay şekillendirilebilir.
    /Geleceği, geçmiş gibi rijit ve değişemez bir şey gibi görmeye meylederiz, /
    /oysa ki gelecek hayli esnektir. Dünya, sandığımızdan çok daha esnek ve/
    /işlenebilir. Bize düşen, elimize çekici alıp onu şekillendirmeye başlamak./ 
 
    *Bono*
+
+   [[top][Yukarı]]
 ** Başarısızlık berbat olabilir. Ama başarısız olmamak adına tüm hayatı korku ve tedbir içinde geçirmek çok daha kötü.
    /Harry Potter'ı yayımlamadan önce işsiz kalmıştım, yeni boşanmıştım ve kıt/
    /kanaat geçinebiliyordum. Bu başarısızlık döneminden çıkmak da çok kolay/
@@ -119,6 +160,8 @@
    /düşmekten korkarak yürürseniz, aslında pek de bir adım atmamış olursunuz./ 
 
    *J.K. Rowling*
+
+   [[top][Yukarı]]
 ** Şu an kafanızdaki başarı tanımı ileride değişecek; hem de fazlasıyla.
    /Ben de çoğu insan gibi gençliğimde başarıyı şöhret, para, pahalı arabalar/
    /gibi şeylerle tanımladım. Bugünkü bakışımsa oldukça farklı. Asıl başarı, /
@@ -127,6 +170,8 @@
    /kaybetmemektir. Yolunuzu sizin adınıza kimse çizememelidir./ 
    
    *Ellen DeGeneres*
+
+   [[top][Yukarı]]
 ** En büyük korkularınızı hayal gücünüz üretir; teslim olmayın.
    /Hayal gücü zaman zaman bazı şeyleri olduğundan çok daha zormuş gibi/
    /algılamanıza uol açabilir; ama onsuz da fazla bir şey başarmak mümkün/
@@ -138,6 +183,8 @@
    
    *Winston Churchill*
 
+
+   [[top][Yukarı]]
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"
 
