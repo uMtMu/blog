@@ -8,6 +8,13 @@
 #+END_CENTER
 #+NAME: top
 * Yazılar
+** Jenga
+   <2016-07-24 Sun 19:46>
+   Hayatımız Jenga oyunu gibi. Çocukken dizilişe bağlı olarak görece sağlam
+   oluyoruz. Sonra yükselmek veya ilerlemek için bir şeylerin yerini
+   değiştirmeye başlıyoruz. Farklı bir şeye dönüşüyoruz. Hamlelerimize bağlı
+   olarak denge değerimiz değişiyor. Ortaya koyduğumuz ben değişiyor.
+   [[top][Yukarı]]
 ** Sakinleştiremediklerimizden misiniz?
    <2016-07-18 Mon 15:57>
    [[top][Yukarı]]
