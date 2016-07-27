@@ -8,6 +8,12 @@
 #+END_CENTER
 #+NAME: top
 * Yazılar
+** İnsanlar ve söyledikleri
+   İnsanların söylediklerini daha iyi anlamaya başladığımı düşünüyorum. Bu
+   kendi kendine düşünüp kurmak değil. Çevremdeki insanlar iyi insanlar ve
+   benim de iyiliğimi düşünüyorlar. Söylenenlere düz bakmak yerine altındaki
+   duyguyu ve alternatif düşünceleri daha iyi anlamaya çalışacağım. Onlar kendi
+   yöntemleri ile bana duygusal ve mantıksal olarak yardım etmeye çalışıyorlar.
 ** Jenga
    <2016-07-24 Sun 19:46>
    Hayatımız Jenga oyunu gibi. Çocukken dizilişe bağlı olarak görece sağlam
