@@ -8,6 +8,10 @@
 #+END_CENTER
 #+NAME: top
 * Yazılar
+** Can
+   Gözlerinin yuvalarından dışarı bakıyorum. Ne kadar çıkıp gitmek istesem de
+   gidersem ikimizin de yok olacağını biliyorum. Belki etkimiz kalacak. Ama biz
+   olmayacağız. Ne sen sen olacaksın ne de ben ben.
 ** İnsanlar ve söyledikleri
    İnsanların söylediklerini daha iyi anlamaya başladığımı düşünüyorum. Bu
    kendi kendine düşünüp kurmak değil. Çevremdeki insanlar iyi insanlar ve
