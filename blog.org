@@ -8,6 +8,11 @@
 #+END_CENTER
 #+NAME: top
 * Yazılar
+** Protokol farkı
+   <2016-08-01 Mon 10:06>
+   Ben TCP kullanıyordum o ise UDP.
+
+   [[top][Yukarı]]
 ** Martılara veda
    <2016-07-29 Fri 09:42>
    Elveda martılar. 
