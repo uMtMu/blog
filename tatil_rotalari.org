@@ -27,6 +27,33 @@
 ** Yorum
    Baya eğlenceli zaman geçirebilirsiniz. Deniz hızlı derinleşiyor. Genelde
    dalgasız. Alkol pahalı değil. Yemekler inanılmaz güzel ve doyurucu. 
+
+* Hipo Kamp - Gümüldür
+** Ulaşım
+   1. İzban Cumaovası İstasyonu
+   2. Eshot 775
+   3. Mina durağından sonra Sönmez durağında inilecek. Sağda Migrosu görünce durağa
+      bakmaya başlayın. Öğleden önce gidişte şöförün arkası, Öğleden sonra
+      gidişte diğer sıra güneşsiz.
+      
+      Sönmez durağında indikten sonra aynı ana yolu 500 mt kadar takip
+      ettiğinizde sol tarafınızda Hipo Kamp :D
+** Konaklama ve Maliyet
+   - Çadır alanı 16.5 TL
+   - Kişi başı ücret 22 TL
+
+** İmkanlar
+   - Duş, tuvalet, soyunma kabini var. 
+   - Kamp alanına gelene kadar Migros ve A101 bulunuyor. Gıda ihtiyacı buradan
+     karşılanabilir. Ayrıca kamp içerisinde bira, su ve bakliyat, ekmek vs
+     satılan bir kantin var. Günde 3 saat aralığında açık oluyor. 
+     
+     Aldığınız şeyleri pişirmek için kap kacağınız varsa bir mutfağı ve buluşık
+     yıkabilecek alanı var. 
+** Yorum
+   Aslına bakarsanız pek çadır kampı sayılmaz. Kurulan çadırlar da iki oda 1
+   salon şeklinde. Genellikle ailelerin kaldığı daha çok karavan kampı
+   tarzında. Sincap görebilirsiniz, öyle bir artısı var :D
 * Eklenmesi istediğiniz rotaları umut1010@gmail.com adresine üstteki formata uygun gönderebilirsiniz.
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"
