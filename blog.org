@@ -8,6 +8,18 @@
 #+END_CENTER
 #+NAME: top
 * Yazılar
+** Mutlu son
+   <2016-08-18 Thu 11:08>
+   Dünyada bu kadar hayal kırıklığı olmasaydı kimse filmlerde mutlu son beklemezdi.
+
+   [[top][Yukarı]]
+** Babalık
+   <2016-08-18 Thu 11:08>
+   İki çocuğu olan bir baba gibiyiz. Bir elimizle hisleri bir elimizle
+   gerçekleri tutarız. Birinin elini bırakırsak çocuk büyüyünce götümüzden kan
+   alır
+
+   [[top][Yukarı]]
 ** Protokol farkı
    <2016-08-01 Mon 10:06>
    Ben TCP kullanıyordum o ise UDP.
