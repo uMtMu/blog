@@ -8,8 +8,15 @@
 #+END_CENTER
 #+NAME: top
 * Yazılar
+** Güzel günler gelmeyebilir ama en azından bir an gelebilir.
+   <2016-08-29 Mon 21:10>
+
+   [[top][Yukarı]]
 ** Endişeli misin?
+   <2016-08-29 Mon 21:08>
    [[./img/Bridge-of-Spies.jpg][Bir faydası olur mu?]]
+
+   [[top][Yukarı]]
 ** Mutlu son
    <2016-08-18 Thu 11:08>
    Dünyada bu kadar hayal kırıklığı olmasaydı kimse filmlerde mutlu son beklemezdi.
