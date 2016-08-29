@@ -8,6 +8,8 @@
 #+END_CENTER
 #+NAME: top
 * Yazılar
+** Endişeli misin?
+   [[./img/Bridge-of-Spies.jpg][Bir faydası olur mu?]]
 ** Mutlu son
    <2016-08-18 Thu 11:08>
    Dünyada bu kadar hayal kırıklığı olmasaydı kimse filmlerde mutlu son beklemezdi.
