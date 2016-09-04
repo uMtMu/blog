@@ -1,0 +1,192 @@
+#+TITLE: uMtMu
+#+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
+#+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+#+OPTIONS: ^:nil \n:t
+#+BEGIN_CENTER
+[[file:img/ja2.png]]
+#+END_CENTER
+* Yol
+** Virtul Env
+   #+BEGIN_SRC sh :shebang #!/bin/bash
+   cd ~/Proje/python
+   mkdir mydj_sites
+   cd mydj_sites
+   virtualenv django_env
+   . django_env/bin/activate
+   #+END_SRC
+
+   #+RESULTS:
+   | New python executable in /home/umt/Proje/python/mydj_sites/django_env/bin/python |     |               |
+   | Installing setuptools                                                            | pip | wheel...done. |
+   
+** Projenin oluşturulması
+   #+BEGIN_SRC sh :shebang #!/bin/bash
+   cd ~/Proje/python/mydj_sites
+   . django_env/bin/activate
+   django-admin startproject mydj_sites
+   
+   #+END_SRC
+
+   #+RESULTS:
+   django_env/
+      ...
+   mydj_sites/ 
+   *root directory is just a container for your project. Its name doesn’t matter
+   to Django; you can rename it to anything you like.*  
+   ├── manage.py
+   *A command-line utility that lets you interact with this Django project in
+   various ways.* 
+   └── mydj_sites 
+   *directory is the actual Python package for your project. Its name is the
+   Python package name you’ll need to use to import anything inside it* 
+       ├── __init__.py
+       ├── settings.py
+       ├── urls.py
+       └── wsgi.py
+   
+** Geliştirme sunucusu
+   #+BEGIN_SRC sh :shebang #!/bin/bash
+   cd ~/Proje/python/mydj_sites
+   . django_env/bin/activate
+   python mydj_sites/manage.py runserver
+   #+END_SRC
+
+   #+RESULTS:
+   python manage.py runserver
+   Performing system checks...
+   
+   System check identified no issues (0 silenced).
+   
+   You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+   Run 'python manage.py migrate' to apply them.
+   
+   September 04, 2016 - 18:52:28
+   Django version 1.10.1, using settings 'mydj_sites.settings'
+   Starting development server at http://127.0.0.1:8000/
+   Quit the server with CONTROL-C.
+** İlk uygulamanın oluşturulması
+   #+BEGIN_SRC sh :shebang #!/bin/bash
+   cd ~/Proje/python/mydj_sites
+   . django_env/bin/activate
+   cd mydj_sites
+   python manage.py startapp polls
+   #+END_SRC
+
+   #+RESULTS:
+
+   Oluşan dizin yapısı
+   polls/
+   ├── admin.py
+   ├── apps.py
+   ├── __init__.py
+   ├── migrations
+   │   └── __init__.py
+   ├── models.py
+   ├── tests.py
+   └── views.py
+   
+** İlk view'ın oluşturulması
+   #+BEGIN_SRC python
+   polls/views.py
+   from django.http import HttpResponse
+
+
+   def index(request):
+       return HttpResponse("Hello, world. You're at the polls index.")
+   #+END_SRC
+** polls dizini altında urls.py dosyasının oluşturulması
+   #+BEGIN_SRC python
+   from django.conf.urls import url
+   
+   from . import views
+   
+   urlpatterns = [
+       url(r'^$', views.index, name='index'),
+   ]
+   
+   #+END_SRC
+** mydj_sites/mydj_sites/mydj_sites dizinindeki urls.py içeriğine yönlendirme ekleme
+   #+BEGIN_SRC python
+   from django.conf.urls import url, include
+   from django.contrib import admin
+   
+   urlpatterns = [
+       url(r'^polls/', include('polls.urls')),
+       url(r'^admin/', admin.site.urls),
+   ]
+   #+END_SRC
+   http://localhost:8000/polls/
+** Veri tabanının ayarlanması
+   mydj_sites/mydj_sites/mydj_sites/settings.py dosyası içerisinde veri tabanı
+   olarak sqlite seçili. INSTALLED_APPS dizisi içerisinde belirlenmiş
+   uygulamalar için veri tabanında tablolar oluşturulmalı.
+   
+   #+BEGIN_SRC sh
+   cd ~/Proje/python/mydj_sites
+   . django_env/bin/activate
+   cd mydj_sites
+   
+   python manage.py migrate
+   #+END_SRC
+   
+** Veri tabanı modellerinin oluşturulması
+   polls/models.py
+   #+BEGIN_SRC python
+   from django.db import models
+   
+   
+   class Question(models.Model):
+       question_text = models.CharField(max_length=200)
+       pub_date = models.DateTimeField('date published')
+   
+   
+   class Choice(models.Model):
+       question = models.ForeignKey(Question, on_delete=models.CASCADE)
+       choice_text = models.CharField(max_length=200)
+       votes = models.IntegerField(default=0)
+   #+END_SRC
+
+** Modellerin aktive edilmesi
+   Veri tabanı şemasının oluşturulması
+   Veri tabanı objelerinin oluşturulması
+   
+   Yukarıda belirtilen eylemler, polls uygulamasının
+   mydj_sites/mydj_sites/mydj_sites/settings.py dosyası INSTALLED_APPS
+   listesinin içerisine "'polls.apps.PollsConfig'," olarak eklenmesi gerekir. 
+   #+BEGIN_SRC sh
+   cd ~/Proje/python/mydj_sites
+   . django_env/bin/activate
+   cd mydj_sites
+   python manage.py makemigrations polls
+   
+   #+END_SRC
+   makemigrations komutu ile yeni eklenen uygulamalar olduğunu ve bu
+   uygulamalar için gerekli veri tabanı değişikliklerinin yapılacağı bilgisi
+   verilmektedir. Daha önce bu işlem için south uygulaması kullanılmıştı. Bu
+   yöntem ile veri tabanı değişiklikleri sürüm kontrol sistemi altında tutulmuş.
+   
+   python manage.py makemigrations polls
+   Migrations for 'polls':
+   polls/migrations/0001_initial.py:
+    - Create model Choice
+    - Create model Question
+    - Add field question to choice
+   polls/migrations/0001_initial.py dosyasının aldında ilgili migration ile
+   ilgili işlemler bulunmaktadır.
+   #+BEGIN_SRC sh
+   cd ~/Proje/python/mydj_sites
+   . django_env/bin/activate
+   cd mydj_sites
+   python manage.py sqlmigrate polls 0001 # migration'ın SQL karşılığı
+   python manage.py migrate
+   #+END_SRC
+** API ile oynamak ??
+   #+BEGIN_SRC sh
+   cd ~/Proje/python/mydj_sites
+   . django_env/bin/activate
+   cd mydj_sites
+   pyton manage.py shell
+   #+END_SRC
+* Bağlantılar
+#+INCLUDE: "baglantilar.org"
+
