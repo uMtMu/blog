@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="uMtMu"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2016-09-10T12:25+0300"/>
+<meta name="generated" content="2016-09-11T18:14+0300"/>
 <meta name="author" content="umt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -172,19 +172,34 @@ for the JavaScript code in this tag.
 <li><a href="#sec-1-4-2">1.4.2 Generic viewlar</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-5">1.5 Templateler üzerine deneme (CSS ekleme)</a>
+<li><a href="#sec-1-5">1.5 Writing your first Django app, part 5</a>
 <ul>
-<li><a href="#sec-1-5-1">1.5.1 görüntü ekleme</a></li>
-<li><a href="#sec-1-5-2">1.5.2 javascript ve css ekleme</a></li>
+<li><a href="#sec-1-5-1">1.5.1 Otomatik testler (ilginç bir konu)</a></li>
+<li><a href="#sec-1-5-2">1.5.2 Bug'ın düzeltilmesi</a></li>
+<li><a href="#sec-1-5-3">1.5.3 Daha karmaşık örnekler</a></li>
+<li><a href="#sec-1-5-4">1.5.4 View'ı test etmek</a></li>
+<li><a href="#sec-1-5-5">1.5.5 View'ı geliştirelim</a></li>
+<li><a href="#sec-1-5-6">1.5.6 View için otomatik test yazalım</a></li>
+<li><a href="#sec-1-5-7">1.5.7 DetailView için test yazılması</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-6">1.6 Writing your first Django app, part 5</a>
+<li><a href="#sec-1-6">1.6 Writing your first Django app, part 6</a>
 <ul>
-<li><a href="#sec-1-6-1">1.6.1 Otomatik testler (ilginç bir konu)</a></li>
+<li><a href="#sec-1-6-1">1.6.1 Templateler üzerine deneme (CSS ekleme)</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-7">1.7 Writing your first Django app, part 7</a>
+<ul>
+<li><a href="#sec-1-7-1">1.7.1 Admin panelinin düzenlenmesi</a></li>
+<li><a href="#sec-1-7-2">1.7.2 Choice modelinin admin paneline eklenmesi ve sonrası :D</a></li>
+<li><a href="#sec-1-7-3">1.7.3 Şimdi de Question listemizi düzenleyelim</a></li>
+<li><a href="#sec-1-7-4">1.7.4 Admin penceresinde Question modellerinin süzülmesi ve arama</a></li>
+<li><a href="#sec-1-7-5">1.7.5 Admin pencere template'inin düzenlenmesi</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-2">2 Bağlantılar</a></li>
+<li><a href="#sec-2">2 Araştırılacak [0/2]</a></li>
+<li><a href="#sec-3">3 Bağlantılar</a></li>
 </ul>
 </div>
 </div>
@@ -1143,126 +1158,18 @@ mkdir polls
 </div>
 
 <div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Templateler üzerine deneme (CSS ekleme)</h3>
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Writing your first Django app, part 5</h3>
 <div class="outline-text-3" id="text-1-5">
 
 
 </div>
 
 <div id="outline-container-1-5-1" class="outline-4">
-<h4 id="sec-1-5-1"><span class="section-number-4">1.5.1</span> görüntü ekleme</h4>
+<h4 id="sec-1-5-1"><span class="section-number-4">1.5.1</span> Otomatik testler (ilginç bir konu)</h4>
 <div class="outline-text-4" id="text-1-5-1">
 
-<ol>
-<li>mydj_sites/mydj_sites/mydj_sites/settings.py dosyasında INSTALLED_APPS listesinde<br/>
-       django.contrib.staticfiles yoksa eklenecek.<br/>
-</li>
-<li>1. adımdaki dosyada STATIC_URL='<i>static</i>' olarak tanımlanacak.<br/>
-</li>
-<li>static dosyalar polls/static/polls dizini altında olacak. Örnek olarak<br/>
-       polls/static/polls/survey.jpg<br/>
-</li>
-<li>polls/templates/polls/index.html<br/>
-
-<p><br/>
-<pre class="src src-python">{% load static %}
-&lt;img <span style="color: #fcaf3e;">src</span>=<span style="color: #e9b96e;">"{% static "</span>polls/survey.jpg<span style="color: #e9b96e;">" %}"</span> <span style="color: #fcaf3e;">alt</span>=<span style="color: #e9b96e;">"Oylar&#305; g&#246;relim"</span>/&gt;
-{% <span style="color: #b4fa70;">if</span> latest_question_list %}
-<span style="background-color: #212526;"> </span>  &lt;ul&gt;
-<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>{% <span style="color: #b4fa70;">for</span> question <span style="color: #b4fa70;">in</span> latest_question_list %}
-<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>  &lt;li&gt;&lt;a <span style="color: #fcaf3e;">href</span>=<span style="color: #e9b96e;">"{% url 'polls:detail' question.id %}"</span>&gt;{{ question.question_text }}&lt;/a&gt;&lt;/li&gt;
-<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>{% endfor %}
-<span style="background-color: #212526;"> </span>  &lt;/ul&gt;
-{% <span style="color: #b4fa70;">else</span> %}
-<span style="background-color: #212526;"> </span>  &lt;p&gt;No polls are available.&lt;/p&gt;
-{% endif %}
-</pre>
-
-</p></li>
-</ol>
-
-</div>
-
-</div>
-
-<div id="outline-container-1-5-2" class="outline-4">
-<h4 id="sec-1-5-2"><span class="section-number-4">1.5.2</span> javascript ve css ekleme</h4>
-<div class="outline-text-4" id="text-1-5-2">
-
-<p>    mydj_sites/mydj_sites/polls/static/polls<br/>
-    ├── frontend.js<br/>
-    ├── style.css<br/>
-    └── survey.jpg<br/>
-</p>
-<p>    <br/>
-    frontend.js<br/>
-</p>
-<p><br/>
-<pre class="src src-javascript">$(
-    <span style="color: #b4fa70;">function</span>() {
-        $( <span style="color: #e9b96e;">"img"</span> ).each( <span style="color: #b4fa70;">function</span>() {
-            <span style="color: #b4fa70;">var</span> <span style="color: #fcaf3e;">$img</span> = $( <span style="color: #e6a8df;">this</span> );
-            <span style="color: #b4fa70;">var</span> <span style="color: #fcaf3e;">img_scale</span> = $img.width() / $img.height();
-            $img.width( $img.parent().width() );
-            $img.height( $img.height() * $img_scale );
-        });
-    }
-);
-</pre>
-
-
-    style.css<br/>
-</p>
-<p><br/>
-<pre class="src src-css"><span style="color: #fce94f;">.center </span>{
-    <span style="color: #fcaf3e;">margin</span>: auto;
-    <span style="color: #fcaf3e;">width</span>: 50%;
-    <span style="color: #fcaf3e;">border</span>: 3px solid green;
-    <span style="color: #fcaf3e;">padding</span>: 10px;
-}
-</pre>
-
-</p>
-<p>    <br/>
-    templates/index.html<br/>
-</p>
-<p><br/>
-<pre class="src src-html">{% load static %}
-&lt;<span style="color: #fce94f;">script</span> <span style="color: #fcaf3e;">src</span>=<span style="color: #e9b96e;">"https://code.jquery.com/jquery-3.1.0.min.js"</span>&gt;&lt;/<span style="color: #fce94f;">script</span>&gt;
-&lt;<span style="color: #fce94f;">script</span> <span style="color: #fcaf3e;">type</span>=<span style="color: #e9b96e;">"text/javascript"</span> <span style="color: #fcaf3e;">src</span>=<span style="color: #e9b96e;">"{% static "</span>polls/frontend.js<span style="color: #e9b96e;">" %}"</span>&gt;&lt;/<span style="color: #fce94f;">script</span>&gt;
-&lt;<span style="color: #fce94f;">link</span> <span style="color: #fcaf3e;">rel</span>=<span style="color: #e9b96e;">"stylesheet"</span> <span style="color: #fcaf3e;">type</span>=<span style="color: #e9b96e;">"text/css"</span> <span style="color: #fcaf3e;">href</span>=<span style="color: #e9b96e;">"{% static "</span>polls/style.css<span style="color: #e9b96e;">" %}"</span>&gt;&lt;/<span style="color: #fce94f;">script</span>&gt;
-&lt;<span style="color: #fce94f;">div</span> <span style="color: #fcaf3e;">class</span>=<span style="color: #e9b96e;">"center"</span>&gt;
-  &lt;<span style="color: #fce94f;">img</span> <span style="color: #fcaf3e;">src</span>=<span style="color: #e9b96e;">"{% static "</span>polls/survey.jpg<span style="color: #e9b96e;">" %}"</span> <span style="color: #fcaf3e;">alt</span>=<span style="color: #e9b96e;">"Oylar&#305; g&#246;relim"</span>/&gt;
-  {% if latest_question_list %}
-  &lt;<span style="color: #fce94f;">ul</span>&gt;
-    {% for question in latest_question_list %}
-    &lt;<span style="color: #fce94f;">li</span>&gt;&lt;<span style="color: #fce94f;">a</span> <span style="color: #fcaf3e;">href</span>=<span style="color: #e9b96e;">"{% url 'polls:detail' question.id %}"</span>&gt;{{ question.question_text }}&lt;/<span style="color: #fce94f;">a</span>&gt;&lt;/<span style="color: #fce94f;">li</span>&gt;
-    {% endfor %}
-  &lt;/<span style="color: #fce94f;">ul</span>&gt;
-  {% else %}
-  &lt;<span style="color: #fce94f;">p</span>&gt;No polls are available.&lt;/<span style="color: #fce94f;">p</span>&gt;
-  {% endif %}
-&lt;/<span style="color: #fce94f;">div</span>&gt;
-</pre>
-
-</p></div>
-</div>
-
-</div>
-
-<div id="outline-container-1-6" class="outline-3">
-<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Writing your first Django app, part 5</h3>
-<div class="outline-text-3" id="text-1-6">
-
-
-</div>
-
-<div id="outline-container-1-6-1" class="outline-4">
-<h4 id="sec-1-6-1"><span class="section-number-4">1.6.1</span> Otomatik testler (ilginç bir konu)</h4>
-<div class="outline-text-4" id="text-1-6-1">
-
 <ul>
-<li id="sec-1-6-1-1">Neden test?<br/>
+<li id="sec-1-5-1-1">Neden test?<br/>
      Otomatik testler 3 farklı fazda yazılabilir. Başta, sonda, ortada :D<br/>
 
 <p>     <br/>
@@ -1276,7 +1183,7 @@ mkdir polls
 </p></li>
 </ul>
 <ul>
-<li id="sec-1-6-1-2">Nasıl test?<br/>
+<li id="sec-1-5-1-2">Nasıl test?<br/>
 
 <p><br/>
 <pre class="src src-sh"><span style="color: #ad7fa8;">cd</span> ~/Proje/python/mydj_sites
@@ -1336,11 +1243,17 @@ python manage.py test polls
 <p>     <br/>
 </p></li>
 </ul>
-<ul>
-<li id="sec-1-6-1-3">Bug'ın düzeltilmesi<br/>
+</div>
+
+</div>
+
+<div id="outline-container-1-5-2" class="outline-4">
+<h4 id="sec-1-5-2"><span class="section-number-4">1.5.2</span> Bug'ın düzeltilmesi</h4>
+<div class="outline-text-4" id="text-1-5-2">
+
 
 <p><br/>
-     polls/models.py<br/>
+    polls/models.py<br/>
 </p>
 <p><br/>
 <pre class="src src-python"><span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">was_published_recently</span>(<span style="color: #b4fa70;">self</span>):
@@ -1349,16 +1262,20 @@ python manage.py test polls
 </pre>
 
 
-</p></li>
-</ul>
-<ul>
-<li id="sec-1-6-1-4">Daha karmaşık örnekler<br/>
-     While we’re here, we can further pin down the was_published_recently()<br/>
-     method; in fact, it would be positively embarrassing if in fixing one bug<br/>
-     we had introduced another. <br/>
+</p></div>
 
-<p>     <br/>
-     polls/test.py<br/>
+</div>
+
+<div id="outline-container-1-5-3" class="outline-4">
+<h4 id="sec-1-5-3"><span class="section-number-4">1.5.3</span> Daha karmaşık örnekler</h4>
+<div class="outline-text-4" id="text-1-5-3">
+
+<p>    While we’re here, we can further pin down the was_published_recently()<br/>
+    method; in fact, it would be positively embarrassing if in fixing one bug<br/>
+    we had introduced another. <br/>
+</p>
+<p>    <br/>
+    polls/test.py<br/>
 </p>
 <p><br/>
 <pre class="src src-python"><span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">test_was_published_recently_with_old_question</span>(<span style="color: #b4fa70;">self</span>):
@@ -1381,22 +1298,26 @@ python manage.py test polls
 </pre>
 
 
-     Bu genişletme ile bu metodun tarih bazında bütün olası girdilerine karşı çıktıları<br/>
-     kontrol edilmiş oldu.<br/>
+    Bu genişletme ile bu metodun tarih bazında bütün olası girdilerine karşı çıktıları<br/>
+    kontrol edilmiş oldu.<br/>
 </p>
 <p><br/>
-</p></li>
-</ul>
-<ul>
-<li id="sec-1-6-1-5">View'ı test etmek<br/>
+</p></div>
+
+</div>
+
+<div id="outline-container-1-5-4" class="outline-4">
+<h4 id="sec-1-5-4"><span class="section-number-4">1.5.4</span> View'ı test etmek</h4>
+<div class="outline-text-4" id="text-1-5-4">
+
 <ul>
 <li>Django test istemcisi<br/>
-       Djangonun sunduğu test istemcisini test.py dosyası üzerinden ya da shell<br/>
-       üzerinden kullanabiliriz.<br/>
+      Djangonun sunduğu test istemcisini test.py dosyası üzerinden ya da shell<br/>
+      üzerinden kullanabiliriz.<br/>
 
-<p>       <br/>
-       Shell üzerinden test.py üzerinden denemeden farklı olarak aşağıdaki iki<br/>
-       satır gerekir.<br/>
+<p>      <br/>
+      Shell üzerinden test.py üzerinden denemeden farklı olarak aşağıdaki iki<br/>
+      satır gerekir.<br/>
 </p>
 <p><br/>
 <pre class="src src-sh"><span style="color: #ad7fa8;">cd</span> ~/Proje/python/mydj_sites
@@ -1408,14 +1329,14 @@ pyton manage.py shell <span style="color: #73d216;"># </span><span style="color:
 </pre>
 
 
-       setup_test_environment() installs a template renderer which will allow us<br/>
-       to examine some additional attributes on responses such as<br/>
-       response.context that otherwise wouldn’t be available. Note that this<br/>
-       method does not setup a test database, so the following will be run<br/>
-       against the existing database and the output may differ slightly<br/>
-       depending on what questions you already created. You might get unexpected<br/>
-       results if your TIME_ZONE in settings.py isn’t correct. If you don’t<br/>
-       remember setting it earlier, check it before continuing. <br/>
+      setup_test_environment() installs a template renderer which will allow us<br/>
+      to examine some additional attributes on responses such as<br/>
+      response.context that otherwise wouldn’t be available. Note that this<br/>
+      method does not setup a test database, so the following will be run<br/>
+      against the existing database and the output may differ slightly<br/>
+      depending on what questions you already created. You might get unexpected<br/>
+      results if your TIME_ZONE in settings.py isn’t correct. If you don’t<br/>
+      remember setting it earlier, check it before continuing. <br/>
 </p>
 <p><br/>
 </p>
@@ -1451,17 +1372,514 @@ b<span style="color: #e9b96e;">'\n    &lt;ul&gt;\n    \n        &lt;li&gt;&lt;a 
 </p></li>
 </ul>
 
+
+<p><br/>
+</p></div>
+
+</div>
+
+<div id="outline-container-1-5-5" class="outline-4">
+<h4 id="sec-1-5-5"><span class="section-number-4">1.5.5</span> View'ı geliştirelim</h4>
+<div class="outline-text-4" id="text-1-5-5">
+
+<p>    polls/views.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.utils <span style="color: #b4fa70;">import</span> timezone
+<span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">get_queryset</span>(<span style="color: #b4fa70;">self</span>):
+<span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">"""</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   Return the last five published questions (not including those set to be</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   published in the future).</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   """</span>
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> Question.objects.<span style="color: #ad7fa8;">filter</span>(
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   pub_date__lte=timezone.now()
+<span style="background-color: #212526;"> </span>   ).order_by(<span style="color: #e9b96e;">'-pub_date'</span>)[:5]    
+</pre>
+
+
+</p></div>
+
+</div>
+
+<div id="outline-container-1-5-6" class="outline-4">
+<h4 id="sec-1-5-6"><span class="section-number-4">1.5.6</span> View için otomatik test yazalım</h4>
+<div class="outline-text-4" id="text-1-5-6">
+
+
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.urls <span style="color: #b4fa70;">import</span> reverse
+
+<span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">create_question</span>(question_text, days):
+<span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">"""</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   Creates a question with the given `question_text` and published the</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   given number of `days` offset to now (negative for questions published</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   in the past, positive for questions that have yet to be published).</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   """</span>
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">time</span> = timezone.now() + datetime.timedelta(days=days)
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> Question.objects.create(question_text=question_text, pub_date=time)
+
+
+<span style="color: #b4fa70;">class</span> <span style="color: #8cc4ff;">QuestionViewTests</span>(TestCase):
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">test_index_view_with_no_questions</span>(<span style="color: #b4fa70;">self</span>):
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">"""</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   If no questions exist, an appropriate message should be displayed.</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   """</span>
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">response</span> = <span style="color: #b4fa70;">self</span>.client.get(reverse(<span style="color: #e9b96e;">'polls:index'</span>))
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">self</span>.assertEqual(response.status_code, 200)
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">self</span>.assertContains(response, <span style="color: #e9b96e;">"No polls are available."</span>)
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">self</span>.assertQuerysetEqual(response.context[<span style="color: #e9b96e;">'latest_question_list'</span>], [])
+
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">test_index_view_with_a_past_question</span>(<span style="color: #b4fa70;">self</span>):
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">"""</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   Questions with a pub_date in the past should be displayed on the</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   index page.</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   """</span>
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   create_question(question_text=<span style="color: #e9b96e;">"Past question."</span>, days=-30)
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">response</span> = <span style="color: #b4fa70;">self</span>.client.get(reverse(<span style="color: #e9b96e;">'polls:index'</span>))
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">self</span>.assertQuerysetEqual(
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   response.context[<span style="color: #e9b96e;">'latest_question_list'</span>],
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   [<span style="color: #e9b96e;">'&lt;Question: Past question.&gt;'</span>]
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   )
+
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">test_index_view_with_a_future_question</span>(<span style="color: #b4fa70;">self</span>):
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">"""</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   Questions with a pub_date in the future should not be displayed on</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   the index page.</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   """</span>
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   create_question(question_text=<span style="color: #e9b96e;">"Future question."</span>, days=30)
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">response</span> = <span style="color: #b4fa70;">self</span>.client.get(reverse(<span style="color: #e9b96e;">'polls:index'</span>))
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">self</span>.assertContains(response, <span style="color: #e9b96e;">"No polls are available."</span>)
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">self</span>.assertQuerysetEqual(response.context[<span style="color: #e9b96e;">'latest_question_list'</span>], [])
+
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">test_index_view_with_future_question_and_past_question</span>(<span style="color: #b4fa70;">self</span>):
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">"""</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   Even if both past and future questions exist, only past questions</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   should be displayed.</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   """</span>
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   create_question(question_text=<span style="color: #e9b96e;">"Past question."</span>, days=-30)
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   create_question(question_text=<span style="color: #e9b96e;">"Future question."</span>, days=30)
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">response</span> = <span style="color: #b4fa70;">self</span>.client.get(reverse(<span style="color: #e9b96e;">'polls:index'</span>))
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">self</span>.assertQuerysetEqual(
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   response.context[<span style="color: #e9b96e;">'latest_question_list'</span>],
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   [<span style="color: #e9b96e;">'&lt;Question: Past question.&gt;'</span>]
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   )
+
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">test_index_view_with_two_past_questions</span>(<span style="color: #b4fa70;">self</span>):
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">"""</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   The questions index page may display multiple questions.</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   """</span>
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   create_question(question_text=<span style="color: #e9b96e;">"Past question 1."</span>, days=-30)
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   create_question(question_text=<span style="color: #e9b96e;">"Past question 2."</span>, days=-5)
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">response</span> = <span style="color: #b4fa70;">self</span>.client.get(reverse(<span style="color: #e9b96e;">'polls:index'</span>))
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">self</span>.assertQuerysetEqual(
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   response.context[<span style="color: #e9b96e;">'latest_question_list'</span>],
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   [<span style="color: #e9b96e;">'&lt;Question: Past question 2.&gt;'</span>, <span style="color: #e9b96e;">'&lt;Question: Past question 1.&gt;'</span>]
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   )
+</pre>
+
+</p></div>
+
+</div>
+
+<div id="outline-container-1-5-7" class="outline-4">
+<h4 id="sec-1-5-7"><span class="section-number-4">1.5.7</span> DetailView için test yazılması</h4>
+<div class="outline-text-4" id="text-1-5-7">
+
+
+<p>    <br/>
+    polls/views.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">class</span> <span style="color: #8cc4ff;">DetailView</span>(generic.DetailView):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">model</span> = Question
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">template_name</span> = <span style="color: #e9b96e;">'polls/detail.html'</span>
+
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">get_queryset</span>(<span style="color: #b4fa70;">self</span>):
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">"""</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   Excludes any questions that aren't published yet.</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   """</span>
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> Question.objects.<span style="color: #ad7fa8;">filter</span>(pub_date__lte=timezone.now())    
+</pre>
+
+
+    polls/test.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">class</span> <span style="color: #8cc4ff;">QuestionIndexDetailTests</span>(TestCase):
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">test_detail_view_with_a_future_question</span>(<span style="color: #b4fa70;">self</span>):
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">"""</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   The detail view of a question with a pub_date in the future should</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   return a 404 not found.</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   """</span>
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">future_question</span> = create_question(question_text=<span style="color: #e9b96e;">'Future question.'</span>, days=5)
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">url</span> = reverse(<span style="color: #e9b96e;">'polls:detail'</span>, args=(future_question.<span style="color: #ad7fa8;">id</span>,))
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">response</span> = <span style="color: #b4fa70;">self</span>.client.get(url)
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">self</span>.assertEqual(response.status_code, 404)
+
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">test_detail_view_with_a_past_question</span>(<span style="color: #b4fa70;">self</span>):
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">"""</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   The detail view of a question with a pub_date in the past should</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   display the question's text.</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   """</span>
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">past_question</span> = create_question(question_text=<span style="color: #e9b96e;">'Past Question.'</span>, days=-5)
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">url</span> = reverse(<span style="color: #e9b96e;">'polls:detail'</span>, args=(past_question.<span style="color: #ad7fa8;">id</span>,))
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">response</span> = <span style="color: #b4fa70;">self</span>.client.get(url)
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">self</span>.assertContains(response, past_question.question_text)
+</pre>
+
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Writing your first Django app, part 6</h3>
+<div class="outline-text-3" id="text-1-6">
+
+
+</div>
+
+<div id="outline-container-1-6-1" class="outline-4">
+<h4 id="sec-1-6-1"><span class="section-number-4">1.6.1</span> Templateler üzerine deneme (CSS ekleme)</h4>
+<div class="outline-text-4" id="text-1-6-1">
+
+<ul>
+<li id="sec-1-6-1-1">görüntü ekleme<br/>
+<ol>
+<li>mydj_sites/mydj_sites/mydj_sites/settings.py dosyasında INSTALLED_APPS listesinde<br/>
+        django.contrib.staticfiles yoksa eklenecek.<br/>
+</li>
+<li>1. adımdaki dosyada STATIC_URL='<i>static</i>' olarak tanımlanacak.<br/>
+</li>
+<li>static dosyalar polls/static/polls dizini altında olacak. Örnek olarak<br/>
+        polls/static/polls/survey.jpg<br/>
+</li>
+<li>polls/templates/polls/index.html<br/>
+
+<p><br/>
+<pre class="src src-python">{% load static %}
+&lt;img <span style="color: #fcaf3e;">src</span>=<span style="color: #e9b96e;">"{% static "</span>polls/survey.jpg<span style="color: #e9b96e;">" %}"</span> <span style="color: #fcaf3e;">alt</span>=<span style="color: #e9b96e;">"Oylar&#305; g&#246;relim"</span>/&gt;
+{% <span style="color: #b4fa70;">if</span> latest_question_list %}
+<span style="background-color: #212526;"> </span>  &lt;ul&gt;
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>{% <span style="color: #b4fa70;">for</span> question <span style="color: #b4fa70;">in</span> latest_question_list %}
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>  &lt;li&gt;&lt;a <span style="color: #fcaf3e;">href</span>=<span style="color: #e9b96e;">"{% url 'polls:detail' question.id %}"</span>&gt;{{ question.question_text }}&lt;/a&gt;&lt;/li&gt;
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>{% endfor %}
+<span style="background-color: #212526;"> </span>  &lt;/ul&gt;
+{% <span style="color: #b4fa70;">else</span> %}
+<span style="background-color: #212526;"> </span>  &lt;p&gt;No polls are available.&lt;/p&gt;
+{% endif %}
+</pre>
+
+</p></li>
+</ol>
+
 </li>
 </ul>
+<ul>
+<li id="sec-1-6-1-2">javascript ve css ekleme<br/>
+     mydj_sites/mydj_sites/polls/static/polls<br/>
+     ├── frontend.js<br/>
+     ├── style.css<br/>
+     └── survey.jpg<br/>
+
+<p>     <br/>
+     frontend.js<br/>
+</p>
+<p><br/>
+<pre class="src src-javascript">$(
+    <span style="color: #b4fa70;">function</span>() {
+        $( <span style="color: #e9b96e;">"img"</span> ).each( <span style="color: #b4fa70;">function</span>() {
+            <span style="color: #b4fa70;">var</span> <span style="color: #fcaf3e;">$img</span> = $( <span style="color: #e6a8df;">this</span> );
+            <span style="color: #b4fa70;">var</span> <span style="color: #fcaf3e;">img_scale</span> = $img.width() / $img.height();
+            $img.width( $img.parent().width() );
+            $img.height( $img.height() * $img_scale );
+        });
+    }
+);
+</pre>
+
+
+     style.css<br/>
+</p>
+<p><br/>
+<pre class="src src-css"><span style="color: #fce94f;">.center </span>{
+    <span style="color: #fcaf3e;">margin</span>: auto;
+    <span style="color: #fcaf3e;">width</span>: 50%;
+    <span style="color: #fcaf3e;">border</span>: 3px solid green;
+    <span style="color: #fcaf3e;">padding</span>: 10px;
+}
+</pre>
+
+</p>
+<p>     <br/>
+     templates/index.html<br/>
+</p>
+<p><br/>
+<pre class="src src-html">{% load static %}
+&lt;<span style="color: #fce94f;">script</span> <span style="color: #fcaf3e;">src</span>=<span style="color: #e9b96e;">"https://code.jquery.com/jquery-3.1.0.min.js"</span>&gt;&lt;/<span style="color: #fce94f;">script</span>&gt;
+&lt;<span style="color: #fce94f;">script</span> <span style="color: #fcaf3e;">type</span>=<span style="color: #e9b96e;">"text/javascript"</span> <span style="color: #fcaf3e;">src</span>=<span style="color: #e9b96e;">"{% static "</span>polls/frontend.js<span style="color: #e9b96e;">" %}"</span>&gt;&lt;/<span style="color: #fce94f;">script</span>&gt;
+&lt;<span style="color: #fce94f;">link</span> <span style="color: #fcaf3e;">rel</span>=<span style="color: #e9b96e;">"stylesheet"</span> <span style="color: #fcaf3e;">type</span>=<span style="color: #e9b96e;">"text/css"</span> <span style="color: #fcaf3e;">href</span>=<span style="color: #e9b96e;">"{% static "</span>polls/style.css<span style="color: #e9b96e;">" %}"</span>&gt;&lt;/<span style="color: #fce94f;">script</span>&gt;
+&lt;<span style="color: #fce94f;">div</span> <span style="color: #fcaf3e;">class</span>=<span style="color: #e9b96e;">"center"</span>&gt;
+  &lt;<span style="color: #fce94f;">img</span> <span style="color: #fcaf3e;">src</span>=<span style="color: #e9b96e;">"{% static "</span>polls/survey.jpg<span style="color: #e9b96e;">" %}"</span> <span style="color: #fcaf3e;">alt</span>=<span style="color: #e9b96e;">"Oylar&#305; g&#246;relim"</span>/&gt;
+  {% if latest_question_list %}
+  &lt;<span style="color: #fce94f;">ul</span>&gt;
+    {% for question in latest_question_list %}
+    &lt;<span style="color: #fce94f;">li</span>&gt;&lt;<span style="color: #fce94f;">a</span> <span style="color: #fcaf3e;">href</span>=<span style="color: #e9b96e;">"{% url 'polls:detail' question.id %}"</span>&gt;{{ question.question_text }}&lt;/<span style="color: #fce94f;">a</span>&gt;&lt;/<span style="color: #fce94f;">li</span>&gt;
+    {% endfor %}
+  &lt;/<span style="color: #fce94f;">ul</span>&gt;
+  {% else %}
+  &lt;<span style="color: #fce94f;">p</span>&gt;No polls are available.&lt;/<span style="color: #fce94f;">p</span>&gt;
+  {% endif %}
+&lt;/<span style="color: #fce94f;">div</span>&gt;
+</pre>
+
+</p></li>
+</ul>
 </div>
+</div>
+
+</div>
+
+<div id="outline-container-1-7" class="outline-3">
+<h3 id="sec-1-7"><span class="section-number-3">1.7</span> Writing your first Django app, part 7</h3>
+<div class="outline-text-3" id="text-1-7">
+
+
+</div>
+
+<div id="outline-container-1-7-1" class="outline-4">
+<h4 id="sec-1-7-1"><span class="section-number-4">1.7.1</span> Admin panelinin düzenlenmesi</h4>
+<div class="outline-text-4" id="text-1-7-1">
+
+<p>    Daha önce "admin.site.register(Question)" ile Question modelini admin<br/>
+    penceresine eklemiştik.<br/>
+</p>
+<p>    <br/>
+    polls/admin.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.contrib <span style="color: #b4fa70;">import</span> admin
+
+<span style="color: #b4fa70;">from</span> .models <span style="color: #b4fa70;">import</span> Question
+
+
+<span style="color: #b4fa70;">class</span> <span style="color: #8cc4ff;">QuestionAdmin</span>(admin.ModelAdmin):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">fields</span> = [<span style="color: #e9b96e;">'pub_date'</span>, <span style="color: #e9b96e;">'question_text'</span>]
+
+admin.site.register(Question, QuestionAdmin)
+</pre>
+
+</p>
+<p>    <br/>
+    Yukarıdaki kod ile Question modelinin admin panelinde oluşturulması<br/>
+    sırasında Field sıralamaları belirlenmiş oldu.<br/>
+</p>
+<p><br/>
+    polls/admin.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.contrib <span style="color: #b4fa70;">import</span> admin
+
+<span style="color: #b4fa70;">from</span> .models <span style="color: #b4fa70;">import</span> Question
+
+
+<span style="color: #b4fa70;">class</span> <span style="color: #8cc4ff;">QuestionAdmin</span>(admin.ModelAdmin):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">fieldsets</span> = [
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   (<span style="color: #e6a8df;">None</span>,               {<span style="color: #e9b96e;">'fields'</span>: [<span style="color: #e9b96e;">'question_text'</span>]}),
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   (<span style="color: #e9b96e;">'Date information'</span>, {<span style="color: #e9b96e;">'fields'</span>: [<span style="color: #e9b96e;">'pub_date'</span>]}),
+<span style="background-color: #212526;"> </span>   ]
+
+admin.site.register(Question, QuestionAdmin)
+
+</pre>
+
+    Yukarıdaki kod ile de ilgili alanlar gruplanabilir.<br/>
+</p></div>
+
+</div>
+
+<div id="outline-container-1-7-2" class="outline-4">
+<h4 id="sec-1-7-2"><span class="section-number-4">1.7.2</span> Choice modelinin admin paneline eklenmesi ve sonrası :D</h4>
+<div class="outline-text-4" id="text-1-7-2">
+
+<p>    Choice modelini aynı Question modelini eklediğimiz gibi<br/>
+    "admin.site.register(Choice)" şeklinde ekleyebiliriz. Böylelikle Choice<br/>
+    nesnelerimizi de admin panelimizden ekleyebiliriz. Ancak görüldüğü gibi<br/>
+    Soruyu oluşturduktan sonra soruya ait cevapları ayrıca eklemek etkin bir<br/>
+    yol değildir. Daha iyileştirmek için cevap ekleme seçeneklerini soru ekleme<br/>
+    penceresine gömelim.<br/>
+</p>
+<p>    <br/>
+    polls/admin.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.contrib <span style="color: #b4fa70;">import</span> admin
+
+<span style="color: #b4fa70;">from</span> .models <span style="color: #b4fa70;">import</span> Choice, Question
+
+
+<span style="color: #b4fa70;">class</span> <span style="color: #8cc4ff;">ChoiceInline</span>(admin.StackedInline):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">model</span> = Choice
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">extra</span> = 3
+
+
+<span style="color: #b4fa70;">class</span> <span style="color: #8cc4ff;">QuestionAdmin</span>(admin.ModelAdmin):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">fieldsets</span> = [
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   (<span style="color: #e6a8df;">None</span>,               {<span style="color: #e9b96e;">'fields'</span>: [<span style="color: #e9b96e;">'question_text'</span>]}),
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   (<span style="color: #e9b96e;">'Date information'</span>, {<span style="color: #e9b96e;">'fields'</span>: [<span style="color: #e9b96e;">'pub_date'</span>], <span style="color: #e9b96e;">'classes'</span>: [<span style="color: #e9b96e;">'collapse'</span>]}),
+<span style="background-color: #212526;"> </span>   ]
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">inlines</span> = [ChoiceInline]
+
+admin.site.register(Question, QuestionAdmin)
+
+</pre>
+
+
+    Sonuç nasıl oldu :) Fena değil. Ancak sorular aşağı doğru fazla yer<br/>
+    kapladı. Bunun için "class ChoiceInline(admin.StackedInline):" satırındaki<br/>
+    <b>StackedInline</b> yerine <b>TabularInline</b> koyabiliriz.<br/>
+</p></div>
+
+</div>
+
+<div id="outline-container-1-7-3" class="outline-4">
+<h4 id="sec-1-7-3"><span class="section-number-4">1.7.3</span> Şimdi de Question listemizi düzenleyelim</h4>
+<div class="outline-text-4" id="text-1-7-3">
+
+<p>    Varsayılan olarak Model ana sayfamızdaki listede sadece modelin str<br/>
+    fonksiyonunun çıktısı görüntülerinir. Bunun yanında faydalı alanları da<br/>
+    gösterebiliriz. <br/>
+</p>
+<p><br/>
+    polls/admin.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">class</span> <span style="color: #8cc4ff;">QuestionAdmin</span>(admin.ModelAdmin):
+<span style="background-color: #212526;"> </span>   <span style="color: #73d216;"># </span><span style="color: #73d216;">...</span>
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">list_display</span> = (<span style="color: #e9b96e;">'question_text'</span>, <span style="color: #e9b96e;">'pub_date'</span>, <span style="color: #e9b96e;">'was_published_recently'</span>)
+</pre>
+
+
+    Bu penceredeki alan isimleri aşağıdaki şekilde düzenlenebilir.<br/>
+    polls/models.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">class</span> <span style="color: #8cc4ff;">Question</span>(models.Model):
+<span style="background-color: #212526;"> </span>   <span style="color: #73d216;"># </span><span style="color: #73d216;">...</span>
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">was_published_recently</span>(<span style="color: #b4fa70;">self</span>):
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">now</span> = timezone.now()
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> now - datetime.timedelta(days=1) &lt;= <span style="color: #b4fa70;">self</span>.pub_date &lt;= now
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">was_published_recently.admin_order_field</span> = <span style="color: #e9b96e;">'pub_date'</span>
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">was_published_recently.boolean</span> = <span style="color: #e6a8df;">True</span>
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">was_published_recently.short_description</span> = <span style="color: #e9b96e;">'Published recently?'</span>
+</pre>
+
+</p></div>
+
+</div>
+
+<div id="outline-container-1-7-4" class="outline-4">
+<h4 id="sec-1-7-4"><span class="section-number-4">1.7.4</span> Admin penceresinde Question modellerinin süzülmesi ve arama</h4>
+<div class="outline-text-4" id="text-1-7-4">
+
+<p>    polls/admin.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #fcaf3e;">list_filter</span> = [<span style="color: #e9b96e;">'pub_date'</span>]
+<span style="color: #fcaf3e;">search_fields</span> = [<span style="color: #e9b96e;">'question_text'</span>]
+
+</pre>
+
+</p></div>
+
+</div>
+
+<div id="outline-container-1-7-5" class="outline-4">
+<h4 id="sec-1-7-5"><span class="section-number-4">1.7.5</span> Admin pencere template'inin düzenlenmesi</h4>
+<div class="outline-text-4" id="text-1-7-5">
+
+<p>    Create a templates directory in your project directory (the one that<br/>
+    contains manage.py)<br/>
+</p>
+<p><br/>
+</p>
+<p><br/>
+<pre class="src src-sh">mkdir mydj_sites/mydj_sites/templates
+mkdir mydj_sites/mydj_sites/templates/admin
+</pre>
+
+
+    mydj_sites/mydj_sites/mydj_sites/settings.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #fcaf3e;">TEMPLATES</span> = [
+<span style="background-color: #212526;"> </span>   {
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">'BACKEND'</span>: <span style="color: #e9b96e;">'django.template.backends.django.DjangoTemplates'</span>,
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">'DIRS'</span>: [os.path.join(BASE_DIR, <span style="color: #e9b96e;">'templates'</span>)],
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">'APP_DIRS'</span>: <span style="color: #e6a8df;">True</span>,
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">'OPTIONS'</span>: {
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">'context_processors'</span>: [
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">'django.template.context_processors.debug'</span>,
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">'django.template.context_processors.request'</span>,
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">'django.contrib.auth.context_processors.auth'</span>,
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">'django.contrib.messages.context_processors.messages'</span>,
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   ],
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   },
+<span style="background-color: #212526;"> </span>   },
+]
+</pre>
+
+
+    Şimdi django admin template dosyasını kendi templates/admin dizinimiz<br/>
+    altına kopyalayacağız. Django şablonun bulunduğu dizini aşağıdaki şekilde bulabiliriz.<br/>
+</p>
+<p><br/>
+<pre class="src src-sh">python -c <span style="color: #e9b96e;">"import django; print(django.__path__)"</span>
+</pre>
+
+
+    Yukarıdaki dizin altındaki "contrib/admin/templates/admin/base_site.html"<br/>
+    dosyayı mydj_sites/mydj_sites/templates/admin dizini altına<br/>
+    kopyalayalım. İçeriği aşağıdaki gibi<br/>
+</p>
+<p><br/>
+<pre class="src src-python">{% extends <span style="color: #e9b96e;">"admin/base.html"</span> %}
+
+{% block title %}{{ title }} | {{ site_title|default:_(<span style="color: #e9b96e;">'Django site admin'</span>) }}{% endblock %}
+
+{% block branding %}
+&lt;h1 <span style="color: #ad7fa8;">id</span>=<span style="color: #e9b96e;">"site-name"</span>&gt;&lt;a <span style="color: #fcaf3e;">href</span>=<span style="color: #e9b96e;">"{% url 'admin:index' %}"</span>&gt;{{ site_header|default:_(<span style="color: #e9b96e;">'Django administration'</span>) }}&lt;/a&gt;&lt;/h1&gt;
+{% endblock %}
+
+{% block nav-<span style="color: #b4fa70;">global</span> %}{% endblock %}    
+</pre>
+
+</p></div>
 </div>
 </div>
 
 </div>
 
 <div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Bağlantılar</h2>
+<h2 id="sec-2"><span class="section-number-2">2</span> Araştırılacak [0/2]</h2>
 <div class="outline-text-2" id="text-2">
+
+<ul>
+<li><code>[&nbsp;]</code> Polls uygulamasında cevapları oluştururken verilen oy sayısı da<br/>
+    belirlenebiliyor. Bu uygun olmaz. Varsayılan oy sayısının sıfır olarak<br/>
+    belirlenmesi ve oluşturulurken bu değerin girilmemesini sağlamak iyi olur.<br/>
+</li>
+<li><code>[&nbsp;]</code> utf-8 karakterlerin kullanabilmesi<br/>
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Bağlantılar</h2>
+<div class="outline-text-2" id="text-3">
 
 
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -1484,7 +1902,7 @@ b<span style="color: #e9b96e;">'\n    &lt;ul&gt;\n    \n        &lt;li&gt;&lt;a 
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2016-09-10T12:25+0300</p>
+<p class="date">Date: 2016-09-11T18:14+0300</p>
 <p class="author">Author: umt</p>
 <p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
