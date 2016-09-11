@@ -41,7 +41,6 @@
 ** Konaklama ve Maliyet
    - Çadır alanı 16.5 TL
    - Kişi başı ücret 22 TL
-
 ** İmkanlar
    - Duş, tuvalet, soyunma kabini var. 
    - Kamp alanına gelene kadar Migros ve A101 bulunuyor. Gıda ihtiyacı buradan
@@ -54,6 +53,22 @@
    Aslına bakarsanız pek çadır kampı sayılmaz. Kurulan çadırlar da iki oda 1
    salon şeklinde. Genellikle ailelerin kaldığı daha çok karavan kampı
    tarzında. Sincap görebilirsiniz, öyle bir artısı var :D
+* Akyaka orman kampı (0551 448 70 34) DENENMEDİ!
+** Ulaşım 
+   1. Marmaris otobüsüne bin. Pamukkale ve Kamil Koç'un özel servisleri var. Akyaka
+   inmek istediğini söyle onlar getiriyor.
+** Konaklama
+   - Çadır alanı günlük 35 TL kendi çadırımız, kişi başı ücret yok.
+** İmkanlar
+   - WC, duş, kafeterya, elektrik var.
+** Yorum
+   Normal durumlarda rezervasyon gerekmediği ancak bayram gibi özel durumlarda
+   gelmesen 2 gün önceden aramak gerektiğini söylediler.
+* Muğla -> Datça -> Çubucak orman kampı DENENMEDİ!
+** Ulaşım
+** Konaklama
+** İmkanlar
+** Yorum
 * Eklenmesi istediğiniz rotaları umut1010@gmail.com adresine üstteki formata uygun gönderebilirsiniz.
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"
