@@ -16,7 +16,9 @@
     Sistem kuruldu. Test yapıldı. Sanırım radyo vericisi kalitesiz olduğu için
     baş ağrısı yapıyor. Ayrıca ses kalitesi yetersiz.
 ** Django <2016-03-27 Sun 20:23>
-*** HelloWorld
+*** Django tutorial
+    <2016-09-11 Sun 18:18>
+    [[file:django.org][Django çalışması]] 
 *** Apache üzerinde çalıştırma
 *** Ngix üzerinde çalıştırma
 *** Güvenlik
