@@ -6,187 +6,1001 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yol
-** Virtul Env
-   #+BEGIN_SRC sh :shebang #!/bin/bash
-   cd ~/Proje/python
-   mkdir mydj_sites
-   cd mydj_sites
-   virtualenv django_env
-   . django_env/bin/activate
-   #+END_SRC
+** Writing your first Django app, part 1 
+*** Virtul Env
+    #+BEGIN_SRC sh :shebang #!/bin/bash
+    cd ~/Proje/python
+    mkdir mydj_sites
+    cd mydj_sites
+    virtualenv django_env
+    . django_env/bin/activate
+    #+END_SRC
 
-   #+RESULTS:
-   | New python executable in /home/umt/Proje/python/mydj_sites/django_env/bin/python |     |               |
-   | Installing setuptools                                                            | pip | wheel...done. |
-   
-** Projenin oluşturulması
-   #+BEGIN_SRC sh :shebang #!/bin/bash
-   cd ~/Proje/python/mydj_sites
-   . django_env/bin/activate
-   django-admin startproject mydj_sites
-   
-   #+END_SRC
+    #+RESULTS:
+    | New python executable in /home/umt/Proje/python/mydj_sites/django_env/bin/python |     |               |
+    | Installing setuptools                                                            | pip | wheel...done. |
+    
+*** Projenin oluşturulması
+    #+BEGIN_SRC sh :shebang #!/bin/bash
+    cd ~/Proje/python/mydj_sites
+    . django_env/bin/activate
+    django-admin startproject mydj_sites
+    
+    #+END_SRC
 
-   #+RESULTS:
-   django_env/
-      ...
-   mydj_sites/ 
-   *root directory is just a container for your project. Its name doesn’t matter
-   to Django; you can rename it to anything you like.*  
-   ├── manage.py
-   *A command-line utility that lets you interact with this Django project in
-   various ways.* 
-   └── mydj_sites 
-   *directory is the actual Python package for your project. Its name is the
-   Python package name you’ll need to use to import anything inside it* 
-       ├── __init__.py
-       ├── settings.py
-       ├── urls.py
-       └── wsgi.py
-   
-** Geliştirme sunucusu
-   #+BEGIN_SRC sh :shebang #!/bin/bash
-   cd ~/Proje/python/mydj_sites
-   . django_env/bin/activate
-   python mydj_sites/manage.py runserver
-   #+END_SRC
+    #+RESULTS:
+    django_env/
+       ...
+    mydj_sites/ 
+    *root directory is just a container for your project. Its name doesn’t matter
+    to Django; you can rename it to anything you like.*  
+    ├── manage.py
+    *A command-line utility that lets you interact with this Django project in
+    various ways.* 
+    └── mydj_sites 
+    *directory is the actual Python package for your project. Its name is the
+    Python package name you’ll need to use to import anything inside it* 
+       	├── __init__.py
+       	├── settings.py
+       	├── urls.py
+       	└── wsgi.py
+    
+*** Geliştirme sunucusu
+    #+BEGIN_SRC sh :shebang #!/bin/bash
+    cd ~/Proje/python/mydj_sites
+    . django_env/bin/activate
+    python mydj_sites/manage.py runserver
+    #+END_SRC
 
-   #+RESULTS:
-   python manage.py runserver
-   Performing system checks...
-   
-   System check identified no issues (0 silenced).
-   
-   You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
-   Run 'python manage.py migrate' to apply them.
-   
-   September 04, 2016 - 18:52:28
-   Django version 1.10.1, using settings 'mydj_sites.settings'
-   Starting development server at http://127.0.0.1:8000/
-   Quit the server with CONTROL-C.
-** İlk uygulamanın oluşturulması
-   #+BEGIN_SRC sh :shebang #!/bin/bash
-   cd ~/Proje/python/mydj_sites
-   . django_env/bin/activate
-   cd mydj_sites
-   python manage.py startapp polls
-   #+END_SRC
+    #+RESULTS:
+    python manage.py runserver
+    Performing system checks...
+    
+    System check identified no issues (0 silenced).
+    
+    You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+    Run 'python manage.py migrate' to apply them.
+    
+    September 04, 2016 - 18:52:28
+    Django version 1.10.1, using settings 'mydj_sites.settings'
+    Starting development server at http://127.0.0.1:8000/
+    Quit the server with CONTROL-C.
+*** İlk uygulamanın oluşturulması
+    #+BEGIN_SRC sh :shebang #!/bin/bash
+    cd ~/Proje/python/mydj_sites
+    . django_env/bin/activate
+    cd mydj_sites
+    python manage.py startapp polls
+    #+END_SRC
 
-   #+RESULTS:
+    #+RESULTS:
 
-   Oluşan dizin yapısı
-   polls/
-   ├── admin.py
-   ├── apps.py
-   ├── __init__.py
-   ├── migrations
-   │   └── __init__.py
-   ├── models.py
-   ├── tests.py
-   └── views.py
+    Oluşan dizin yapısı
+    polls/
+    ├── admin.py
+    ├── apps.py
+    ├── __init__.py
+    ├── migrations
+    │   └── __init__.py
+    ├── models.py
+    ├── tests.py
+    └── views.py
+    
+*** İlk view'ın oluşturulması
+    #+BEGIN_SRC python
+    polls/views.py
+    from django.http import HttpResponse
+
+
+    def index(request):
+       	return HttpResponse("Hello, world. You're at the polls index.")
+    #+END_SRC
+*** polls dizini altında urls.py dosyasının oluşturulması
+    #+BEGIN_SRC python
+    from django.conf.urls import url
+    
+    from . import views
+    
+    urlpatterns = [
+       	url(r'^$', views.index, name='index'),
+    ]
+    
+    #+END_SRC
+*** mydj_sites/mydj_sites/mydj_sites dizinindeki urls.py içeriğine yönlendirme ekleme
+    #+BEGIN_SRC python
+    from django.conf.urls import url, include
+    from django.contrib import admin
+    
+    urlpatterns = [
+       	url(r'^polls/', include('polls.urls')),
+       	url(r'^admin/', admin.site.urls),
+    ]
+    #+END_SRC
+    http://localhost:8000/polls/
+** Writing your first Django app, part 2 
+*** Veri tabanının ayarlanması
+    mydj_sites/mydj_sites/mydj_sites/settings.py dosyası içerisinde veri tabanı
+    olarak sqlite seçili. INSTALLED_APPS dizisi içerisinde belirlenmiş
+    uygulamalar için veri tabanında tablolar oluşturulmalı.
+    
+    #+BEGIN_SRC sh
+    cd ~/Proje/python/mydj_sites
+    . django_env/bin/activate
+    cd mydj_sites
+    
+    python manage.py migrate
+    #+END_SRC
+    
+*** Veri tabanı modellerinin oluşturulması
+    polls/models.py
+    #+BEGIN_SRC python
+    from django.db import models
+    
+    
+    class Question(models.Model):
+       	question_text = models.CharField(max_length=200)
+       	pub_date = models.DateTimeField('date published')
+    
+    
+    class Choice(models.Model):
+       	question = models.ForeignKey(Question, on_delete=models.CASCADE)
+       	choice_text = models.CharField(max_length=200)
+       	votes = models.IntegerField(default=0)
+    #+END_SRC
+
+*** Modellerin aktive edilmesi
+    Veri tabanı şemasının oluşturulması
+    Veri tabanı objelerinin oluşturulması
+    
+    Yukarıda belirtilen eylemler, polls uygulamasının
+    mydj_sites/mydj_sites/mydj_sites/settings.py dosyası INSTALLED_APPS
+    listesinin içerisine "'polls.apps.PollsConfig'," olarak eklenmesi gerekir. 
+    #+BEGIN_SRC sh
+    cd ~/Proje/python/mydj_sites
+    . django_env/bin/activate
+    cd mydj_sites
+    python manage.py makemigrations polls
+    
+    #+END_SRC
+    makemigrations komutu ile yeni eklenen uygulamalar olduğunu ve bu
+    uygulamalar için gerekli veri tabanı değişikliklerinin yapılacağı bilgisi
+    verilmektedir. Daha önce bu işlem için south uygulaması kullanılmıştı. Bu
+    yöntem ile veri tabanı değişiklikleri sürüm kontrol sistemi altında tutulmuş.
+    
+    python manage.py makemigrations polls
+    Migrations for 'polls':
+    polls/migrations/0001_initial.py:
+     - Create model Choice
+     - Create model Question
+     - Add field question to choice
+    polls/migrations/0001_initial.py dosyasının aldında ilgili migration ile
+    ilgili işlemler bulunmaktadır.
+    #+BEGIN_SRC sh
+    cd ~/Proje/python/mydj_sites
+    . django_env/bin/activate
+    cd mydj_sites
+    python manage.py sqlmigrate polls 0001 # migration'ın SQL karşılığı
+    python manage.py migrate
+    #+END_SRC
+*** API ile oynamak ??
+    #+BEGIN_SRC sh
+    cd ~/Proje/python/mydj_sites
+    . django_env/bin/activate
+    cd mydj_sites
+    pyton manage.py shell # python shell django projemizi root alarak başlıyor.
+    >>> import django
+    >>> django.setup()
+    >>> from polls.models import Question, Choice   # Import the model classes we just wrote.
+    
+    # No questions are in the system yet.
+    >>> Question.objects.all()
+    <QuerySet []>
+    
+    # Create a new Question.
+    # Support for time zones is enabled in the default settings file, so
+    # Django expects a datetime with tzinfo for pub_date. Use timezone.now()
+    # instead of datetime.datetime.now() and it will do the right thing.
+    >>> from django.utils import timezone
+    >>> q = Question(question_text="What's new?", pub_date=timezone.now())
+    
+    # Save the object into the database. You have to call save() explicitly.
+    >>> q.save()
+    
+    # Now it has an ID. Note that this might say "1L" instead of "1", depending
+    # on which database you're using. That's no biggie; it just means your
+    # database backend prefers to return integers as Python long integer
+    # objects.
+    >>> q.id
+    1
+    
+    # Access model field values via Python attributes.
+    >>> q.question_text
+    "What's new?"
+    >>> q.pub_date
+    datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=<UTC>)
+    
+    # Change values by changing the attributes, then calling save().
+    >>> q.question_text = "What's up?"
+    >>> q.save()
+    
+    # objects.all() displays all the questions in the database.
+    >>> Question.objects.all()
+    <QuerySet [<Question: Question object>]>
+    #+END_SRC
+    
+    #+BEGIN_SRC sh
+    cd ~/Proje/python/mydj_sites
+    . django_env/bin/activate
+    cd mydj_sites
+    pyton manage.py shell # python shell django projemizi root alarak başlıyor.   
+    >>> from polls.models import Question, Choice
+    
+    # Make sure our __str__() addition worked.
+    >>> Question.objects.all()
+    <QuerySet [<Question: What's up?>]>
+    
+    # Django provides a rich database lookup API that's entirely driven by
+    # keyword arguments.
+    >>> Question.objects.filter(id=1)
+    <QuerySet [<Question: What's up?>]>
+    >>> Question.objects.filter(question_text__startswith='What')
+    <QuerySet [<Question: What's up?>]>
+    
+    # Get the question that was published this year.
+    >>> from django.utils import timezone
+    >>> current_year = timezone.now().year
+    >>> Question.objects.get(pub_date__year=current_year)
+    <Question: What's up?>
+    
+    # Request an ID that doesn't exist, this will raise an exception.
+    >>> Question.objects.get(id=2)
+    Traceback (most recent call last):
+       	...
+    DoesNotExist: Question matching query does not exist.
+    
+    # Lookup by a primary key is the most common case, so Django provides a
+    # shortcut for primary-key exact lookups.
+    # The following is identical to Question.objects.get(id=1).
+    >>> Question.objects.get(pk=1)
+    <Question: What's up?>
+    
+    # Make sure our custom method worked.
+    >>> q = Question.objects.get(pk=1)
+    >>> q.was_published_recently()
+    True
+    
+    # Give the Question a couple of Choices. The create call constructs a new
+    # Choice object, does the INSERT statement, adds the choice to the set
+    # of available choices and returns the new Choice object. Django creates
+    # a set to hold the "other side" of a ForeignKey relation
+    # (e.g. a question's choice) which can be accessed via the API.
+    >>> q = Question.objects.get(pk=1)
+    
+    # Display any choices from the related object set -- none so far.
+    >>> q.choice_set.all()
+    <QuerySet []>
+    
+    # Create three choices.
+    >>> q.choice_set.create(choice_text='Not much', votes=0)
+    <Choice: Not much>
+    >>> q.choice_set.create(choice_text='The sky', votes=0)
+    <Choice: The sky>
+    >>> c = q.choice_set.create(choice_text='Just hacking again', votes=0)
+    
+    # Choice objects have API access to their related Question objects.
+    >>> c.question
+    <Question: What's up?>
+    
+    # And vice versa: Question objects get access to Choice objects.
+    >>> q.choice_set.all()
+    <QuerySet [<Choice: Not much>, <Choice: The sky>, <Choice: Just hacking again>]>
+    >>> q.choice_set.count()
+    3
+    
+    # The API automatically follows relationships as far as you need.
+    # Use double underscores to separate relationships.
+    # This works as many levels deep as you want; there's no limit.
+    # Find all Choices for any question whose pub_date is in this year
+    # (reusing the 'current_year' variable we created above).
+    >>> Choice.objects.filter(question__pub_date__year=current_year)
+    <QuerySet [<Choice: Not much>, <Choice: The sky>, <Choice: Just hacking again>]>
+    
+    # Let's delete one of the choices. Use delete() for that.
+    >>> c = q.choice_set.filter(choice_text__startswith='Just hacking')
+    >>> c.delete()
+    #+END_SRC
+*** Django Admin
+**** admin kullanıcısı oluşturma
+     #+BEGIN_SRC sh
+     cd ~/Proje/python/mydj_sites
+     . django_env/bin/activate
+     cd mydj_sites
+     python manage.py createsuperuser
+     python manage.py runserver
+     #+END_SRC
+     
+     http://127.0.0.1:8000/admin/
+**** polls uygulamasını admin penceresi üzerinde erişime açma
+     polls/admin.py
+     #+BEGIN_SRC python
+     from django.contrib import admin
+
+     from .models import Question
+
+     admin.site.register(Question)
+     #+END_SRC
+     
+** Writing your first Django app, part 3
+*** Başlıklar
+    - Blog homepage – displays the latest few entries.
+    - Entry “detail” page – permalink page for a single entry.
+    - Year-based archive page – displays all months with entries in the given year.
+    - Month-based archive page – displays all days with entries in the given month.
+    - Day-based archive page – displays all entries in the given day.
+    - Comment action – handles posting comments to a given entry.
+    In our poll application, we’ll have the following four views: 
+    - Question “index” page – displays the latest few questions.
+    - Question “detail” page – displays a question text, with no results but with a form to vote.
+    - Question “results” page – displays results for a particular question.
+    - Vote action – handles voting for a particular choice in a particular question.
+*** Daha fazla view
+    polls/views.py
+    #+BEGIN_SRC python
+    def detail(request, question_id):
+       return HttpResponse("You're looking at question %s." % question_id)
    
-** İlk view'ın oluşturulması
-   #+BEGIN_SRC python
-   polls/views.py
-   from django.http import HttpResponse
-
-
-   def index(request):
-       return HttpResponse("Hello, world. You're at the polls index.")
-   #+END_SRC
-** polls dizini altında urls.py dosyasının oluşturulması
-   #+BEGIN_SRC python
+   def results(request, question_id):
+       response = "You're looking at the results of question %s."
+       return HttpResponse(response % question_id)
+   
+   def vote(request, question_id):
+       return HttpResponse("You're voting on question %s." % question_id)
+    #+END_SRC
+    
+    polls/urls.py
+    #+BEGIN_SRC python
    from django.conf.urls import url
    
    from . import views
    
    urlpatterns = [
+       # ex: /polls/
        url(r'^$', views.index, name='index'),
-   ]
-   
-   #+END_SRC
-** mydj_sites/mydj_sites/mydj_sites dizinindeki urls.py içeriğine yönlendirme ekleme
-   #+BEGIN_SRC python
-   from django.conf.urls import url, include
-   from django.contrib import admin
-   
-   urlpatterns = [
-       url(r'^polls/', include('polls.urls')),
-       url(r'^admin/', admin.site.urls),
-   ]
-   #+END_SRC
-   http://localhost:8000/polls/
-** Veri tabanının ayarlanması
-   mydj_sites/mydj_sites/mydj_sites/settings.py dosyası içerisinde veri tabanı
-   olarak sqlite seçili. INSTALLED_APPS dizisi içerisinde belirlenmiş
-   uygulamalar için veri tabanında tablolar oluşturulmalı.
-   
-   #+BEGIN_SRC sh
-   cd ~/Proje/python/mydj_sites
-   . django_env/bin/activate
-   cd mydj_sites
-   
-   python manage.py migrate
-   #+END_SRC
-   
-** Veri tabanı modellerinin oluşturulması
-   polls/models.py
-   #+BEGIN_SRC python
-   from django.db import models
-   
-   
-   class Question(models.Model):
-       question_text = models.CharField(max_length=200)
-       pub_date = models.DateTimeField('date published')
-   
-   
-   class Choice(models.Model):
-       question = models.ForeignKey(Question, on_delete=models.CASCADE)
-       choice_text = models.CharField(max_length=200)
-       votes = models.IntegerField(default=0)
-   #+END_SRC
+       # ex: /polls/5/
+       url(r'^(?P<question_id>[0-9]+)/$', views.detail, name='detail'),
+       # ex: /polls/5/results/
+       url(r'^(?P<question_id>[0-9]+)/results/$', views.results, name='results'),
+       # ex: /polls/5/vote/
+       url(r'^(?P<question_id>[0-9]+)/vote/$', views.vote, name='vote'),
+   ] 
+    #+END_SRC
 
-** Modellerin aktive edilmesi
-   Veri tabanı şemasının oluşturulması
-   Veri tabanı objelerinin oluşturulması
+    polls/views.py
+    #+BEGIN_SRC python
+   from django.http import HttpResponse
    
-   Yukarıda belirtilen eylemler, polls uygulamasının
-   mydj_sites/mydj_sites/mydj_sites/settings.py dosyası INSTALLED_APPS
-   listesinin içerisine "'polls.apps.PollsConfig'," olarak eklenmesi gerekir. 
-   #+BEGIN_SRC sh
-   cd ~/Proje/python/mydj_sites
-   . django_env/bin/activate
-   cd mydj_sites
-   python manage.py makemigrations polls
+   from .models import Question
    
-   #+END_SRC
-   makemigrations komutu ile yeni eklenen uygulamalar olduğunu ve bu
-   uygulamalar için gerekli veri tabanı değişikliklerinin yapılacağı bilgisi
-   verilmektedir. Daha önce bu işlem için south uygulaması kullanılmıştı. Bu
-   yöntem ile veri tabanı değişiklikleri sürüm kontrol sistemi altında tutulmuş.
    
-   python manage.py makemigrations polls
-   Migrations for 'polls':
-   polls/migrations/0001_initial.py:
-    - Create model Choice
-    - Create model Question
-    - Add field question to choice
-   polls/migrations/0001_initial.py dosyasının aldında ilgili migration ile
-   ilgili işlemler bulunmaktadır.
-   #+BEGIN_SRC sh
-   cd ~/Proje/python/mydj_sites
-   . django_env/bin/activate
-   cd mydj_sites
-   python manage.py sqlmigrate polls 0001 # migration'ın SQL karşılığı
-   python manage.py migrate
-   #+END_SRC
-** API ile oynamak ??
-   #+BEGIN_SRC sh
-   cd ~/Proje/python/mydj_sites
-   . django_env/bin/activate
-   cd mydj_sites
-   pyton manage.py shell
-   #+END_SRC
+   def index(request):
+       latest_question_list = Question.objects.order_by('-pub_date')[:5]
+       output = ', '.join([q.question_text for q in latest_question_list])
+       return HttpResponse(output)
+   
+   # Leave the rest of the views (detail, results, vote) unchanged 
+    #+END_SRC
+
+    View kulllanımındaki problem sayfa tasarımının hard-coded olarak yapılmış
+    olmasıdır. Bunun önüne geçmek için django template dili kullanılabilir.
+
+    #+BEGIN_SRC sh
+    cd ~/Proje/python/mydj_sites/mydj_sites/polls
+    mkdir templates;cd templates
+    mkdir polls
+    #+END_SRC
+
+    #+RESULTS:
+
+    
+    polls/templates/polls/index.html
+    #+BEGIN_SRC python
+    {% if latest_question_list %}
+       <ul>
+       {% for question in latest_question_list %}
+           <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+       {% endfor %}
+       </ul>
+   {% else %}
+       <p>No polls are available.</p>
+   {% endif %}
+    #+END_SRC
+
+    Şimdi de polls/views.py dosyamızın oluşturduğumuz template'i kullanmasını
+    sağlayalım. 
+    
+    polls/views.py
+    #+BEGIN_SRC python
+    from django.http import HttpResponse
+    from django.template import loader
+   
+    from .models import Question
+   
+   
+    def index(request):
+        latest_question_list = Question.objects.order_by('-pub_date')[:5]
+        template = loader.get_template('polls/index.html')
+        context = {
+            'latest_question_list': latest_question_list,
+        }
+        return HttpResponse(template.render(context, request))
+    #+END_SRC
+*** Bir kısayol: render()
+    polls/views.py
+    #+BEGIN_SRC python
+   from django.shortcuts import render
+   
+   from .models import Question
+   
+   
+   def index(request):
+       latest_question_list = Question.objects.order_by('-pub_date')[:5]
+       context = {'latest_question_list': latest_question_list}
+       return render(request, 'polls/index.html', context) 
+    #+END_SRC
+
+    *HttpResponse(template.render(context, request))* yerine *return
+    render(request, 'polls/index.html', context)* kulllandık. Ayrıca *loader*
+    ve *HttpReponse* yerine sadece *render* import etmemiz yeterli oldu. Ancak
+    render gerektirmeyen *static sayfalarınız* için hala loader ve HttpResponse
+    sınıflarını kullanmanız gerekir.
+*** 404 hatası oluşturmak
+    polls/views.py
+    #+BEGIN_SRC python
+    from django.http import Http404
+    from django.shortcuts import render
+    
+    from .models import Question
+    # ...
+    def detail(request, question_id):
+        try:
+            question = Question.objects.get(pk=question_id)
+        except Question.DoesNotExist:
+            raise Http404("Question does not exist")
+        return render(request, 'polls/detail.html', {'question': question}) 
+    #+END_SRC
+    
+    polls/templates/polls/detail.html
+    #+BEGIN_SRC python
+    {{ question }}
+    #+END_SRC
+*** Bir başka kısayol: get_object_or_404()
+    polls/views.py
+    #+BEGIN_SRC python
+   from django.shortcuts import get_object_or_404, render
+   
+   from .models import Question
+   # ...
+   def detail(request, question_id):
+       question = get_object_or_404(Question, pk=question_id)
+       return render(request, 'polls/detail.html', {'question': question}) 
+    #+END_SRC
+*** template sistemini kullanalım
+    polls/templates/polls/detail.html
+    #+BEGIN_SRC python
+    <h1>{{ question.question_text }}</h1>
+    <ul>
+     {% for choice in question.choice_set.all %}
+        <li>{{ choice.choice_text }}</li>
+    {% endfor %}
+    </ul>
+    #+END_SRC
+*** Hardcoded URL'lerin kaldırılması
+    polls/templates/polls/index.html
+    #+BEGIN_SRC python
+    #<li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+    <li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>
+    #+END_SRC
+*** URL isim uzaylarının oluşturulması
+    polls uygulamasında "details" url'i olduğu gibi başka bir uygulamada da
+    "details" url'i olabilir. Djangonun bunu ayırt edebilmesi için aşağıdaki
+    işlemler yapılmalıdır.
+
+    polls/urls.py
+    #+BEGIN_SRC python
+    from django.conf.urls import url
+    
+    from . import views
+    
+    app_name = 'polls'
+    urlpatterns = [
+        url(r'^$', views.index, name='index'),
+        url(r'^(?P<question_id>[0-9]+)/$', views.detail, name='detail'),
+        url(r'^(?P<question_id>[0-9]+)/results/$', views.results, name='results'),
+        url(r'^(?P<question_id>[0-9]+)/vote/$', views.vote, name='vote'),
+    ]
+    #+END_SRC
+
+    polls/templates/polls/index.html
+    #+BEGIN_SRC python
+    /*<li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>*/
+    <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    #+END_SRC
+** Writing your first Django app, part 4
+*** Basit bir form 
+    polls/templates/polls/detail.html
+    #+BEGIN_SRC python
+    <h1>{{ question.question_text }}</h1>
+    
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    
+    <form action="{% url 'polls:vote' question.id %}" method="post">
+    {% csrf_token %}
+    {% for choice in question.choice_set.all %}
+        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+        <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
+    {% endfor %}
+    <input type="submit" value="Vote" />
+    </form>
+    #+END_SRC
+    
+    polls/views.py
+    #+BEGIN_SRC python
+    from django.shortcuts import get_object_or_404, render
+    from django.http import HttpResponseRedirect, HttpResponse
+    from django.urls import reverse
+    
+    from .models import Choice, Question
+    # ...
+    def vote(request, question_id):
+        question = get_object_or_404(Question, pk=question_id)
+        try:
+            selected_choice = question.choice_set.get(pk=request.POST['choice'])
+        except (KeyError, Choice.DoesNotExist):
+            # Redisplay the question voting form.
+            return render(request, 'polls/detail.html', {
+                'question': question,
+                'error_message': "You didn't select a choice.",
+            })
+        else:
+            selected_choice.votes += 1
+            selected_choice.save()
+            # Always return an HttpResponseRedirect after successfully dealing
+            # with POST data. This prevents data from being posted twice if a
+            # user hits the Back button.
+            return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+    #+END_SRC
+    polls/views.py
+    #+BEGIN_SRC python
+    from django.shortcuts import get_object_or_404, render
+    
+    
+    def results(request, question_id):
+        question = get_object_or_404(Question, pk=question_id)
+        return render(request, 'polls/results.html', {'question': question})
+    #+END_SRC
+    polls/templates/polls/results.html
+    #+BEGIN_SRC python
+    <h1>{{ question.question_text }}</h1>
+    
+    <ul>
+    {% for choice in question.choice_set.all %}
+        <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+    {% endfor %}
+    </ul>
+    
+    <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+    #+END_SRC
+*** Generic viewlar
+    These views represent a common case of basic Web development: 
+    - getting data from the database according to a parameter passed in the URL,
+    - loading a template and returning the rendered template. 
+    
+    Because this is so common, Django provides a shortcut, called the “generic
+    views” system.
+    
+**** urls.py'nin güncellenmesi
+     polls/urls.py
+     #+BEGIN_SRC python
+     from django.conf.urls import url
+      
+     from . import views
+      
+     app_name = 'polls'
+     urlpatterns = [
+         url(r'^$', views.IndexView.as_view(), name='index'),
+         url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
+         url(r'^(?P<pk>[0-9]+)/results/$', views.ResultsView.as_view(), name='results'),
+         url(r'^(?P<question_id>[0-9]+)/vote/$', views.vote, name='vote'),
+     ]     
+     #+END_SRC
+     *Önemli* url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(),
+     name='detail'),  <pk> yazan yerde daha önceden <question_id> yazıyordu. Bu
+     değişikliğin sebebi, generic viewların primary_key ile çalışıyor olması
+**** views.py'nin güncellenmesi
+     polls/views.py
+     #+BEGIN_SRC python
+     from django.shortcuts import get_object_or_404, render
+     from django.http import HttpResponseRedirect
+     from django.urls import reverse
+     from django.views import generic
+     
+     from .models import Choice, Question
+     
+     
+     class IndexView(generic.ListView):
+         template_name = 'polls/index.html'
+         context_object_name = 'latest_question_list'
+     
+         def get_queryset(self):
+             """Return the last five published questions."""
+             return Question.objects.order_by('-pub_date')[:5]
+     
+     
+     class DetailView(generic.DetailView):
+         model = Question
+         template_name = 'polls/detail.html'
+     
+     
+     class ResultsView(generic.DetailView):
+         model = Question
+         template_name = 'polls/results.html'
+     
+     
+     def vote(request, question_id):
+         ... # same as above, no changes needed.
+     #+END_SRC
+     DetailView varsayılan olarak <app name>/templates/<app name>/<model
+     name>_detail.html dosyasını template olarak kullanır. Bizim durumumuzda bu
+     dosya question_detail.html olacaktı. template_name değişkeni ile bunu
+     değiştirdik.
+     Aynı şekilde ListView de varsayılan olarak <app name>/templates/<app name>/<model
+     name>_list.html kullanacaktı.
+** Templateler üzerine deneme (CSS ekleme)
+*** görüntü ekleme
+    1. mydj_sites/mydj_sites/mydj_sites/settings.py dosyasında INSTALLED_APPS listesinde
+       django.contrib.staticfiles yoksa eklenecek.
+    2. 1. adımdaki dosyada STATIC_URL='/static/' olarak tanımlanacak.
+    3. static dosyalar polls/static/polls dizini altında olacak. Örnek olarak
+       polls/static/polls/survey.jpg
+    4. polls/templates/polls/index.html
+       #+BEGIN_SRC python
+       {% load static %}
+       <img src="{% static "polls/survey.jpg" %}" alt="Oyları görelim"/>
+       {% if latest_question_list %}
+          <ul>
+            {% for question in latest_question_list %}
+                  <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+            {% endfor %}
+          </ul>
+       {% else %}
+          <p>No polls are available.</p>
+       {% endif %}
+       #+END_SRC
+*** javascript ve css ekleme
+    mydj_sites/mydj_sites/polls/static/polls
+    ├── frontend.js
+    ├── style.css
+    └── survey.jpg
+    
+    frontend.js
+    #+BEGIN_SRC javascript
+    $(
+        function() {
+            $( "img" ).each( function() {
+    	        var $img = $( this );
+    	        var img_scale = $img.width() / $img.height();
+    	        $img.width( $img.parent().width() );
+    	        $img.height( $img.height() * $img_scale );
+    	    });
+        }
+    );
+    #+END_SRC
+
+    style.css
+    #+BEGIN_SRC css
+    .center {
+        margin: auto;
+        width: 50%;
+        border: 3px solid green;
+        padding: 10px;
+    }
+    #+END_SRC
+    
+    templates/index.html
+    #+BEGIN_SRC html
+    {% load static %}
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="{% static "polls/frontend.js" %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "polls/style.css" %}"></script>
+    <div class="center">
+      <img src="{% static "polls/survey.jpg" %}" alt="Oyları görelim"/>
+      {% if latest_question_list %}
+      <ul>
+        {% for question in latest_question_list %}
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p>No polls are available.</p>
+      {% endif %}
+    </div>
+    #+END_SRC
+** Writing your first Django app, part 5
+*** Otomatik testler (ilginç bir konu)
+**** Neden test?
+     Otomatik testler 3 farklı fazda yazılabilir. Başta, sonda, ortada :D
+     
+     *We identify a bug*
+     Fortunately, there’s a little bug in the polls application for us to fix
+     right away: the Question.was_published_recently() method returns True if the
+     Question was published within the last day (which is correct) but also if
+     the Question’s pub_date field is in the future (which certainly isn’t). 
+ 
+**** Nasıl test?
+     #+BEGIN_SRC sh
+     cd ~/Proje/python/mydj_sites
+     . django_env/bin/activate
+     cd mydj_sites
+     pyton manage.py shell # python shell django projemizi root alarak başlıyor.   
+     
+     >>> import datetime
+     >>> from django.utils import timezone
+     >>> from polls.models import Question
+     >>> # create a Question instance with pub_date 30 days in the future
+     >>> future_question = Question(pub_date=timezone.now() + datetime.timedelta(days=30))
+     >>> # was it published recently?
+     >>> future_question.was_published_recently()
+     True
+     #+END_SRC
+
+     Yukarıda görüldüğü gibi yayın tarihi gelecekte olan bir soru için de yakın
+     zamanda yayınlanmış cevabı dönüyor.
+     
+     polls/test.py
+     #+BEGIN_SRC python
+     import datetime
+     
+     from django.utils import timezone
+     from django.test import TestCase
+     
+     from .models import Question
+     
+     
+     class QuestionMethodTests(TestCase):
+     
+         def test_was_published_recently_with_future_question(self):
+             """
+             was_published_recently() should return False for questions whose
+             pub_date is in the future.
+             """
+             time = timezone.now() + datetime.timedelta(days=30)
+             future_question = Question(pub_date=time)
+             self.assertIs(future_question.was_published_recently(), False)
+     #+END_SRC
+
+     Testlerin çalıştırılması
+     #+BEGIN_SRC sh
+     cd ~/Proje/python/mydj_sites
+     . django_env/bin/activate
+     cd mydj_sites
+     python manage.py test polls
+     #+END_SRC
+     
+*** Bug'ın düzeltilmesi
+
+    polls/models.py
+    #+BEGIN_SRC python
+    def was_published_recently(self):
+	now = timezone.now()
+	return now - datetime.timedelta(days=1) <= self.pub_date <= now    
+    #+END_SRC
+
+*** Daha karmaşık örnekler
+    While we’re here, we can further pin down the was_published_recently()
+    method; in fact, it would be positively embarrassing if in fixing one bug
+    we had introduced another. 
+    
+    polls/test.py
+    #+BEGIN_SRC python
+    def test_was_published_recently_with_old_question(self):
+	"""
+	was_published_recently() should return False for questions whose
+	pub_date is older than 1 day.
+	"""
+	time = timezone.now() - datetime.timedelta(days=30)
+	old_question = Question(pub_date=time)
+	self.assertIs(old_question.was_published_recently(), False)
+    
+    def test_was_published_recently_with_recent_question(self):
+	"""
+	was_published_recently() should return True for questions whose
+	pub_date is within the last day.
+	"""
+	time = timezone.now() - datetime.timedelta(hours=1)
+	recent_question = Question(pub_date=time)
+	self.assertIs(recent_question.was_published_recently(), True)
+    #+END_SRC
+
+    Bu genişletme ile bu metodun tarih bazında bütün olası girdilerine karşı çıktıları
+    kontrol edilmiş oldu.
+
+*** View'ı test etmek
+    - Django test istemcisi
+      Djangonun sunduğu test istemcisini test.py dosyası üzerinden ya da shell
+      üzerinden kullanabiliriz.
+      
+      Shell üzerinden test.py üzerinden denemeden farklı olarak aşağıdaki iki
+      satır gerekir.
+      #+BEGIN_SRC sh
+      cd ~/Proje/python/mydj_sites
+      . django_env/bin/activate
+      cd mydj_sites
+      pyton manage.py shell # python shell django projemizi root alarak başlıyor.
+      >>> from django.test.utils import setup_test_environment
+      >>> setup_test_environment()
+      #+END_SRC
+
+      setup_test_environment() installs a template renderer which will allow us
+      to examine some additional attributes on responses such as
+      response.context that otherwise wouldn’t be available. Note that this
+      method does not setup a test database, so the following will be run
+      against the existing database and the output may differ slightly
+      depending on what questions you already created. You might get unexpected
+      results if your TIME_ZONE in settings.py isn’t correct. If you don’t
+      remember setting it earlier, check it before continuing. 
+
+      #+BEGIN_SRC sh
+      cd ~/Proje/python/mydj_sites
+      . django_env/bin/activate
+      cd mydj_sites
+      pyton manage.py shell # python shell django projemizi root alarak başlıyor.
+      >>> from django.test.utils import setup_test_environment
+      >>> setup_test_environment()
+      >>> from django.test import Client
+      >>> # create an instance of the client for our use
+      >>> client = Client()       
+      >>> # get a response from '/'
+      >>> response = client.get('/')
+      >>> # we should expect a 404 from that address
+      >>> response.status_code
+      404
+      >>> # on the other hand we should expect to find something at '/polls/'
+      >>> # we'll use 'reverse()' rather than a hardcoded URL
+      >>> from django.urls import reverse
+      >>> response = client.get(reverse('polls:index'))
+      >>> response.status_code
+      200
+      >>> response.content
+      b'\n    <ul>\n    \n        <li><a href="/polls/1/">What&#39;s up?</a></li>\n    \n    </ul>\n\n'
+      >>> # If the following doesn't work, you probably omitted the call to
+      >>> # setup_test_environment() described above
+      >>> response.context['latest_question_list']
+      <QuerySet [<Question: What's up?>]>
+      #+END_SRC
+
+*** View'ı geliştirelim
+    polls/views.py
+    #+BEGIN_SRC python
+    from django.utils import timezone
+    def get_queryset(self):
+        """
+        Return the last five published questions (not including those set to be
+        published in the future).
+        """
+        return Question.objects.filter(
+            pub_date__lte=timezone.now()
+        ).order_by('-pub_date')[:5]    
+    #+END_SRC
+
+*** View için otomatik test yazalım
+    #+BEGIN_SRC python
+    from django.urls import reverse
+    
+    def create_question(question_text, days):
+        """
+        Creates a question with the given `question_text` and published the
+        given number of `days` offset to now (negative for questions published
+        in the past, positive for questions that have yet to be published).
+        """
+        time = timezone.now() + datetime.timedelta(days=days)
+        return Question.objects.create(question_text=question_text, pub_date=time)
+    
+    
+    class QuestionViewTests(TestCase):
+        def test_index_view_with_no_questions(self):
+            """
+            If no questions exist, an appropriate message should be displayed.
+            """
+            response = self.client.get(reverse('polls:index'))
+            self.assertEqual(response.status_code, 200)
+            self.assertContains(response, "No polls are available.")
+            self.assertQuerysetEqual(response.context['latest_question_list'], [])
+    
+        def test_index_view_with_a_past_question(self):
+            """
+            Questions with a pub_date in the past should be displayed on the
+            index page.
+            """
+            create_question(question_text="Past question.", days=-30)
+            response = self.client.get(reverse('polls:index'))
+            self.assertQuerysetEqual(
+                response.context['latest_question_list'],
+                ['<Question: Past question.>']
+            )
+    
+        def test_index_view_with_a_future_question(self):
+            """
+            Questions with a pub_date in the future should not be displayed on
+            the index page.
+            """
+            create_question(question_text="Future question.", days=30)
+            response = self.client.get(reverse('polls:index'))
+            self.assertContains(response, "No polls are available.")
+            self.assertQuerysetEqual(response.context['latest_question_list'], [])
+    
+        def test_index_view_with_future_question_and_past_question(self):
+            """
+            Even if both past and future questions exist, only past questions
+            should be displayed.
+            """
+            create_question(question_text="Past question.", days=-30)
+            create_question(question_text="Future question.", days=30)
+            response = self.client.get(reverse('polls:index'))
+            self.assertQuerysetEqual(
+                response.context['latest_question_list'],
+                ['<Question: Past question.>']
+            )
+    
+        def test_index_view_with_two_past_questions(self):
+            """
+            The questions index page may display multiple questions.
+            """
+            create_question(question_text="Past question 1.", days=-30)
+            create_question(question_text="Past question 2.", days=-5)
+            response = self.client.get(reverse('polls:index'))
+            self.assertQuerysetEqual(
+                response.context['latest_question_list'],
+                ['<Question: Past question 2.>', '<Question: Past question 1.>']
+            )
+    #+END_SRC
+*** DetailView için test yazılması
+    
+    polls/views.py
+    #+BEGIN_SRC python
+    class DetailView(generic.DetailView):
+        model = Question
+        template_name = 'polls/detail.html'
+    
+        def get_queryset(self):
+            """
+            Excludes any questions that aren't published yet.
+            """
+            return Question.objects.filter(pub_date__lte=timezone.now())    
+    #+END_SRC
+
+    polls/test.py
+    #+BEGIN_SRC python
+    class QuestionIndexDetailTests(TestCase):
+        def test_detail_view_with_a_future_question(self):
+            """
+            The detail view of a question with a pub_date in the future should
+            return a 404 not found.
+            """
+            future_question = create_question(question_text='Future question.', days=5)
+            url = reverse('polls:detail', args=(future_question.id,))
+            response = self.client.get(url)
+            self.assertEqual(response.status_code, 404)
+    
+        def test_detail_view_with_a_past_question(self):
+            """
+            The detail view of a question with a pub_date in the past should
+            display the question's text.
+            """
+            past_question = create_question(question_text='Past Question.', days=-5)
+            url = reverse('polls:detail', args=(past_question.id,))
+            response = self.client.get(url)
+            self.assertContains(response, past_question.question_text)
+    #+END_SRC
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"
 

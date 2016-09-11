@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="uMtMu"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2016-09-05T00:37+0300"/>
+<meta name="generated" content="2016-09-10T12:25+0300"/>
 <meta name="author" content="umt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -134,17 +134,54 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#sec-1">1 Yol</a>
 <ul>
-<li><a href="#sec-1-1">1.1 Virtul Env</a></li>
-<li><a href="#sec-1-2">1.2 Projenin oluşturulması</a></li>
-<li><a href="#sec-1-3">1.3 Geliştirme sunucusu</a></li>
-<li><a href="#sec-1-4">1.4 İlk uygulamanın oluşturulması</a></li>
-<li><a href="#sec-1-5">1.5 İlk view'ın oluşturulması</a></li>
-<li><a href="#sec-1-6">1.6 polls dizini altında urls.py dosyasının oluşturulması</a></li>
-<li><a href="#sec-1-7">1.7 mydj_sites/mydj_sites/mydj_sites dizinindeki urls.py içeriğine yönlendirme ekleme</a></li>
-<li><a href="#sec-1-8">1.8 Veri tabanının ayarlanması</a></li>
-<li><a href="#sec-1-9">1.9 Veri tabanı modellerinin oluşturulması</a></li>
-<li><a href="#sec-1-10">1.10 Modellerin aktive edilmesi</a></li>
-<li><a href="#sec-1-11">1.11 API ile oynamak ??</a></li>
+<li><a href="#sec-1-1">1.1 Writing your first Django app, part 1</a>
+<ul>
+<li><a href="#sec-1-1-1">1.1.1 Virtul Env</a></li>
+<li><a href="#sec-1-1-2">1.1.2 Projenin oluşturulması</a></li>
+<li><a href="#sec-1-1-3">1.1.3 Geliştirme sunucusu</a></li>
+<li><a href="#sec-1-1-4">1.1.4 İlk uygulamanın oluşturulması</a></li>
+<li><a href="#sec-1-1-5">1.1.5 İlk view'ın oluşturulması</a></li>
+<li><a href="#sec-1-1-6">1.1.6 polls dizini altında urls.py dosyasının oluşturulması</a></li>
+<li><a href="#sec-1-1-7">1.1.7 mydj_sites/mydj_sites/mydj_sites dizinindeki urls.py içeriğine yönlendirme ekleme</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">1.2 Writing your first Django app, part 2</a>
+<ul>
+<li><a href="#sec-1-2-1">1.2.1 Veri tabanının ayarlanması</a></li>
+<li><a href="#sec-1-2-2">1.2.2 Veri tabanı modellerinin oluşturulması</a></li>
+<li><a href="#sec-1-2-3">1.2.3 Modellerin aktive edilmesi</a></li>
+<li><a href="#sec-1-2-4">1.2.4 API ile oynamak ??</a></li>
+<li><a href="#sec-1-2-5">1.2.5 Django Admin</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">1.3 Writing your first Django app, part 3</a>
+<ul>
+<li><a href="#sec-1-3-1">1.3.1 Başlıklar</a></li>
+<li><a href="#sec-1-3-2">1.3.2 Daha fazla view</a></li>
+<li><a href="#sec-1-3-3">1.3.3 Bir kısayol: render()</a></li>
+<li><a href="#sec-1-3-4">1.3.4 404 hatası oluşturmak</a></li>
+<li><a href="#sec-1-3-5">1.3.5 Bir başka kısayol: get_object_or_404()</a></li>
+<li><a href="#sec-1-3-6">1.3.6 template sistemini kullanalım</a></li>
+<li><a href="#sec-1-3-7">1.3.7 Hardcoded URL'lerin kaldırılması</a></li>
+<li><a href="#sec-1-3-8">1.3.8 URL isim uzaylarının oluşturulması</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-4">1.4 Writing your first Django app, part 4</a>
+<ul>
+<li><a href="#sec-1-4-1">1.4.1 Basit bir form</a></li>
+<li><a href="#sec-1-4-2">1.4.2 Generic viewlar</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-5">1.5 Templateler üzerine deneme (CSS ekleme)</a>
+<ul>
+<li><a href="#sec-1-5-1">1.5.1 görüntü ekleme</a></li>
+<li><a href="#sec-1-5-2">1.5.2 javascript ve css ekleme</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-6">1.6 Writing your first Django app, part 5</a>
+<ul>
+<li><a href="#sec-1-6-1">1.6.1 Otomatik testler (ilginç bir konu)</a></li>
+</ul></li>
 </ul>
 </li>
 <li><a href="#sec-2">2 Bağlantılar</a></li>
@@ -160,143 +197,150 @@ for the JavaScript code in this tag.
 </div>
 
 <div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Virtul Env</h3>
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Writing your first Django app, part 1</h3>
 <div class="outline-text-3" id="text-1-1">
 
 
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> Virtul Env</h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+
 <p><br/>
-<pre class="example">cd ~/Proje/python
+<pre class="src src-sh"><span style="color: #ad7fa8;">cd</span> ~/Proje/python
 mkdir mydj_sites
-cd mydj_sites
+<span style="color: #ad7fa8;">cd</span> mydj_sites
 virtualenv django_env
-. django_env/bin/activate
+<span style="color: #ad7fa8;">.</span> django_env/bin/activate
 </pre>
 
 </p>
-<p>   <br/>
+<p>    <br/>
 </p></div>
 
 </div>
 
-<div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Projenin oluşturulması</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> Projenin oluşturulması</h4>
+<div class="outline-text-4" id="text-1-1-2">
 
 
 <p><br/>
-<pre class="example">cd ~/Proje/python/mydj_sites
-. django_env/bin/activate
+<pre class="src src-sh"><span style="color: #ad7fa8;">cd</span> ~/Proje/python/mydj_sites
+<span style="color: #ad7fa8;">.</span> django_env/bin/activate
 django-admin startproject mydj_sites
 
 </pre>
 
-   django_env/<br/>
-      &hellip;<br/>
-   mydj_sites/ <br/>
-   <b>root directory is just a container for your project. Its name doesn’t matter    to Django; you can rename it to anything you like.</b>  <br/>
-   ├── manage.py<br/>
-   <b>A command-line utility that lets you interact with this Django project in    various ways.</b> <br/>
-   └── mydj_sites <br/>
-   <b>directory is the actual Python package for your project. Its name is the    Python package name you’ll need to use to import anything inside it</b> <br/>
-       ├── __init__.py<br/>
-       ├── settings.py<br/>
-       ├── urls.py<br/>
-       └── wsgi.py<br/>
+    django_env/<br/>
+       &hellip;<br/>
+    mydj_sites/ <br/>
+    <b>root directory is just a container for your project. Its name doesn’t matter     to Django; you can rename it to anything you like.</b>  <br/>
+    ├── manage.py<br/>
+    <b>A command-line utility that lets you interact with this Django project in     various ways.</b> <br/>
+    └── mydj_sites <br/>
+    <b>directory is the actual Python package for your project. Its name is the     Python package name you’ll need to use to import anything inside it</b> <br/>
+        ├── __init__.py<br/>
+        ├── settings.py<br/>
+        ├── urls.py<br/>
+        └── wsgi.py<br/>
 </p>
-<p>   <br/>
+<p>    <br/>
 </p></div>
 
 </div>
 
-<div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Geliştirme sunucusu</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-1-1-3" class="outline-4">
+<h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> Geliştirme sunucusu</h4>
+<div class="outline-text-4" id="text-1-1-3">
 
 
 <p><br/>
-<pre class="example">cd ~/Proje/python/mydj_sites
-. django_env/bin/activate
+<pre class="src src-sh"><span style="color: #ad7fa8;">cd</span> ~/Proje/python/mydj_sites
+<span style="color: #ad7fa8;">.</span> django_env/bin/activate
 python mydj_sites/manage.py runserver
 </pre>
 
-   python manage.py runserver<br/>
-   Performing system checks&hellip;<br/>
+    python manage.py runserver<br/>
+    Performing system checks&hellip;<br/>
 </p>
-<p>   <br/>
-   System check identified no issues (0 silenced).<br/>
+<p>    <br/>
+    System check identified no issues (0 silenced).<br/>
 </p>
-<p>   <br/>
-   You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.<br/>
-   Run 'python manage.py migrate' to apply them.<br/>
+<p>    <br/>
+    You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.<br/>
+    Run 'python manage.py migrate' to apply them.<br/>
 </p>
-<p>   <br/>
-   September 04, 2016 - 18:52:28<br/>
-   Django version 1.10.1, using settings 'mydj_sites.settings'<br/>
-   Starting development server at <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a><br/>
-   Quit the server with CONTROL-C.<br/>
+<p>    <br/>
+    September 04, 2016 - 18:52:28<br/>
+    Django version 1.10.1, using settings 'mydj_sites.settings'<br/>
+    Starting development server at <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a><br/>
+    Quit the server with CONTROL-C.<br/>
 </p></div>
 
 </div>
 
-<div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> İlk uygulamanın oluşturulması</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-1-1-4" class="outline-4">
+<h4 id="sec-1-1-4"><span class="section-number-4">1.1.4</span> İlk uygulamanın oluşturulması</h4>
+<div class="outline-text-4" id="text-1-1-4">
 
 
 <p><br/>
-<pre class="example">cd ~/Proje/python/mydj_sites
-. django_env/bin/activate
-cd mydj_sites
+<pre class="src src-sh"><span style="color: #ad7fa8;">cd</span> ~/Proje/python/mydj_sites
+<span style="color: #ad7fa8;">.</span> django_env/bin/activate
+<span style="color: #ad7fa8;">cd</span> mydj_sites
 python manage.py startapp polls
 </pre>
 
 
-   Oluşan dizin yapısı<br/>
-   polls/<br/>
-   ├── admin.py<br/>
-   ├── apps.py<br/>
-   ├── __init__.py<br/>
-   ├── migrations<br/>
-   │   └── __init__.py<br/>
-   ├── models.py<br/>
-   ├── tests.py<br/>
-   └── views.py<br/>
+    Oluşan dizin yapısı<br/>
+    polls/<br/>
+    ├── admin.py<br/>
+    ├── apps.py<br/>
+    ├── __init__.py<br/>
+    ├── migrations<br/>
+    │   └── __init__.py<br/>
+    ├── models.py<br/>
+    ├── tests.py<br/>
+    └── views.py<br/>
 </p>
-<p>   <br/>
+<p>    <br/>
 </p></div>
 
 </div>
 
-<div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> İlk view'ın oluşturulması</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-1-1-5" class="outline-4">
+<h4 id="sec-1-1-5"><span class="section-number-4">1.1.5</span> İlk view'ın oluşturulması</h4>
+<div class="outline-text-4" id="text-1-1-5">
 
 
 <p><br/>
-<pre class="example">polls/views.py
-from django.http import HttpResponse
+<pre class="src src-python">polls/views.py
+<span style="color: #b4fa70;">from</span> django.http <span style="color: #b4fa70;">import</span> HttpResponse
 
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+<span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">index</span>(request):
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> HttpResponse(<span style="color: #e9b96e;">"Hello, world. You're at the polls index."</span>)
 </pre>
 
 </p></div>
 
 </div>
 
-<div id="outline-container-1-6" class="outline-3">
-<h3 id="sec-1-6"><span class="section-number-3">1.6</span> polls dizini altında urls.py dosyasının oluşturulması</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-1-1-6" class="outline-4">
+<h4 id="sec-1-1-6"><span class="section-number-4">1.1.6</span> polls dizini altında urls.py dosyasının oluşturulması</h4>
+<div class="outline-text-4" id="text-1-1-6">
 
 
 <p><br/>
-<pre class="example">from django.conf.urls import url
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.conf.urls <span style="color: #b4fa70;">import</span> url
 
-from . import views
+<span style="color: #b4fa70;">from</span> . <span style="color: #b4fa70;">import</span> views
 
-urlpatterns = [
-    url(r'^$', views.index, name='index'),
+<span style="color: #fcaf3e;">urlpatterns</span> = [
+<span style="background-color: #212526;"> </span>   url(r<span style="color: #e9b96e;">'^$'</span>, views.index, name=<span style="color: #e9b96e;">'index'</span>),
 ]
 
 </pre>
@@ -305,69 +349,77 @@ urlpatterns = [
 
 </div>
 
-<div id="outline-container-1-7" class="outline-3">
-<h3 id="sec-1-7"><span class="section-number-3">1.7</span> mydj_sites/mydj_sites/mydj_sites dizinindeki urls.py içeriğine yönlendirme ekleme</h3>
-<div class="outline-text-3" id="text-1-7">
+<div id="outline-container-1-1-7" class="outline-4">
+<h4 id="sec-1-1-7"><span class="section-number-4">1.1.7</span> mydj_sites/mydj_sites/mydj_sites dizinindeki urls.py içeriğine yönlendirme ekleme</h4>
+<div class="outline-text-4" id="text-1-1-7">
 
 
 <p><br/>
-<pre class="example">from django.conf.urls import url, include
-from django.contrib import admin
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.conf.urls <span style="color: #b4fa70;">import</span> url, include
+<span style="color: #b4fa70;">from</span> django.contrib <span style="color: #b4fa70;">import</span> admin
 
-urlpatterns = [
-    url(r'^polls/', include('polls.urls')),
-    url(r'^admin/', admin.site.urls),
+<span style="color: #fcaf3e;">urlpatterns</span> = [
+<span style="background-color: #212526;"> </span>   url(r<span style="color: #e9b96e;">'^polls/'</span>, include(<span style="color: #e9b96e;">'polls.urls'</span>)),
+<span style="background-color: #212526;"> </span>   url(r<span style="color: #e9b96e;">'^admin/'</span>, admin.site.urls),
 ]
 </pre>
 
-   <a href="http://localhost:8000/polls/">http://localhost:8000/polls/</a><br/>
+    <a href="http://localhost:8000/polls/">http://localhost:8000/polls/</a><br/>
 </p></div>
+</div>
 
 </div>
 
-<div id="outline-container-1-8" class="outline-3">
-<h3 id="sec-1-8"><span class="section-number-3">1.8</span> Veri tabanının ayarlanması</h3>
-<div class="outline-text-3" id="text-1-8">
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Writing your first Django app, part 2</h3>
+<div class="outline-text-3" id="text-1-2">
 
-<p>   mydj_sites/mydj_sites/mydj_sites/settings.py dosyası içerisinde veri tabanı<br/>
-   olarak sqlite seçili. INSTALLED_APPS dizisi içerisinde belirlenmiş<br/>
-   uygulamalar için veri tabanında tablolar oluşturulmalı.<br/>
+
+</div>
+
+<div id="outline-container-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Veri tabanının ayarlanması</h4>
+<div class="outline-text-4" id="text-1-2-1">
+
+<p>    mydj_sites/mydj_sites/mydj_sites/settings.py dosyası içerisinde veri tabanı<br/>
+    olarak sqlite seçili. INSTALLED_APPS dizisi içerisinde belirlenmiş<br/>
+    uygulamalar için veri tabanında tablolar oluşturulmalı.<br/>
 </p>
-<p>   <br/>
+<p>    <br/>
 </p>
 <p><br/>
-<pre class="example">cd ~/Proje/python/mydj_sites
-. django_env/bin/activate
-cd mydj_sites
+<pre class="src src-sh"><span style="color: #ad7fa8;">cd</span> ~/Proje/python/mydj_sites
+<span style="color: #ad7fa8;">.</span> django_env/bin/activate
+<span style="color: #ad7fa8;">cd</span> mydj_sites
 
 python manage.py migrate
 </pre>
 
 </p>
-<p>   <br/>
+<p>    <br/>
 </p></div>
 
 </div>
 
-<div id="outline-container-1-9" class="outline-3">
-<h3 id="sec-1-9"><span class="section-number-3">1.9</span> Veri tabanı modellerinin oluşturulması</h3>
-<div class="outline-text-3" id="text-1-9">
+<div id="outline-container-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> Veri tabanı modellerinin oluşturulması</h4>
+<div class="outline-text-4" id="text-1-2-2">
 
-<p>   polls/models.py<br/>
+<p>    polls/models.py<br/>
 </p>
 <p><br/>
-<pre class="example">from django.db import models
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.db <span style="color: #b4fa70;">import</span> models
 
 
-class Question(models.Model):
-    question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
+<span style="color: #b4fa70;">class</span> <span style="color: #8cc4ff;">Question</span>(models.Model):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">question_text</span> = models.CharField(max_length=200)
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">pub_date</span> = models.DateTimeField(<span style="color: #e9b96e;">'date published'</span>)
 
 
-class Choice(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=200)
-    votes = models.IntegerField(default=0)
+<span style="color: #b4fa70;">class</span> <span style="color: #8cc4ff;">Choice</span>(models.Model):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">question</span> = models.ForeignKey(Question, on_delete=models.CASCADE)
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">choice_text</span> = models.CharField(max_length=200)
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">votes</span> = models.IntegerField(default=0)
 </pre>
 
 
@@ -375,35 +427,35 @@ class Choice(models.Model):
 
 </div>
 
-<div id="outline-container-1-10" class="outline-3">
-<h3 id="sec-1-10"><span class="section-number-3">1.10</span> Modellerin aktive edilmesi</h3>
-<div class="outline-text-3" id="text-1-10">
+<div id="outline-container-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> Modellerin aktive edilmesi</h4>
+<div class="outline-text-4" id="text-1-2-3">
 
-<p>   Veri tabanı şemasının oluşturulması<br/>
-   Veri tabanı objelerinin oluşturulması<br/>
+<p>    Veri tabanı şemasının oluşturulması<br/>
+    Veri tabanı objelerinin oluşturulması<br/>
 </p>
-<p>   <br/>
-   Yukarıda belirtilen eylemler, polls uygulamasının<br/>
-   mydj_sites/mydj_sites/mydj_sites/settings.py dosyası INSTALLED_APPS<br/>
-   listesinin içerisine "'polls.apps.PollsConfig'," olarak eklenmesi gerekir. <br/>
+<p>    <br/>
+    Yukarıda belirtilen eylemler, polls uygulamasının<br/>
+    mydj_sites/mydj_sites/mydj_sites/settings.py dosyası INSTALLED_APPS<br/>
+    listesinin içerisine "'polls.apps.PollsConfig'," olarak eklenmesi gerekir. <br/>
 </p>
 <p><br/>
-<pre class="example">cd ~/Proje/python/mydj_sites
-. django_env/bin/activate
-cd mydj_sites
+<pre class="src src-sh"><span style="color: #ad7fa8;">cd</span> ~/Proje/python/mydj_sites
+<span style="color: #ad7fa8;">.</span> django_env/bin/activate
+<span style="color: #ad7fa8;">cd</span> mydj_sites
 python manage.py makemigrations polls
 
 </pre>
 
-   makemigrations komutu ile yeni eklenen uygulamalar olduğunu ve bu<br/>
-   uygulamalar için gerekli veri tabanı değişikliklerinin yapılacağı bilgisi<br/>
-   verilmektedir. Daha önce bu işlem için south uygulaması kullanılmıştı. Bu<br/>
-   yöntem ile veri tabanı değişiklikleri sürüm kontrol sistemi altında tutulmuş.<br/>
+    makemigrations komutu ile yeni eklenen uygulamalar olduğunu ve bu<br/>
+    uygulamalar için gerekli veri tabanı değişikliklerinin yapılacağı bilgisi<br/>
+    verilmektedir. Daha önce bu işlem için south uygulaması kullanılmıştı. Bu<br/>
+    yöntem ile veri tabanı değişiklikleri sürüm kontrol sistemi altında tutulmuş.<br/>
 </p>
-<p>   <br/>
-   python manage.py makemigrations polls<br/>
-   Migrations for 'polls':<br/>
-   polls/migrations/0001_initial.py:<br/>
+<p>    <br/>
+    python manage.py makemigrations polls<br/>
+    Migrations for 'polls':<br/>
+    polls/migrations/0001_initial.py:<br/>
 </p><ul>
 <li>Create model Choice<br/>
 </li>
@@ -413,14 +465,14 @@ python manage.py makemigrations polls
 </li>
 </ul>
 
-<p>   polls/migrations/0001_initial.py dosyasının aldında ilgili migration ile<br/>
-   ilgili işlemler bulunmaktadır.<br/>
+<p>    polls/migrations/0001_initial.py dosyasının aldında ilgili migration ile<br/>
+    ilgili işlemler bulunmaktadır.<br/>
 </p>
 <p><br/>
-<pre class="example">cd ~/Proje/python/mydj_sites
-. django_env/bin/activate
-cd mydj_sites
-python manage.py sqlmigrate polls 0001 # migration'ın SQL karşılığı
+<pre class="src src-sh"><span style="color: #ad7fa8;">cd</span> ~/Proje/python/mydj_sites
+<span style="color: #ad7fa8;">.</span> django_env/bin/activate
+<span style="color: #ad7fa8;">cd</span> mydj_sites
+python manage.py sqlmigrate polls 0001 <span style="color: #73d216;"># </span><span style="color: #73d216;">migration'&#305;n SQL kar&#351;&#305;l&#305;&#287;&#305;</span>
 python manage.py migrate
 </pre>
 
@@ -428,19 +480,981 @@ python manage.py migrate
 
 </div>
 
-<div id="outline-container-1-11" class="outline-3">
-<h3 id="sec-1-11"><span class="section-number-3">1.11</span> API ile oynamak ??</h3>
-<div class="outline-text-3" id="text-1-11">
+<div id="outline-container-1-2-4" class="outline-4">
+<h4 id="sec-1-2-4"><span class="section-number-4">1.2.4</span> API ile oynamak ??</h4>
+<div class="outline-text-4" id="text-1-2-4">
 
 
 <p><br/>
-<pre class="example">cd ~/Proje/python/mydj_sites
-. django_env/bin/activate
-cd mydj_sites
-pyton manage.py shell
+<pre class="src src-sh"><span style="color: #ad7fa8;">cd</span> ~/Proje/python/mydj_sites
+<span style="color: #ad7fa8;">.</span> django_env/bin/activate
+<span style="color: #ad7fa8;">cd</span> mydj_sites
+pyton manage.py shell <span style="color: #73d216;"># </span><span style="color: #73d216;">python shell django projemizi root alarak ba&#351;l&#305;yor.</span>
+&gt;&gt;&gt; import django
+&gt;&gt;&gt; django.setup()
+&gt;&gt;&gt; from polls.models import Question, Choice   <span style="color: #73d216;"># </span><span style="color: #73d216;">Import the model classes we just wrote.</span>
+
+<span style="color: #73d216;"># </span><span style="color: #73d216;">No questions are in the system yet.</span>
+&gt;&gt;&gt; Question.objects.all()
+&lt;QuerySet []&gt;
+
+<span style="color: #73d216;"># </span><span style="color: #73d216;">Create a new Question.</span>
+<span style="color: #73d216;"># </span><span style="color: #73d216;">Support for time zones is enabled in the default settings file, so</span>
+<span style="color: #73d216;"># </span><span style="color: #73d216;">Django expects a datetime with tzinfo for pub_date. Use timezone.now()</span>
+<span style="color: #73d216;"># </span><span style="color: #73d216;">instead of datetime.datetime.now() and it will do the right thing.</span>
+&gt;&gt;&gt; from django.utils import timezone
+&gt;&gt;&gt; q = Question(<span style="color: #fcaf3e;">question_text</span>=<span style="color: #e9b96e;">"What's new?"</span>, <span style="color: #fcaf3e;">pub_date</span>=timezone.now())
+
+<span style="color: #73d216;"># </span><span style="color: #73d216;">Save the object into the database. You have to call save() explicitly.</span>
+&gt;&gt;&gt; q.save()
+
+<span style="color: #73d216;"># </span><span style="color: #73d216;">Now it has an ID. Note that this might say "1L" instead of "1", depending</span>
+<span style="color: #73d216;"># </span><span style="color: #73d216;">on which database you're using. That's no biggie; it just means your</span>
+<span style="color: #73d216;"># </span><span style="color: #73d216;">database backend prefers to return integers as Python long integer</span>
+<span style="color: #73d216;"># </span><span style="color: #73d216;">objects.</span>
+&gt;&gt;&gt; q.id
+1
+
+<span style="color: #73d216;"># </span><span style="color: #73d216;">Access model field values via Python attributes.</span>
+&gt;&gt;&gt; q.question_text
+<span style="color: #e9b96e;">"What's new?"</span>
+&gt;&gt;&gt; q.pub_date
+<span style="color: #fce94f;">datetime.datetime</span>(2012, 2, 26, 13, 0, 0, 775217, <span style="color: #fcaf3e;">tzinfo</span>=&lt;UTC&gt;)
+
+<span style="color: #73d216;"># </span><span style="color: #73d216;">Change values by changing the attributes, then calling save().</span>
+&gt;&gt;&gt; q.question_text = <span style="color: #e9b96e;">"What's up?"</span>
+&gt;&gt;&gt; q.save()
+
+<span style="color: #73d216;"># </span><span style="color: #73d216;">objects.all() displays all the questions in the database.</span>
+&gt;&gt;&gt; Question.objects.all()
+&lt;QuerySet [&lt;Question: Question object&gt;]&gt;
+</pre>
+
+</p>
+<p>    <br/>
+</p>
+<p><br/>
+<pre class="src src-sh"><span style="color: #ad7fa8;">cd</span> ~/Proje/python/mydj_sites
+<span style="color: #ad7fa8;">.</span> django_env/bin/activate
+<span style="color: #ad7fa8;">cd</span> mydj_sites
+pyton manage.py shell <span style="color: #73d216;"># </span><span style="color: #73d216;">python shell django projemizi root alarak ba&#351;l&#305;yor.   </span>
+&gt;&gt;&gt; from polls.models import Question, Choice
+
+<span style="color: #73d216;"># </span><span style="color: #73d216;">Make sure our __str__() addition worked.</span>
+&gt;&gt;&gt; Question.objects.all()
+&lt;QuerySet [&lt;Question: What<span style="color: #e9b96e;">'s up?&gt;]&gt;</span>
+
+<span style="color: #e9b96e;"># Django provides a rich database lookup API that'</span>s entirely driven by
+<span style="color: #73d216;"># </span><span style="color: #73d216;">keyword arguments.</span>
+&gt;&gt;&gt; Question.objects.filter(<span style="color: #fcaf3e;">id</span>=1)
+&lt;QuerySet [&lt;Question: What<span style="color: #e9b96e;">'s up?&gt;]&gt;</span>
+<span style="color: #e9b96e;">&gt;&gt;&gt; Question.objects.filter(question_text__startswith='</span>What<span style="color: #e9b96e;">')</span>
+<span style="color: #e9b96e;">&lt;QuerySet [&lt;Question: What'</span>s up?&gt;]&gt;
+
+<span style="color: #73d216;"># </span><span style="color: #73d216;">Get the question that was published this year.</span>
+&gt;&gt;&gt; from django.utils import timezone
+&gt;&gt;&gt; current_year = timezone.now().year
+&gt;&gt;&gt; Question.objects.get(<span style="color: #fcaf3e;">pub_date__year</span>=current_year)
+&lt;Question: What<span style="color: #e9b96e;">'s up?&gt;</span>
+
+<span style="color: #e9b96e;"># Request an ID that doesn'</span>t exist, this will raise an exception.
+&gt;&gt;&gt; Question.objects.get(<span style="color: #fcaf3e;">id</span>=2)
+<span style="color: #fce94f;">Traceback</span> (most recent call last):
+    ...
+DoesNotExist: Question matching query does not exist.
+
+<span style="color: #73d216;"># </span><span style="color: #73d216;">Lookup by a primary key is the most common case, so Django provides a</span>
+<span style="color: #73d216;"># </span><span style="color: #73d216;">shortcut for primary-key exact lookups.</span>
+<span style="color: #73d216;"># </span><span style="color: #73d216;">The following is identical to Question.objects.get(id=1).</span>
+&gt;&gt;&gt; Question.objects.get(<span style="color: #fcaf3e;">pk</span>=1)
+&lt;Question: What<span style="color: #e9b96e;">'s up?&gt;</span>
+
+<span style="color: #e9b96e;"># Make sure our custom method worked.</span>
+<span style="color: #e9b96e;">&gt;&gt;&gt; q = Question.objects.get(pk=1)</span>
+<span style="color: #e9b96e;">&gt;&gt;&gt; q.was_published_recently()</span>
+<span style="color: #e9b96e;">True</span>
+
+<span style="color: #e9b96e;"># Give the Question a couple of Choices. The create call constructs a new</span>
+<span style="color: #e9b96e;"># Choice object, does the INSERT statement, adds the choice to the set</span>
+<span style="color: #e9b96e;"># of available choices and returns the new Choice object. Django creates</span>
+<span style="color: #e9b96e;"># a set to hold the "other side" of a ForeignKey relation</span>
+<span style="color: #e9b96e;"># (e.g. a question'</span>s choice) which can be accessed via the API.
+&gt;&gt;&gt; q = Question.objects.get(<span style="color: #fcaf3e;">pk</span>=1)
+
+<span style="color: #73d216;"># </span><span style="color: #73d216;">Display any choices from the related object set -- none so far.</span>
+&gt;&gt;&gt; q.choice_set.all()
+&lt;QuerySet []&gt;
+
+<span style="color: #73d216;"># </span><span style="color: #73d216;">Create three choices.</span>
+&gt;&gt;&gt; q.choice_set.create(<span style="color: #fcaf3e;">choice_text</span>=<span style="color: #e9b96e;">'Not much'</span>, <span style="color: #fcaf3e;">votes</span>=0)
+&lt;Choice: Not much&gt;
+&gt;&gt;&gt; q.choice_set.create(<span style="color: #fcaf3e;">choice_text</span>=<span style="color: #e9b96e;">'The sky'</span>, <span style="color: #fcaf3e;">votes</span>=0)
+&lt;Choice: The sky&gt;
+&gt;&gt;&gt; c = q.choice_set.create(<span style="color: #fcaf3e;">choice_text</span>=<span style="color: #e9b96e;">'Just hacking again'</span>, <span style="color: #fcaf3e;">votes</span>=0)
+
+<span style="color: #73d216;"># </span><span style="color: #73d216;">Choice objects have API access to their related Question objects.</span>
+&gt;&gt;&gt; c.question
+&lt;Question: What<span style="color: #e9b96e;">'s up?&gt;</span>
+
+<span style="color: #e9b96e;"># And vice versa: Question objects get access to Choice objects.</span>
+<span style="color: #e9b96e;">&gt;&gt;&gt; q.choice_set.all()</span>
+<span style="color: #e9b96e;">&lt;QuerySet [&lt;Choice: Not much&gt;, &lt;Choice: The sky&gt;, &lt;Choice: Just hacking again&gt;]&gt;</span>
+<span style="color: #e9b96e;">&gt;&gt;&gt; q.choice_set.count()</span>
+<span style="color: #e9b96e;">3</span>
+
+<span style="color: #e9b96e;"># The API automatically follows relationships as far as you need.</span>
+<span style="color: #e9b96e;"># Use double underscores to separate relationships.</span>
+<span style="color: #e9b96e;"># This works as many levels deep as you want; there'</span>s no limit.
+<span style="color: #73d216;"># </span><span style="color: #73d216;">Find all Choices for any question whose pub_date is in this year</span>
+<span style="color: #73d216;"># </span><span style="color: #73d216;">(reusing the 'current_year' variable we created above).</span>
+&gt;&gt;&gt; Choice.objects.filter(<span style="color: #fcaf3e;">question__pub_date__year</span>=current_year)
+&lt;QuerySet [&lt;Choice: Not much&gt;, &lt;Choice: The sky&gt;, &lt;Choice: Just hacking again&gt;]&gt;
+
+<span style="color: #73d216;"># </span><span style="color: #73d216;">Let's delete one of the choices. Use delete() for that.</span>
+&gt;&gt;&gt; c = q.choice_set.filter(<span style="color: #fcaf3e;">choice_text__startswith</span>=<span style="color: #e9b96e;">'Just hacking'</span>)
+&gt;&gt;&gt; c.delete()
 </pre>
 
 </p></div>
+
+</div>
+
+<div id="outline-container-1-2-5" class="outline-4">
+<h4 id="sec-1-2-5"><span class="section-number-4">1.2.5</span> Django Admin</h4>
+<div class="outline-text-4" id="text-1-2-5">
+
+<ul>
+<li id="sec-1-2-5-1">admin kullanıcısı oluşturma<br/>
+
+<p><br/>
+<pre class="src src-sh"><span style="color: #ad7fa8;">cd</span> ~/Proje/python/mydj_sites
+<span style="color: #ad7fa8;">.</span> django_env/bin/activate
+<span style="color: #ad7fa8;">cd</span> mydj_sites
+python manage.py createsuperuser
+python manage.py runserver
+</pre>
+
+</p>
+<p>     <br/>
+     <a href="http://127.0.0.1:8000/admin/">http://127.0.0.1:8000/admin/</a><br/>
+</p></li>
+</ul>
+<ul>
+<li id="sec-1-2-5-2">polls uygulamasını admin penceresi üzerinde erişime açma<br/>
+     polls/admin.py<br/>
+
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.contrib <span style="color: #b4fa70;">import</span> admin
+
+<span style="color: #b4fa70;">from</span> .models <span style="color: #b4fa70;">import</span> Question
+
+admin.site.register(Question)
+</pre>
+
+</p>
+<p>     <br/>
+</p></li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Writing your first Django app, part 3</h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+</div>
+
+<div id="outline-container-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> Başlıklar</h4>
+<div class="outline-text-4" id="text-1-3-1">
+
+<ul>
+<li>Blog homepage – displays the latest few entries.<br/>
+</li>
+<li>Entry “detail” page – permalink page for a single entry.<br/>
+</li>
+<li>Year-based archive page – displays all months with entries in the given year.<br/>
+</li>
+<li>Month-based archive page – displays all days with entries in the given month.<br/>
+</li>
+<li>Day-based archive page – displays all entries in the given day.<br/>
+</li>
+<li>Comment action – handles posting comments to a given entry.<br/>
+</li>
+</ul>
+
+<p>    In our poll application, we’ll have the following four views: <br/>
+</p><ul>
+<li>Question “index” page – displays the latest few questions.<br/>
+</li>
+<li>Question “detail” page – displays a question text, with no results but with a form to vote.<br/>
+</li>
+<li>Question “results” page – displays results for a particular question.<br/>
+</li>
+<li>Vote action – handles voting for a particular choice in a particular question.<br/>
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3-2" class="outline-4">
+<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> Daha fazla view</h4>
+<div class="outline-text-4" id="text-1-3-2">
+
+<p>    polls/views.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="background-color: #212526;"> </span><span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">detail</span>(request, question_id):
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> HttpResponse(<span style="color: #e9b96e;">"You're looking at question %s."</span> % question_id)
+
+<span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">results</span>(request, question_id):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">response</span> = <span style="color: #e9b96e;">"You're looking at the results of question %s."</span>
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> HttpResponse(response % question_id)
+
+<span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">vote</span>(request, question_id):
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> HttpResponse(<span style="color: #e9b96e;">"You're voting on question %s."</span> % question_id)
+</pre>
+
+</p>
+<p>    <br/>
+    polls/urls.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.conf.urls <span style="color: #b4fa70;">import</span> url
+
+<span style="color: #b4fa70;">from</span> . <span style="color: #b4fa70;">import</span> views
+
+<span style="color: #fcaf3e;">urlpatterns</span> = [
+<span style="background-color: #212526;"> </span>   <span style="color: #73d216;"># </span><span style="color: #73d216;">ex: /polls/</span>
+<span style="background-color: #212526;"> </span>   url(r<span style="color: #e9b96e;">'^$'</span>, views.index, name=<span style="color: #e9b96e;">'index'</span>),
+<span style="background-color: #212526;"> </span>   <span style="color: #73d216;"># </span><span style="color: #73d216;">ex: /polls/5/</span>
+<span style="background-color: #212526;"> </span>   url(r<span style="color: #e9b96e;">'^(?P&lt;question_id&gt;[0-9]+)/$'</span>, views.detail, name=<span style="color: #e9b96e;">'detail'</span>),
+<span style="background-color: #212526;"> </span>   <span style="color: #73d216;"># </span><span style="color: #73d216;">ex: /polls/5/results/</span>
+<span style="background-color: #212526;"> </span>   url(r<span style="color: #e9b96e;">'^(?P&lt;question_id&gt;[0-9]+)/results/$'</span>, views.results, name=<span style="color: #e9b96e;">'results'</span>),
+<span style="background-color: #212526;"> </span>   <span style="color: #73d216;"># </span><span style="color: #73d216;">ex: /polls/5/vote/</span>
+<span style="background-color: #212526;"> </span>   url(r<span style="color: #e9b96e;">'^(?P&lt;question_id&gt;[0-9]+)/vote/$'</span>, views.vote, name=<span style="color: #e9b96e;">'vote'</span>),
+] 
+</pre>
+
+
+    polls/views.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.http <span style="color: #b4fa70;">import</span> HttpResponse
+
+<span style="color: #b4fa70;">from</span> .models <span style="color: #b4fa70;">import</span> Question
+
+
+<span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">index</span>(request):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">latest_question_list</span> = Question.objects.order_by(<span style="color: #e9b96e;">'-pub_date'</span>)[:5]
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">output</span> = <span style="color: #e9b96e;">', '</span>.join([q.question_text <span style="color: #b4fa70;">for</span> q <span style="color: #b4fa70;">in</span> latest_question_list])
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> HttpResponse(output)
+
+<span style="color: #73d216;"># </span><span style="color: #73d216;">Leave the rest of the views (detail, results, vote) unchanged </span>
+</pre>
+
+
+    View kulllanımındaki problem sayfa tasarımının hard-coded olarak yapılmış<br/>
+    olmasıdır. Bunun önüne geçmek için django template dili kullanılabilir.<br/>
+</p>
+<p><br/>
+</p>
+<p><br/>
+<pre class="src src-sh"><span style="color: #ad7fa8;">cd</span> ~/Proje/python/mydj_sites/mydj_sites/polls
+mkdir templates;<span style="color: #ad7fa8;">cd</span> templates
+mkdir polls
+</pre>
+
+
+</p>
+<p>    <br/>
+    polls/templates/polls/index.html<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="background-color: #212526;"> </span>{% <span style="color: #b4fa70;">if</span> latest_question_list %}
+<span style="background-color: #212526;"> </span>   &lt;ul&gt;
+<span style="background-color: #212526;"> </span>   {% <span style="color: #b4fa70;">for</span> question <span style="color: #b4fa70;">in</span> latest_question_list %}
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   &lt;li&gt;&lt;a <span style="color: #fcaf3e;">href</span>=<span style="color: #e9b96e;">"/polls/{{ question.id }}/"</span>&gt;{{ question.question_text }}&lt;/a&gt;&lt;/li&gt;
+<span style="background-color: #212526;"> </span>   {% endfor %}
+<span style="background-color: #212526;"> </span>   &lt;/ul&gt;
+{% <span style="color: #b4fa70;">else</span> %}
+<span style="background-color: #212526;"> </span>   &lt;p&gt;No polls are available.&lt;/p&gt;
+{% endif %}
+</pre>
+
+
+    Şimdi de polls/views.py dosyamızın oluşturduğumuz template'i kullanmasını<br/>
+    sağlayalım. <br/>
+</p>
+<p>    <br/>
+    polls/views.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.http <span style="color: #b4fa70;">import</span> HttpResponse
+<span style="color: #b4fa70;">from</span> django.template <span style="color: #b4fa70;">import</span> loader
+
+<span style="color: #b4fa70;">from</span> .models <span style="color: #b4fa70;">import</span> Question
+
+
+<span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">index</span>(request):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">latest_question_list</span> = Question.objects.order_by(<span style="color: #e9b96e;">'-pub_date'</span>)[:5]
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">template</span> = loader.get_template(<span style="color: #e9b96e;">'polls/index.html'</span>)
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">context</span> = {
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">'latest_question_list'</span>: latest_question_list,
+<span style="background-color: #212526;"> </span>   }
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> HttpResponse(template.render(context, request))
+</pre>
+
+</p></div>
+
+</div>
+
+<div id="outline-container-1-3-3" class="outline-4">
+<h4 id="sec-1-3-3"><span class="section-number-4">1.3.3</span> Bir kısayol: render()</h4>
+<div class="outline-text-4" id="text-1-3-3">
+
+<p>    polls/views.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.shortcuts <span style="color: #b4fa70;">import</span> render
+
+<span style="color: #b4fa70;">from</span> .models <span style="color: #b4fa70;">import</span> Question
+
+
+<span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">index</span>(request):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">latest_question_list</span> = Question.objects.order_by(<span style="color: #e9b96e;">'-pub_date'</span>)[:5]
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">context</span> = {<span style="color: #e9b96e;">'latest_question_list'</span>: latest_question_list}
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> render(request, <span style="color: #e9b96e;">'polls/index.html'</span>, context) 
+</pre>
+
+
+    <b>HttpResponse(template.render(context, request))</b> yerine <b>return     render(request, 'polls/index.html', context)</b> kulllandık. Ayrıca <b>loader</b><br/>
+    ve <b>HttpReponse</b> yerine sadece <b>render</b> import etmemiz yeterli oldu. Ancak<br/>
+    render gerektirmeyen <b>static sayfalarınız</b> için hala loader ve HttpResponse<br/>
+    sınıflarını kullanmanız gerekir.<br/>
+</p></div>
+
+</div>
+
+<div id="outline-container-1-3-4" class="outline-4">
+<h4 id="sec-1-3-4"><span class="section-number-4">1.3.4</span> 404 hatası oluşturmak</h4>
+<div class="outline-text-4" id="text-1-3-4">
+
+<p>    polls/views.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.http <span style="color: #b4fa70;">import</span> Http404
+<span style="color: #b4fa70;">from</span> django.shortcuts <span style="color: #b4fa70;">import</span> render
+
+<span style="color: #b4fa70;">from</span> .models <span style="color: #b4fa70;">import</span> Question
+<span style="color: #73d216;"># </span><span style="color: #73d216;">...</span>
+<span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">detail</span>(request, question_id):
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">try</span>:
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">question</span> = Question.objects.get(pk=question_id)
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">except</span> Question.DoesNotExist:
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">raise</span> Http404(<span style="color: #e9b96e;">"Question does not exist"</span>)
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> render(request, <span style="color: #e9b96e;">'polls/detail.html'</span>, {<span style="color: #e9b96e;">'question'</span>: question}) 
+</pre>
+
+</p>
+<p>    <br/>
+    polls/templates/polls/detail.html<br/>
+</p>
+<p><br/>
+<pre class="src src-python">{{ question }}
+</pre>
+
+</p></div>
+
+</div>
+
+<div id="outline-container-1-3-5" class="outline-4">
+<h4 id="sec-1-3-5"><span class="section-number-4">1.3.5</span> Bir başka kısayol: get_object_or_404()</h4>
+<div class="outline-text-4" id="text-1-3-5">
+
+<p>    polls/views.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.shortcuts <span style="color: #b4fa70;">import</span> get_object_or_404, render
+
+<span style="color: #b4fa70;">from</span> .models <span style="color: #b4fa70;">import</span> Question
+<span style="color: #73d216;"># </span><span style="color: #73d216;">...</span>
+<span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">detail</span>(request, question_id):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">question</span> = get_object_or_404(Question, pk=question_id)
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> render(request, <span style="color: #e9b96e;">'polls/detail.html'</span>, {<span style="color: #e9b96e;">'question'</span>: question}) 
+</pre>
+
+</p></div>
+
+</div>
+
+<div id="outline-container-1-3-6" class="outline-4">
+<h4 id="sec-1-3-6"><span class="section-number-4">1.3.6</span> template sistemini kullanalım</h4>
+<div class="outline-text-4" id="text-1-3-6">
+
+<p>    polls/templates/polls/detail.html<br/>
+</p>
+<p><br/>
+<pre class="src src-python">&lt;h1&gt;{{ question.question_text }}&lt;/h1&gt;
+&lt;ul&gt;
+<span style="background-color: #212526;"> </span>{% <span style="color: #b4fa70;">for</span> choice <span style="color: #b4fa70;">in</span> question.choice_set.<span style="color: #ad7fa8;">all</span> %}
+<span style="background-color: #212526;"> </span>   &lt;li&gt;{{ choice.choice_text }}&lt;/li&gt;
+{% endfor %}
+&lt;/ul&gt;
+</pre>
+
+</p></div>
+
+</div>
+
+<div id="outline-container-1-3-7" class="outline-4">
+<h4 id="sec-1-3-7"><span class="section-number-4">1.3.7</span> Hardcoded URL'lerin kaldırılması</h4>
+<div class="outline-text-4" id="text-1-3-7">
+
+<p>    polls/templates/polls/index.html<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #73d216;">#</span><span style="color: #73d216;">&lt;li&gt;&lt;a href="/polls/{{ question.id }}/"&gt;{{ question.question_text }}&lt;/a&gt;&lt;/li&gt;</span>
+&lt;li&gt;&lt;a <span style="color: #fcaf3e;">href</span>=<span style="color: #e9b96e;">"{% url 'detail' question.id %}"</span>&gt;{{ question.question_text }}&lt;/a&gt;&lt;/li&gt;
+</pre>
+
+</p></div>
+
+</div>
+
+<div id="outline-container-1-3-8" class="outline-4">
+<h4 id="sec-1-3-8"><span class="section-number-4">1.3.8</span> URL isim uzaylarının oluşturulması</h4>
+<div class="outline-text-4" id="text-1-3-8">
+
+<p>    polls uygulamasında "details" url'i olduğu gibi başka bir uygulamada da<br/>
+    "details" url'i olabilir. Djangonun bunu ayırt edebilmesi için aşağıdaki<br/>
+    işlemler yapılmalıdır.<br/>
+</p>
+<p><br/>
+    polls/urls.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.conf.urls <span style="color: #b4fa70;">import</span> url
+
+<span style="color: #b4fa70;">from</span> . <span style="color: #b4fa70;">import</span> views
+
+<span style="color: #fcaf3e;">app_name</span> = <span style="color: #e9b96e;">'polls'</span>
+<span style="color: #fcaf3e;">urlpatterns</span> = [
+<span style="background-color: #212526;"> </span>   url(r<span style="color: #e9b96e;">'^$'</span>, views.index, name=<span style="color: #e9b96e;">'index'</span>),
+<span style="background-color: #212526;"> </span>   url(r<span style="color: #e9b96e;">'^(?P&lt;question_id&gt;[0-9]+)/$'</span>, views.detail, name=<span style="color: #e9b96e;">'detail'</span>),
+<span style="background-color: #212526;"> </span>   url(r<span style="color: #e9b96e;">'^(?P&lt;question_id&gt;[0-9]+)/results/$'</span>, views.results, name=<span style="color: #e9b96e;">'results'</span>),
+<span style="background-color: #212526;"> </span>   url(r<span style="color: #e9b96e;">'^(?P&lt;question_id&gt;[0-9]+)/vote/$'</span>, views.vote, name=<span style="color: #e9b96e;">'vote'</span>),
+]
+</pre>
+
+
+    polls/templates/polls/index.html<br/>
+</p>
+<p><br/>
+<pre class="src src-python">/*&lt;li&gt;&lt;a <span style="color: #fcaf3e;">href</span>=<span style="color: #e9b96e;">"{% url 'detail' question.id %}"</span>&gt;{{ question.question_text }}&lt;/a&gt;&lt;/li&gt;*/
+&lt;li&gt;&lt;a <span style="color: #fcaf3e;">href</span>=<span style="color: #e9b96e;">"{% url 'polls:detail' question.id %}"</span>&gt;{{ question.question_text }}&lt;/a&gt;&lt;/li&gt;
+</pre>
+
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Writing your first Django app, part 4</h3>
+<div class="outline-text-3" id="text-1-4">
+
+
+</div>
+
+<div id="outline-container-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> Basit bir form</h4>
+<div class="outline-text-4" id="text-1-4-1">
+
+<p>    polls/templates/polls/detail.html<br/>
+</p>
+<p><br/>
+<pre class="src src-python">&lt;h1&gt;{{ question.question_text }}&lt;/h1&gt;
+
+{% <span style="color: #b4fa70;">if</span> error_message %}&lt;p&gt;&lt;strong&gt;{{ error_message }}&lt;/strong&gt;&lt;/p&gt;{% endif %}
+
+&lt;form <span style="color: #fcaf3e;">action</span>=<span style="color: #e9b96e;">"{% url 'polls:vote' question.id %}"</span> <span style="color: #fcaf3e;">method</span>=<span style="color: #e9b96e;">"post"</span>&gt;
+{% csrf_token %}
+{% <span style="color: #b4fa70;">for</span> choice <span style="color: #b4fa70;">in</span> question.choice_set.<span style="color: #ad7fa8;">all</span> %}
+<span style="background-color: #212526;"> </span>   &lt;<span style="color: #ad7fa8;">input</span> <span style="color: #ad7fa8;">type</span>=<span style="color: #e9b96e;">"radio"</span> <span style="color: #fcaf3e;">name</span>=<span style="color: #e9b96e;">"choice"</span> <span style="color: #ad7fa8;">id</span>=<span style="color: #e9b96e;">"choice{{ forloop.counter }}"</span> <span style="color: #fcaf3e;">value</span>=<span style="color: #e9b96e;">"{{ choice.id }}"</span> /&gt;
+<span style="background-color: #212526;"> </span>   &lt;label <span style="color: #b4fa70;">for</span>=<span style="color: #e9b96e;">"choice{{ forloop.counter }}"</span>&gt;{{ choice.choice_text }}&lt;/label&gt;&lt;br /&gt;
+{% endfor %}
+&lt;<span style="color: #ad7fa8;">input</span> <span style="color: #ad7fa8;">type</span>=<span style="color: #e9b96e;">"submit"</span> <span style="color: #fcaf3e;">value</span>=<span style="color: #e9b96e;">"Vote"</span> /&gt;
+&lt;/form&gt;
+</pre>
+
+</p>
+<p>    <br/>
+    polls/views.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.shortcuts <span style="color: #b4fa70;">import</span> get_object_or_404, render
+<span style="color: #b4fa70;">from</span> django.http <span style="color: #b4fa70;">import</span> HttpResponseRedirect, HttpResponse
+<span style="color: #b4fa70;">from</span> django.urls <span style="color: #b4fa70;">import</span> reverse
+
+<span style="color: #b4fa70;">from</span> .models <span style="color: #b4fa70;">import</span> Choice, Question
+<span style="color: #73d216;"># </span><span style="color: #73d216;">...</span>
+<span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">vote</span>(request, question_id):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">question</span> = get_object_or_404(Question, pk=question_id)
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">try</span>:
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">selected_choice</span> = question.choice_set.get(pk=request.POST[<span style="color: #e9b96e;">'choice'</span>])
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">except</span> (<span style="color: #8cc4ff;">KeyError</span>, Choice.DoesNotExist):
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #73d216;"># </span><span style="color: #73d216;">Redisplay the question voting form.</span>
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> render(request, <span style="color: #e9b96e;">'polls/detail.html'</span>, {
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">'question'</span>: question,
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">'error_message'</span>: <span style="color: #e9b96e;">"You didn't select a choice."</span>,
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   })
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">else</span>:
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">selected_choice.votes</span> += 1
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   selected_choice.save()
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #73d216;"># </span><span style="color: #73d216;">Always return an HttpResponseRedirect after successfully dealing</span>
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #73d216;"># </span><span style="color: #73d216;">with POST data. This prevents data from being posted twice if a</span>
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #73d216;"># </span><span style="color: #73d216;">user hits the Back button.</span>
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> HttpResponseRedirect(reverse(<span style="color: #e9b96e;">'polls:results'</span>, args=(question.<span style="color: #ad7fa8;">id</span>,)))
+</pre>
+
+    polls/views.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.shortcuts <span style="color: #b4fa70;">import</span> get_object_or_404, render
+
+
+<span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">results</span>(request, question_id):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">question</span> = get_object_or_404(Question, pk=question_id)
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> render(request, <span style="color: #e9b96e;">'polls/results.html'</span>, {<span style="color: #e9b96e;">'question'</span>: question})
+</pre>
+
+    polls/templates/polls/results.html<br/>
+</p>
+<p><br/>
+<pre class="src src-python">&lt;h1&gt;{{ question.question_text }}&lt;/h1&gt;
+
+&lt;ul&gt;
+{% <span style="color: #b4fa70;">for</span> choice <span style="color: #b4fa70;">in</span> question.choice_set.<span style="color: #ad7fa8;">all</span> %}
+<span style="background-color: #212526;"> </span>   &lt;li&gt;{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}&lt;/li&gt;
+{% endfor %}
+&lt;/ul&gt;
+
+&lt;a <span style="color: #fcaf3e;">href</span>=<span style="color: #e9b96e;">"{% url 'polls:detail' question.id %}"</span>&gt;Vote again?&lt;/a&gt;
+</pre>
+
+</p></div>
+
+</div>
+
+<div id="outline-container-1-4-2" class="outline-4">
+<h4 id="sec-1-4-2"><span class="section-number-4">1.4.2</span> Generic viewlar</h4>
+<div class="outline-text-4" id="text-1-4-2">
+
+<p>    These views represent a common case of basic Web development: <br/>
+</p><ul>
+<li>getting data from the database according to a parameter passed in the URL,<br/>
+</li>
+<li>loading a template and returning the rendered template. <br/>
+</li>
+</ul>
+
+
+<p>    <br/>
+    Because this is so common, Django provides a shortcut, called the “generic<br/>
+    views” system.<br/>
+</p>
+<p>    <br/>
+</p><ul>
+<li id="sec-1-4-2-1">urls.py'nin güncellenmesi<br/>
+     polls/urls.py<br/>
+
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.conf.urls <span style="color: #b4fa70;">import</span> url
+
+<span style="color: #b4fa70;">from</span> . <span style="color: #b4fa70;">import</span> views
+
+<span style="color: #fcaf3e;">app_name</span> = <span style="color: #e9b96e;">'polls'</span>
+<span style="color: #fcaf3e;">urlpatterns</span> = [
+<span style="background-color: #212526;"> </span>   url(r<span style="color: #e9b96e;">'^$'</span>, views.IndexView.as_view(), name=<span style="color: #e9b96e;">'index'</span>),
+<span style="background-color: #212526;"> </span>   url(r<span style="color: #e9b96e;">'^(?P&lt;pk&gt;[0-9]+)/$'</span>, views.DetailView.as_view(), name=<span style="color: #e9b96e;">'detail'</span>),
+<span style="background-color: #212526;"> </span>   url(r<span style="color: #e9b96e;">'^(?P&lt;pk&gt;[0-9]+)/results/$'</span>, views.ResultsView.as_view(), name=<span style="color: #e9b96e;">'results'</span>),
+<span style="background-color: #212526;"> </span>   url(r<span style="color: #e9b96e;">'^(?P&lt;question_id&gt;[0-9]+)/vote/$'</span>, views.vote, name=<span style="color: #e9b96e;">'vote'</span>),
+]     
+</pre>
+
+     <b>Önemli</b> url(r'^(?P&lt;pk&gt;[0-9]+)/$', views.DetailView.as_view(),<br/>
+     name='detail'),  &lt;pk&gt; yazan yerde daha önceden &lt;question_id&gt; yazıyordu. Bu<br/>
+     değişikliğin sebebi, generic viewların primary_key ile çalışıyor olması<br/>
+</p></li>
+</ul>
+<ul>
+<li id="sec-1-4-2-2">views.py'nin güncellenmesi<br/>
+     polls/views.py<br/>
+
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.shortcuts <span style="color: #b4fa70;">import</span> get_object_or_404, render
+<span style="color: #b4fa70;">from</span> django.http <span style="color: #b4fa70;">import</span> HttpResponseRedirect
+<span style="color: #b4fa70;">from</span> django.urls <span style="color: #b4fa70;">import</span> reverse
+<span style="color: #b4fa70;">from</span> django.views <span style="color: #b4fa70;">import</span> generic
+
+<span style="color: #b4fa70;">from</span> .models <span style="color: #b4fa70;">import</span> Choice, Question
+
+
+<span style="color: #b4fa70;">class</span> <span style="color: #8cc4ff;">IndexView</span>(generic.ListView):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">template_name</span> = <span style="color: #e9b96e;">'polls/index.html'</span>
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">context_object_name</span> = <span style="color: #e9b96e;">'latest_question_list'</span>
+
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">get_queryset</span>(<span style="color: #b4fa70;">self</span>):
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">"""Return the last five published questions."""</span>
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> Question.objects.order_by(<span style="color: #e9b96e;">'-pub_date'</span>)[:5]
+
+
+<span style="color: #b4fa70;">class</span> <span style="color: #8cc4ff;">DetailView</span>(generic.DetailView):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">model</span> = Question
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">template_name</span> = <span style="color: #e9b96e;">'polls/detail.html'</span>
+
+
+<span style="color: #b4fa70;">class</span> <span style="color: #8cc4ff;">ResultsView</span>(generic.DetailView):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">model</span> = Question
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">template_name</span> = <span style="color: #e9b96e;">'polls/results.html'</span>
+
+
+<span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">vote</span>(request, question_id):
+<span style="background-color: #212526;"> </span>   ... <span style="color: #73d216;"># </span><span style="color: #73d216;">same as above, no changes needed.</span>
+</pre>
+
+     DetailView varsayılan olarak &lt;app name&gt;/templates/&lt;app name&gt;/&lt;model<br/>
+     name&gt;_detail.html dosyasını template olarak kullanır. Bizim durumumuzda bu<br/>
+     dosya question_detail.html olacaktı. template_name değişkeni ile bunu<br/>
+     değiştirdik.<br/>
+     Aynı şekilde ListView de varsayılan olarak &lt;app name&gt;/templates/&lt;app name&gt;/&lt;model<br/>
+     name&gt;_list.html kullanacaktı.<br/>
+</p></li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Templateler üzerine deneme (CSS ekleme)</h3>
+<div class="outline-text-3" id="text-1-5">
+
+
+</div>
+
+<div id="outline-container-1-5-1" class="outline-4">
+<h4 id="sec-1-5-1"><span class="section-number-4">1.5.1</span> görüntü ekleme</h4>
+<div class="outline-text-4" id="text-1-5-1">
+
+<ol>
+<li>mydj_sites/mydj_sites/mydj_sites/settings.py dosyasında INSTALLED_APPS listesinde<br/>
+       django.contrib.staticfiles yoksa eklenecek.<br/>
+</li>
+<li>1. adımdaki dosyada STATIC_URL='<i>static</i>' olarak tanımlanacak.<br/>
+</li>
+<li>static dosyalar polls/static/polls dizini altında olacak. Örnek olarak<br/>
+       polls/static/polls/survey.jpg<br/>
+</li>
+<li>polls/templates/polls/index.html<br/>
+
+<p><br/>
+<pre class="src src-python">{% load static %}
+&lt;img <span style="color: #fcaf3e;">src</span>=<span style="color: #e9b96e;">"{% static "</span>polls/survey.jpg<span style="color: #e9b96e;">" %}"</span> <span style="color: #fcaf3e;">alt</span>=<span style="color: #e9b96e;">"Oylar&#305; g&#246;relim"</span>/&gt;
+{% <span style="color: #b4fa70;">if</span> latest_question_list %}
+<span style="background-color: #212526;"> </span>  &lt;ul&gt;
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>{% <span style="color: #b4fa70;">for</span> question <span style="color: #b4fa70;">in</span> latest_question_list %}
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>  &lt;li&gt;&lt;a <span style="color: #fcaf3e;">href</span>=<span style="color: #e9b96e;">"{% url 'polls:detail' question.id %}"</span>&gt;{{ question.question_text }}&lt;/a&gt;&lt;/li&gt;
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>{% endfor %}
+<span style="background-color: #212526;"> </span>  &lt;/ul&gt;
+{% <span style="color: #b4fa70;">else</span> %}
+<span style="background-color: #212526;"> </span>  &lt;p&gt;No polls are available.&lt;/p&gt;
+{% endif %}
+</pre>
+
+</p></li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-5-2" class="outline-4">
+<h4 id="sec-1-5-2"><span class="section-number-4">1.5.2</span> javascript ve css ekleme</h4>
+<div class="outline-text-4" id="text-1-5-2">
+
+<p>    mydj_sites/mydj_sites/polls/static/polls<br/>
+    ├── frontend.js<br/>
+    ├── style.css<br/>
+    └── survey.jpg<br/>
+</p>
+<p>    <br/>
+    frontend.js<br/>
+</p>
+<p><br/>
+<pre class="src src-javascript">$(
+    <span style="color: #b4fa70;">function</span>() {
+        $( <span style="color: #e9b96e;">"img"</span> ).each( <span style="color: #b4fa70;">function</span>() {
+            <span style="color: #b4fa70;">var</span> <span style="color: #fcaf3e;">$img</span> = $( <span style="color: #e6a8df;">this</span> );
+            <span style="color: #b4fa70;">var</span> <span style="color: #fcaf3e;">img_scale</span> = $img.width() / $img.height();
+            $img.width( $img.parent().width() );
+            $img.height( $img.height() * $img_scale );
+        });
+    }
+);
+</pre>
+
+
+    style.css<br/>
+</p>
+<p><br/>
+<pre class="src src-css"><span style="color: #fce94f;">.center </span>{
+    <span style="color: #fcaf3e;">margin</span>: auto;
+    <span style="color: #fcaf3e;">width</span>: 50%;
+    <span style="color: #fcaf3e;">border</span>: 3px solid green;
+    <span style="color: #fcaf3e;">padding</span>: 10px;
+}
+</pre>
+
+</p>
+<p>    <br/>
+    templates/index.html<br/>
+</p>
+<p><br/>
+<pre class="src src-html">{% load static %}
+&lt;<span style="color: #fce94f;">script</span> <span style="color: #fcaf3e;">src</span>=<span style="color: #e9b96e;">"https://code.jquery.com/jquery-3.1.0.min.js"</span>&gt;&lt;/<span style="color: #fce94f;">script</span>&gt;
+&lt;<span style="color: #fce94f;">script</span> <span style="color: #fcaf3e;">type</span>=<span style="color: #e9b96e;">"text/javascript"</span> <span style="color: #fcaf3e;">src</span>=<span style="color: #e9b96e;">"{% static "</span>polls/frontend.js<span style="color: #e9b96e;">" %}"</span>&gt;&lt;/<span style="color: #fce94f;">script</span>&gt;
+&lt;<span style="color: #fce94f;">link</span> <span style="color: #fcaf3e;">rel</span>=<span style="color: #e9b96e;">"stylesheet"</span> <span style="color: #fcaf3e;">type</span>=<span style="color: #e9b96e;">"text/css"</span> <span style="color: #fcaf3e;">href</span>=<span style="color: #e9b96e;">"{% static "</span>polls/style.css<span style="color: #e9b96e;">" %}"</span>&gt;&lt;/<span style="color: #fce94f;">script</span>&gt;
+&lt;<span style="color: #fce94f;">div</span> <span style="color: #fcaf3e;">class</span>=<span style="color: #e9b96e;">"center"</span>&gt;
+  &lt;<span style="color: #fce94f;">img</span> <span style="color: #fcaf3e;">src</span>=<span style="color: #e9b96e;">"{% static "</span>polls/survey.jpg<span style="color: #e9b96e;">" %}"</span> <span style="color: #fcaf3e;">alt</span>=<span style="color: #e9b96e;">"Oylar&#305; g&#246;relim"</span>/&gt;
+  {% if latest_question_list %}
+  &lt;<span style="color: #fce94f;">ul</span>&gt;
+    {% for question in latest_question_list %}
+    &lt;<span style="color: #fce94f;">li</span>&gt;&lt;<span style="color: #fce94f;">a</span> <span style="color: #fcaf3e;">href</span>=<span style="color: #e9b96e;">"{% url 'polls:detail' question.id %}"</span>&gt;{{ question.question_text }}&lt;/<span style="color: #fce94f;">a</span>&gt;&lt;/<span style="color: #fce94f;">li</span>&gt;
+    {% endfor %}
+  &lt;/<span style="color: #fce94f;">ul</span>&gt;
+  {% else %}
+  &lt;<span style="color: #fce94f;">p</span>&gt;No polls are available.&lt;/<span style="color: #fce94f;">p</span>&gt;
+  {% endif %}
+&lt;/<span style="color: #fce94f;">div</span>&gt;
+</pre>
+
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Writing your first Django app, part 5</h3>
+<div class="outline-text-3" id="text-1-6">
+
+
+</div>
+
+<div id="outline-container-1-6-1" class="outline-4">
+<h4 id="sec-1-6-1"><span class="section-number-4">1.6.1</span> Otomatik testler (ilginç bir konu)</h4>
+<div class="outline-text-4" id="text-1-6-1">
+
+<ul>
+<li id="sec-1-6-1-1">Neden test?<br/>
+     Otomatik testler 3 farklı fazda yazılabilir. Başta, sonda, ortada :D<br/>
+
+<p>     <br/>
+     <b>We identify a bug</b><br/>
+     Fortunately, there’s a little bug in the polls application for us to fix<br/>
+     right away: the Question.was_published_recently() method returns True if the<br/>
+     Question was published within the last day (which is correct) but also if<br/>
+     the Question’s pub_date field is in the future (which certainly isn’t). <br/>
+</p>
+<p> <br/>
+</p></li>
+</ul>
+<ul>
+<li id="sec-1-6-1-2">Nasıl test?<br/>
+
+<p><br/>
+<pre class="src src-sh"><span style="color: #ad7fa8;">cd</span> ~/Proje/python/mydj_sites
+<span style="color: #ad7fa8;">.</span> django_env/bin/activate
+<span style="color: #ad7fa8;">cd</span> mydj_sites
+pyton manage.py shell <span style="color: #73d216;"># </span><span style="color: #73d216;">python shell django projemizi root alarak ba&#351;l&#305;yor.   </span>
+
+&gt;&gt;&gt; import datetime
+&gt;&gt;&gt; from django.utils import timezone
+&gt;&gt;&gt; from polls.models import Question
+&gt;&gt;&gt; <span style="color: #73d216;"># </span><span style="color: #73d216;">create a Question instance with pub_date 30 days in the future</span>
+&gt;&gt;&gt; future_question = Question(<span style="color: #fcaf3e;">pub_date</span>=timezone.now() + datetime.timedelta(<span style="color: #fcaf3e;">days</span>=30))
+&gt;&gt;&gt; <span style="color: #73d216;"># </span><span style="color: #73d216;">was it published recently?</span>
+&gt;&gt;&gt; future_question.was_published_recently()
+True
+</pre>
+
+
+     Yukarıda görüldüğü gibi yayın tarihi gelecekte olan bir soru için de yakın<br/>
+     zamanda yayınlanmış cevabı dönüyor.<br/>
+</p>
+<p>     <br/>
+     polls/test.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">import</span> datetime
+
+<span style="color: #b4fa70;">from</span> django.utils <span style="color: #b4fa70;">import</span> timezone
+<span style="color: #b4fa70;">from</span> django.test <span style="color: #b4fa70;">import</span> TestCase
+
+<span style="color: #b4fa70;">from</span> .models <span style="color: #b4fa70;">import</span> Question
+
+
+<span style="color: #b4fa70;">class</span> <span style="color: #8cc4ff;">QuestionMethodTests</span>(TestCase):
+
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">test_was_published_recently_with_future_question</span>(<span style="color: #b4fa70;">self</span>):
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">"""</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   was_published_recently() should return False for questions whose</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   pub_date is in the future.</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   </span><span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   """</span>
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">time</span> = timezone.now() + datetime.timedelta(days=30)
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">future_question</span> = Question(pub_date=time)
+<span style="background-color: #212526;"> </span>   <span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">self</span>.assertIs(future_question.was_published_recently(), <span style="color: #e6a8df;">False</span>)
+</pre>
+
+
+     Testlerin çalıştırılması<br/>
+</p>
+<p><br/>
+<pre class="src src-sh"><span style="color: #ad7fa8;">cd</span> ~/Proje/python/mydj_sites
+<span style="color: #ad7fa8;">.</span> django_env/bin/activate
+<span style="color: #ad7fa8;">cd</span> mydj_sites
+python manage.py test polls
+</pre>
+
+</p>
+<p>     <br/>
+</p></li>
+</ul>
+<ul>
+<li id="sec-1-6-1-3">Bug'ın düzeltilmesi<br/>
+
+<p><br/>
+     polls/models.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">was_published_recently</span>(<span style="color: #b4fa70;">self</span>):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">now</span> = timezone.now()
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> now - datetime.timedelta(days=1) &lt;= <span style="color: #b4fa70;">self</span>.pub_date &lt;= now    
+</pre>
+
+
+</p></li>
+</ul>
+<ul>
+<li id="sec-1-6-1-4">Daha karmaşık örnekler<br/>
+     While we’re here, we can further pin down the was_published_recently()<br/>
+     method; in fact, it would be positively embarrassing if in fixing one bug<br/>
+     we had introduced another. <br/>
+
+<p>     <br/>
+     polls/test.py<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">test_was_published_recently_with_old_question</span>(<span style="color: #b4fa70;">self</span>):
+<span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">"""</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   was_published_recently() should return False for questions whose</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   pub_date is older than 1 day.</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   """</span>
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">time</span> = timezone.now() - datetime.timedelta(days=30)
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">old_question</span> = Question(pub_date=time)
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">self</span>.assertIs(old_question.was_published_recently(), <span style="color: #e6a8df;">False</span>)
+
+<span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">test_was_published_recently_with_recent_question</span>(<span style="color: #b4fa70;">self</span>):
+<span style="background-color: #212526;"> </span>   <span style="color: #e9b96e;">"""</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   was_published_recently() should return True for questions whose</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   pub_date is within the last day.</span>
+<span style="color: #e9b96e; background-color: #212526;"> </span><span style="color: #e9b96e;">   """</span>
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">time</span> = timezone.now() - datetime.timedelta(hours=1)
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">recent_question</span> = Question(pub_date=time)
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">self</span>.assertIs(recent_question.was_published_recently(), <span style="color: #e6a8df;">True</span>)
+</pre>
+
+
+     Bu genişletme ile bu metodun tarih bazında bütün olası girdilerine karşı çıktıları<br/>
+     kontrol edilmiş oldu.<br/>
+</p>
+<p><br/>
+</p></li>
+</ul>
+<ul>
+<li id="sec-1-6-1-5">View'ı test etmek<br/>
+<ul>
+<li>Django test istemcisi<br/>
+       Djangonun sunduğu test istemcisini test.py dosyası üzerinden ya da shell<br/>
+       üzerinden kullanabiliriz.<br/>
+
+<p>       <br/>
+       Shell üzerinden test.py üzerinden denemeden farklı olarak aşağıdaki iki<br/>
+       satır gerekir.<br/>
+</p>
+<p><br/>
+<pre class="src src-sh"><span style="color: #ad7fa8;">cd</span> ~/Proje/python/mydj_sites
+<span style="color: #ad7fa8;">.</span> django_env/bin/activate
+<span style="color: #ad7fa8;">cd</span> mydj_sites
+pyton manage.py shell <span style="color: #73d216;"># </span><span style="color: #73d216;">python shell django projemizi root alarak ba&#351;l&#305;yor.</span>
+&gt;&gt;&gt; from django.test.utils import setup_test_environment
+&gt;&gt;&gt; setup_test_environment()
+</pre>
+
+
+       setup_test_environment() installs a template renderer which will allow us<br/>
+       to examine some additional attributes on responses such as<br/>
+       response.context that otherwise wouldn’t be available. Note that this<br/>
+       method does not setup a test database, so the following will be run<br/>
+       against the existing database and the output may differ slightly<br/>
+       depending on what questions you already created. You might get unexpected<br/>
+       results if your TIME_ZONE in settings.py isn’t correct. If you don’t<br/>
+       remember setting it earlier, check it before continuing. <br/>
+</p>
+<p><br/>
+</p>
+<p><br/>
+<pre class="src src-sh"><span style="color: #ad7fa8;">cd</span> ~/Proje/python/mydj_sites
+<span style="color: #ad7fa8;">.</span> django_env/bin/activate
+<span style="color: #ad7fa8;">cd</span> mydj_sites
+pyton manage.py shell <span style="color: #73d216;"># </span><span style="color: #73d216;">python shell django projemizi root alarak ba&#351;l&#305;yor.</span>
+&gt;&gt;&gt; from django.test.utils import setup_test_environment
+&gt;&gt;&gt; setup_test_environment()
+&gt;&gt;&gt; from django.test import Client
+&gt;&gt;&gt; <span style="color: #73d216;"># </span><span style="color: #73d216;">create an instance of the client for our use</span>
+&gt;&gt;&gt; client = Client()       
+&gt;&gt;&gt; <span style="color: #73d216;"># </span><span style="color: #73d216;">get a response from '/'</span>
+&gt;&gt;&gt; response = client.get(<span style="color: #e9b96e;">'/'</span>)
+&gt;&gt;&gt; <span style="color: #73d216;"># </span><span style="color: #73d216;">we should expect a 404 from that address</span>
+&gt;&gt;&gt; response.status_code
+404
+&gt;&gt;&gt; <span style="color: #73d216;"># </span><span style="color: #73d216;">on the other hand we should expect to find something at '/polls/'</span>
+&gt;&gt;&gt; <span style="color: #73d216;"># </span><span style="color: #73d216;">we'll use 'reverse()' rather than a hardcoded URL</span>
+&gt;&gt;&gt; from django.urls import reverse
+&gt;&gt;&gt; response = client.get(reverse(<span style="color: #e9b96e;">'polls:index'</span>))
+&gt;&gt;&gt; response.status_code
+200
+&gt;&gt;&gt; response.content
+b<span style="color: #e9b96e;">'\n    &lt;ul&gt;\n    \n        &lt;li&gt;&lt;a href="/polls/1/"&gt;What&amp;#39;s up?&lt;/a&gt;&lt;/li&gt;\n    \n    &lt;/ul&gt;\n\n'</span>
+&gt;&gt;&gt; <span style="color: #73d216;"># </span><span style="color: #73d216;">If the following doesn't work, you probably omitted the call to</span>
+&gt;&gt;&gt; <span style="color: #73d216;"># </span><span style="color: #73d216;">setup_test_environment() described above</span>
+&gt;&gt;&gt; response.context[<span style="color: #e9b96e;">'latest_question_list'</span>]
+&lt;QuerySet [&lt;Question: What<span style="color: #e9b96e;">'s up?&gt;]&gt;</span>
+</pre>
+
+</p></li>
+</ul>
+
+</li>
+</ul>
+</div>
+</div>
 </div>
 
 </div>
@@ -470,7 +1484,7 @@ pyton manage.py shell
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2016-09-05T00:37+0300</p>
+<p class="date">Date: 2016-09-10T12:25+0300</p>
 <p class="author">Author: umt</p>
 <p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
