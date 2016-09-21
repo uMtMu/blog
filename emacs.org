@@ -37,5 +37,21 @@
    
    *M-x prepend-to-register RET r*
    Prepend region to text in register r.
+* ElPy
+  1. Reponun eklenmesi
+     #+BEGIN_SRC elisp
+     (require 'package)
+     (add-to-list 'package-archives
+             '("elpy" . "http://jorgenschaefer.github.io/packages/"))
+     #+END_SRC
+  2. Paketin yüklenmesi
+     M-x package-install RET elpy
+  3. Paketin aktifleştirilmesi
+     #+BEGIN_SRC elisp
+     (package-initialize)
+     (elpy-enable)
+     #+END_SRC
+  4. Paketin yapılandırılması
+     M-x elpy-config RET
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"

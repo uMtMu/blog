@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="uMtMu"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2016-09-05T00:34+0300"/>
+<meta name="generated" content="2016-09-21T11:39+0300"/>
 <meta name="author" content="umt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -139,7 +139,8 @@ for the JavaScript code in this tag.
 <li><a href="#sec-2-2">2.2 Registerlar</a></li>
 </ul>
 </li>
-<li><a href="#sec-3">3 Bağlantılar</a></li>
+<li><a href="#sec-3">3 ElPy</a></li>
+<li><a href="#sec-4">4 Bağlantılar</a></li>
 </ul>
 </div>
 </div>
@@ -213,8 +214,42 @@ for the JavaScript code in this tag.
 </div>
 
 <div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Bağlantılar</h2>
+<h2 id="sec-3"><span class="section-number-2">3</span> ElPy</h2>
 <div class="outline-text-2" id="text-3">
+
+<ol>
+<li>Reponun eklenmesi<br/>
+
+<p><br/>
+<pre class="src src-elisp">(<span style="color: #00bfff;">require</span> '<span style="color: #a2cd5a;">package</span>)
+(add-to-list 'package-archives
+        '(<span style="color: #deb887;">"elpy"</span> . <span style="color: #deb887;">"http://jorgenschaefer.github.io/packages/"</span>))
+</pre>
+
+</p></li>
+<li>Paketin yüklenmesi<br/>
+     M-x package-install RET elpy<br/>
+</li>
+<li>Paketin aktifleştirilmesi<br/>
+
+<p><br/>
+<pre class="src src-elisp">(package-initialize)
+(elpy-enable)
+</pre>
+
+</p></li>
+<li>Paketin yapılandırılması<br/>
+     M-x elpy-config RET<br/>
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Bağlantılar</h2>
+<div class="outline-text-2" id="text-4">
 
 
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -236,7 +271,7 @@ for the JavaScript code in this tag.
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2016-09-05T00:34+0300</p>
+<p class="date">Date: 2016-09-21T11:39+0300</p>
 <p class="author">Author: umt</p>
 <p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
