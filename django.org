@@ -1153,11 +1153,102 @@
     
     {% block nav-global %}{% endblock %}    
     #+END_SRC
-* Araştırılacak [0/2]
+** Yerelleştirme ve Çeviri
+*** Giriş
+    Django projelerinin yerelleştirilebilir olması için çevirilmesi gereken
+    string alanlar için bu alanlar *translation strings* adı verilen kancalar
+    koymamız gerekir. 
+    
+    Bundan sonra Django tüm projeden bu alanları çekerek *message file* dosyası
+    oluşturur. Bu dosya içerisinden ilgili dil için gerekli çeviriler kolaylıkla
+    yapılabilir. Bu dosya derlendikten sonra Django çalışma sırasında dil
+    değişimi yapabilir. 
+
+    Yerelleştirme Djangoda varsayılan olarak açıktır. Kullanılmak istenmiyorsa
+    settings.py dosyasındaki *USE_I18N = FALSE* olarak ayarlanabilir. 
+
+    Yerelleştirmee konusunda bir noktada yerel biçimlerin
+    düzenlenmesidir. Bildindiği gibi farklı ülkelerde tarih ve ondalık ayraç
+    gösterimi farklı olabilir. Bunun için *USE_L10N* ayarlaması yapılmalıdır. 
+
+    Projeniz için çevirinin aktif olup olmadığını kontrol etmek
+    için settings.py dosyasında *MIDDLEWARE*
+    dizisinde *django.middleware.locale.LocaleMiddleware* olup olmadığını
+    kontrol edebilirsiniz.
+*** Çeviri: Python kodu içinde
+    - Standart çeviri
+      /ugettext()/ fonksiyonu ile *translation string* ler
+      belirlenir. Fonsiyonun kısayolu olarak (*_*) kullanılabilir. Python'un
+      interaktif shell uygulaması *_* karakterini *son sonuç* olarak
+      tanımladığı için kullanım sırasında /ugettext()/ *_()* olarak tekrar
+      import edilerek sorun çözülür.
+      
+      Örnek view
+      #+BEGIN_SRC python
+      from django.utils.translation import ugettext as _
+      from django.http import HttpResponse
+      
+      def my_view(request):
+          output = _("Welcome to my site.")
+          return HttpResponse(output)
+      #+END_SRC
+
+      Çeviri kod içerisinde değişkenler ve hesaplanmış(join ile birleştirilmiş
+      gibi) veriler üzerinde de uygulanabilir. 
+
+      #+BEGIN_SRC python
+      def my_view(request):
+          words = ['Welcome', 'to', 'my', 'site.']
+          output = _(' '.join(words))
+          return HttpResponse(output)
+      #+END_SRC
+      Açıkcası hesaplanmış veri kısmını anlayamadım. *???*
+      #+BEGIN_SRC python
+      def my_view(request):
+          sentence = 'Welcome to my site.'
+          output = _(sentence)
+          return HttpResponse(output)
+      #+END_SRC
+
+      Hemen altındaki uyarıda, Djangonun değişken ve hesaplanmış verilerdeki
+      stringleri bulamadığını bunun için *makemessages* kullanıldığını
+      yazmış. *???*
+
+      #+BEGIN_SRC python
+      def my_view(request, m, d):
+          output = _('Today is %(month)s %(day)s.') % {'month': m, 'day': d}
+          return HttpResponse(output)
+      #+END_SRC
+
+      Yukarıdaki örnekte, farklı dillerdeki farklı kelime dizilişlerini yenmek
+      için konumsal(positional) interpolasyon kullanmak yerine
+      isimlendirilmiş(named-string) interpolasyon kullanmak gerektiğini
+      gösteriyor. 
+
+      #+BEGIN_SRC python
+      def my_view(request):
+          # Translators: This message appears on the home page only
+          output = ugettext("Welcome to my site.")
+      #+END_SRC
+
+      Yukarıdaki şekilde uzantısı \*.po olan *messagefile* içerisinde çevirmene
+      yardımcı olacak çeviri metnine yorum satırı eklenebiliyor. Çıktısı
+      aşağıdaki gibi. 
+      
+      #+BEGIN_SRC po
+      #. Translators: This message appears on the home page only
+      # path/to/python/file.py:123
+      msgid "Welcome to my site."
+      msgstr ""
+      #+END_SRC
+    - Marking strings as no-op *???*
+    - 
+* Araştırılacak [0/3]
   - [ ] Polls uygulamasında cevapları oluştururken verilen oy sayısı da
     belirlenebiliyor. Bu uygun olmaz. Varsayılan oy sayısının sıfır olarak
     belirlenmesi ve oluşturulurken bu değerin girilmemesini sağlamak iyi olur.
   - [ ] utf-8 karakterlerin kullanabilmesi
+  - [ ] farklı dillerin esnek bir şekilde implemente edilmesi (Localization)
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"
 

@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="uMtMu"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2016-09-11T18:14+0300"/>
+<meta name="generated" content="2016-09-20T10:49+0300"/>
 <meta name="author" content="umt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -195,10 +195,16 @@ for the JavaScript code in this tag.
 <li><a href="#sec-1-7-3">1.7.3 Şimdi de Question listemizi düzenleyelim</a></li>
 <li><a href="#sec-1-7-4">1.7.4 Admin penceresinde Question modellerinin süzülmesi ve arama</a></li>
 <li><a href="#sec-1-7-5">1.7.5 Admin pencere template'inin düzenlenmesi</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-8">1.8 Yerelleştirme ve Çeviri</a>
+<ul>
+<li><a href="#sec-1-8-1">1.8.1 Giriş</a></li>
+<li><a href="#sec-1-8-2">1.8.2 Çeviri: Python kodu içinde</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-2">2 Araştırılacak [0/2]</a></li>
+<li><a href="#sec-2">2 Araştırılacak [0/3]</a></li>
 <li><a href="#sec-3">3 Bağlantılar</a></li>
 </ul>
 </div>
@@ -1856,12 +1862,146 @@ mkdir mydj_sites/mydj_sites/templates/admin
 
 </p></div>
 </div>
+
+</div>
+
+<div id="outline-container-1-8" class="outline-3">
+<h3 id="sec-1-8"><span class="section-number-3">1.8</span> Yerelleştirme ve Çeviri</h3>
+<div class="outline-text-3" id="text-1-8">
+
+
+</div>
+
+<div id="outline-container-1-8-1" class="outline-4">
+<h4 id="sec-1-8-1"><span class="section-number-4">1.8.1</span> Giriş</h4>
+<div class="outline-text-4" id="text-1-8-1">
+
+<p>    Django projelerinin yerelleştirilebilir olması için çevirilmesi gereken<br/>
+    string alanlar için bu alanlar <b>translation strings</b> adı verilen kancalar<br/>
+    koymamız gerekir. <br/>
+</p>
+<p>    <br/>
+    Bundan sonra Django tüm projeden bu alanları çekerek <b>message file</b> dosyası<br/>
+    oluşturur. Bu dosya içerisinden ilgili dil için gerekli çeviriler kolaylıkla<br/>
+    yapılabilir. Bu dosya derlendikten sonra Django çalışma sırasında dil<br/>
+    değişimi yapabilir. <br/>
+</p>
+<p><br/>
+    Yerelleştirme Djangoda varsayılan olarak açıktır. Kullanılmak istenmiyorsa<br/>
+    settings.py dosyasındaki <b>USE_I18N = FALSE</b> olarak ayarlanabilir. <br/>
+</p>
+<p><br/>
+    Yerelleştirmee konusunda bir noktada yerel biçimlerin<br/>
+    düzenlenmesidir. Bildindiği gibi farklı ülkelerde tarih ve ondalık ayraç<br/>
+    gösterimi farklı olabilir. Bunun için <b>USE_L10N</b> ayarlaması yapılmalıdır. <br/>
+</p>
+<p><br/>
+    Projeniz için çevirinin aktif olup olmadığını kontrol etmek<br/>
+    için settings.py dosyasında <b>MIDDLEWARE</b><br/>
+    dizisinde <b>django.middleware.locale.LocaleMiddleware</b> olup olmadığını<br/>
+    kontrol edebilirsiniz.<br/>
+</p></div>
+
+</div>
+
+<div id="outline-container-1-8-2" class="outline-4">
+<h4 id="sec-1-8-2"><span class="section-number-4">1.8.2</span> Çeviri: Python kodu içinde</h4>
+<div class="outline-text-4" id="text-1-8-2">
+
+<ul>
+<li>Standart çeviri<br/>
+      <i>ugettext()</i> fonksiyonu ile <b>translation string</b> ler<br/>
+      belirlenir. Fonsiyonun kısayolu olarak (<b>_</b>) kullanılabilir. Python'un<br/>
+      interaktif shell uygulaması <b>_</b> karakterini <b>son sonuç</b> olarak<br/>
+      tanımladığı için kullanım sırasında <i>ugettext()</i> <b>_()</b> olarak tekrar<br/>
+      import edilerek sorun çözülür.<br/>
+
+<p>      <br/>
+      Örnek view<br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> django.utils.translation <span style="color: #b4fa70;">import</span> ugettext <span style="color: #b4fa70;">as</span> _
+<span style="color: #b4fa70;">from</span> django.http <span style="color: #b4fa70;">import</span> HttpResponse
+
+<span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">my_view</span>(request):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">output</span> = _(<span style="color: #e9b96e;">"Welcome to my site."</span>)
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> HttpResponse(output)
+</pre>
+
+
+      Çeviri kod içerisinde değişkenler ve hesaplanmış(join ile birleştirilmiş<br/>
+      gibi) veriler üzerinde de uygulanabilir. <br/>
+</p>
+<p><br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">my_view</span>(request):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">words</span> = [<span style="color: #e9b96e;">'Welcome'</span>, <span style="color: #e9b96e;">'to'</span>, <span style="color: #e9b96e;">'my'</span>, <span style="color: #e9b96e;">'site.'</span>]
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">output</span> = _(<span style="color: #e9b96e;">' '</span>.join(words))
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> HttpResponse(output)
+</pre>
+
+      Açıkcası hesaplanmış veri kısmını anlayamadım. <b>???</b><br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">my_view</span>(request):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">sentence</span> = <span style="color: #e9b96e;">'Welcome to my site.'</span>
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">output</span> = _(sentence)
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> HttpResponse(output)
+</pre>
+
+
+      Hemen altındaki uyarıda, Djangonun değişken ve hesaplanmış verilerdeki<br/>
+      stringleri bulamadığını bunun için <b>makemessages</b> kullanıldığını<br/>
+      yazmış. <b>???</b><br/>
+</p>
+<p><br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">my_view</span>(request, m, d):
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">output</span> = _(<span style="color: #e9b96e;">'Today is %(month)s %(day)s.'</span>) % {<span style="color: #e9b96e;">'month'</span>: m, <span style="color: #e9b96e;">'day'</span>: d}
+<span style="background-color: #212526;"> </span>   <span style="color: #b4fa70;">return</span> HttpResponse(output)
+</pre>
+
+
+      Yukarıdaki örnekte, farklı dillerdeki farklı kelime dizilişlerini yenmek<br/>
+      için konumsal(positional) interpolasyon kullanmak yerine<br/>
+      isimlendirilmiş(named-string) interpolasyon kullanmak gerektiğini<br/>
+      gösteriyor. <br/>
+</p>
+<p><br/>
+</p>
+<p><br/>
+<pre class="src src-python"><span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">my_view</span>(request):
+<span style="background-color: #212526;"> </span>   <span style="color: #73d216;"># </span><span style="color: #73d216;">Translators: This message appears on the home page only</span>
+<span style="background-color: #212526;"> </span>   <span style="color: #fcaf3e;">output</span> = ugettext(<span style="color: #e9b96e;">"Welcome to my site."</span>)
+</pre>
+
+
+      Yukarıdaki şekilde uzantısı \*.po olan <b>messagefile</b> içerisinde çevirmene<br/>
+      yardımcı olacak çeviri metnine yorum satırı eklenebiliyor. Çıktısı<br/>
+      aşağıdaki gibi. <br/>
+</p>
+<p>      <br/>
+</p>
+<p><br/>
+<pre class="src src-po">#. Translators: This message appears on the home page only
+# path/to/python/file.py:123
+msgid <span style="color: #e9b96e;">"Welcome to my site."</span>
+msgstr <span style="color: #e9b96e;">""</span>
+</pre>
+
+</p></li>
+</ul>
+
+</div>
+</div>
 </div>
 
 </div>
 
 <div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Araştırılacak [0/2]</h2>
+<h2 id="sec-2"><span class="section-number-2">2</span> Araştırılacak [0/3]</h2>
 <div class="outline-text-2" id="text-2">
 
 <ul>
@@ -1870,6 +2010,8 @@ mkdir mydj_sites/mydj_sites/templates/admin
     belirlenmesi ve oluşturulurken bu değerin girilmemesini sağlamak iyi olur.<br/>
 </li>
 <li><code>[&nbsp;]</code> utf-8 karakterlerin kullanabilmesi<br/>
+</li>
+<li><code>[&nbsp;]</code> farklı dillerin esnek bir şekilde implemente edilmesi (Localization)<br/>
 </li>
 </ul>
 
@@ -1902,7 +2044,7 @@ mkdir mydj_sites/mydj_sites/templates/admin
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2016-09-11T18:14+0300</p>
+<p class="date">Date: 2016-09-20T10:49+0300</p>
 <p class="author">Author: umt</p>
 <p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
