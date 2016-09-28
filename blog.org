@@ -8,6 +8,18 @@
 #+END_CENTER
 #+NAME: top
 * Yazılar
+** Sezen abılam demiş
+   <2016-09-28 Wed 15:39>
+   Dert bitmeyince, bildiğin çektiğine yetmeyince 
+   Düşmanında kendini yakalayınca, bi daha kin gütmeyince 
+
+   [[top][Yukarı]]
+** Pişmanlık
+   <2016-09-28 Wed 15:38>
+   Ölümün pişmanlığı, şu ne yaşıyorum yerine şu an ne yaşayabilirdim
+   düşüncesidir.
+
+   [[top][Yukarı]]
 ** Güzel günler gelmeyebilir ama en azından bir an gelebilir.
    <2016-08-29 Mon 21:10>
 
