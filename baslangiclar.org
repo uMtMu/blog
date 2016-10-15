@@ -26,6 +26,9 @@
 
 *** Devamı Github'da
     [[https://github.com/uMtMu/flasksite]]
+
+*** OpenShift'da yayınlama
+    [[https://webapps.cmc.edu/flaskdoc/guide/deploying-your-app/deploying-on-openshift/][Kaynak]]
 ** NodeJS ödevi yapıldı.
 *** Başlangıç <2016-01-10 Sun 13:30>
 *** Bitiş <2016-01-31 Sun 13:30>
