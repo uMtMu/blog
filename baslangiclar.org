@@ -7,6 +7,24 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Nelere başladım ?
+** Flask <2016-10-07 Fri 16:08>
+   [[http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world][Kaynak]]
+*** Kurulum
+    #+BEGIN_SRC sh :shebang #!/bin/bash 
+    virtualenv flask_sites_env
+    . flask_sites_env/bin/activate
+    pip install flask flask-login flask-openid flask-mail flask-sqlalchemy sqlalchemy-migrate flask-whooshalchemy flask-wtf flask-babel guess_language flipflop coverage
+    #+END_SRC
+
+*** Ortamın hazırlanması
+    #+BEGIN_SRC sh :shebang #!/bin/bash 
+    mkdir app
+    mkdir app/static
+    mkdir app/templates
+    mkdir tmp
+    #+END_SRC
+
+*** Devamı Github'da
 ** NodeJS ödevi yapıldı.
 *** Başlangıç <2016-01-10 Sun 13:30>
 *** Bitiş <2016-01-31 Sun 13:30>
@@ -32,6 +50,6 @@
     yerine toplu bir pano yaptırmalıyım. Toplu minik panolar da olabilir. 
 *** Hangi fotoğrafları bastıracağım?
 *** Nerede bastıracağım?
-    Dükkanın karşısında bastırabilirim.
+    Dükkanın karşısında bastırabiliri
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"
