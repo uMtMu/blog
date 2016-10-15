@@ -25,6 +25,7 @@
     #+END_SRC
 
 *** Devamı Github'da
+    [[https://github.com/uMtMu/flasksite]]
 ** NodeJS ödevi yapıldı.
 *** Başlangıç <2016-01-10 Sun 13:30>
 *** Bitiş <2016-01-31 Sun 13:30>
