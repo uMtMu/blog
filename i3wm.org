@@ -1,0 +1,66 @@
+#+TITLE: uMtMu
+#+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
+#+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+#+OPTIONS: ^:nil \n:t
+#+BEGIN_CENTER
+[[file:img/ja2.png]]
+#+END_CENTER
+#+NAME: top
+* i3wm
+** Kısayollar
+| Temeller        |                              |
+| M - Oklar       | pencereler arasında dolaş    |
+| M - f           | pencereyi tam ekran yap      |
+| M - h           | yatay pencere aç             |
+| M - v           | dikey pencere aç             |
+| M - S - q       | pencereyi kapat              |
+| M - r           | pencere boyutlandır (oklar)  |
+| M - S - Oklar   | pencerelerin yerini değiştir |
+| Uygulamalar     |                              |
+| M - RET         | yeni terminal                |
+| M - d           | uygulama çalıştır (dmenu)    |
+| Percere düzeni  |                              |
+| M - e           | varsayılan düzen             |
+| M - s           | yığma düzen                  |
+| M - w           | tablı düzen                  |
+| Havada durma :D |                              |
+| M - S - Space   | Havada durma aç/kapa         |
+| M - Sürükle     | Pencereyi sürükle            |
+| Kapatma         |                              |
+| M - S - e       | Oturumu kapat                |
+
+*Emacs tuş kombinasyonları ile çakışıyor olabilir*  
+** Yapılandırma
+*** Workspace isimlendirme
+    - Aşağıdaki gibi isim tanımlanır 
+      set $workspace1 "1: Emacs"
+    - Aşağıdaki eşlemeler güncellenir
+      *Önce:*  bindsym $mod+1 workspace 1
+      *Sonra:* bindsym $mod+1 workspace $workspace1
+
+      *Önce:*  bindsym $mod+Shift+1 move container to workspace 1
+      *Sonra:* bindsym $mod+Shift+1 move container to workspace $workspace1
+*** Masaüstü görüntüsü belirleme
+    - sudo apt-get install feh
+    - i3 yapılandırma dosyasına eklenir
+      exec_always --no-startup-id feh --bg-scale ~/Pictures/zen.jpg
+*** Belirli uygulamanın kendiliğinden belirtilen workspacede açılması
+    - İstenilen uygulama çalıştırılır
+    - terminalde "xprop" komutu çalıştırılır.
+    - Çıktıdan aşağıdaki satırdaki değer kullanırılır
+      WM_CLASS(STRING) = "google-chrome", "google-chrome"
+    - assign [class="google-chrome"] $workspace3 
+*** Workspace ikonları
+    - Font Awesome indir [[https://github.com/FortAwesome/Font-Awesome/releases][İndir]]
+    - unzip font_awesome.zip
+    - mkdir ~/.fonts
+    - mv font_awesome/fonts/fontawesome-webfont.ttf ~/.fonts
+    - *Önemli* i3 yapılandırma dosyasında awesome font tipinin kullanılabilir
+      olarak ayarlanması
+      font pango:DejaVu Sans Mono 10, Awesome 10
+    - http://fontawesome.io/cheatsheet/ adresinden istenilen karakterler
+      bulunur. Mesela  fa-chrome ve i3 yapılandırma dosyasında workspace adına
+      eklenir. 
+* Bağlantılar
+#+INCLUDE: "baglantilar.org"
+
