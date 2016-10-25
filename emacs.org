@@ -9,6 +9,7 @@
 #+NAME: top
 * .emacs
 * ipuçları
+** conf-mode
 ** Template kısayolları
 | 1. | 2. | 3.  | Sonuç                             |
 | <  | s  | TAB | #+BEGIN_SRC ... #+END_SRC         |
