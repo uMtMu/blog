@@ -9,6 +9,10 @@
 #+NAME: top
 * .emacs
 * ipuçları
+** List occurence
+   M - s o -> list occurence
+   M - s o RET def RET -> list functions
+   M - s o RET class RET -> list classes
 ** conf-mode
 ** Template kısayolları
 | 1. | 2. | 3.  | Sonuç                             |
