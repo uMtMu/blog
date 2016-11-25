@@ -8,6 +8,11 @@
 #+END_CENTER
 #+NAME: top
 * Yazılar
+** Ölü
+   <2016-11-25 Fri 09:24>
+   Zaten ölü olan bir şeyi tekrar öldüremezsin.
+
+   [[top][Yukarı]]
 ** Alçı
    <2016-09-29 Thu 19:53>
    
