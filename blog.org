@@ -8,6 +8,25 @@
 #+END_CENTER
 #+NAME: top
 * Yazılar
+** Bu 10 şeyi kendinize yapmayın
+   <2016-12-04 Sun 13:08>
+   1. Asla ama asla kendinizi suçlamayın.
+      Her şey yaşanması gerektiği için yaşandı.
+      *!! Bu başlık için söyleyeceklerim var.*
+   2. Kendinize karşı dürüst olun.
+      Unutmayın, kandıramayacağınız tek kişi kendinizsiniz.
+      *!! Bu başlık için de söyleyeceklerim var.*
+   3. Kendinizi olduğunuzdan aşağı görmeyin.
+   4. Geçmişte yaşamayı bırakın.
+   5. İhtiyaçlarınızı görmezden gelmeyin.
+   6. Yapacağınız şeyleri çok fazla düşünmeyin. Yapın gitsin.
+   7. Fırsatlardan korkmayın.
+   8. Başkaları için yaşamayı bırakın.
+      Aşırı fedakar olmayın. Patlayınca feci olur.
+   9. Sevmediğiniz şeyleri yapmayın.
+   10. Hayallerinizi ertelemeyin.
+
+   [[top][Yukarı]]
 ** Ölü
    <2016-11-25 Fri 09:24>
    Zaten ölü olan bir şeyi tekrar öldüremezsin.
