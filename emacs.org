@@ -7,6 +7,8 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 #+NAME: top
+* multiple replace on fly						:Ara:
+  Değiştirilen kelimenin her bir kopyasının aynı anda güncellenmesi
 * .emacs
 * ipuçları
 ** List occurence
