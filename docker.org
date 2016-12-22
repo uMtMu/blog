@@ -1,0 +1,187 @@
+#+TITLE: uMtMu
+#+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
+#+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+#+OPTIONS: ^:nil \n:t
+* Docker CEO'sunun sunum
+  https://youtu.be/Q5POuMHxW-0
+  WM -> Least software specific 
+  - docker *ps* # -a parametresi ile tüm containerlar listelenir
+   | ID | IMAGE | COMMAND | CREATED | STATUS | PORTS |
+   |    |       |         |         |        |       |
+    
+  - docker *images*
+  - docker *run* /imagename:tag/ -p hostpost:containerpost [command]
+    -it parametreleri ile komutun interaktif olarak çalışması sağlanabilir. (-i
+    = input, -t = tty)
+    -p parametresi ile host ve container üzerindeki port eşlemesi yapılabilir.
+    Birden fazla port eşlemesi yapılabilir. Ayrıca -P parametresi ile port
+    seçimi docker'a bırakılabilir.
+  - docker *diff* [ID] # belirtilen containerı temel alınan kontainer ile
+    karşılaştırır. 
+  - docker *commit* [ID] user/tag# # orijinal imajın üzerinde yapılan
+    değişiklikleri ayrı bir imaj olarak kaydeder.
+
+* Alper Kanat'ın Docker yazısından alınan notlar
+     | [[https://medium.com/monitisemea/docker-serisi-1-1c6629499b9a][Birinci yazı]] | [[https://medium.com/monitisemea/docker-serisi-2-docker-engine-bolum-1-3e39a0912607][İkinci Yazı]] | [[https://medium.com/monitisemea/docker-serisi-3-docker-engine-bolum-2-a7c6c5f50851][Üçüncü Yazı]] |
+** Birinci Yazı
+*** Sanallaştırma ve Docker
+     Sanal makineler, Hypervisor(Virtual box, VMware vs) denen yazılımlar
+     aracılığıyla işletim sistemi ve donanım ile iletişime geçebilir.
+     Container teknolojisi, Hypervisiondan farklı olarak işletim sistemi
+     çekirdeğinden destek alıyor. Bu sayede daha az kaynak kullanıyor.
+     Linux containers(LXC), Docker'ın atası
+     Docker, LXC desteğinin kullanılmasını kolaylaştıran bir uygulama
+     Container, kabaca çalışmasını istediğimiz programın asgari ihtiyaçlarının
+     tamamını barındıran kapsayıcı imajın çalışan halidir.
+     Her container bir imajı baz alarak başlar ve imajlar birbirinden miras
+     alabilirler. İmajdaki her değişiklik yeni bir katman oluşturur. Docker, AUFS
+     (Advanced Multi-Layered Unification FileSystem) kullanır. 
+     - Continous Integration ortamında paket oluşturmak ya da test çalıştırmak
+     - Micro servisler oluşturmak
+     - Çok çaba harcanarak kurulan masaüstü uygulamaları (Eclipse CHE gibi)
+       docker ile kullanılabilir.
+
+     _Avantajları_
+     - WMlere göre daha hızlı başlaması ve düşük maliyet
+     - Doğrudan çekirdek desteği ile HyperVisor katmanından kurtulmak
+     - İmaj taşınabilirliği
+     - Orijinal imajın farklı çevresel değişkenlerle farklı davranışlara sahip
+       olması 
+
+** İkinci Yazı
+*** Komutlar
+     - docker *info*
+     - docker *pull* /imagename:tag/
+     - docker *build* # ???
+     - docker *push*
+     - docker *run*
+       - docker *run* -it -rm ubuntu /bin/bash
+	 _-it:_ interactive
+	 _--rm:_ container sonlandığında dosyaları silinir
+	 /bin/bash container'da çalıştırılır
+       - docker *run* -d --name deneme --restart=always -p 3000:3000 imagename:tag
+	 _-d:_ daemon olarak çalıştır
+	 _--name:_ container'ı isimlendir
+	 _--restart:_ container her hangi bir şekilde sonlandığılda yeniden
+         başlatılması (no, on-failure[:max-retry], always, unless-stopped)
+       - Diğer parametreleri
+	 _-e:_ Çevresel değişken tanımlamak için kullanılır. 
+	 _-v:_ Container içerisindeki bir dizin ya da bir dosyayı, ev sahibi
+         makine üstündeki bir dizine bağlamak için kullanılır.
+	 _-l:_ Container'a etiket tanımlamak için kullanılır.
+	 _-u:_ Container'ın hangi kullanıcı ile başlayacağı tanımlanır.
+     - docker *logs* --tail 20 -f imagename
+       Docker containerları genellikle yalnızca bir tek süreç çalıştıracak ve
+       temel çıktıya(stdout) bir şey basacak şekilde tasarlanır. Temel çıktıya
+       basılan işlem kayıtlarına bu komut ile ulaşulabilir. Öğreneğin nginx
+       container'ı başlattığınızda access.log dosyası bu komut ile takip edilebilir.
+     - docker *exec* -it imagename ls -l /srv
+       Hali hazırda çalışan container üzerinde komut çalıştırmaya yarar.
+     - docker *cp* ~/dosya imagename:/hedef_dizin
+       Container ya da ev sahibi sistem içindeki dosyanın kopyalanması
+       _-L:_ Sembolik bağlantıların güvenli bir şekilde kopyalanmasını garanti
+       altına alır.
+     - docker *stop* imagename
+       _-t:_ Durdurma işlemini t sn geciktiri.
+     - docker *start* imagename
+       _-a:_ Temel çıktı aktif kabul oturumuna aktarılır.
+     - docker *inspect* imagename
+** Üçüncü yazı
+*** Kalıcı veri depolama
+**** Ev sahibi makineden dizin/dosya bağlamak
+      Mesela PHP kodunu container içine koymadan, dosyaları ev sahibi makine
+      üzerinde tutarak çalıştırmak.
+      - docker *run* -d --name nginx1 -v
+        ~/nginx/nginx.conf:/etc/nginx/nginx.conf -p 8000:80 nginx
+      - docker *run* -d --name nginx2 -v ~/web:/var/www/html -p 8001:80 nginx 
+**** Depolayıcı containerlar kullanmak
+      - İlgili alanı birden fazla container ile paylaşmak
+      - Bir container'a birden fazla depolayıcı container bağlama
+      - Depolayıcı containerlar, bağlı olduğu containerlar ölse dahi
+        silinmezler. Tekrar tekrar kullanılabilirler.
+	- Depolayıcı container yaratmak
+          docker *create* -v /dbdata --name dbstore training/postgres /bin/true
+	- Depolayıcı container'ı bağlamak
+	  docker *run* -d --volumes-from dbstore --name db1 training/postgres
+	  
+      Bu sayede "db1" adındaki container'ımızın içindeki /dbdata dizini,
+      aslında "dbstore" container'ından bağlanmış olacaktır. Diyelim ki; disk
+      alanını yedeklemek istiyoruz. Yeni bir container ile aynı depolayıcı
+      container'ı bağlayarak bu işlemi gerçekleştirebilir.
+      - docker *run* --rm --volumes-from dbstore -v $(pwd):/backup ubuntu tar
+        cvf /backup/backup.tar /dbdata
+	- Çalıştıktan sonra silinecek bir şekilde, ubuntu imajından yeni bir
+          container yarat (docker run --rm)
+	- Bu container'a dbstore adlı depolayıcı container'ından dışarı açılan
+          dizinleri bağla (--volumes-from dbstore)
+	- Ev sahibi makine üstünde bulunduğum dizini, container içerisindeki
+          /backup dizinine bağla (-v $(pwd):/backup)
+	- Container üstündeki /dbdata dizinini sıkıştırarak ev sahibi makine
+          üstündeki /backup dizinine backup.tar dosyasını kaydet
+**** Paylaşımlı disk alanı kullanmak
+      Local sürücülere ek olarak, Azure, Google Compute Engine, NFS gibi farklı
+      sürücü servisleri de kullanılabilir(--volume-driver=flock) Parametre
+      verilmezse disk alanı ev sahibi makina üzerinde oluşturulur
+      - Yeni disk alanı oluşturmak
+	docker *volume* create --name=shared-disk
+      - Yeni disk alanı oluşturmak(Flocker yüklendikten sonra)
+	docker *volume* create -d flocker -o size=20GB --name=shared-disk
+      - Oluşturduğumuz disk alanını container'daki bir dölüme bağlamak için
+	docker *run* -d *--name=t1* -v shared-disk:/usr/local/tomcat/webapps -P tomcat
+	docker *run* -d *--name=t2* -v shared-disk:/usr/local/tomcat/webapps -P tomcat
+
+*** Çevresel değişkenler
+     Uygulama yapılandırma için kullanılır. Mesela;
+     docker *run* --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
+
+     Dockerfile incelenerek imajda kullanılabilir olan çevresel değişkenler
+     öğrenilebilir.
+*** Bağlantı noktaları
+     İmaj hazırlanırken Dockerfile içerisinde belirlenmelidir. Ancak yine de
+     container çalıştırılırken -p ya da -P ile ev sahibi makineye bağlanmazsa
+     dışarıdan erişim sağlanamaz.
+*** Dockerfile
+     Özetle docker imajını tarig eder. Dockerfileda her satır bağımsız çalışır.
+     ADD, COPY, RUN gibi komutlar temel alınan imaja yeni katmanlar ekler.
+
+     #Dockerfile
+     --------------------------------------------------------
+     *FROM* node:6.2-slim #Her dockerfile FROM satırı ile başlar
+     *MAINTAINER* Alper Kanat <me@alperkan.at>
+     *ADD* . /srv # Bulunduğumuz dizini containerda /srv dizinine kopyalar
+     *WORKDIR* /srv
+     *RUN* apt-get update && apt-get install -qqy git
+     *RUN* npm install -g bower gulp
+     *RUN* npm install
+     *RUN* bower install --allow-root
+     *RUN* gulp clean build
+     *ENV* NODE_ENV production # NODE_ENV çevvresel değişkenine göre node.js uygulaması farklı davranır.
+     *EXPOSE* 3000 # -p ya da -P parametresi ile bağlama işlemi çalışma zamanında yapılır.
+     *CMD* ["./app.js"] # /srv/app.js dosyasını çalıştırır.
+     --------------------------------------------------------
+
+     Dockerfile dosyasına eklenebilecek satırlar
+     - Docker run sırasında etiket vermektense
+       *LABEL* type="node" purpose="api" role="core" description="RESTAPI"
+     - Kalıcı veri depolarının bağlanması
+       *VOLUME* ["/data"]
+       *VOLUME* /data
+     - Docker aksini söylemedikce container içindeki süreçleri "root"
+       kullanıcısı ile çalıştırır. *USER* satırı ile değiştirilebilir. 
+       *!!!ARAŞTIRILACAK!!!*
+     - Çevresel değişkenlerin yeterli olmadığı durumlarda imajlar parametrik
+       üretilebilir. Öntanımlı değerler belirlenebilir.
+       #Dockerfile
+       --------------------------------------------------------
+       *ARG* user1=someuser
+       *ARG* buildno=1
+       --------------------------------------------------------
+       
+       docker *build* --build-arg buildno=2 -t imagename/dadada
+     - Belirli zaman aralıkları ile docker sisteminde çalıştırılarak
+       container'ın sağlığını kontrol edilebilir.
+       *HEALTHCHECK* --interval=5m --timeout=3s\
+       *CMD* curl -f http://localhost/ || exit 1
+
+* Bağlantılar
+#+INCLUDE: "baglantilar.org"

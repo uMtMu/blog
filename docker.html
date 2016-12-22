@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>uMtMu</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="uMtMu"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2016-12-22T18:13+0300"/>
+<meta name="author" content="umt"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">uMtMu</h1>
+
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Docker CEO'sunun sunum</a></li>
+<li><a href="#sec-2">2 Alper Kanat'ın Docker yazısından alınan notlar</a>
+<ul>
+<li><a href="#sec-2-1">2.1 Birinci Yazı</a>
+<ul>
+<li><a href="#sec-2-1-1">2.1.1 Sanallaştırma ve Docker</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-2">2.2 İkinci Yazı</a>
+<ul>
+<li><a href="#sec-2-2-1">2.2.1 Komutlar</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-3">2.3 Üçüncü yazı</a>
+<ul>
+<li><a href="#sec-2-3-1">2.3.1 Kalıcı veri depolama</a></li>
+<li><a href="#sec-2-3-2">2.3.2 Çevresel değişkenler</a></li>
+<li><a href="#sec-2-3-3">2.3.3 Bağlantı noktaları</a></li>
+<li><a href="#sec-2-3-4">2.3.4 Dockerfile</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-3">3 Bağlantılar</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Docker CEO'sunun sunum</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>  <a href="https://youtu.be/Q5POuMHxW-0">https://youtu.be/Q5POuMHxW-0</a><br/>
+  WM -&gt; Least software specific <br/>
+</p><ul>
+<li>docker <b>ps</b> # -a parametresi ile tüm containerlar listelenir<br/>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">ID</td><td class="left">IMAGE</td><td class="left">COMMAND</td><td class="left">CREATED</td><td class="left">STATUS</td><td class="left">PORTS</td></tr>
+</tbody>
+</table>
+
+
+<p>    <br/>
+</p></li>
+<li>docker <b>images</b><br/>
+</li>
+<li>docker <b>run</b> <i>imagename:tag</i> -p hostpost:containerpost [command]<br/>
+    -it parametreleri ile komutun interaktif olarak çalışması sağlanabilir. (-i<br/>
+    = input, -t = tty)<br/>
+    -p parametresi ile host ve container üzerindeki port eşlemesi yapılabilir.<br/>
+    Birden fazla port eşlemesi yapılabilir. Ayrıca -P parametresi ile port<br/>
+    seçimi docker'a bırakılabilir.<br/>
+</li>
+<li>docker <b>diff</b> [ID] # belirtilen containerı temel alınan kontainer ile<br/>
+    karşılaştırır. <br/>
+</li>
+<li>docker <b>commit</b> [ID] user/tag# # orijinal imajın üzerinde yapılan<br/>
+    değişiklikleri ayrı bir imaj olarak kaydeder.<br/>
+</li>
+</ul>
+
+
+<p><br/>
+</p></div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Alper Kanat'ın Docker yazısından alınan notlar</h2>
+<div class="outline-text-2" id="text-2">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left"><a href="https://medium.com/monitisemea/docker-serisi-1-1c6629499b9a">Birinci yazı</a></td><td class="left"><a href="https://medium.com/monitisemea/docker-serisi-2-docker-engine-bolum-1-3e39a0912607">İkinci Yazı</a></td><td class="left"><a href="https://medium.com/monitisemea/docker-serisi-3-docker-engine-bolum-2-a7c6c5f50851">Üçüncü Yazı</a></td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Birinci Yazı</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+</div>
+
+<div id="outline-container-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1"><span class="section-number-4">2.1.1</span> Sanallaştırma ve Docker</h4>
+<div class="outline-text-4" id="text-2-1-1">
+
+<p>     Sanal makineler, Hypervisor(Virtual box, VMware vs) denen yazılımlar<br/>
+     aracılığıyla işletim sistemi ve donanım ile iletişime geçebilir.<br/>
+     Container teknolojisi, Hypervisiondan farklı olarak işletim sistemi<br/>
+     çekirdeğinden destek alıyor. Bu sayede daha az kaynak kullanıyor.<br/>
+     Linux containers(LXC), Docker'ın atası<br/>
+     Docker, LXC desteğinin kullanılmasını kolaylaştıran bir uygulama<br/>
+     Container, kabaca çalışmasını istediğimiz programın asgari ihtiyaçlarının<br/>
+     tamamını barındıran kapsayıcı imajın çalışan halidir.<br/>
+     Her container bir imajı baz alarak başlar ve imajlar birbirinden miras<br/>
+     alabilirler. İmajdaki her değişiklik yeni bir katman oluşturur. Docker, AUFS<br/>
+     (Advanced Multi-Layered Unification FileSystem) kullanır. <br/>
+</p><ul>
+<li>Continous Integration ortamında paket oluşturmak ya da test çalıştırmak<br/>
+</li>
+<li>Micro servisler oluşturmak<br/>
+</li>
+<li>Çok çaba harcanarak kurulan masaüstü uygulamaları (Eclipse CHE gibi)<br/>
+       docker ile kullanılabilir.<br/>
+</li>
+</ul>
+
+
+<p><br/>
+     <span style="text-decoration:underline;">Avantajları</span><br/>
+</p><ul>
+<li>WMlere göre daha hızlı başlaması ve düşük maliyet<br/>
+</li>
+<li>Doğrudan çekirdek desteği ile HyperVisor katmanından kurtulmak<br/>
+</li>
+<li>İmaj taşınabilirliği<br/>
+</li>
+<li>Orijinal imajın farklı çevresel değişkenlerle farklı davranışlara sahip<br/>
+       olması <br/>
+</li>
+</ul>
+
+
+<p><br/>
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> İkinci Yazı</h3>
+<div class="outline-text-3" id="text-2-2">
+
+
+</div>
+
+<div id="outline-container-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1"><span class="section-number-4">2.2.1</span> Komutlar</h4>
+<div class="outline-text-4" id="text-2-2-1">
+
+<ul>
+<li>docker <b>info</b><br/>
+</li>
+<li>docker <b>pull</b> <i>imagename:tag</i><br/>
+</li>
+<li>docker <b>build</b> # ???<br/>
+</li>
+<li>docker <b>push</b><br/>
+</li>
+<li>docker <b>run</b><br/>
+<ul>
+<li>docker <b>run</b> -it -rm ubuntu /bin/bash<br/>
+         <span style="text-decoration:underline;">-it:</span> interactive<br/>
+         <span style="text-decoration:underline;">&ndash;rm:</span> container sonlandığında dosyaları silinir<br/>
+         /bin/bash container'da çalıştırılır<br/>
+</li>
+<li>docker <b>run</b> -d &ndash;name deneme &ndash;restart=always -p 3000:3000 imagename:tag<br/>
+         <span style="text-decoration:underline;">-d:</span> daemon olarak çalıştır<br/>
+         <span style="text-decoration:underline;">&ndash;name:</span> container'ı isimlendir<br/>
+         <span style="text-decoration:underline;">&ndash;restart:</span> container her hangi bir şekilde sonlandığılda yeniden<br/>
+         başlatılması (no, on-failure[:max-retry], always, unless-stopped)<br/>
+</li>
+<li>Diğer parametreleri<br/>
+         <span style="text-decoration:underline;">-e:</span> Çevresel değişken tanımlamak için kullanılır. <br/>
+         <span style="text-decoration:underline;">-v:</span> Container içerisindeki bir dizin ya da bir dosyayı, ev sahibi<br/>
+         makine üstündeki bir dizine bağlamak için kullanılır.<br/>
+         <span style="text-decoration:underline;">-l:</span> Container'a etiket tanımlamak için kullanılır.<br/>
+         <span style="text-decoration:underline;">-u:</span> Container'ın hangi kullanıcı ile başlayacağı tanımlanır.<br/>
+</li>
+</ul>
+
+</li>
+<li>docker <b>logs</b> &ndash;tail 20 -f imagename<br/>
+       Docker containerları genellikle yalnızca bir tek süreç çalıştıracak ve<br/>
+       temel çıktıya(stdout) bir şey basacak şekilde tasarlanır. Temel çıktıya<br/>
+       basılan işlem kayıtlarına bu komut ile ulaşulabilir. Öğreneğin nginx<br/>
+       container'ı başlattığınızda access.log dosyası bu komut ile takip edilebilir.<br/>
+</li>
+<li>docker <b>exec</b> -it imagename ls -l /srv<br/>
+       Hali hazırda çalışan container üzerinde komut çalıştırmaya yarar.<br/>
+</li>
+<li>docker <b>cp</b> ~/dosya imagename:/hedef_dizin<br/>
+       Container ya da ev sahibi sistem içindeki dosyanın kopyalanması<br/>
+       <span style="text-decoration:underline;">-L:</span> Sembolik bağlantıların güvenli bir şekilde kopyalanmasını garanti<br/>
+       altına alır.<br/>
+</li>
+<li>docker <b>stop</b> imagename<br/>
+       <span style="text-decoration:underline;">-t:</span> Durdurma işlemini t sn geciktiri.<br/>
+</li>
+<li>docker <b>start</b> imagename<br/>
+       <span style="text-decoration:underline;">-a:</span> Temel çıktı aktif kabul oturumuna aktarılır.<br/>
+</li>
+<li>docker <b>inspect</b> imagename<br/>
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> Üçüncü yazı</h3>
+<div class="outline-text-3" id="text-2-3">
+
+
+</div>
+
+<div id="outline-container-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1"><span class="section-number-4">2.3.1</span> Kalıcı veri depolama</h4>
+<div class="outline-text-4" id="text-2-3-1">
+
+<ul>
+<li id="sec-2-3-1-1">Ev sahibi makineden dizin/dosya bağlamak<br/>
+      Mesela PHP kodunu container içine koymadan, dosyaları ev sahibi makine<br/>
+      üzerinde tutarak çalıştırmak.<br/>
+<ul>
+<li>docker <b>run</b> -d &ndash;name nginx1 -v<br/>
+        ~/nginx/nginx.conf:/etc/nginx/nginx.conf -p 8000:80 nginx<br/>
+</li>
+<li>docker <b>run</b> -d &ndash;name nginx2 -v ~/web:/var/www/html -p 8001:80 nginx <br/>
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-2-3-1-2">Depolayıcı containerlar kullanmak<br/>
+<ul>
+<li>İlgili alanı birden fazla container ile paylaşmak<br/>
+</li>
+<li>Bir container'a birden fazla depolayıcı container bağlama<br/>
+</li>
+<li>Depolayıcı containerlar, bağlı olduğu containerlar ölse dahi<br/>
+        silinmezler. Tekrar tekrar kullanılabilirler.<br/>
+<ul>
+<li>Depolayıcı container yaratmak<br/>
+          docker <b>create</b> -v /dbdata &ndash;name dbstore training/postgres /bin/true<br/>
+</li>
+<li>Depolayıcı container'ı bağlamak<br/>
+          docker <b>run</b> -d &ndash;volumes-from dbstore &ndash;name db1 training/postgres<br/>
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+<p>          <br/>
+      Bu sayede "db1" adındaki container'ımızın içindeki /dbdata dizini,<br/>
+      aslında "dbstore" container'ından bağlanmış olacaktır. Diyelim ki; disk<br/>
+      alanını yedeklemek istiyoruz. Yeni bir container ile aynı depolayıcı<br/>
+      container'ı bağlayarak bu işlemi gerçekleştirebilir.<br/>
+</p><ul>
+<li>docker <b>run</b> &ndash;rm &ndash;volumes-from dbstore -v $(pwd):/backup ubuntu tar<br/>
+        cvf /backup/backup.tar /dbdata<br/>
+<ul>
+<li>Çalıştıktan sonra silinecek bir şekilde, ubuntu imajından yeni bir<br/>
+          container yarat (docker run &ndash;rm)<br/>
+</li>
+<li>Bu container'a dbstore adlı depolayıcı container'ından dışarı açılan<br/>
+          dizinleri bağla (&ndash;volumes-from dbstore)<br/>
+</li>
+<li>Ev sahibi makine üstünde bulunduğum dizini, container içerisindeki<br/>
+          /backup dizinine bağla (-v $(pwd):/backup)<br/>
+</li>
+<li>Container üstündeki /dbdata dizinini sıkıştırarak ev sahibi makine<br/>
+          üstündeki /backup dizinine backup.tar dosyasını kaydet<br/>
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-2-3-1-3">Paylaşımlı disk alanı kullanmak<br/>
+      Local sürücülere ek olarak, Azure, Google Compute Engine, NFS gibi farklı<br/>
+      sürücü servisleri de kullanılabilir(&ndash;volume-driver=flock) Parametre<br/>
+      verilmezse disk alanı ev sahibi makina üzerinde oluşturulur<br/>
+<ul>
+<li>Yeni disk alanı oluşturmak<br/>
+        docker <b>volume</b> create &ndash;name=shared-disk<br/>
+</li>
+<li>Yeni disk alanı oluşturmak(Flocker yüklendikten sonra)<br/>
+        docker <b>volume</b> create -d flocker -o size=20GB &ndash;name=shared-disk<br/>
+</li>
+<li>Oluşturduğumuz disk alanını container'daki bir dölüme bağlamak için<br/>
+        docker <b>run</b> -d <b>&ndash;name=t1</b> -v shared-disk:/usr/local/tomcat/webapps -P tomcat<br/>
+        docker <b>run</b> -d <b>&ndash;name=t2</b> -v shared-disk:/usr/local/tomcat/webapps -P tomcat<br/>
+</li>
+</ul>
+
+
+<p><br/>
+</p></li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-2-3-2" class="outline-4">
+<h4 id="sec-2-3-2"><span class="section-number-4">2.3.2</span> Çevresel değişkenler</h4>
+<div class="outline-text-4" id="text-2-3-2">
+
+<p>     Uygulama yapılandırma için kullanılır. Mesela;<br/>
+     docker <b>run</b> &ndash;name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql<br/>
+</p>
+<p><br/>
+     Dockerfile incelenerek imajda kullanılabilir olan çevresel değişkenler<br/>
+     öğrenilebilir.<br/>
+</p></div>
+
+</div>
+
+<div id="outline-container-2-3-3" class="outline-4">
+<h4 id="sec-2-3-3"><span class="section-number-4">2.3.3</span> Bağlantı noktaları</h4>
+<div class="outline-text-4" id="text-2-3-3">
+
+<p>     İmaj hazırlanırken Dockerfile içerisinde belirlenmelidir. Ancak yine de<br/>
+     container çalıştırılırken -p ya da -P ile ev sahibi makineye bağlanmazsa<br/>
+     dışarıdan erişim sağlanamaz.<br/>
+</p></div>
+
+</div>
+
+<div id="outline-container-2-3-4" class="outline-4">
+<h4 id="sec-2-3-4"><span class="section-number-4">2.3.4</span> Dockerfile</h4>
+<div class="outline-text-4" id="text-2-3-4">
+
+<p>     Özetle docker imajını tarig eder. Dockerfileda her satır bağımsız çalışır.<br/>
+     ADD, COPY, RUN gibi komutlar temel alınan imaja yeni katmanlar ekler.<br/>
+</p>
+<p><br/>
+     #Dockerfile<br/>
+
+</p>
+<hr/>
+<p>
+     <b>FROM</b> node:6.2-slim #Her dockerfile FROM satırı ile başlar<br/>
+     <b>MAINTAINER</b> Alper Kanat &lt;me@alperkan.at&gt;<br/>
+     <b>ADD</b> . /srv # Bulunduğumuz dizini containerda /srv dizinine kopyalar<br/>
+     <b>WORKDIR</b> /srv<br/>
+     <b>RUN</b> apt-get update &amp;&amp; apt-get install -qqy git<br/>
+     <b>RUN</b> npm install -g bower gulp<br/>
+     <b>RUN</b> npm install<br/>
+     <b>RUN</b> bower install &ndash;allow-root<br/>
+     <b>RUN</b> gulp clean build<br/>
+     <b>ENV</b> NODE_ENV production # NODE_ENV çevvresel değişkenine göre node.js uygulaması farklı davranır.<br/>
+     <b>EXPOSE</b> 3000 # -p ya da -P parametresi ile bağlama işlemi çalışma zamanında yapılır.<br/>
+     <b>CMD</b> ["./app.js"] # /srv/app.js dosyasını çalıştırır.<br/>
+
+</p>
+<hr/>
+
+<p><br/>
+     Dockerfile dosyasına eklenebilecek satırlar<br/>
+</p><ul>
+<li>Docker run sırasında etiket vermektense<br/>
+       <b>LABEL</b> type="node" purpose="api" role="core" description="RESTAPI"<br/>
+</li>
+<li>Kalıcı veri depolarının bağlanması<br/>
+       <b>VOLUME</b> ["/data"]<br/>
+       <b>VOLUME</b> /data<br/>
+</li>
+<li>Docker aksini söylemedikce container içindeki süreçleri "root"<br/>
+       kullanıcısı ile çalıştırır. <b>USER</b> satırı ile değiştirilebilir. <br/>
+       <b>!!!ARAŞTIRILACAK!!!</b><br/>
+</li>
+<li>Çevresel değişkenlerin yeterli olmadığı durumlarda imajlar parametrik<br/>
+       üretilebilir. Öntanımlı değerler belirlenebilir.<br/>
+       #Dockerfile<br/>
+
+<hr/>
+       <b>ARG</b> user1=someuser<br/>
+       <b>ARG</b> buildno=1<br/>
+
+<hr/>
+
+<p>       <br/>
+       docker <b>build</b> &ndash;build-arg buildno=2 -t imagename/dadada<br/>
+</p></li>
+<li>Belirli zaman aralıkları ile docker sisteminde çalıştırılarak<br/>
+       container'ın sağlığını kontrol edilebilir.<br/>
+       <b>HEALTHCHECK</b> &ndash;interval=5m &ndash;timeout=3s\<br/>
+       <b>CMD</b> curl -f <a href="http://localhost/">http://localhost/</a> || exit 1<br/>
+</li>
+</ul>
+
+
+<p><br/>
+</p></div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Bağlantılar</h2>
+<div class="outline-text-2" id="text-3">
+
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<center>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left"><a href="blog.html">Blog</a></td><td class="left"><a href="bash.html">Bash</a></td><td class="left"><a href="baslangiclar.html">Başlangıç</a></td><td class="left"><a href="muzik.html">Müzik</a></td><td class="left"><a href="okunacaklar.html">Okunacaklar</a></td></tr>
+<tr><td class="left"><a href="notlar.html">Notlar</a></td><td class="left"><a href="projeler.html">Projeler</a></td><td class="left"><a href="sozler.html">Sözler</a></td><td class="left"><a href="tatil_rotalari.html">Tatil Rotaları</a></td><td class="left"><a href="emacs.html">Emacs</a></td></tr>
+<tr><td class="left"></td><td class="left"></td><td class="left"><a href="index.html">Ana Sayfa</a></td><td class="left"></td><td class="left"></td></tr>
+</tbody>
+</table>
+
+</center>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2016-12-22T18:13+0300</p>
+<p class="author">Author: umt</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
