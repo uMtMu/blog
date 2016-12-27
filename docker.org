@@ -54,6 +54,8 @@
      - docker *pull* /imagename:tag/
      - docker *build* # ???
      - docker *push*
+     - docker *rmi* <imagename|image_ID>
+     - docker *rm* <containername|container_ID>
      - docker *run*
        - docker *run* -it -rm ubuntu /bin/bash
 	 _-it:_ interactive
