@@ -1,5 +1,6 @@
 #+TITLE: uMtMu
 #+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
+#+HTML: <script src="js/scripts.js"></script>
 #+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 #+OPTIONS: ^:nil \n:t
 #+OPTIONS: with-timestamps
@@ -8,6 +9,10 @@
 #+END_CENTER
 #+NAME: top
 * Yazılar
+** Hayat farklı karakterlerin baş rolünü oynadığı farklı episodelar gibi
+   <2017-01-09 Mon 12:07>
+
+   [[top][Yukarı]]
 ** Bu 10 şeyi kendinize yapmayın
    <2016-12-04 Sun 13:08>
    1. Asla ama asla kendinizi suçlamayın.
