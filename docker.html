@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="uMtMu"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2016-12-27T13:00+0300"/>
+<meta name="generated" content="2016-12-27T13:42+0300"/>
 <meta name="author" content="umt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -147,7 +147,8 @@ for the JavaScript code in this tag.
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-3">3 Bağlantılar</a></li>
+<li><a href="#sec-3">3 Docker networking</a></li>
+<li><a href="#sec-4">4 Bağlantılar</a></li>
 </ul>
 </div>
 </div>
@@ -426,7 +427,7 @@ for the JavaScript code in this tag.
 <li>Yeni disk alanı oluşturmak(Flocker yüklendikten sonra)<br/>
         docker <b>volume</b> create -d flocker -o size=20GB &ndash;name=shared-disk<br/>
 </li>
-<li>Oluşturduğumuz disk alanını container'daki bir dölüme bağlamak için<br/>
+<li>Oluşturduğumuz disk alanını container'daki bir bölüme bağlamak için<br/>
         docker <b>run</b> -d <b>&ndash;name=t1</b> -v shared-disk:/usr/local/tomcat/webapps -P tomcat<br/>
         docker <b>run</b> -d <b>&ndash;name=t2</b> -v shared-disk:/usr/local/tomcat/webapps -P tomcat<br/>
 </li>
@@ -537,8 +538,49 @@ for the JavaScript code in this tag.
 </div>
 
 <div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Bağlantılar</h2>
+<h2 id="sec-3"><span class="section-number-2">3</span> Docker networking</h2>
 <div class="outline-text-2" id="text-3">
+
+<ul>
+<li>docker <b>network</b> ls<br/>
+    Bu komut ile aşağıdaki gibi docker ile kullanılabilecek networkler listelenir.<br/>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">NETWORK</td><td class="left">ID</td><td class="left">NAME</td><td class="left">DRIVER</td><td class="left">SCOPE</td></tr>
+<tr><td class="left">dafbe2fb6962</td><td class="left">bridge</td><td class="left">bridge</td><td class="left">local</td><td class="left"></td></tr>
+<tr><td class="left">1f7c90ccae50</td><td class="left">host</td><td class="left">host</td><td class="left">local</td><td class="left"></td></tr>
+<tr><td class="left">5c3ff1fec5b8</td><td class="left">none</td><td class="left">null</td><td class="left">local</td><td class="left"></td></tr>
+</tbody>
+</table>
+
+
+<p><br/>
+    Bridge isimli network, Docker'ın ev sahibi sunucuda kurduğu sanal arayüzü işaret<br/>
+    eder. Bu arayüzü <b>ifconfig</b> komutu ile incelenebilir. Çalıştırılan bütün<br/>
+    containerlar aksi belirtilmediği sürece Bridge isimli networke bağlıdır.<br/>
+</p>
+<p><br/>
+</p></li>
+<li>docker <b>run</b> &ndash;network=&lt;NETWORK&gt;<br/>
+    Komutu ile imaj istenilen network ile bağlı başlatılabilir.<br/>
+</li>
+</ul>
+
+
+<p><br/>
+</p>
+<p><br/>
+</p>
+<p><br/>
+</p></div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Bağlantılar</h2>
+<div class="outline-text-2" id="text-4">
 
 
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -560,7 +602,7 @@ for the JavaScript code in this tag.
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2016-12-27T13:00+0300</p>
+<p class="date">Date: 2016-12-27T13:42+0300</p>
 <p class="author">Author: umt</p>
 <p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>

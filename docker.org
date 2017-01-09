@@ -128,7 +128,7 @@
 	docker *volume* create --name=shared-disk
       - Yeni disk alanı oluşturmak(Flocker yüklendikten sonra)
 	docker *volume* create -d flocker -o size=20GB --name=shared-disk
-      - Oluşturduğumuz disk alanını container'daki bir dölüme bağlamak için
+      - Oluşturduğumuz disk alanını container'daki bir bölüme bağlamak için
 	docker *run* -d *--name=t1* -v shared-disk:/usr/local/tomcat/webapps -P tomcat
 	docker *run* -d *--name=t2* -v shared-disk:/usr/local/tomcat/webapps -P tomcat
 
@@ -185,5 +185,29 @@
        *HEALTHCHECK* --interval=5m --timeout=3s\
        *CMD* curl -f http://localhost/ || exit 1
 
+* Docker networking
+
+** Komutlar
+   - docker *network* ls
+     Bu komut ile aşağıdaki gibi docker ile kullanılabilecek networkler listelenir.
+     | NETWORK      | ID     | NAME   | DRIVER | SCOPE |
+     | dafbe2fb6962 | bridge | bridge | local  |       |
+     | 1f7c90ccae50 | host   | host   | local  |       |
+     | 5c3ff1fec5b8 | none   | null   | local  |       |
+
+     Bridge isimli network, Docker'ın ev sahibi sunucuda kurduğu sanal arayüzü işaret
+     eder. Bu arayüzü *ifconfig* komutu ile incelenebilir. Çalıştırılan bütün
+     containerlar aksi belirtilmediği sürece Bridge isimli networke bağlıdır.
+
+   - docker *network* inspect bridge
+     Ağ arayüzü hakkında daha detaylı bilgi verir.
+
+** Kullanıcı tanımlı ağlar
+   - Bridge network oluşturma
+     En kolay oluşturulan network tipidir.
+     - docker *network* create
+
+   - docker *run* --network=<NETWORK>
+     Komutu ile imaj istenilen network ile bağlı başlatılabilir.
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"
