@@ -1,0 +1,62 @@
+#+TITLE: uMtMu
+#+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
+#+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+#+OPTIONS: ^:nil \n:t
+#+BEGIN_CENTER
+[[file:img/ja2.png]]
+#+END_CENTER
+* Yazılar
+** İş görüşmelerinde Don Kişot olmamak
+   Bir arkadaşım, "/Eabi ben cep telefonu kullanmaya karşıyım. Bunlar hep
+   kapitalizm. Çalışmakla işim olmaz/" falan diyen insanların aslında sisteme
+   karşı olmadığını, sistemi ürettiği "yan ürünler" olduklarını söylemişti.
+   Bence de eğer sistem dediğiniz şeyi aşmak istediğiniz bir duvar olarak
+   algılıyorsanız, o insanlar gibi duvarında dibinde kamp kurup abi ben sisteme
+   karşıyım demek ya da benim gibi duvara kafamı vurmaya devam edip "amk duvarı"
+   demenin bir anlamı yok. Eğer duvar benzetmesinin üzerinden devam  edecek
+   olursak, diğer tarafa erişmek istiyorsak, duvarı delebilir, yıkabilir,
+   merdiven/ip vs ile tırmanabiliriz.
+   İş görüşmelerine katılan şirket çalışanları, savaşmamız gereken yel
+   değirmenleri değildir. Onlar ancak ununu eleyip eleğini asmak isteyen
+   insanlardır. Eğer sizin de amacınız aynıysa onlarla *iş biliği* içinde
+   çalışabilirsiniz. 
+
+   *Not:* Don kişot'u okumadım. 
+** Tavır
+*** İstek
+    İşe girmek istiyor musun? 
+    - Evetse İstekli olduğunu göster.
+    - Hayırsa Burada ne işin var?
+*** Duygusal tutarlılık
+** Mulakatlar
+   Bu dökümanlardaki antil kuntil başlıklar şimdiye kadar hep rahatsız etmişti.
+   Bu ne lan adam neleri sormuş falan diyordum. Biraz geçte olsa bu konuda
+   fikrim değişti. Her ne kadar bu sorular/kalıplar kopya/özenti falan da olsa
+   ki olmayabilir, *amaç sizi tanımaktır. Bu nedenle her soru değerlidir.*
+   Mülakat(sözlü veya  yazılı fark etmez) insanın kendisini tanıması için bir
+   mücadeledir. Karşınızda sizi tanımak isteyen(az ya da çok) bir insan/insan
+   grubu bulunmaktadır.
+
+   Evet, sorulan şeyler sizi genellikle bir kalıba sokmaya yönelik. Ancak
+   onların bakmak istediği veya görmek istediklerin kalıbın dışında da siz
+   varsınız. Belki de mulakatlarda sıçrama noktanız, karşınızdaki kişinin sizi
+   tanımak için orada olmasıdır. Anahtar nokta, sizi ne seviyede tanımak
+   istediğini bilmiyor olmanızdır.
+** Ödevler (Gözden geçir)
+   Sanırım burada asıl sorun onları ödev veya angarya olarak görmek. Bence ödev
+   olarak değil de işe alınmanız ve ilk göreviniz gibi görmek daha uygun olur.
+
+   Ödev dediğimiz şey kopya çekmeden en yüksek puanı almaya çalıştığımız bir
+   görevdir. 
+
+   İş yerinde verilen ilk işimiz ise olabilecek tüm kaynaklardan yararlanarak,
+   sorunu çözmeye yönelik bir görevdir. Her ne kadar sonuca göre
+   değerlendirileceği düşünülse de asıl amaç yolu görmek, işi yaparken hangi
+   zihin yapısında olduğunuzu anlamaktır.
+
+   Ödevlerde olduğundan daha az kopya çekincesi olmalı bence. Sonuç olarak bir
+   iş yapıyorsunuz ve önemli olan kodun özgünlüğü değil sorunun çözülmesidir. 
+** Bütün yazdıklarım kendime notlarımdır.
+* Bağlantılar
+#+INCLUDE: "baglantilar.org"
+
