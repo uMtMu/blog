@@ -7,6 +7,11 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 #+NAME: top
+* Elpy kısayollar
+  | M - .       | Tanımlanan noktaya git        |
+  | M - *       | M - . ya geri dön             |
+  | C - c C - o | Fonsiyon ve sınıfları listele |
+  |             |                               |
 * Kaydedilmemiş değişiklikler
   C-x s kombinasyonu ile toplu tampon kayıtlarında "d" tuşu ile değişiklikler
   görülebilir. 
