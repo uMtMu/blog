@@ -7,6 +7,31 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
+** https://cmdchallenge.com
+*** hello_world/
+    echo "hello world"
+*** current_working_directory
+    pwd
+*** list_files
+    ls
+*** list_files_adv
+    ls -aF
+*** nested_dirs
+    find . -name -exec cat {} \;
+*** print_file_contents
+    cat access.log
+*** last_lines
+    tail -n 5 access.log
+*** find_string_in_a_file
+    grep GET access.log
+*** find_tabs_in_a_file
+    grep -P "\t" file-with-tabs.txt | wc -l
+*** seach_for_file_containing_string
+    grep 500 * | cut -d':' -f1 | uniq # grep -l 500 
+*** search_by_file_extension
+    ls access.log*
+*** search_for_string_in_files_recursive
+    grep -r "class" | grep me.py | cut -d':' -f2 # grep -h 500 **/access.log*
 ** Küçük şeyler :)
 *** aranan dosyaların sonuna ekleme
     <2016-10-17 Mon 00:13>
