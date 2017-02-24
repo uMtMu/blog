@@ -9,29 +9,46 @@
 * Yazılar
 ** https://cmdchallenge.com
 *** hello_world/
-    echo "hello world"
+    - echo "hello world"
+    - echo 'hello world'
 *** current_working_directory
-    pwd
+    - pwd
+    - pwd
 *** list_files
-    ls
+    - ls
+    - ls
 *** list_files_adv
-    ls -aF
+    - ls -aF
+    - ls -laF -C1
 *** nested_dirs
-    find . -name -exec cat {} \;
+    - find . -name -exec cat {} \;
+    - cat ./.../\ \ /.\ .the\ flag.txt
 *** print_file_contents
-    cat access.log
+    - cat access.log
+    - cat access.log
 *** last_lines
-    tail -n 5 access.log
+    - tail -n 5 access.log
+    - tail -n 5 access.log
 *** find_string_in_a_file
-    grep GET access.log
+    - grep GET access.log
+    - grep 'GET' access.log
 *** find_tabs_in_a_file
-    grep -P "\t" file-with-tabs.txt | wc -l
+    - grep -P "\t" file-with-tabs.txt | wc -l
+    - grep -P '\t' file-with-tabs.txt | wc -l
 *** seach_for_file_containing_string
-    grep 500 * | cut -d':' -f1 | uniq # grep -l 500 
+    - grep 500 * | cut -d':' -f1 | uniq
+    - grep -l 500
 *** search_by_file_extension
-    ls access.log*
+    - ls access.log*
+    - find . -name 'access.log*'
 *** search_for_string_in_files_recursive
-    grep -r "class" | grep me.py | cut -d':' -f2 # grep -h 500 **/access.log*
+    - grep -r "class" | grep me.py | cut -d':' -f2
+    - grep -h 500 **/access.log*
+*** extract_ip_address
+    - find . -name 'access.log*' -exec cat {} + | cut -d' ' -f1
+    - grep -Pho '^\d+\.\d+\.\d+\.\d+' **/access.log*
+*** delete_files
+    - 
 ** Küçük şeyler :)
 *** aranan dosyaların sonuna ekleme
     <2016-10-17 Mon 00:13>

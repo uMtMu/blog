@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>uMtMu</title>
-<!-- 2017-02-23 Prş 19:14 -->
+<!-- 2017-02-24 Cum 18:57 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="umt" />
@@ -200,6 +200,8 @@ for the JavaScript code in this tag.
 <li><a href="#sec-1-1-10">1.1.10. seach_for_file_containing_string</a></li>
 <li><a href="#sec-1-1-11">1.1.11. search_by_file_extension</a></li>
 <li><a href="#sec-1-1-12">1.1.12. search_for_string_in_files_recursive</a></li>
+<li><a href="#sec-1-1-13">1.1.13. extract_ip_address</a></li>
+<li><a href="#sec-1-1-14">1.1.14. delete_files</a></li>
 </ul>
 </li>
 <li><a href="#sec-1-2">1.2. Küçük şeyler :)</a>
@@ -241,97 +243,152 @@ for the JavaScript code in this tag.
 </div><div id="outline-container-sec-1-1-1" class="outline-4">
 <h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> hello_world/</h4>
 <div class="outline-text-4" id="text-1-1-1">
-<p>
-echo "hello world"<br  />
-</p>
+<ul class="org-ul">
+<li>echo "hello world"<br  />
+</li>
+<li>echo 'hello world'<br  />
+</li>
+</ul>
 </div>
 </div>
 <div id="outline-container-sec-1-1-2" class="outline-4">
 <h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> current_working_directory</h4>
 <div class="outline-text-4" id="text-1-1-2">
-<p>
-pwd<br  />
-</p>
+<ul class="org-ul">
+<li>pwd<br  />
+</li>
+<li>pwd<br  />
+</li>
+</ul>
 </div>
 </div>
 <div id="outline-container-sec-1-1-3" class="outline-4">
 <h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> list_files</h4>
 <div class="outline-text-4" id="text-1-1-3">
-<p>
-ls<br  />
-</p>
+<ul class="org-ul">
+<li>ls<br  />
+</li>
+<li>ls<br  />
+</li>
+</ul>
 </div>
 </div>
 <div id="outline-container-sec-1-1-4" class="outline-4">
 <h4 id="sec-1-1-4"><span class="section-number-4">1.1.4</span> list_files_adv</h4>
 <div class="outline-text-4" id="text-1-1-4">
-<p>
-ls -aF<br  />
-</p>
+<ul class="org-ul">
+<li>ls -aF<br  />
+</li>
+<li>ls -laF -C1<br  />
+</li>
+</ul>
 </div>
 </div>
 <div id="outline-container-sec-1-1-5" class="outline-4">
 <h4 id="sec-1-1-5"><span class="section-number-4">1.1.5</span> nested_dirs</h4>
 <div class="outline-text-4" id="text-1-1-5">
-<p>
-find . -name -exec cat {} \;<br  />
-</p>
+<ul class="org-ul">
+<li>find . -name -exec cat {} \;<br  />
+</li>
+<li>cat ./&#x2026;/\ \ /.\ .the\ flag.txt<br  />
+</li>
+</ul>
 </div>
 </div>
 <div id="outline-container-sec-1-1-6" class="outline-4">
 <h4 id="sec-1-1-6"><span class="section-number-4">1.1.6</span> print_file_contents</h4>
 <div class="outline-text-4" id="text-1-1-6">
-<p>
-cat access.log<br  />
-</p>
+<ul class="org-ul">
+<li>cat access.log<br  />
+</li>
+<li>cat access.log<br  />
+</li>
+</ul>
 </div>
 </div>
 <div id="outline-container-sec-1-1-7" class="outline-4">
 <h4 id="sec-1-1-7"><span class="section-number-4">1.1.7</span> last_lines</h4>
 <div class="outline-text-4" id="text-1-1-7">
-<p>
-tail -n 5 access.log<br  />
-</p>
+<ul class="org-ul">
+<li>tail -n 5 access.log<br  />
+</li>
+<li>tail -n 5 access.log<br  />
+</li>
+</ul>
 </div>
 </div>
 <div id="outline-container-sec-1-1-8" class="outline-4">
 <h4 id="sec-1-1-8"><span class="section-number-4">1.1.8</span> find_string_in_a_file</h4>
 <div class="outline-text-4" id="text-1-1-8">
-<p>
-grep GET access.log<br  />
-</p>
+<ul class="org-ul">
+<li>grep GET access.log<br  />
+</li>
+<li>grep 'GET' access.log<br  />
+</li>
+</ul>
 </div>
 </div>
 <div id="outline-container-sec-1-1-9" class="outline-4">
 <h4 id="sec-1-1-9"><span class="section-number-4">1.1.9</span> find_tabs_in_a_file</h4>
 <div class="outline-text-4" id="text-1-1-9">
-<p>
-grep -P "\t" file-with-tabs.txt | wc -l<br  />
-</p>
+<ul class="org-ul">
+<li>grep -P "\t" file-with-tabs.txt | wc -l<br  />
+</li>
+<li>grep -P '\t' file-with-tabs.txt | wc -l<br  />
+</li>
+</ul>
 </div>
 </div>
 <div id="outline-container-sec-1-1-10" class="outline-4">
 <h4 id="sec-1-1-10"><span class="section-number-4">1.1.10</span> seach_for_file_containing_string</h4>
 <div class="outline-text-4" id="text-1-1-10">
-<p>
-grep 500 * | cut -d':' -f1 | uniq # grep -l 500<br  />
-</p>
+<ul class="org-ul">
+<li>grep 500 * | cut -d':' -f1 | uniq<br  />
+</li>
+<li>grep -l 500<br  />
+</li>
+</ul>
 </div>
 </div>
 <div id="outline-container-sec-1-1-11" class="outline-4">
 <h4 id="sec-1-1-11"><span class="section-number-4">1.1.11</span> search_by_file_extension</h4>
 <div class="outline-text-4" id="text-1-1-11">
-<p>
-ls access.log*<br  />
-</p>
+<ul class="org-ul">
+<li>ls access.log*<br  />
+</li>
+<li>find . -name 'access.log*'<br  />
+</li>
+</ul>
 </div>
 </div>
 <div id="outline-container-sec-1-1-12" class="outline-4">
 <h4 id="sec-1-1-12"><span class="section-number-4">1.1.12</span> search_for_string_in_files_recursive</h4>
 <div class="outline-text-4" id="text-1-1-12">
-<p>
-grep -r "class" | grep me.py | cut -d':' -f2 # grep -h 500 <b>*/access.log</b><br  />
-</p>
+<ul class="org-ul">
+<li>grep -r "class" | grep me.py | cut -d':' -f2<br  />
+</li>
+<li>grep -h 500 <b>*/access.log</b><br  />
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-1-13" class="outline-4">
+<h4 id="sec-1-1-13"><span class="section-number-4">1.1.13</span> extract_ip_address</h4>
+<div class="outline-text-4" id="text-1-1-13">
+<ul class="org-ul">
+<li>find . -name 'access.log*' -exec cat {} + | cut -d' ' -f1<br  />
+</li>
+<li>grep -Pho '^\d+\.\d+\.\d+\.\d+' <b>*/access.log</b><br  />
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-1-14" class="outline-4">
+<h4 id="sec-1-1-14"><span class="section-number-4">1.1.14</span> delete_files</h4>
+<div class="outline-text-4" id="text-1-1-14">
+<ul class="org-ul">
+<li></li>
+</ul>
 </div>
 </div>
 </div>
@@ -617,7 +674,7 @@ sort data | uniq -c #Satırların tekrar sayıları<br  />
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: umt</p>
-<p class="date">Created: 2017-02-23 Prş 19:14</p>
+<p class="date">Created: 2017-02-24 Cum 18:57</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
