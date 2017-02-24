@@ -7,7 +7,7 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
-** https://cmdchallenge.com
+** [[https://cmdchallenge.com][CMD CHALLENGE]]
 *** hello_world/
     - echo "hello world"
     - echo 'hello world'
