@@ -82,7 +82,9 @@
 *** sum_all_numbers
     - cat sum-me.txt | paste -sd+ | bc
     - paste -sd+ sum-me.txt | bc
-*** 
+*** just_files
+    - find . -type f | rev | cut -d'/' -f1 | rev # find . -type f | awk -F'/' '{print $NF}'
+    - find -type f -printf '%f\n'
 ** Küçük şeyler :)
 *** aranan dosyaların sonuna ekleme
     <2016-10-17 Mon 00:13>
