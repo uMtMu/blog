@@ -9,6 +9,15 @@
 #+END_CENTER
 #+NAME: top
 * Yazılar
+** Yolcu yolunda gerek mi?
+   <2017-03-03 Cum 18:05>
+   
+   Bu yeniden doğuşlardan bıktım. Bu seyahatlerden. Acaba daha yeteri kadar
+   ölmedim mi? Kum çıkartacak kadar dibe inmedim mi? Eridiğimi hissediyorum. Hiç
+   bir zaman istediğim gibi olamayacağımı hissediyorum. Neden Beethoven
+   olamadığımın sebebi bu. [[*San%C4%B1r%C4%B1m%20bu%20halde%20fazla%20uza%C4%9Fa%20gidemeyece%C4%9Fim][Sanırım bu halde fazla uzağa gidemeyeceğim.]]
+
+   [[top][Yukarı]]
 ** Hayat farklı karakterlerin baş rolünü oynadığı farklı episodelar gibi
    <2017-01-09 Mon 12:07>
 
