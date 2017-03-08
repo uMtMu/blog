@@ -1,6 +1,5 @@
 #+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 #+HTML: <center>
-| [[file:blog.org][Blog]]   | [[file:bash.org][Bash]]     | [[file:baslangiclar.org][Başlangıç]] | [[file:muzik.org][Müzik]]          | [[file:okunacaklar.org][Okunacaklar]] |
-| [[file:notlar.org][Notlar]] | [[file:projeler.org][Projeler]] | [[file:sozler.org][Sözler]]    | [[file:tatil_rotalari.org][Tatil Rotaları]] | [[file:emacs.org][Emacs]]       |
-|        |          | [[file:index.org][Ana Sayfa]] |                |             |
+[[file:blog.org][Blog]] [[file:bash.org][Bash]] [[file:baslangiclar.org][Başlangıç]] [[file:muzik.org][Müzik]] [[file:okunacaklar.org][Okacaklar]] [[file:notlar.org][Notlar]] [[file:projeler.org][Projeler]] [[file:sozler.org][Sözler]] [[file:tatil_rotalari.org][Tatil Rotaları]] [[file:emacs.org][Emacs]]
+[[file:index.org][Ana Sayfa]]
 #+HTML: </center>

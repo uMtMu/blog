@@ -1,63 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>uMtMu</title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="title" content="uMtMu"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2016-08-22T07:38+0300"/>
-<meta name="author" content="umt"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<!-- 2017-03-08 Çrş 10:18 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="umt" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
   .title  { text-align: center; }
-  .todo   { color: red; }
+  .todo   { font-family: monospace; color: red; }
   .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
   pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
   }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
     background: #ffffcc;
   }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
   textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
 <script type="text/javascript">
@@ -106,511 +134,501 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
-
 </head>
 <body>
-
-<div id="preamble">
-
-</div>
-
 <div id="content">
 <h1 class="title">uMtMu</h1>
-
-
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-
-<div style="text-align: center">
-<p><img src="img/ja2.png"  alt="img/ja2.png" /><br/>
-</p>
-</div>
-
-<p><br/>
-</p>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1 Sözler</a>
+<li><a href="#sec-1">1. Sözler</a>
 <ul>
-<li><a href="#sec-1-1">1.1 Savunma planımızda büyük bir hedef belirlemişsek büyük bir enerjiyle ve gücümüzün son zerresine kadar bu hedefi izlemeliyiz</a></li>
-<li><a href="#sec-1-2">1.2 Aşk ve fiziksel güzellik, belki insanlık düşünce tarihinin en yıkıcı iki fikri</a></li>
-<li><a href="#sec-1-3">1.3 Don't let mental blocks control you. Set yourself free. Confront your fear and turn the mental blocks into building blocks</a></li>
-<li><a href="#sec-1-4">1.4 Hayatınız aksilik ve yenilgilerle dolu olacak. Farkı yaratansa, bununla nasıl başa çıktığınız.</a></li>
-<li><a href="#sec-1-5">1.5 Fırsatları görmeye çalışmanızın önemi büyük.</a></li>
-<li><a href="#sec-1-6">1.6 Hayatınızı, sanki bu size verilen ikinci şansmış gibi yaşayın.</a></li>
-<li><a href="#sec-1-7">1.7 Hayal kurmayı bırakın ve hayata geçirin.</a></li>
-<li><a href="#sec-1-8">1.8 Hayatın tüm olayını, yaptığınız seçimler belirleyecek.</a></li>
-<li><a href="#sec-1-9">1.9 Kendinize, kendinizden şüphe etmeyi yasaklayın.</a></li>
-<li><a href="#sec-1-10">1.10 Başarı ve başarısızlıklarınızda şansın önemini hiç unutmayın.</a></li>
-<li><a href="#sec-1-11">1.11 Kendi dünyanızı kendiniz kurun.</a></li>
-<li><a href="#sec-1-12">1.12 Başarı, bembeyaz parlak bir smokine çok benzer.</a></li>
-<li><a href="#sec-1-13">1.13 Bir şey size doğru gelmiyorsa, o şeyi yapmayın.</a></li>
-<li><a href="#sec-1-14">1.14 Yalnızca sağa sola CV gönderip bir şeyler olsun diye beklemekle yetinmeyin.</a></li>
-<li><a href="#sec-1-15">1.15 Ancak geçmişimizin noktalarını birleştirebiliriz.</a></li>
-<li><a href="#sec-1-16">1.16 Gelecek hepimizin sandığından çok daha kolay şekillendirilebilir.</a></li>
-<li><a href="#sec-1-17">1.17 Başarısızlık berbat olabilir. Ama başarısız olmamak adına tüm hayatı korku ve tedbir içinde geçirmek çok daha kötü.</a></li>
-<li><a href="#sec-1-18">1.18 Şu an kafanızdaki başarı tanımı ileride değişecek; hem de fazlasıyla.</a></li>
-<li><a href="#sec-1-19">1.19 En büyük korkularınızı hayal gücünüz üretir; teslim olmayın.</a></li>
+<li><a href="#sec-1-1">1.1. Savunma planımızda büyük bir hedef belirlemişsek büyük bir enerjiyle ve gücümüzün son zerresine kadar bu hedefi izlemeliyiz</a></li>
+<li><a href="#sec-1-2">1.2. Aşk ve fiziksel güzellik, belki insanlık düşünce tarihinin en yıkıcı iki fikri</a></li>
+<li><a href="#sec-1-3">1.3. Don't let mental blocks control you. Set yourself free. Confront your fear and turn the mental blocks into building blocks</a></li>
+<li><a href="#sec-1-4">1.4. Hayatınız aksilik ve yenilgilerle dolu olacak. Farkı yaratansa, bununla nasıl başa çıktığınız.</a></li>
+<li><a href="#sec-1-5">1.5. Fırsatları görmeye çalışmanızın önemi büyük.</a></li>
+<li><a href="#sec-1-6">1.6. Hayatınızı, sanki bu size verilen ikinci şansmış gibi yaşayın.</a></li>
+<li><a href="#sec-1-7">1.7. Hayal kurmayı bırakın ve hayata geçirin.</a></li>
+<li><a href="#sec-1-8">1.8. Hayatın tüm olayını, yaptığınız seçimler belirleyecek.</a></li>
+<li><a href="#sec-1-9">1.9. Kendinize, kendinizden şüphe etmeyi yasaklayın.</a></li>
+<li><a href="#sec-1-10">1.10. Başarı ve başarısızlıklarınızda şansın önemini hiç unutmayın.</a></li>
+<li><a href="#sec-1-11">1.11. Kendi dünyanızı kendiniz kurun.</a></li>
+<li><a href="#sec-1-12">1.12. Başarı, bembeyaz parlak bir smokine çok benzer.</a></li>
+<li><a href="#sec-1-13">1.13. Bir şey size doğru gelmiyorsa, o şeyi yapmayın.</a></li>
+<li><a href="#sec-1-14">1.14. Yalnızca sağa sola CV gönderip bir şeyler olsun diye beklemekle yetinmeyin.</a></li>
+<li><a href="#sec-1-15">1.15. Ancak geçmişimizin noktalarını birleştirebiliriz.</a></li>
+<li><a href="#sec-1-16">1.16. Gelecek hepimizin sandığından çok daha kolay şekillendirilebilir.</a></li>
+<li><a href="#sec-1-17">1.17. Başarısızlık berbat olabilir. Ama başarısız olmamak adına tüm hayatı korku ve tedbir içinde geçirmek çok daha kötü.</a></li>
+<li><a href="#sec-1-18">1.18. Şu an kafanızdaki başarı tanımı ileride değişecek; hem de fazlasıyla.</a></li>
+<li><a href="#sec-1-19">1.19. En büyük korkularınızı hayal gücünüz üretir; teslim olmayın.</a></li>
 </ul>
 </li>
-<li><a href="#sec-2">2 Alıntılar</a>
+<li><a href="#sec-2">2. Alıntılar</a>
 <ul>
-<li><a href="#sec-2-1">2.1 İçerdeki düşman</a></li>
-<li><a href="#sec-2-2">2.2 Yaşamak</a></li>
+<li><a href="#sec-2-1">2.1. İçerdeki düşman</a></li>
+<li><a href="#sec-2-2">2.2. Yaşamak</a></li>
 </ul>
 </li>
-<li><a href="#sec-3">3 Bağlantılar</a></li>
+<li><a href="#sec-3">3. Bağlantılar</a></li>
 </ul>
 </div>
 </div>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<div class="center">
 
-<div id="outline-container-1" class="outline-2">
+<div class="figure">
+<p><img src="img/ja2.png" alt="ja2.png" /><br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1"><span class="section-number-2">1</span> Sözler</h2>
 <div class="outline-text-2" id="text-1">
-
-
-</div>
-
-<div id="outline-container-1-1" class="outline-3">
+</div><div id="outline-container-sec-1-1" class="outline-3">
 <h3 id="sec-1-1"><span class="section-number-3">1.1</span> Savunma planımızda büyük bir hedef belirlemişsek büyük bir enerjiyle ve gücümüzün son zerresine kadar bu hedefi izlemeliyiz</h3>
 <div class="outline-text-3" id="text-1-1">
-
-<p>   <i>Savunma planımızda büyük bir hedef belirlemişsek (bir düşman kolunu imha</i><br/>
-   <i>etmek vb.) büyük bir enerjiyle ve gücümüzün son zerresine kadar bu hedefi</i> <br/>
-   <i>izlemeliyiz. Çoğu durumda, saldırgan, başka bir noktadan kendi amaçlarını</i><br/>
-   <i>izleyecektir. Örneğin, onun sağ kanadına saldırdığınızda, o da sol kanadında</i><br/>
-   <i>kesin üstünlük kazanacaktır. Sonuç olarak, düşmandan önce yavaşlarsak</i><br/>
-   <i>düşmandan daha az bir enerjiyle kendi amacımızı izlersek, düşman tümüyle</i><br/>
-   <i>üstünlük kazanırken, bizim kazancımız yarım olacaktır. Bu yüzden, düşman</i><br/>
-   <i>gücünün zirvesine ulaşacak ve zafer kazanacak, biz ise kısmen kazandığımız</i><br/>
-   /üstünlüklerimizi bile bırakmak zorunda kalacağız. /<br/>
+<p>
+<i>Savunma planımızda büyük bir hedef belirlemişsek (bir düşman kolunu imha</i><br  />
+<i>etmek vb.) büyük bir enerjiyle ve gücümüzün son zerresine kadar bu hedefi</i> <br  />
+<i>izlemeliyiz. Çoğu durumda, saldırgan, başka bir noktadan kendi amaçlarını</i><br  />
+<i>izleyecektir. Örneğin, onun sağ kanadına saldırdığınızda, o da sol kanadında</i><br  />
+<i>kesin üstünlük kazanacaktır. Sonuç olarak, düşmandan önce yavaşlarsak</i><br  />
+<i>düşmandan daha az bir enerjiyle kendi amacımızı izlersek, düşman tümüyle</i><br  />
+<i>üstünlük kazanırken, bizim kazancımız yarım olacaktır. Bu yüzden, düşman</i><br  />
+<i>gücünün zirvesine ulaşacak ve zafer kazanacak, biz ise kısmen kazandığımız</i><br  />
+/üstünlüklerimizi bile bırakmak zorunda kalacağız. /<br  />
 </p>
-<p><br/>
-   <b>Carl von Clausewitz</b><br/>
-</p>
-<p><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
 
+<p>
+<b>Carl von Clausewitz</b><br  />
+</p>
+
+<p>
+<i>Yukarı</i><br  />
+</p>
 </div>
-
-<div id="outline-container-1-2" class="outline-3">
+</div>
+<div id="outline-container-sec-1-2" class="outline-3">
 <h3 id="sec-1-2"><span class="section-number-3">1.2</span> Aşk ve fiziksel güzellik, belki insanlık düşünce tarihinin en yıkıcı iki fikri</h3>
 <div class="outline-text-3" id="text-1-2">
-
-<p>   <b>Toni Morrison</b><br/>
+<p>
+<b>Toni Morrison</b><br  />
 </p>
-<p><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
 
+<p>
+<i>Yukarı</i><br  />
+</p>
 </div>
-
-<div id="outline-container-1-3" class="outline-3">
+</div>
+<div id="outline-container-sec-1-3" class="outline-3">
 <h3 id="sec-1-3"><span class="section-number-3">1.3</span> Don't let mental blocks control you. Set yourself free. Confront your fear and turn the mental blocks into building blocks</h3>
 <div class="outline-text-3" id="text-1-3">
-
-<p>   <b>Dr. Roopleen</b><br/>
-</p></div>
-
+<p>
+<b>Dr. Roopleen</b><br  />
+</p>
 </div>
-
-<div id="outline-container-1-4" class="outline-3">
+</div>
+<div id="outline-container-sec-1-4" class="outline-3">
 <h3 id="sec-1-4"><span class="section-number-3">1.4</span> Hayatınız aksilik ve yenilgilerle dolu olacak. Farkı yaratansa, bununla nasıl başa çıktığınız.</h3>
 <div class="outline-text-3" id="text-1-4">
-
-<p>   <i>Sık sık ahmak insanlarla, kötü patronlarla karşılaşacaksınız ve istediğiniz</i><br/>
-   <i>her şey de gerçekleşmeyecek. Bunu kabullenip kararlı ve dirençli olmanız</i><br/>
-   <i>gerekiyor. Ve bir başarı, küçük bile olsa yine de başarıdır.</i><br/>
+<p>
+<i>Sık sık ahmak insanlarla, kötü patronlarla karşılaşacaksınız ve istediğiniz</i><br  />
+<i>her şey de gerçekleşmeyecek. Bunu kabullenip kararlı ve dirençli olmanız</i><br  />
+<i>gerekiyor. Ve bir başarı, küçük bile olsa yine de başarıdır.</i><br  />
 </p>
-<p><br/>
-   <b>Barack Obama</b><br/>
-</p>
-<p><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
 
+<p>
+<b>Barack Obama</b><br  />
+</p>
+
+<p>
+<i>Yukarı</i><br  />
+</p>
 </div>
-
-<div id="outline-container-1-5" class="outline-3">
+</div>
+<div id="outline-container-sec-1-5" class="outline-3">
 <h3 id="sec-1-5"><span class="section-number-3">1.5</span> Fırsatları görmeye çalışmanızın önemi büyük.</h3>
 <div class="outline-text-3" id="text-1-5">
-
-<p>   <i>Google'ın ilk zamanlarıydı ve beni işe almak istediler. Burun kıvırarak, bu</i><br/>
-   <i>işin benim için yeterince iyi olmadığını söyledim. O zamanın CEO'su Eric</i><br/>
-   <i>Schmidt ise bana şöyle dedi: 'Size bir roketin içerisinde bir yer teklif</i><br/>
-   <i>ediyorum. Hangi koltuk diye soracağınıza, oturmanızı öneririm'.</i> <br/>
+<p>
+<i>Google'ın ilk zamanlarıydı ve beni işe almak istediler. Burun kıvırarak, bu</i><br  />
+<i>işin benim için yeterince iyi olmadığını söyledim. O zamanın CEO'su Eric</i><br  />
+<i>Schmidt ise bana şöyle dedi: 'Size bir roketin içerisinde bir yer teklif</i><br  />
+<i>ediyorum. Hangi koltuk diye soracağınıza, oturmanızı öneririm'.</i> <br  />
 </p>
-<p><br/>
-   <b>Sheryl Sandberg</b><br/>
-</p>
-<p><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
 
+<p>
+<b>Sheryl Sandberg</b><br  />
+</p>
+
+<p>
+<i>Yukarı</i><br  />
+</p>
 </div>
-
-<div id="outline-container-1-6" class="outline-3">
+</div>
+<div id="outline-container-sec-1-6" class="outline-3">
 <h3 id="sec-1-6"><span class="section-number-3">1.6</span> Hayatınızı, sanki bu size verilen ikinci şansmış gibi yaşayın.</h3>
 <div class="outline-text-3" id="text-1-6">
-
-<p>   <i>Kendinizi 50 yıl sonrasında hayal edin. Dönüp baktığınızda güzel anıları da</i><br/>
-   <i>hatırlayacaksınız, geçmiş pişmanlıkları da. Ama şu kesin; keşke daha çok</i><br/>
-   <i>gülseydim, daha çok kahkaha atsaydım, daha çok dans etseydim, daha çok</i><br/>
-   <i>teşekkür etseydim, sahip olduklarım için daha çok şükretseydim</i><br/>
-   <i>diyeceksiniz. 50 yıl sonraki halinize sorun; neyi farklı yapardım diye. İşte</i><br/>
-   <i>şimdi onu yapın.</i><br/>
+<p>
+<i>Kendinizi 50 yıl sonrasında hayal edin. Dönüp baktığınızda güzel anıları da</i><br  />
+<i>hatırlayacaksınız, geçmiş pişmanlıkları da. Ama şu kesin; keşke daha çok</i><br  />
+<i>gülseydim, daha çok kahkaha atsaydım, daha çok dans etseydim, daha çok</i><br  />
+<i>teşekkür etseydim, sahip olduklarım için daha çok şükretseydim</i><br  />
+<i>diyeceksiniz. 50 yıl sonraki halinize sorun; neyi farklı yapardım diye. İşte</i><br  />
+<i>şimdi onu yapın.</i><br  />
 </p>
-<p><br/>
-   <b>Salman Khan</b><br/>
-</p>
-<p><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
 
+<p>
+<b>Salman Khan</b><br  />
+</p>
+
+<p>
+<i>Yukarı</i><br  />
+</p>
 </div>
-
-<div id="outline-container-1-7" class="outline-3">
+</div>
+<div id="outline-container-sec-1-7" class="outline-3">
 <h3 id="sec-1-7"><span class="section-number-3">1.7</span> Hayal kurmayı bırakın ve hayata geçirin.</h3>
 <div class="outline-text-3" id="text-1-7">
-
-<p>   <i>Dünya hayalperestlerle dolu. Birileri bir şeyleri hayal ederken başka</i><br/>
-   <i>birileri bu fikirleri hayata geçiriyor. Siz, hayata geçirenlerden</i><br/>
-   <i>olun. Gerçek tutkunuzun ne olduğunu bulmak yıllarınızı alabilir. Bununla</i><br/>
-   <i>vakit kaybetmek yerine, önünüzdeki fırsatları değerlendirin; bir şeyler</i><br/>
-   <i>yapıyor olun. Hiçbir şey hayal ettiğiniz mükemmellikte olmayacak</i><br/>
-   <i>zaten. Mükemmel iş, mükemmel hayat yoktur.</i><br/>
+<p>
+<i>Dünya hayalperestlerle dolu. Birileri bir şeyleri hayal ederken başka</i><br  />
+<i>birileri bu fikirleri hayata geçiriyor. Siz, hayata geçirenlerden</i><br  />
+<i>olun. Gerçek tutkunuzun ne olduğunu bulmak yıllarınızı alabilir. Bununla</i><br  />
+<i>vakit kaybetmek yerine, önünüzdeki fırsatları değerlendirin; bir şeyler</i><br  />
+<i>yapıyor olun. Hiçbir şey hayal ettiğiniz mükemmellikte olmayacak</i><br  />
+<i>zaten. Mükemmel iş, mükemmel hayat yoktur.</i><br  />
 </p>
-<p><br/>
-   <b>Shonda Rhimes</b><br/>
-</p>
-<p><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
 
+<p>
+<b>Shonda Rhimes</b><br  />
+</p>
+
+<p>
+<i>Yukarı</i><br  />
+</p>
 </div>
-
-<div id="outline-container-1-8" class="outline-3">
+</div>
+<div id="outline-container-sec-1-8" class="outline-3">
 <h3 id="sec-1-8"><span class="section-number-3">1.8</span> Hayatın tüm olayını, yaptığınız seçimler belirleyecek.</h3>
 <div class="outline-text-3" id="text-1-8">
-
-<p>   <i>Akıl size verilmiş bir lütuftur; ama örneğin kibar olmak bir seçimdir. Ve</i><br/>
-   <i>bazen zor seçimler de yapmanız gerekebilir. Hayatınızın şeklini belirleyecek</i><br/>
-   <i>olan şey de bu seçimlerinizdir. 80 yaşınıza gelip de bir gün sessizlik</i><br/>
-   <i>içerisinde hayatınızın muhakemesini yaparken, gözünüzün önüne gelenlerin</i><br/>
-   <i>tamamı seçimleriniz olacak.</i> <br/>
+<p>
+<i>Akıl size verilmiş bir lütuftur; ama örneğin kibar olmak bir seçimdir. Ve</i><br  />
+<i>bazen zor seçimler de yapmanız gerekebilir. Hayatınızın şeklini belirleyecek</i><br  />
+<i>olan şey de bu seçimlerinizdir. 80 yaşınıza gelip de bir gün sessizlik</i><br  />
+<i>içerisinde hayatınızın muhakemesini yaparken, gözünüzün önüne gelenlerin</i><br  />
+<i>tamamı seçimleriniz olacak.</i> <br  />
 </p>
-<p><br/>
-   <b>Jeff Bezos</b><br/>
-</p>
-<p><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
 
+<p>
+<b>Jeff Bezos</b><br  />
+</p>
+
+<p>
+<i>Yukarı</i><br  />
+</p>
 </div>
-
-<div id="outline-container-1-9" class="outline-3">
+</div>
+<div id="outline-container-sec-1-9" class="outline-3">
 <h3 id="sec-1-9"><span class="section-number-3">1.9</span> Kendinize, kendinizden şüphe etmeyi yasaklayın.</h3>
 <div class="outline-text-3" id="text-1-9">
-
-<p>   <i>Kendinden kuşku duymak kadar zararlı şey az vardır. Bu tutum sizi defansif</i><br/>
-   <i>ve pasif hale getirir. İnsanı tüketir; acımasızdır. Kendinize güven</i><br/>
-   <i>içerisinde yaptığınız işleri ve yaşadığınız anları bir hatırlayın; en</i><br/>
-   <i>yaratıcı olduğunuz anların bunlar olduğunu fark edersiniz. Ve gerçek</i><br/>
-   <i>potansiyeliniz de aslında odur.</i> <br/>
+<p>
+<i>Kendinden kuşku duymak kadar zararlı şey az vardır. Bu tutum sizi defansif</i><br  />
+<i>ve pasif hale getirir. İnsanı tüketir; acımasızdır. Kendinize güven</i><br  />
+<i>içerisinde yaptığınız işleri ve yaşadığınız anları bir hatırlayın; en</i><br  />
+<i>yaratıcı olduğunuz anların bunlar olduğunu fark edersiniz. Ve gerçek</i><br  />
+<i>potansiyeliniz de aslında odur.</i> <br  />
 </p>
-<p><br/>
-   <b>Jennifer Lee</b><br/>
-</p>
-<p><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
 
+<p>
+<b>Jennifer Lee</b><br  />
+</p>
+
+<p>
+<i>Yukarı</i><br  />
+</p>
 </div>
-
-<div id="outline-container-1-10" class="outline-3">
+</div>
+<div id="outline-container-sec-1-10" class="outline-3">
 <h3 id="sec-1-10"><span class="section-number-3">1.10</span> Başarı ve başarısızlıklarınızda şansın önemini hiç unutmayın.</h3>
 <div class="outline-text-3" id="text-1-10">
-
-<p>   <i>İnsanlar, özellikle de başarılı insanlar, başarılarının şansla</i><br/>
-   <i>ilişkilendirildiğini duymaktan hiç hoşlanmazlar. Sanki o başarı zaten</i><br/>
-   <i>kaçınılmazdı gibi davranırlar; ama hayatın minik oyunlarının büyük etkisini</i><br/>
-   <i>göz ardı ederler. Şans faktörü denen şey gerçektir; ve etkisi sandığınızdan</i><br/>
-   <i>büyüktür. Bunu kabul ederseniz, kendinizi burnu havada bir ukala olmaktan</i><br/>
-   <i>kurtarırsınız.</i><br/>
+<p>
+<i>İnsanlar, özellikle de başarılı insanlar, başarılarının şansla</i><br  />
+<i>ilişkilendirildiğini duymaktan hiç hoşlanmazlar. Sanki o başarı zaten</i><br  />
+<i>kaçınılmazdı gibi davranırlar; ama hayatın minik oyunlarının büyük etkisini</i><br  />
+<i>göz ardı ederler. Şans faktörü denen şey gerçektir; ve etkisi sandığınızdan</i><br  />
+<i>büyüktür. Bunu kabul ederseniz, kendinizi burnu havada bir ukala olmaktan</i><br  />
+<i>kurtarırsınız.</i><br  />
 </p>
-<p><br/>
-   <b>Michael Lewis</b><br/>
-</p>
-<p><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
 
+<p>
+<b>Michael Lewis</b><br  />
+</p>
+
+<p>
+<i>Yukarı</i><br  />
+</p>
 </div>
-
-<div id="outline-container-1-11" class="outline-3">
+</div>
+<div id="outline-container-sec-1-11" class="outline-3">
 <h3 id="sec-1-11"><span class="section-number-3">1.11</span> Kendi dünyanızı kendiniz kurun.</h3>
 <div class="outline-text-3" id="text-1-11">
-
-<p>   <i>Benim işim, sizlere 2 saatliğine başka bir dünya yaratmak. Sizin işiniz</i><br/>
-   <i>ise, kendi dünyan/ızı yaratmak olsun. Bu canavarlar kendini çok değişik</i><br/>
-   <i>biçimlerde gösterir: Irkçılık, homofobi, etnik, sınıfsal, siyasi ve dini</i><br/>
-   <i>ayrımcılık. Hepsi de aynı şeydir; kocaman bir nefret bulutu. Nefret, "bize</i><br/>
-   <i>karşı onlar" mantığından doğar. Sizin dünyanızda, "hepimiz" olsun.</i><br/>
+<p>
+<i>Benim işim, sizlere 2 saatliğine başka bir dünya yaratmak. Sizin işiniz</i><br  />
+<i>ise, kendi dünyan/ızı yaratmak olsun. Bu canavarlar kendini çok değişik</i><br  />
+<i>biçimlerde gösterir: Irkçılık, homofobi, etnik, sınıfsal, siyasi ve dini</i><br  />
+<i>ayrımcılık. Hepsi de aynı şeydir; kocaman bir nefret bulutu. Nefret, "bize</i><br  />
+<i>karşı onlar" mantığından doğar. Sizin dünyanızda, "hepimiz" olsun.</i><br  />
 </p>
-<p><br/>
-   <b>Stephen Spielberg</b><br/>
-</p>
-<p><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
 
+<p>
+<b>Stephen Spielberg</b><br  />
+</p>
+
+<p>
+<i>Yukarı</i><br  />
+</p>
 </div>
-
-<div id="outline-container-1-12" class="outline-3">
+</div>
+<div id="outline-container-sec-1-12" class="outline-3">
 <h3 id="sec-1-12"><span class="section-number-3">1.12</span> Başarı, bembeyaz parlak bir smokine çok benzer.</h3>
 <div class="outline-text-3" id="text-1-12">
-
-<p>   <i>Harvard mezunu olduğunuzda herkesin sizden tek beklentisi başarıdır. Ben bu</i><br/>
-   <i>baskıyı çok tehlikeli buluyorum. Başarı, bembeyaz bir smokin giymeye</i><br/>
-   <i>benzer. İçinde harika hissedersiniz ama kirlenecek, bir şey dökülecek diye</i><br/>
-   <i>kıpırdayamazsınız - ve en sonunda kirlenir de. Yerlerde yuvarlanın, o smokini</i><br/>
-   <i>kirletin, düşün, kalkın. Başarısızlıklarınızdan çok şey öğrenirsiniz.</i> <br/>
+<p>
+<i>Harvard mezunu olduğunuzda herkesin sizden tek beklentisi başarıdır. Ben bu</i><br  />
+<i>baskıyı çok tehlikeli buluyorum. Başarı, bembeyaz bir smokin giymeye</i><br  />
+<i>benzer. İçinde harika hissedersiniz ama kirlenecek, bir şey dökülecek diye</i><br  />
+<i>kıpırdayamazsınız - ve en sonunda kirlenir de. Yerlerde yuvarlanın, o smokini</i><br  />
+<i>kirletin, düşün, kalkın. Başarısızlıklarınızdan çok şey öğrenirsiniz.</i> <br  />
 </p>
-<p><br/>
-   <b>Conan O'Brien</b><br/>
-</p>
-<p><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
 
+<p>
+<b>Conan O'Brien</b><br  />
+</p>
+
+<p>
+<i>Yukarı</i><br  />
+</p>
 </div>
-
-<div id="outline-container-1-13" class="outline-3">
+</div>
+<div id="outline-container-sec-1-13" class="outline-3">
 <h3 id="sec-1-13"><span class="section-number-3">1.13</span> Bir şey size doğru gelmiyorsa, o şeyi yapmayın.</h3>
 <div class="outline-text-3" id="text-1-13">
-
-<p>   <i>Ben bunun için dünyaya gelmişim dediğiniz bir iş bulabildinizse eğer, /    /aldığınız maaştan bağımsız olarak her yeni gün size lütuf gibidir. Peki o işi</i><br/>
-   <i>bulduğunuzu nasıl bilirsiniz? Bilmezsiniz, hissedersiniz. İş seçiminizde</i><br/>
-   <i>egonuz yerine, içgüdülerinize kulak verin. Hayatın her alanında, bir işi</i><br/>
-   <i>yapmak size doğru gelmiyorsa, onu yapmayın. Bu ders, sizi çokça pişmanlıktan</i><br/>
-   <i>kurtarır.</i> <br/>
+<p>
+<i>Ben bunun için dünyaya gelmişim dediğiniz bir iş bulabildinizse eğer, /<br  />
+/aldığınız maaştan bağımsız olarak her yeni gün size lütuf gibidir. Peki o işi</i><br  />
+<i>bulduğunuzu nasıl bilirsiniz? Bilmezsiniz, hissedersiniz. İş seçiminizde</i><br  />
+<i>egonuz yerine, içgüdülerinize kulak verin. Hayatın her alanında, bir işi</i><br  />
+<i>yapmak size doğru gelmiyorsa, onu yapmayın. Bu ders, sizi çokça pişmanlıktan</i><br  />
+<i>kurtarır.</i> <br  />
 </p>
-<p><br/>
-   <b>Oprah Winfrey</b><br/>
-</p>
-<p><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
 
+<p>
+<b>Oprah Winfrey</b><br  />
+</p>
+
+<p>
+<i>Yukarı</i><br  />
+</p>
 </div>
-
-<div id="outline-container-1-14" class="outline-3">
+</div>
+<div id="outline-container-sec-1-14" class="outline-3">
 <h3 id="sec-1-14"><span class="section-number-3">1.14</span> Yalnızca sağa sola CV gönderip bir şeyler olsun diye beklemekle yetinmeyin.</h3>
 <div class="outline-text-3" id="text-1-14">
-
-<p>   <i>Bazı insanlar CV'ler gönderir ve sessizce oturup birileri arasın diye</i><br/>
-   <i>bekler. Bazıları ise yapı gereği bekleyemez; gider ve talep ederler. Siz de o</i><br/>
-   <i>insanlardan olmaya çalışın. Neden günlerce, haftalarca hiç tanımadığınız</i><br/>
-   <i>insanlar sizi arayacak mı, aramayacak mı diye endişe duyasınız? Çevrenizi</i><br/>
-   <i>devreye sokun ve atak olun.</i> <br/>
+<p>
+<i>Bazı insanlar CV'ler gönderir ve sessizce oturup birileri arasın diye</i><br  />
+<i>bekler. Bazıları ise yapı gereği bekleyemez; gider ve talep ederler. Siz de o</i><br  />
+<i>insanlardan olmaya çalışın. Neden günlerce, haftalarca hiç tanımadığınız</i><br  />
+<i>insanlar sizi arayacak mı, aramayacak mı diye endişe duyasınız? Çevrenizi</i><br  />
+<i>devreye sokun ve atak olun.</i> <br  />
 </p>
-<p><br/>
-   <b>Robert Krulwich</b><br/>
-</p>
-<p><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
 
+<p>
+<b>Robert Krulwich</b><br  />
+</p>
+
+<p>
+<i>Yukarı</i><br  />
+</p>
 </div>
-
-<div id="outline-container-1-15" class="outline-3">
+</div>
+<div id="outline-container-sec-1-15" class="outline-3">
 <h3 id="sec-1-15"><span class="section-number-3">1.15</span> Ancak geçmişimizin noktalarını birleştirebiliriz.</h3>
 <div class="outline-text-3" id="text-1-15">
-
-<p>   <i>Eğer beni Reed'deyken okuldan atmasalardı, ben bu yola muhtemelen hiç</i><br/>
-   <i>girmeyecektim ve kişisel bilgisayarlar belki de bu yönde</i><br/>
-   <i>gelişmeyecekti. Gelecekte bizleri neyin beklediğini bilemeyiz. Buna dair</i><br/>
-   <i>öngörülerde bulunmak bizi bir yere vardırmaz. Ama geçmişimizle ilgili</i><br/>
-   <i>noktaları birleştirebiliriz. Siz bir şeye inanın. İçgüdünüz, kader, karma, /    /hayat; farketmez. Bu yaklaşım beni hayatım boyunca yanıltmadı.</i> <br/>
+<p>
+<i>Eğer beni Reed'deyken okuldan atmasalardı, ben bu yola muhtemelen hiç</i><br  />
+<i>girmeyecektim ve kişisel bilgisayarlar belki de bu yönde</i><br  />
+<i>gelişmeyecekti. Gelecekte bizleri neyin beklediğini bilemeyiz. Buna dair</i><br  />
+<i>öngörülerde bulunmak bizi bir yere vardırmaz. Ama geçmişimizle ilgili</i><br  />
+<i>noktaları birleştirebiliriz. Siz bir şeye inanın. İçgüdünüz, kader, karma, /<br  />
+/hayat; farketmez. Bu yaklaşım beni hayatım boyunca yanıltmadı.</i> <br  />
 </p>
-<p><br/>
-   <b>Steve Jobs</b><br/>
-</p>
-<p><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
 
+<p>
+<b>Steve Jobs</b><br  />
+</p>
+
+<p>
+<i>Yukarı</i><br  />
+</p>
 </div>
-
-<div id="outline-container-1-16" class="outline-3">
+</div>
+<div id="outline-container-sec-1-16" class="outline-3">
 <h3 id="sec-1-16"><span class="section-number-3">1.16</span> Gelecek hepimizin sandığından çok daha kolay şekillendirilebilir.</h3>
 <div class="outline-text-3" id="text-1-16">
-
-<p>   <i>Geleceği, geçmiş gibi rijit ve değişemez bir şey gibi görmeye meylederiz, /    /oysa ki gelecek hayli esnektir. Dünya, sandığımızdan çok daha esnek ve</i><br/>
-   <i>işlenebilir. Bize düşen, elimize çekici alıp onu şekillendirmeye başlamak.</i> <br/>
+<p>
+<i>Geleceği, geçmiş gibi rijit ve değişemez bir şey gibi görmeye meylederiz, /<br  />
+/oysa ki gelecek hayli esnektir. Dünya, sandığımızdan çok daha esnek ve</i><br  />
+<i>işlenebilir. Bize düşen, elimize çekici alıp onu şekillendirmeye başlamak.</i> <br  />
 </p>
-<p><br/>
-   <b>Bono</b><br/>
-</p>
-<p><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
 
+<p>
+<b>Bono</b><br  />
+</p>
+
+<p>
+<i>Yukarı</i><br  />
+</p>
 </div>
-
-<div id="outline-container-1-17" class="outline-3">
+</div>
+<div id="outline-container-sec-1-17" class="outline-3">
 <h3 id="sec-1-17"><span class="section-number-3">1.17</span> Başarısızlık berbat olabilir. Ama başarısız olmamak adına tüm hayatı korku ve tedbir içinde geçirmek çok daha kötü.</h3>
 <div class="outline-text-3" id="text-1-17">
-
-<p>   <i>Harry Potter'ı yayımlamadan önce işsiz kalmıştım, yeni boşanmıştım ve kıt</i><br/>
-   <i>kanaat geçinebiliyordum. Bu başarısızlık döneminden çıkmak da çok kolay</i><br/>
-   <i>olmadı. Ama bir noktada, olmadığım bir kişi gibi görünüp sevmediğim işlerin</i><br/>
-   <i>peşinde koşturmayı bıraktım ve tüm enerjimi, şu hayatta bana bir anlam ifade</i><br/>
-   <i>eden şeye yönelttim; kitabıma. Hayatın iniş çıkışları daima olur. Ama</i><br/>
-   <i>düşmekten korkarak yürürseniz, aslında pek de bir adım atmamış olursunuz.</i> <br/>
+<p>
+<i>Harry Potter'ı yayımlamadan önce işsiz kalmıştım, yeni boşanmıştım ve kıt</i><br  />
+<i>kanaat geçinebiliyordum. Bu başarısızlık döneminden çıkmak da çok kolay</i><br  />
+<i>olmadı. Ama bir noktada, olmadığım bir kişi gibi görünüp sevmediğim işlerin</i><br  />
+<i>peşinde koşturmayı bıraktım ve tüm enerjimi, şu hayatta bana bir anlam ifade</i><br  />
+<i>eden şeye yönelttim; kitabıma. Hayatın iniş çıkışları daima olur. Ama</i><br  />
+<i>düşmekten korkarak yürürseniz, aslında pek de bir adım atmamış olursunuz.</i> <br  />
 </p>
-<p><br/>
-   <b>J.K. Rowling</b><br/>
-</p>
-<p><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
 
+<p>
+<b>J.K. Rowling</b><br  />
+</p>
+
+<p>
+<i>Yukarı</i><br  />
+</p>
 </div>
-
-<div id="outline-container-1-18" class="outline-3">
+</div>
+<div id="outline-container-sec-1-18" class="outline-3">
 <h3 id="sec-1-18"><span class="section-number-3">1.18</span> Şu an kafanızdaki başarı tanımı ileride değişecek; hem de fazlasıyla.</h3>
 <div class="outline-text-3" id="text-1-18">
-
-<p>   <i>Ben de çoğu insan gibi gençliğimde başarıyı şöhret, para, pahalı arabalar</i><br/>
-   <i>gibi şeylerle tanımladım. Bugünkü bakışımsa oldukça farklı. Asıl başarı, /    /dürüst ve sağlam durabildiğin bir hayat sürebilmek, seni olduğun gibi kabul</i><br/>
-   <i>etmeyen baskıların karşısında dik durabilmek, ve vicdanını asla</i><br/>
-   <i>kaybetmemektir. Yolunuzu sizin adınıza kimse çizememelidir.</i> <br/>
+<p>
+<i>Ben de çoğu insan gibi gençliğimde başarıyı şöhret, para, pahalı arabalar</i><br  />
+<i>gibi şeylerle tanımladım. Bugünkü bakışımsa oldukça farklı. Asıl başarı, /<br  />
+/dürüst ve sağlam durabildiğin bir hayat sürebilmek, seni olduğun gibi kabul</i><br  />
+<i>etmeyen baskıların karşısında dik durabilmek, ve vicdanını asla</i><br  />
+<i>kaybetmemektir. Yolunuzu sizin adınıza kimse çizememelidir.</i> <br  />
 </p>
-<p>   <br/>
-   <b>Ellen DeGeneres</b><br/>
-</p>
-<p><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
 
+<p>
+<b>Ellen DeGeneres</b><br  />
+</p>
+
+<p>
+<i>Yukarı</i><br  />
+</p>
 </div>
-
-<div id="outline-container-1-19" class="outline-3">
+</div>
+<div id="outline-container-sec-1-19" class="outline-3">
 <h3 id="sec-1-19"><span class="section-number-3">1.19</span> En büyük korkularınızı hayal gücünüz üretir; teslim olmayın.</h3>
 <div class="outline-text-3" id="text-1-19">
+<p>
+<i>Hayal gücü zaman zaman bazı şeyleri olduğundan çok daha zormuş gibi</i><br  />
+<i>algılamanıza uol açabilir; ama onsuz da fazla bir şey başarmak mümkün</i><br  />
+<i>değil. Bu nedenle, hayal gücü geniş olan insanların mutlaka cesareti de yüksek olmalıdır.</i><br  />
+</p>
 
-<p>   <i>Hayal gücü zaman zaman bazı şeyleri olduğundan çok daha zormuş gibi</i><br/>
-   <i>algılamanıza uol açabilir; ama onsuz da fazla bir şey başarmak mümkün</i><br/>
-   <i>değil. Bu nedenle, hayal gücü geniş olan insanların mutlaka cesareti de yüksek olmalıdır.</i><br/>
+<p>
+<i>Asla teslim olmayın. Asla, asla, asla, asla. Büyük, küçük, önemli, önemsiz;</i><br  />
+<i>hiçbir noktada teslim olmayın. Onur ve sağduyunun güce yenilmesine izin</i><br  />
+<i>vermeyin.</i> <br  />
 </p>
-<p><br/>
-   <i>Asla teslim olmayın. Asla, asla, asla, asla. Büyük, küçük, önemli, önemsiz;</i><br/>
-   <i>hiçbir noktada teslim olmayın. Onur ve sağduyunun güce yenilmesine izin</i><br/>
-   <i>vermeyin.</i> <br/>
+
+<p>
+<b>Winston Churchill</b><br  />
 </p>
-<p>   <br/>
-   <b>Winston Churchill</b><br/>
+
+
+<p>
+<i>Yukarı</i><br  />
 </p>
-<p><br/>
-</p>
-<p><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
 </div>
-
 </div>
-
-<div id="outline-container-2" class="outline-2">
+</div>
+<div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2"><span class="section-number-2">2</span> Alıntılar</h2>
 <div class="outline-text-2" id="text-2">
-
-
-</div>
-
-<div id="outline-container-2-1" class="outline-3">
+</div><div id="outline-container-sec-2-1" class="outline-3">
 <h3 id="sec-2-1"><span class="section-number-3">2.1</span> İçerdeki düşman</h3>
 <div class="outline-text-3" id="text-2-1">
-
-<p>   Yeterince hızlı davransa, siyah saçlı kızın işini bitirmiş olacaktı; ama<br/>
-   tehlikenin büyüklüğü karşısında eyleme geçememişti. Gerilimli anlarda<br/>
-   insanın bir dış düşmana karşı değil de, hep kendi bedenine karşı savaştığını<br/>
-   fark ediyordu. Şimdi bile, içtiği cine karşın, midedeki buruntu doğru dürüst<br/>
-   düşünmesini engelliyordu. Bunun destansı ya da trajik görünen tüm durumlar<br/>
-   için de geçerli olduğunu anlıyordu şimdi. Uğruna savaştığınız davalar, savaş<br/>
-   alanında, işkence odasında, batmakta olan bir gemide hep unutuluveriyordu,<br/>
-   çünkü beden şişip büyüyerek tüm evreni kaplıyordu; korkudan çarpılmadığınız<br/>
-   ya da acı içinde haykırmadığınız durumlarda bile, yaşam her an açlığa,<br/>
-   soğuğa, uykusuzluğa, mide buruntusuna ya da diş ağrısına karşı verilen bir<br/>
-   savaşımdı.<br/>
+<p>
+Yeterince hızlı davransa, siyah saçlı kızın işini bitirmiş olacaktı; ama<br  />
+tehlikenin büyüklüğü karşısında eyleme geçememişti. Gerilimli anlarda<br  />
+insanın bir dış düşmana karşı değil de, hep kendi bedenine karşı savaştığını<br  />
+fark ediyordu. Şimdi bile, içtiği cine karşın, midedeki buruntu doğru dürüst<br  />
+düşünmesini engelliyordu. Bunun destansı ya da trajik görünen tüm durumlar<br  />
+için de geçerli olduğunu anlıyordu şimdi. Uğruna savaştığınız davalar, savaş<br  />
+alanında, işkence odasında, batmakta olan bir gemide hep unutuluveriyordu,<br  />
+çünkü beden şişip büyüyerek tüm evreni kaplıyordu; korkudan çarpılmadığınız<br  />
+ya da acı içinde haykırmadığınız durumlarda bile, yaşam her an açlığa,<br  />
+soğuğa, uykusuzluğa, mide buruntusuna ya da diş ağrısına karşı verilen bir<br  />
+savaşımdı.<br  />
 </p>
-<p><br/>
-   <b>Bin Dokuz Yüz Seksen Dört</b><br/>
-   <i>Sf 128</i><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
 
+<p>
+<b>Bin Dokuz Yüz Seksen Dört</b><br  />
+<i>Sf 128</i><br  />
+<i>Yukarı</i><br  />
+</p>
 </div>
-
-<div id="outline-container-2-2" class="outline-3">
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
 <h3 id="sec-2-2"><span class="section-number-3">2.2</span> Yaşamak</h3>
 <div class="outline-text-3" id="text-2-2">
-
-<p>   Sık sık kaçış hayalleri kurmaktan alamıyorlardı kendilerini. Talihleri yaver<br/>
-   gidebilir ve kurdukları düzeni hayatlarının sonuna kadar<br/>
-   sürdürebilirlerdi. Ya da Katharine ölebilir, onlar da bir yolunu bulup<br/>
-   evlenebilirlerdi. Ya da birlikte canlarına kıyabilirlerdi. Ya da sırra kadem<br/>
-   basıp kimsenin tanıyamayacağı bir kılığa bürünebilirler, proleter ağzıyla<br/>
-   konuşmayı öğrenip bir fabrikada çalışmaya başlayabilir, arka sokaklardan<br/>
-   birinde gözlerden uzak yaşayıp gidebilirlerdi. Ama ikisi de bunların<br/>
-   hepsinin ne kadar saaçma olduğunun farkındaydı. Gerçekte hiçbir kaçış<br/>
-   yoktu. Tek uygulanabilir yok olan intiharı ise akıllarının ucundan bile<br/>
-   geçirmiyorlardı. Her gün, her saat hayata dört elle sarılmak, gelecekten<br/>
-   yoksun olduğunu bile bile günübirlik yaşamayı sürdürmek, tıpkı hava olduğu<br/>
-   sürece nefes almayı bırakmamak gibi karşı konulmaz bir iç güdüydü.<br/>
+<p>
+Sık sık kaçış hayalleri kurmaktan alamıyorlardı kendilerini. Talihleri yaver<br  />
+gidebilir ve kurdukları düzeni hayatlarının sonuna kadar<br  />
+sürdürebilirlerdi. Ya da Katharine ölebilir, onlar da bir yolunu bulup<br  />
+evlenebilirlerdi. Ya da birlikte canlarına kıyabilirlerdi. Ya da sırra kadem<br  />
+basıp kimsenin tanıyamayacağı bir kılığa bürünebilirler, proleter ağzıyla<br  />
+konuşmayı öğrenip bir fabrikada çalışmaya başlayabilir, arka sokaklardan<br  />
+birinde gözlerden uzak yaşayıp gidebilirlerdi. Ama ikisi de bunların<br  />
+hepsinin ne kadar saaçma olduğunun farkındaydı. Gerçekte hiçbir kaçış<br  />
+yoktu. Tek uygulanabilir yok olan intiharı ise akıllarının ucundan bile<br  />
+geçirmiyorlardı. Her gün, her saat hayata dört elle sarılmak, gelecekten<br  />
+yoksun olduğunu bile bile günübirlik yaşamayı sürdürmek, tıpkı hava olduğu<br  />
+sürece nefes almayı bırakmamak gibi karşı konulmaz bir iç güdüydü.<br  />
 </p>
-<p><br/>
-   <b>Bin Dokuz Yüz Seksen Dört</b><br/>
-   <i>Sf 181</i><br/>
-   <a href="#top">Yukarı</a><br/>
-</p></div>
-</div>
 
+<p>
+<b>Bin Dokuz Yüz Seksen Dört</b><br  />
+<i>Sf 181</i><br  />
+<i>Yukarı</i><br  />
+</p>
 </div>
-
-<div id="outline-container-3" class="outline-2">
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3"><span class="section-number-2">3</span> Bağlantılar</h2>
 <div class="outline-text-2" id="text-3">
-
-
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <center>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" />
-</colgroup>
-<tbody>
-<tr><td class="left"><a href="blog.html">Blog</a></td><td class="left"><a href="bash.html">Bash</a></td><td class="left"><a href="baslangiclar.html">Başlangıç</a></td><td class="left"><a href="muzik.html">Müzik</a></td><td class="left"><a href="okunacaklar.html">Okunacaklar</a></td></tr>
-<tr><td class="left"><a href="notlar.html">Notlar</a></td><td class="left"><a href="projeler.html">Projeler</a></td><td class="left"><a href="sozler.html">Sözler</a></td><td class="left"><a href="tatil_rotalari.html">Tatil Rotaları</a></td><td class="left"><a href="emacs.html">Emacs</a></td></tr>
-<tr><td class="left"></td><td class="left"></td><td class="left"><a href="index.html">Ana Sayfa</a></td><td class="left"></td><td class="left"></td></tr>
-</tbody>
-</table>
-
+<p>
+<a href="blog.html">Blog</a> <a href="bash.html">Bash</a> <a href="baslangiclar.html">Başlangıç</a> <a href="muzik.html">Müzik</a> <a href="okunacaklar.html">Okacaklar</a> <a href="notlar.html">Notlar</a> <a href="projeler.html">Projeler</a> <a href="sozler.html">Sözler</a> <a href="tatil_rotalari.html">Tatil Rotaları</a> <a href="emacs.html">Emacs</a><br  />
+<a href="index.html">Ana Sayfa</a><br  />
+</p>
 </center>
-
-
 </div>
 </div>
 </div>
-
-<div id="postamble">
-<p class="date">Date: 2016-08-22T07:38+0300</p>
+<div id="postamble" class="status">
 <p class="author">Author: umt</p>
-<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
-<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
-
+<p class="date">Created: 2017-03-08 Çrş 10:18</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
