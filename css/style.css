@@ -48,6 +48,10 @@ p.validation {
     display: none;
 }
 
+a {
+    color: blue;
+}
+
 .outline-2:last-child {
     left: 0;
     position: fixed;

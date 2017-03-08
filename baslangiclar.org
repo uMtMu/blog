@@ -13,7 +13,9 @@
     #+BEGIN_SRC sh :shebang #!/bin/bash 
     virtualenv flask_sites_env
     . flask_sites_env/bin/activate
-    pip install flask flask-login flask-openid flask-mail flask-sqlalchemy sqlalchemy-migrate flask-whooshalchemy flask-wtf flask-babel guess_language flipflop coverage
+    pip install flask flask-login flask-openid flask-mail flask-sqlalchemy\
+    sqlalchemy-migrate flask-whooshalchemy flask-wtf flask-babel\
+    guess_language flipflop coverage
     #+END_SRC
 
 *** Ortamın hazırlanması
