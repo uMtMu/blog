@@ -7,6 +7,14 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 #+NAME: top
+* Orgmode metin stilleri
+  | _ | _metin stili_ |
+  | / | /metin stili/ |
+  | * | *metin stili* |
+  | ~ | ~metin stili~ |
+  | = | =metin stili= |
+  | + | +metin stili+ |
+
 * Elpy kısayollar
   | M - .       | Tanımlanan noktaya git        |
   | M - *       | M - . ya geri dön             |
