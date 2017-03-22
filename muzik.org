@@ -1,7 +1,4 @@
-#+TITLE: uMtMu
-#+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
-#+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-#+OPTIONS: ^:nil \n:t
+#+INCLUDE: "baslik.org"
 * Hoş
 ** Nouela - The Sound of Silence
    [[https://www.youtube.com/watch?v=Q4oInT79CUk][Nouela - The Sound of Silence]]

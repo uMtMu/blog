@@ -1,7 +1,4 @@
-#+TITLE: uMtMu
-#+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
-#+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-#+OPTIONS: ^:nil \n:t
+#+INCLUDE: "baslik.org"
 * Docker CEO'sunun sunum
   https://youtu.be/Q5POuMHxW-0
   WM -> Least software specific 

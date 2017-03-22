@@ -1,10 +1,4 @@
-#+TITLE: uMtMu
-#+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
-#+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-#+OPTIONS: ^:nil \n:t
-#+BEGIN_CENTER
-[[file:img/ja2.png]]
-#+END_CENTER
+#+INCLUDE: "baslik.org"
 * Yol
 ** Writing your first Django app, part 1 
 *** Virtul Env

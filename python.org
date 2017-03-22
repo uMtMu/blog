@@ -1,12 +1,4 @@
-#+TITLE: uMtMu
-#+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
-#+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-#+OPTIONS: ^:nil \n:t
-#+OPTIONS: with-timestamps
-#+BEGIN_CENTER
-[[file:img/ja2.png]]
-#+END_CENTER
-#+NAME: top
+#+INCLUDE: "baslik.org"
 * VirtualEnv
   pyvenv-3.5 virtenv_name
 * Blog

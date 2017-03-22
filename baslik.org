@@ -1,4 +1,11 @@
 #+TITLE: uMtMu
 #+HTML: <link rel="stylesheet" type="text/css" href="css/style.css" />
+#+HTML: <script src="js/scripts.js"></script>
 #+HTML: <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 #+OPTIONS: ^:nil \n:t
+#+OPTIONS: with-timestamps
+#+OPTIONS: toc:nil
+#+BEGIN_CENTER
+[[file:img/ja2.png]]
+#+END_CENTER
+#+TOC: headlines 2
