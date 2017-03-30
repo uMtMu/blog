@@ -81,7 +81,7 @@
     - Use case, if appropriate
     - Args
     - Return type and semantics, unless None is returned
-      #+BEGIN_SRC python  
+
       """Train a model to classify Foos and Bars.
       Usage::
       
@@ -93,7 +93,7 @@
       
       :rtype:    A :class:`Classifier <Classifier>`
       """
-      #+END_SRC
+
 *** On comment
     - No
 
