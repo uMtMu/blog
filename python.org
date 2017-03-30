@@ -1,4 +1,113 @@
 #+INCLUDE: "baslik.org"
+* Best Practice
+** [[https://gist.github.com/sloria/7001839][Kaynak]]
+   
+** Values
+   - "Build tools for others that you want to be built for you." - Kenneth Reitz
+   - "Simplicity is alway better than functionality." - Pieter Hintjens
+   - "Fit the 90% use-case. Ignore the nay sayers." - Kenneth Reitz
+   - "Beautiful is better than ugly." - PEP 20
+** General Development Guide
+   - "Explicit is better than implicit" - PEP 20
+   - "Readability counts." - PEP 20
+   - "Anybody can fix anything." - Khan Academy Development Docs
+   - Fix each broken window (bad design, wrong decision, or poor code) as soon as it is discovered.
+   - "Now is better than never." - PEP 20
+** Naming
+
+   - Variables, functions, methods, packages, modules
+     - lower_case_with_underscores
+   - Classes and Exceptions
+     - CapWords
+   - Protected methods and internal functions
+     - _single_leading_underscore(self, ...)
+   - Private methods
+     - __double_leading_underscore(self, ...)
+   - Constants
+     - ALL_CAPS_WITH_UNDERSCORES
+*** Mindset
+**** 
+    - Fine
+      
+      - for e in elements:
+          e.mutate()
+        Avoid redundant labeling.
+
+    - Yes
+
+      - import audio
+
+        core = audio.Core()
+        controller = audio.Controller()
+    - No
+
+      - import audio
+    
+        core = audio.AudioCore()
+        controller = audio.AudioController()
+**** Prefer ReverseNotation
+    - Yes 
+      
+      - elements = ...
+        elements_active = ...
+        elements_defunct = ...
+    
+    - No
+
+      - elements = ...
+        active_elements = ...
+        defunct_elements ...
+**** Avoid getter and setter methods.
+
+     - Yes
+       - person.age = 42
+     - No
+       - person.set_age(42)
+*** Imports
+    - Yes
+
+      - import canteen
+        import canteen.sessions
+        from canteen import sessions
+    - No
+
+      - from canteen import get_user  # Symbol from canteen/__init__.py
+        from canteen.sessions import get_session  # Symbol from canteen/sessions.py
+
+** Documentation
+
+*** Multi Line
+    - Summary line
+    - Use case, if appropriate
+    - Args
+    - Return type and semantics, unless None is returned
+      #+BEGIN_SRC python  
+      """Train a model to classify Foos and Bars.
+      Usage::
+      
+      >>> import klassify
+      >>> data = [("green", "foo"), ("orange", "bar")]
+      >>> classifier = klassify.train(data)
+      
+      :param train_data: A list of tuples of the form ``(color, label)``.
+      
+      :rtype:    A :class:`Classifier <Classifier>`
+      """
+      #+END_SRC
+*** On comment
+    - No
+
+      - # If the sign is a stop sign
+        if sign.color == 'red' and sign.sides == 8:
+            stop()
+    - Yes
+
+      - def is_stop_sign(sign):
+            return sign.color == 'red' and sign.sides == 8
+
+        if is_stop_sign(sign):
+            stop()
+
 * VirtualEnv
   pyvenv-3.5 virtenv_name
 * Blog
