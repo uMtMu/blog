@@ -35,8 +35,7 @@
       *Sonra:* bindsym $mod+Shift+1 move container to workspace $workspace1
 *** Masaüstü görüntüsü belirleme
     - sudo apt-get install feh
-    - i3 yapılandırma dosyasına eklenir
-      exec_always --no-startup-id feh --bg-scale ~/Pictures/zen.jpg
+    - i3 yapılandırma dosyasına eklenir exec_always --no-startup-id feh --bg-scale ~/Pictures/zen.jpg
 *** Belirli uygulamanın kendiliğinden belirtilen workspacede açılması
     - İstenilen uygulama çalıştırılır
     - terminalde "xprop" komutu çalıştırılır.
@@ -48,12 +47,8 @@
     - unzip font_awesome.zip
     - mkdir ~/.fonts
     - mv font_awesome/fonts/fontawesome-webfont.ttf ~/.fonts
-    - *Önemli* i3 yapılandırma dosyasında awesome font tipinin kullanılabilir
-      olarak ayarlanması
-      font pango:DejaVu Sans Mono 10, Awesome 10
-    - http://fontawesome.io/cheatsheet/ adresinden istenilen karakterler
-      bulunur. Mesela  fa-chrome ve i3 yapılandırma dosyasında workspace adına
-      eklenir. 
+    - *Önemli* i3 yapılandırma dosyasında awesome font tipinin kullanılabilir olarak ayarlanması font pango:DejaVu Sans Mono 10, Awesome 10
+    - http://fontawesome.io/cheatsheet/ adresinden istenilen karakterler bulunur. Mesela  fa-chrome ve i3 yapılandırma dosyasında workspace adına eklenir. 
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"
 

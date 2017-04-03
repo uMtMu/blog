@@ -1,4 +1,83 @@
 #+INCLUDE: "baslik.org"
+* Notlarım
+** 7 simple tricks to write better Python
+   - dict.get(key, if_not_exists)
+   - for else -> bitirdiysen çalıştır
+   - with -> context managers
+   - try:
+     except:
+     else:
+** Python OOP
+*** 
+    | class          |   | instance          |
+    | varible        | X | variable          |
+    | selfsiz        |   | selfli            |
+    | class.__dict__ |   | instance.__dict__ |
+    | classname.var  |   | self.var          |
+***    
+    isinstance(x, y)
+    issubclass(x, y)
+*** @classmethod instance metodlarında otomatik olarak ilk parametre instance olur. Bu decorator ile class gelir. def set_raise_amt(cls, amount):
+        cls.raise_amt = amount
+*** @staticmethod
+    Sınıfla ilgili ancak instance  ya da class referansına ihtiyaç duymayan metodlar.
+    
+    *(ÖRNEK)*
+** Property Decorators
+   #+BEGIN_SRC python
+   
+
+   @property def fullname(self):
+       return '{} {}'.format(self.first, self.last)
+
+   @fullname.setter def fullname(self, name):
+       first, last = name.split(' ')
+       self.first = first self.last = last
+
+    @fullname.deleter def fullname(self, name):
+        print('Delete name!')
+	self.first = None self.last = None del emp1.fullname
+   #+END_SRC
+** Special (Magic/Dunder) Methods
+   | =__init__=     |   |
+   | =__repr__=     |   |
+   | =__str__=      |   |
+   | =__add__=      |   |
+   | =__len__=      |   |
+   | =__iter__=     |   |
+   | =__next__=     |   |
+   | =__reversed__= |   |
+   | =__getattr__=  |   |
+   | =__setattr__=  |   |
+   | =__delattr__=  |   |
+   | vs             |   |
+** try/except
+   #+BEGIN_SRC python try:
+       f = open('file.txt')
+   except FileNotFoundError as e:
+       print(e)
+   except Exception as e:
+       print(e)
+   else:
+       print(f.read())
+       f.close()
+   finally:
+       print('Executing finally!')
+   #+END_SRC
+** namedtuple
+   #+BEGIN_SRC python
+
+   
+   >>> Point = namedtuple('Point', ['x', 'y'], verbose=True)
+   >>> p = Point(11, y=22)
+   >>> p[0] + p[1]
+   33
+   >>> p.x + p.y
+   333
+   >>> x, y = p
+   >>> x + y
+   33
+   #+END_SRC
 * Best Practice
 ** [[https://gist.github.com/sloria/7001839][Kaynak]]
    
@@ -35,28 +114,20 @@
 
     - Yes
 
-      - import audio
-
-        core = audio.Core()
+      - import audio core = audio.Core()
         controller = audio.Controller()
     - No
 
-      - import audio
-    
-        core = audio.AudioCore()
+      - import audio core = audio.AudioCore()
         controller = audio.AudioController()
 **** Prefer ReverseNotation
     - Yes 
       
-      - elements = ...
-        elements_active = ...
-        elements_defunct = ...
+      - elements = ... elements_active = ... elements_defunct = ...
     
     - No
 
-      - elements = ...
-        active_elements = ...
-        defunct_elements ...
+      - elements = ... active_elements = ... defunct_elements ...
 **** Avoid getter and setter methods.
 
      - Yes
@@ -66,13 +137,10 @@
 *** Imports
     - Yes
 
-      - import canteen
-        import canteen.sessions
-        from canteen import sessions
+      - import canteen import canteen.sessions from canteen import sessions
     - No
 
-      - from canteen import get_user  # Symbol from canteen/__init__.py
-        from canteen.sessions import get_session  # Symbol from canteen/sessions.py
+      - from canteen import get_user  # Symbol from canteen/__init__.py from canteen.sessions import get_session  # Symbol from canteen/sessions.py
 
 ** Documentation
 
@@ -97,8 +165,7 @@
 *** On comment
     - No
 
-      - # If the sign is a stop sign
-        if sign.color == 'red' and sign.sides == 8:
+      - # If the sign is a stop sign if sign.color == 'red' and sign.sides == 8:
             stop()
     - Yes
 
@@ -108,9 +175,7 @@
         if is_stop_sign(sign):
             stop()
 
-* VirtualEnv
-  pyvenv-3.5 virtenv_name
-* Blog
-  https://pythondefterim.wordpress.com/
+* VirtualEnv pyvenv-3.5 virtenv_name
+* Blog https://pythondefterim.wordpress.com/
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"

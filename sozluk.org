@@ -2,8 +2,7 @@
 * Sozluk
 ** Dünyanın anlamsız olduğu gerçeği
    <2016-10-21 Fri 00:25>
-   Acı ama gerçek. Dünyanın herhangi bir anlamı yok. Çünkü anlam tanım olarak
-   insan zihninde bulunur ve şeyler ile ilişkilendirilir.
+   Acı ama gerçek. Dünyanın herhangi bir anlamı yok. Çünkü anlam tanım olarak insan zihninde bulunur ve şeyler ile ilişkilendirilir.
    [[top][Yukarı]]
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"

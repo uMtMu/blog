@@ -4,19 +4,14 @@
    [[http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world][Kaynak]]
 *** Kurulum
     #+BEGIN_SRC sh :shebang #!/bin/bash 
-    virtualenv flask_sites_env
-    . flask_sites_env/bin/activate
-    pip install flask flask-login flask-openid flask-mail flask-sqlalchemy\
+    virtualenv flask_sites_env . flask_sites_env/bin/activate pip install flask flask-login flask-openid flask-mail flask-sqlalchemy\
     sqlalchemy-migrate flask-whooshalchemy flask-wtf flask-babel\
     guess_language flipflop coverage
     #+END_SRC
 
 *** Ortamın hazırlanması
     #+BEGIN_SRC sh :shebang #!/bin/bash 
-    mkdir app
-    mkdir app/static
-    mkdir app/templates
-    mkdir tmp
+    mkdir app mkdir app/static mkdir app/templates mkdir tmp
     #+END_SRC
 
 *** Devamı Github'da
@@ -30,8 +25,7 @@
 ** Ses sistemi projesi 
 *** Başlandı <2016-01-30 Sat 21:08>
 *** Gelişme <2016-03-07 Pzt 11:22>
-    Sistem kuruldu. Test yapıldı. Sanırım radyo vericisi kalitesiz olduğu için
-    baş ağrısı yapıyor. Ayrıca ses kalitesi yetersiz.
+    Sistem kuruldu. Test yapıldı. Sanırım radyo vericisi kalitesiz olduğu için baş ağrısı yapıyor. Ayrıca ses kalitesi yetersiz.
 ** Django <2016-03-27 Sun 20:23>
 *** Django tutorial
     <2016-09-11 Sun 18:18>
@@ -43,10 +37,7 @@
 ** Çektiğim fotoğraflar <2016-03-27 Sun 23:14>
    Çektiğim fotoğraflarda bir kısmını bastırıp eve asmayı planlıyorum
 *** Evde nasıl ve nerede sergileyeceğim?
-    Her odada olabilir. Duvarlara çivi çakmak istemiyorum. Yumuşak hamurlar da
-    leke yapıyor. Nasıl yapsam tam bilmiyorum. Aslına bakarsan hamurlar leke
-    yapsa da temizlenmeyecek bir şey olmaz diye düşünüyorum. Belki de tek tek
-    yerine toplu bir pano yaptırmalıyım. Toplu minik panolar da olabilir. 
+    Her odada olabilir. Duvarlara çivi çakmak istemiyorum. Yumuşak hamurlar da leke yapıyor. Nasıl yapsam tam bilmiyorum. Aslına bakarsan hamurlar leke yapsa da temizlenmeyecek bir şey olmaz diye düşünüyorum. Belki de tek tek yerine toplu bir pano yaptırmalıyım. Toplu minik panolar da olabilir. 
 *** Hangi fotoğrafları bastıracağım?
 *** Nerede bastıracağım?
     Dükkanın karşısında bastırabiliri

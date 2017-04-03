@@ -1,8 +1,7 @@
 #+INCLUDE: "baslik.org"
 * Araştırılacaklar
 ** SpacEmacs & ErgoEmacs
-   Bana fazla karışık geldi. Sıfırdan kendin kurup neyin ne olduğunu bilmek daha
-   güzel geliyor. Tabi ne var ne yok görmek için iyi oldu.
+   Bana fazla karışık geldi. Sıfırdan kendin kurup neyin ne olduğunu bilmek daha güzel geliyor. Tabi ne var ne yok görmek için iyi oldu.
    [[https://github.com/syl20bnr/spacemacs][SpacEmacs]] & [[http://ergoemacs.org/][ErgoEmacs]]
 ** orgmode easy templates
 | 1. | 2.  | Sonuç                             |

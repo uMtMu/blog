@@ -67,8 +67,7 @@
     - rm **/*.doc
 *** remove_files_without_extension
     - find . ! -name '*.txt' -a ! -name '*.exe' -delete
-    - find . -type f -regextype posix-extended ! -regex ".*(\.txt|\.exe)$" -exec
-      rm {} +
+    - find . -type f -regextype posix-extended ! -regex ".*(\.txt|\.exe)$" -exec rm {} +
 *** replace_text_in_files
     - find -name '*.txt' -exec sed -i 's/challenges are difficult//gp' {} +
     - sed -i 's/challenges are difficult//g' **/*.txt
@@ -81,44 +80,26 @@
 ** Küçük şeyler :)
 *** aranan dosyaların sonuna ekleme
     <2016-10-17 Mon 00:13>
-    #+BEGIN_SRC sh :shebang #!/bin/bash
-    find ~ -name file_name | xargs sed -i '$a\line2add'
+    #+BEGIN_SRC sh :shebang #!/bin/bash find ~ -name file_name | xargs sed -i '$a\line2add'
     #+END_SRC
 *** ~ altındaki tüm GIT repolarının statüsleri
     <2016-10-17 Mon 00:13>
-    #+BEGIN_SRC sh :shebang #!/bin/bash
-    find /home/ -name ".git" 2> /dev/null | sed 's/\/.git/\//g' | \
+    #+BEGIN_SRC sh :shebang #!/bin/bash find /home/ -name ".git" 2> /dev/null | sed 's/\/.git/\//g' | \
     awk '{\
          print "-------------------------\n\033[1;32mGit Repo:\033[0m " $1;\
          system("git --git-dir="$1".git --work-tree="$1" status")\
          }'
     #+END_SRC
-** Komut: patch
-   İncelenenecek
+** Komut: patch İncelenenecek
    <2015-11-27 Cum 11:27>
-** Komut: cp
-   cp -R ~/files ~/files-backup # tüm dizin alt yapısını ve içeriğini kopyala
-   
-   cp -s ~/myfiles/file*.txt ~/myfiles2 # tüm file*.txt dosyalarının sembolik
-   bağlantılarını ~/myfiles2 dizini altına oluşturur. Sembolik bağlantılar,
-   Windowstaki kısayollar gibidir
-   
-   cp -R -s ~/myfiles ~/myfiles2 # tüm dizinleri oluşturur ve içindeki tüm
-   dosyaların sembolik bağlantılarını oluşturur
-   
-   cp -u * bak # Dizindeki dosyaları eğer kaynak daha yeni ise günceller
-   
-   cp -v *.txt dir # kopyalama işleminin durumunu gösterir
-
-   cp -p file.txt file.txt.bak # sahiplik ve izin bilgileri ile kopyalar
+** Komut: cp cp -R ~/files ~/files-backup # tüm dizin alt yapısını ve içeriğini kopyala cp -s ~/myfiles/file*.txt ~/myfiles2 # tüm file*.txt dosyalarının sembolik bağlantılarını ~/myfiles2 dizini altına oluşturur. Sembolik bağlantılar,
+   Windowstaki kısayollar gibidir cp -R -s ~/myfiles ~/myfiles2 # tüm dizinleri oluşturur ve içindeki tüm dosyaların sembolik bağlantılarını oluşturur cp -u * bak # Dizindeki dosyaları eğer kaynak daha yeni ise günceller cp -v *.txt dir # kopyalama işleminin durumunu gösterir cp -p file.txt file.txt.bak # sahiplik ve izin bilgileri ile kopyalar
 ** Komut: > ve 2>
    >  # stdout
 
    2> # stderr
 ** Komut: alias
-   #Kullanışlı kısa Ubuntu aliasları
-
-   alias e='exit'
+   #Kullanışlı kısa Ubuntu aliasları alias e='exit'
 
    alias c='clear'
    
@@ -135,12 +116,8 @@
    alias agu='ag update'
 
    alias agr='ag remove -purge'
-** Komut: cd
-   cd -  #bir önceki çalışılan dizine geri döner
-
-   cd ~  #kullanici adi  adının ev dizinine gider
-** Komut: ls
-   ls ~ /usr #birden fazla dizinin içi listelenebilir
+** Komut: cd cd -  #bir önceki çalışılan dizine geri döner cd ~  #kullanici adi  adının ev dizinine gider
+** Komut: ls ls ~ /usr #birden fazla dizinin içi listelenebilir
 | -a | --all           | tümünü listele                        |
 | -r | -reverse        | sıralamayı ters yap                   |
 | -d | -directory      | dizinin kendisini işaret eder         |
@@ -149,14 +126,11 @@
 | -t |                 | zamana göre sıralar                   |
 |    |                 |                                       |
 
-** Komut: chmod
-   chmod g+s directory #alt dizinlerinin grubunu sabitleme
+** Komut: chmod chmod g+s directory #alt dizinlerinin grubunu sabitleme
 ** ızin ve sahiplik bilgilerini koruyarak dosya transferi
    1. tar czf - | ssh user@host "cd; tar xzf -"
    2. scp -rp sourcedir user@dest:/dir
-** Veri içindeki eşsiz satırları ve sayılarını bulmak
-   sort data | uniq -u #Eşsiz satırlar
-   sort data | uniq -c #Satırların tekrar sayıları
+** Veri içindeki eşsiz satırları ve sayılarını bulmak sort data | uniq -u #Eşsiz satırlar sort data | uniq -c #Satırların tekrar sayıları
 
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"

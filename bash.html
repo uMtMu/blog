@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>uMtMu</title>
-<!-- 2017-03-22 Çrş 14:21 -->
+<!-- 2017-04-03 Pzt 10:59 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="umt" />
@@ -198,15 +198,15 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#sec-1-1">1.1. CMD CHALLENGE</a></li>
 <li><a href="#sec-1-2">1.2. Küçük şeyler :)</a></li>
-<li><a href="#sec-1-3">1.3. Komut: patch</a></li>
-<li><a href="#sec-1-4">1.4. Komut: cp</a></li>
+<li><a href="#sec-1-3">1.3. Komut: patch İncelenenecek</a></li>
+<li><a href="#sec-1-4">1.4. Komut: cp cp -R ~/files ~/files-backup # tüm dizin alt yapısını ve içeriğini kopyala cp -s ~/myfiles/file*.txt ~/myfiles2 # tüm file*.txt dosyalarının sembolik bağlantılarını ~/myfiles2 dizini altına oluşturur. Sembolik bağlantılar,</a></li>
 <li><a href="#sec-1-5">1.5. Komut: &gt; ve 2&gt;</a></li>
 <li><a href="#sec-1-6">1.6. Komut: alias</a></li>
-<li><a href="#sec-1-7">1.7. Komut: cd</a></li>
-<li><a href="#sec-1-8">1.8. Komut: ls</a></li>
-<li><a href="#sec-1-9">1.9. Komut: chmod</a></li>
+<li><a href="#sec-1-7">1.7. Komut: cd cd -  #bir önceki çalışılan dizine geri döner cd ~  #kullanici adi  adının ev dizinine gider</a></li>
+<li><a href="#sec-1-8">1.8. Komut: ls ls ~ /usr #birden fazla dizinin içi listelenebilir</a></li>
+<li><a href="#sec-1-9">1.9. Komut: chmod chmod g+s directory #alt dizinlerinin grubunu sabitleme</a></li>
 <li><a href="#sec-1-10">1.10. ızin ve sahiplik bilgilerini koruyarak dosya transferi</a></li>
-<li><a href="#sec-1-11">1.11. Veri içindeki eşsiz satırları ve sayılarını bulmak</a></li>
+<li><a href="#sec-1-11">1.11. Veri içindeki eşsiz satırları ve sayılarını bulmak sort data | uniq -u #Eşsiz satırlar sort data | uniq -c #Satırların tekrar sayıları</a></li>
 </ul>
 </li>
 <li><a href="#sec-2">2. Bağlantılar</a></li>
@@ -457,8 +457,7 @@ for the JavaScript code in this tag.
 <ul class="org-ul">
 <li>find . ! -name '*.txt' -a ! -name '*.exe' -delete<br  />
 </li>
-<li>find . -type f -regextype posix-extended ! -regex ".*(\.txt|\.exe)$" -exec<br  />
-rm {} +<br  />
+<li>find . -type f -regextype posix-extended ! -regex ".*(\.txt|\.exe)$" -exec rm {} +<br  />
 </li>
 </ul>
 </div>
@@ -508,8 +507,7 @@ rm {} +<br  />
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">find ~ -name file_name | xargs sed -i <span style="color: #deb887;">'$a\line2add'</span>
-</pre>
+<pre class="src src-sh"></pre>
 </div>
 </div>
 </div>
@@ -521,8 +519,7 @@ rm {} +<br  />
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">find /home/ -name <span style="color: #deb887;">".git"</span> 2&gt; /dev/null | sed <span style="color: #deb887;">'s/\/.git/\//g'</span> | <span style="color: #deb887;">\</span>
-awk <span style="color: #deb887;">'{\</span>
+<pre class="src src-sh">awk <span style="color: #deb887;">'{\</span>
 <span style="color: #deb887;">     print "-------------------------\n\033[1;32mGit Repo:\033[0m " $1;\</span>
 <span style="color: #deb887;">     system("git --git-dir="$1".git --work-tree="$1" status")\</span>
 <span style="color: #deb887;">     }'</span>
@@ -532,42 +529,18 @@ awk <span style="color: #deb887;">'{\</span>
 </div>
 </div>
 <div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Komut: patch</h3>
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Komut: patch İncelenenecek</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
-İncelenenecek<br  />
 <span class="timestamp-wrapper"><span class="timestamp">&lt;2015-11-27 Cum 11:27&gt;</span></span><br  />
 </p>
 </div>
 </div>
 <div id="outline-container-sec-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Komut: cp</h3>
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Komut: cp cp -R ~/files ~/files-backup # tüm dizin alt yapısını ve içeriğini kopyala cp -s ~/myfiles/file*.txt ~/myfiles2 # tüm file*.txt dosyalarının sembolik bağlantılarını ~/myfiles2 dizini altına oluşturur. Sembolik bağlantılar,</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
-cp -R ~/files ~/files-backup # tüm dizin alt yapısını ve içeriğini kopyala<br  />
-</p>
-
-<p>
-cp -s ~/myfiles/file*.txt ~/myfiles2 # tüm file*.txt dosyalarının sembolik<br  />
-bağlantılarını ~/myfiles2 dizini altına oluşturur. Sembolik bağlantılar,<br  />
-Windowstaki kısayollar gibidir<br  />
-</p>
-
-<p>
-cp -R -s ~/myfiles ~/myfiles2 # tüm dizinleri oluşturur ve içindeki tüm<br  />
-dosyaların sembolik bağlantılarını oluşturur<br  />
-</p>
-
-<p>
-cp -u * bak # Dizindeki dosyaları eğer kaynak daha yeni ise günceller<br  />
-</p>
-
-<p>
-cp -v *.txt dir # kopyalama işleminin durumunu gösterir<br  />
-</p>
-
-<p>
-cp -p file.txt file.txt.bak # sahiplik ve izin bilgileri ile kopyalar<br  />
+Windowstaki kısayollar gibidir cp -R -s ~/myfiles ~/myfiles2 # tüm dizinleri oluşturur ve içindeki tüm dosyaların sembolik bağlantılarını oluşturur cp -u * bak # Dizindeki dosyaları eğer kaynak daha yeni ise günceller cp -v *.txt dir # kopyalama işleminin durumunu gösterir cp -p file.txt file.txt.bak # sahiplik ve izin bilgileri ile kopyalar<br  />
 </p>
 </div>
 </div>
@@ -587,11 +560,7 @@ cp -p file.txt file.txt.bak # sahiplik ve izin bilgileri ile kopyalar<br  />
 <h3 id="sec-1-6"><span class="section-number-3">1.6</span> Komut: alias</h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
-#Kullanışlı kısa Ubuntu aliasları<br  />
-</p>
-
-<p>
-alias e='exit'<br  />
+#Kullanışlı kısa Ubuntu aliasları alias e='exit'<br  />
 </p>
 
 <p>
@@ -628,23 +597,11 @@ alias agr='ag remove -purge'<br  />
 </div>
 </div>
 <div id="outline-container-sec-1-7" class="outline-3">
-<h3 id="sec-1-7"><span class="section-number-3">1.7</span> Komut: cd</h3>
-<div class="outline-text-3" id="text-1-7">
-<p>
-cd -  #bir önceki çalışılan dizine geri döner<br  />
-</p>
-
-<p>
-cd ~  #kullanici adi  adının ev dizinine gider<br  />
-</p>
-</div>
+<h3 id="sec-1-7"><span class="section-number-3">1.7</span> Komut: cd cd -  #bir önceki çalışılan dizine geri döner cd ~  #kullanici adi  adının ev dizinine gider</h3>
 </div>
 <div id="outline-container-sec-1-8" class="outline-3">
-<h3 id="sec-1-8"><span class="section-number-3">1.8</span> Komut: ls</h3>
+<h3 id="sec-1-8"><span class="section-number-3">1.8</span> Komut: ls ls ~ /usr #birden fazla dizinin içi listelenebilir</h3>
 <div class="outline-text-3" id="text-1-8">
-<p>
-ls ~ /usr #birden fazla dizinin içi listelenebilir<br  />
-</p>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -703,12 +660,7 @@ ls ~ /usr #birden fazla dizinin içi listelenebilir<br  />
 </div>
 
 <div id="outline-container-sec-1-9" class="outline-3">
-<h3 id="sec-1-9"><span class="section-number-3">1.9</span> Komut: chmod</h3>
-<div class="outline-text-3" id="text-1-9">
-<p>
-chmod g+s directory #alt dizinlerinin grubunu sabitleme<br  />
-</p>
-</div>
+<h3 id="sec-1-9"><span class="section-number-3">1.9</span> Komut: chmod chmod g+s directory #alt dizinlerinin grubunu sabitleme</h3>
 </div>
 <div id="outline-container-sec-1-10" class="outline-3">
 <h3 id="sec-1-10"><span class="section-number-3">1.10</span> ızin ve sahiplik bilgilerini koruyarak dosya transferi</h3>
@@ -722,13 +674,7 @@ chmod g+s directory #alt dizinlerinin grubunu sabitleme<br  />
 </div>
 </div>
 <div id="outline-container-sec-1-11" class="outline-3">
-<h3 id="sec-1-11"><span class="section-number-3">1.11</span> Veri içindeki eşsiz satırları ve sayılarını bulmak</h3>
-<div class="outline-text-3" id="text-1-11">
-<p>
-sort data | uniq -u #Eşsiz satırlar<br  />
-sort data | uniq -c #Satırların tekrar sayıları<br  />
-</p>
-</div>
+<h3 id="sec-1-11"><span class="section-number-3">1.11</span> Veri içindeki eşsiz satırları ve sayılarını bulmak sort data | uniq -u #Eşsiz satırlar sort data | uniq -c #Satırların tekrar sayıları</h3>
 </div>
 </div>
 
@@ -747,7 +693,7 @@ sort data | uniq -c #Satırların tekrar sayıları<br  />
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: umt</p>
-<p class="date">Created: 2017-03-22 Çrş 14:21</p>
+<p class="date">Created: 2017-04-03 Pzt 10:59</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
