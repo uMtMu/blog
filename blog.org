@@ -1,5 +1,10 @@
 #+INCLUDE: "baslik.org"
 * Yazılar
+** Güzel bir gün
+   <2017-04-10 Pzt 19:50>
+   
+   Güzel bir gün hevesle youtube'dan video izleybildiğin gündür bence.
+
 ** Yolcu yolunda gerek mi?
    <2017-03-03 Cum 18:05>
    
