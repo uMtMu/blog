@@ -25,8 +25,30 @@
     *(ÖRNEK)*
 ** Property Decorators
    #+BEGIN_SRC python
-   
+   def decorator_function(orginal_function):
+       def wrapper_function():
+           print('Wrapper executed this before {}'.format(original_function.__name__))
+           return orginal_function()
+       return wrapper_function
 
+   @decorator_function
+   def display():
+       print('display function ran')
+   #+END_SRC
+   Yukarıdaki decorator tanımlaması aşağıdaki gibi generik hale getirilebilir.
+   Aşağıda anlamadığım bir nokta var.
+   #+BEGIN_SRC python
+   def decorator_function(orginal_function):
+       def wrapper_function(*args, **kwargs):
+           print('Wrapper executed this before {}'.format(original_function.__name__))
+           return orginal_function(*args, **kwargs)
+       return wrapper_function
+
+   @decorator_function
+   def display():
+       print('display function ran')
+   #+END_SRC
+   #+BEGIN_SRC python
    @property def fullname(self):
        return '{} {}'.format(self.first, self.last)
 
@@ -39,18 +61,19 @@
 	self.first = None self.last = None del emp1.fullname
    #+END_SRC
 ** Special (Magic/Dunder) Methods
-   | =__init__=     |   |
-   | =__repr__=     |   |
-   | =__str__=      |   |
-   | =__add__=      |   |
-   | =__len__=      |   |
-   | =__iter__=     |   |
-   | =__next__=     |   |
-   | =__reversed__= |   |
-   | =__getattr__=  |   |
-   | =__setattr__=  |   |
-   | =__delattr__=  |   |
-   | vs             |   |
+   | Method         | Explanation |
+   | =__init__=     |             |
+   | =__repr__=     |             |
+   | =__str__=      |             |
+   | =__add__=      |             |
+   | =__len__=      |             |
+   | =__iter__=     |             |
+   | =__next__=     |             |
+   | =__reversed__= |             |
+   | =__getattr__=  |             |
+   | =__setattr__=  |             |
+   | =__delattr__=  |             |
+   | vs             |             |
 ** try/except
    #+BEGIN_SRC python try:
        f = open('file.txt')
@@ -78,6 +101,28 @@
    >>> x + y
    33
    #+END_SRC
+** EAFP
+   It's Easier to Ask Forgiveness then Permission
+
+   #+BEGIN_SRC python
+   def quack_and_fly(thing):
+       try:
+           thing.quack()
+           thing.fly()
+       except AttributeError as e:
+           print(e)
+   #+END_SRC
+** Context Managers
+   * contextlib
+   - with (resource)
+   - ignored (exception)
+   - lock (threading)
+** ChainMap
+   Best way to merge dictionary without altering source dictionaries
+   from collections import ChainMap
+** Python Closure
+   A closure is a record storing function together with an environment: a mapping associating each free variable of the function with the value or storage location to which the name was bound when the closure was created.
+   A closure, unlike a plain function, allows the function to access those captured variable through the closure's reference to them, even when the function is invoked outside their scope.
 * Best Practice
 ** [[https://gist.github.com/sloria/7001839][Kaynak]]
    
