@@ -64,3 +64,26 @@ a {
 .outline-2:last-child h2 {
     display: none;
 }
+
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    min-width: 50%;
+}
+
+th {
+    border: 1px solid black;
+}
+
+tr:not(:first-child):hover {
+    background-color: #bbbbff;
+}
+
+tr:first-child {
+    background-color: #bbb;
+}
+
+td {
+    border: 1px solid black;
+
+}
