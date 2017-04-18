@@ -1,8 +1,11 @@
 #+INCLUDE: "baslik.org"
 * Yazılar
+** Kaçağın şeyin yüzüne sağlam bir tokat indirmeden kaçma
+   <2017-04-15 Cts 23:07>
+   
+   
 ** Artık kendi kendime gülmek gücüme gitmiyor :)
    <2017-04-12 Çrş 10:55>
-
 ** Güzel bir gün
    <2017-04-10 Pzt 19:50>
    
