@@ -220,7 +220,8 @@
         if is_stop_sign(sign):
             stop()
 
-* VirtualEnv pyvenv-3.5 virtenv_name
+* VirtualEnv 
+  pyvenv-3.5 virtenv_name
 * Blog https://pythondefterim.wordpress.com/
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"
