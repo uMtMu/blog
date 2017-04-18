@@ -66,6 +66,7 @@ a {
 }
 
 table {
+
     border-collapse: collapse;
     border: 1px solid black;
     min-width: 50%;
