@@ -1,5 +1,9 @@
 #+INCLUDE: "baslik.org"
 * Yazılar
+** İntihar
+   <2017-04-19 Çrş 21:52>
+   
+   Oysa, ölmezsem fişimi çekin, ne olursa olsun öldürün diye yazmıştı intihar mektubuna. Nereden doğmuştu şu lanet yaşama sevinci tamamen felçliyken yatağinda.
 ** Kaçağın şeyin yüzüne sağlam bir tokat indirmeden kaçma
    <2017-04-15 Cts 23:07>
    
