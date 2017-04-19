@@ -6,6 +6,8 @@
 [[file:img/ja2.png]]
 #+END_CENTER
 * Yazılar
+** İş görüşmesinde verilen sözler
+   Görüşmelerinde verilen sözler not alınmalıdr.. Hem kendi verdiğimiz hem de iş verenin verdiği sözler. Bu notlar sindirilmeli  ve ara ara hatırlanmalıdır.
 ** Görüşme sürecinin adımlarının en başta öğrenilmesi
    Son görüşmemde adımların ilk başta hatta ilk görüşmenin başında öğrenilmesinin önemini anlamış oldum. Buna göre sorulması gereken sorular belirlebilir. Kime ne soru sorulacağı, ne cevap alınacağı bilinir.
 ** İş görüşmelerinde Don Kişot olmamak
