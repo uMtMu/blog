@@ -1,4 +1,24 @@
 #+INCLUDE: "baslik.org"
+* SpacEmacs & ErgoEmacs
+  Bana fazla karışık geldi. Sıfırdan kendin kurup neyin ne olduğunu bilmek daha güzel geliyor. Tabi ne var ne yok görmek için iyi oldu.
+  [[https://github.com/syl20bnr/spacemacs][SpacEmacs]] & [[http://ergoemacs.org/][ErgoEmacs]]
+* orgmode easy templates
+
+  | 1. | 2.  | Sonuç                             |
+  | <s | TAB | #+BEGIN_SRC ... #+END_SRC         |
+  | <e | TAB | #+BEGIN_EXAMPLE ... #+END_EXAMPLE |
+  | <q | TAB | #+BEGIN_QUOTE ... #+END_QUOTE     |
+  | <v | TAB | #+BEGIN_VERSE ... #+END_VERSE     |
+  | <c | TAB | #+BEGIN_CENTER ... #+END_CENTER   |
+  | <l | TAB | #+BEGIN_LaTeX ... #+END_LaTeX     |
+  | <L | TAB | #+LaTeX:                          |
+  | <h | TAB | #+BEGIN_HTML ... #+END_HTML       |
+  | <H | TAB | #+HTML:                           |
+  | <a | TAB | #+BEGIN_ASCII ... #+END_ASCII     |
+  | <A | TAB | #+ASCII:                          |
+  | <i | TAB | #+INDEX: line                     |
+  | <I | TAB | #+INCLUDE: line                   |
+   
 * Orgmode metin stilleri
   | _ | _metin stili_ |
   | / | /metin stili/ |
