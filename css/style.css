@@ -65,6 +65,10 @@ a {
     display: none;
 }
 
+#text-table-of-contents ul li:last-child {
+    display: none;
+}
+
 table {
 
     border-collapse: collapse;
