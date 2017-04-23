@@ -1,4 +1,8 @@
 #+INCLUDE: "baslik.org"
+* rhc log dosyaları
+  ls -l $OPENSHIFT_LOG_DIR
+* rhc ssh ile sunucuya erişim
+  rhc ssh -a proje_adi
 * rhc kurulum
   #+BEGIN_SRC sh
   sudo apt-get install ruby-full
