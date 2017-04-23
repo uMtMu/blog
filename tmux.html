@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>uMtMu</title>
-<!-- 2017-04-23 Paz 02:02 -->
+<!-- 2017-04-23 Paz 02:24 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="umt" />
@@ -152,15 +152,53 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. Tmux Scroll</a></li>
-<li><a href="#sec-2">2. Tmux Kısayollar</a></li>
-<li><a href="#sec-3">3. Bağlantılar</a></li>
+<li><a href="#sec-1">1. .tmux.conf</a></li>
+<li><a href="#sec-2">2. Tmux Scroll</a></li>
+<li><a href="#sec-3">3. Tmux Kısayollar</a></li>
+<li><a href="#sec-4">4. Bağlantılar</a></li>
 </ul>
 </div>
 </div>
 <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Tmux Scroll</h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> .tmux.conf</h2>
 <div class="outline-text-2" id="text-1">
+<pre class="example">
+set -g default-terminal "screen-256color"
+set -g base-index 1
+# Mouse
+# Make mouse useful on copying
+# Kullanışlı olmadığı için kapattım
+setw -g mode-mouse off
+
+# select pane with mouse
+# Kullanışlı olmadığı için kapattım
+setw -g mouse-select-pane off
+
+set -g history-limit 30000
+
+# Automatically set window title
+set-window-option -g automatic-rename on
+set-option -g set-titles on
+
+# THEME
+set -g status-bg black
+set -g status-fg white
+set -g window-status-current-bg white
+set -g window-status-current-fg black
+set -g window-status-current-attr bold
+set -g status-interval 60
+set -g status-left-length 30
+set -g status-left ‘#[fg=green](#S) #(ifconfig eth0 | grep "inet " | cut -d ":" -f 2 |   cut -d " " -f 1)’
+set -g status-right ‘#[fg=yellow]#(cut -d " " -f 1-3 /proc/loadavg)#[default]   #[fg=white]%H:%M#[default]’
+
+# Reload tmux config
+bind r source-file ~/.tmux.conf
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Tmux Scroll</h2>
+<div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li>C – b [<br  />
 </li>
@@ -171,9 +209,9 @@ for the JavaScript code in this tag.
 </ol>
 </div>
 </div>
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Tmux Kısayollar</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Tmux Kısayollar</h2>
+<div class="outline-text-2" id="text-3">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -232,9 +270,9 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Bağlantılar</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Bağlantılar</h2>
+<div class="outline-text-2" id="text-4">
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <center>
 <p>
@@ -247,7 +285,7 @@ for the JavaScript code in this tag.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: umt</p>
-<p class="date">Created: 2017-04-23 Paz 02:02</p>
+<p class="date">Created: 2017-04-23 Paz 02:24</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
