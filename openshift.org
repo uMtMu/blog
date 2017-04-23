@@ -1,0 +1,13 @@
+#+INCLUDE: "baslik.org"
+* rhc kurulum
+  #+BEGIN_SRC sh
+  sudo apt-get install ruby-full
+  sudo apt-get install rubygems
+  sudo apt-get install git-core
+  sudo gem install rhc
+  rhc setup
+  # rhc app create <app_name> <web_cartridge_name>
+  rhc app create myfirstphpapp php-5.4
+  #+END_SRC
+* Bağlantılar
+#+INCLUDE: "baglantilar.org"
