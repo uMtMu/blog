@@ -1,4 +1,21 @@
 #+INCLUDE: "baslik.org"
+* MoveIt
+  Numerik tekrarlama
+  (C|M)-Num Komut örneği C-5 C-f
+  
+  | Komut | Boyut    | Yöne  |
+  | C-f   | Karakter | İleri |
+  | C-b   | Karakter | Geri  |
+  | C-n   | Satır    | İleri |
+  | M-f   | Kelime   | İleri |
+  | C-p   | Satır    | Geri  |
+  | M-f   | Kelime   | İleri |
+  | M-b   | Kelime   | Geri  |
+  | M-v   | Paragraf | İleri |
+  | C-v   | Paragraf | Geri  |
+  | M-<   | Buffer   | Tepe  |
+  | M->   | Buffer   | Dip   |
+
 * SpacEmacs & ErgoEmacs
   Bana fazla karışık geldi. Sıfırdan kendin kurup neyin ne olduğunu bilmek daha güzel geliyor. Tabi ne var ne yok görmek için iyi oldu.
   [[https://github.com/syl20bnr/spacemacs][SpacEmacs]] & [[http://ergoemacs.org/][ErgoEmacs]]
