@@ -1,5 +1,7 @@
 #+INCLUDE: "baslik.org"
 * Yazılar
+** Tutku ve Bilgi
+   İş görüşmelerinde sadece tutku yetmez. Tutkuyla yaptığınız şeye karşı neden bu tutkuyu hissettiğinizi, bu tutkuyla neleri, neden yaptığınızı net bir şekilde bilmeli ve gerektiği kadar açıklamalısınız.
 ** İş görüşmesinde verilen sözler
    Görüşmelerinde verilen sözler not alınmalıdr.. Hem kendi verdiğimiz hem de iş verenin verdiği sözler. Bu notlar sindirilmeli  ve ara ara hatırlanmalıdır.
 ** Görüşme sürecinin adımlarının en başta öğrenilmesi
