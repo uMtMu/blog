@@ -1,4 +1,21 @@
 #+INCLUDE: "baslik.org"
+* GnuPG
+  - Kurulum
+    sudo apt-get install gnupg2
+    sudo apt-get install kleopatra # arayüz
+  - Key oluşturma
+    gpg --gen-key # eposta adresi önemli. Keyringde belirleyici olacak
+  - .emacs ayarlar
+    (require 'epa-file)
+    (epa-file-enable)
+  - orgmode kullanımı
+    Dosya uzantısı gpg (*.gpg) olan dosyanın ilk satırına
+    # -*- mode:org; epa-file-encrypt-to: ("me@mydomain.com") -*-
+    eklenecek
+  - Oluşturulan anahtar dosyasının taşıma amaçlı çıkarılması (Export)
+    gpg --armor --export me@mydomain.com > mykey.asc
+  - Çıkarılan anahtarın eklenmesi (Import)
+    gpg --import mykey.asc 
 * MoveIt
   Numerik tekrarlama
   (C|M)-Num Komut örneği C-5 C-f
