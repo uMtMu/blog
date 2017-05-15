@@ -1,0 +1,197 @@
+#+OPTIONS: toc:nil
+#+OPTIONS: author:nil date:nil
+#+Title:
+#+LaTex_HEADER: \documentclass[10pt]{article}
+#+LaTeX_HEADER: \setlength{\parindent}{0cm} % Default is 15pt.
+#+LaTeX_HEADER: \setlength{\parskip}{1em}
+#+LaTeX_HEADER: \usepackage[a5paper, hmargin=2.0cm,vmargin=2.0cm]{geometry}
+#+LaTeX_HEADER: \usepackage{tocloft}
+#+LaTeX_HEADER: \setlength{\cftsubsecnumwidth}{3em}
+#+LaTeX_HEADER: \usepackage[turkish]{babel}
+#+LaTeX_HEADER: \usepackage{comment}
+#+LaTeX_HEADER: \usepackage{graphicx}
+
+\begin{document}
+* EAFP
+  It's Easier to Ask Forgiveness then Permission
+
+  #+BEGIN_SRC python
+  def quack_and_fly(thing):
+      try:
+          thing.quack()
+          thing.fly()
+      except AttributeError as e:
+          print(e)
+  #+END_SRC
+* Python OOP
+** 
+     | class          |   | instance          |
+     | varible        | X | variable          |
+     | selfsiz        |   | selfli            |
+     | class.__dict__ |   | instance.__dict__ |
+     | classname.var  |   | self.var          |
+**    
+   isinstance(x, y)
+   issubclass(x, y)
+** @classmethod instance metodlarında otomatik olarak ilk parametre instance olur. Bu decorator ile class gelir. def set_raise_amt(cls, amount):
+       cls.raise_amt = amount
+** @staticmethod
+   Sınıfla ilgili ancak instance  ya da class referansına ihtiyaç duymayan metodlar.
+   
+   *(ÖRNEK)*
+* Property Decorators
+   #+BEGIN_SRC python
+   def decorator_function(orginal_function):
+       def wrapper_function():
+           print('Wrapper executed this before {}'.format(original_function.__name__))
+           return orginal_function()
+       return wrapper_function
+
+   @decorator_function
+   def display():
+       print('display function ran')
+   #+END_SRC
+   Yukarıdaki decorator tanımlaması aşağıdaki gibi generik hale getirilebilir.
+
+   #+BEGIN_SRC python
+   def decorator_function(orginal_function):
+       def wrapper_function(*args, **kwargs):
+           print('Wrapper executed this before {}'.format(original_function.__name__))
+           return orginal_function(*args, **kwargs)
+       return wrapper_function
+
+   @decorator_function
+   def display_info(name, age):
+       print('display function ran with args ({}, {})'.format(name, age))
+   #+END_SRC
+   #+BEGIN_SRC python
+   @property 
+   def fullname(self):
+       return '{} {}'.format(self.first, self.last)
+
+   @fullname.setter 
+   def fullname(self, name):
+       first, last = name.split(' ')
+       self.first = first self.last = last
+
+    @fullname.deleter 
+   def fullname(self, name):
+        print('Delete name!')
+	self.first = None self.last = None del emp1.fullname
+   #+END_SRC
+   
+   Üst üste birden fazla decorator kullanılabilir.
+   #+BEGIN_SRC python
+   @my_logger
+   @my_timer
+   def display():
+       pass
+   #+END_SRC
+** Wraps
+   Decorator yazdığımızda orijinal fonksiyonun ismi kaybolur. Bu nedenle otomatik docstring oluşturan uygulamalarda bu kayıp yaşanır bunu önlemek için wraps decoratorü kullanılır.
+   #+BEGIN_SRC python
+   >>> from functools import wraps
+   >>> def my_decorator(f):
+   ...     @wraps(f)
+   ...     def wrapper(*args, **kwds):
+   ...         print('Calling decorated function')
+   ...         return f(*args, **kwds)
+   ...     return wrapper
+   ...
+   >>> @my_decorator
+   ... def example():
+   ...     """Docstring"""
+   ...     print('Called example function')
+   ...
+   >>> example()
+   Calling decorated function
+   Called example function
+   >>> example.__name__
+   'example'
+   >>> example.__doc__
+   'Docstring'
+   #+END_SRC
+* Context Managers
+  Resides in contextlib module
+** with (resource)
+** ignored (exception)
+** lock (threading)
+* Magic Methods (__dunder__)
+   | Method         | Explanation |
+   | =__init__=     |             |
+   | =__repr__=     |             |
+   | =__str__=      |             |
+   | =__add__=      |             |
+   | =__len__=      |             |
+   | =__iter__=     |             |
+   | =__next__=     |             |
+   | =__reversed__= |             |
+   | =__getattr__=  |             |
+   | =__setattr__=  |             |
+   | =__delattr__=  |             |
+   | vs             |             |
+
+* try/except
+  #+BEGIN_SRC python
+  try:
+      f = open('file.txt')
+  except FileNotFoundError as e:
+      print(e)
+  except Exception as e:
+      print(e)
+  else:
+      print(f.read)
+      f.close()
+  finally:
+      print('Executing Finally...')
+  #+END_SRC
+* Collections
+** namedTuple
+   #+BEGIN_SRC 
+   from collections import namedtuple
+   >>>Point = namedtuple('Point', ['x', 'y'], verbose=True)
+   >>>p = Point(11, y=22)
+   >>>p[0]+p[1]
+     33
+   >>>p.x + p.y
+     33
+   >>>x, y = p
+   >>>x + y
+     33
+   #+END_SRC
+** deque (double ended queue)
+   #+BEGIN_SRC python
+   from collections import deque
+   d = deque('ghi')
+   for elem in d:
+       print(elem.upper())
+   G
+   H
+   I
+   d.append('j')
+   d.appendleft('R')
+   #+END_SRC
+   - append/appendleft
+   - pop/popleft
+** chainMap
+  Best way to merge dictionary without altering source dictionaries
+  from collections import ChainMap
+** Python Closure
+   A closure is a record storing function together with an environment: a mapping associating each free variable of the function with the value or storage location to which the name was bound when the closure was created.
+   #+BEGIN_SRC python
+   def html_tag(tag):
+       def wrap_text(msg):
+           print('<{0}>{1}</{0}>'.format(tag, msg))
+       return wrap_text
+   print_h1 = html_tag('h1')
+   print_h1('Test Headline!')
+
+   print_p = html_tag('p')
+   print_p('Test paragraph!')
+   #+END_SRC
+   A closure, unlike a plain function, allows the function to access those captured variable through the closure's reference to them, even when the function is invoked outside their scope.
+
+* Functools
+
+
+\end{document}
