@@ -1,5 +1,7 @@
 #+INCLUDE: "baslik.org"
 * Sözler
+** Bazı hatalar, pişmanlığa sığmayacak kadar kötüdür.
+   *???*
 ** Savunma planımızda büyük bir hedef belirlemişsek büyük bir enerjiyle ve gücümüzün son zerresine kadar bu hedefi izlemeliyiz
    /Savunma planımızda büyük bir hedef belirlemişsek (bir düşman kolunu imha/
    /etmek vb.) büyük bir enerjiyle ve gücümüzün son zerresine kadar bu hedefi/ 
