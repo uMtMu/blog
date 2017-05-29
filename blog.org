@@ -1,5 +1,8 @@
 #+INCLUDE: "baslik.org"
 * Yazılar
+** İçin de susunca yalnızlık zormuş.
+   <2017-05-29 Pzt 21:07>
+
 ** Sinek
    <2017-05-11 Thu 13:43>
    
