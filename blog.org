@@ -1,5 +1,6 @@
 #+INCLUDE: "baslik.org"
 * Yazılar
+** Cırcır böceği eğleniyor muydu?
 ** Martı kanadı
    Tutundum martının kanadına,
    Aldı götürdü bir balıkcı barınağına.
