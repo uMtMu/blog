@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>uMtMu</title>
-<!-- 2017-04-13 Prş 01:31 -->
+<!-- 2017-05-31 Çrş 22:11 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="umt" />
@@ -287,14 +287,14 @@ Sınıfla ilgili ancak instance  ya da class referansına ihtiyaç duymayan meto
 <div class="org-src-container">
 
 <pre class="src src-python"><span style="color: #00bfff;">def</span> <span style="color: #daa520;">decorator_function</span>(orginal_function):
-<span style="background-color: #000000;"> </span>   <span style="color: #00bfff;">def</span> <span style="color: #daa520;">wrapper_function</span>():
+    <span style="color: #00bfff;">def</span> <span style="color: #daa520;">wrapper_function</span>():
         <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'Wrapper executed this before {}'</span>.<span style="color: #f08080;">format</span>(original_function.<span style="color: #f08080;">__name__</span>))
         <span style="color: #00bfff;">return</span> orginal_function()
-<span style="background-color: #000000;"> </span>   <span style="color: #00bfff;">return</span> wrapper_function
+    <span style="color: #00bfff;">return</span> wrapper_function
 
 <span style="color: #98f5ff;">@decorator_function</span>
 <span style="color: #00bfff;">def</span> <span style="color: #daa520;">display</span>():
-<span style="background-color: #000000;"> </span>   <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'display function ran'</span>)
+    <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'display function ran'</span>)
 </pre>
 </div>
 <p>
@@ -304,28 +304,28 @@ Aşağıda anlamadığım bir nokta var.<br  />
 <div class="org-src-container">
 
 <pre class="src src-python"><span style="color: #00bfff;">def</span> <span style="color: #daa520;">decorator_function</span>(orginal_function):
-<span style="background-color: #000000;"> </span>   <span style="color: #00bfff;">def</span> <span style="color: #daa520;">wrapper_function</span>(*args, **kwargs):
+    <span style="color: #00bfff;">def</span> <span style="color: #daa520;">wrapper_function</span>(*args, **kwargs):
         <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'Wrapper executed this before {}'</span>.<span style="color: #f08080;">format</span>(original_function.<span style="color: #f08080;">__name__</span>))
         <span style="color: #00bfff;">return</span> orginal_function(*args, **kwargs)
-<span style="background-color: #000000;"> </span>   <span style="color: #00bfff;">return</span> wrapper_function
+    <span style="color: #00bfff;">return</span> wrapper_function
 
 <span style="color: #98f5ff;">@decorator_function</span>
 <span style="color: #00bfff;">def</span> <span style="color: #daa520;">display</span>():
-<span style="background-color: #000000;"> </span>   <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'display function ran'</span>)
+    <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'display function ran'</span>)
 </pre>
 </div>
 <div class="org-src-container">
 
 <pre class="src src-python"><span style="color: #98f5ff;">@property</span> <span style="color: #00bfff;">def</span> <span style="color: #daa520;">fullname</span>(<span style="color: #00bfff;">self</span>):
-<span style="background-color: #000000;"> </span>   <span style="color: #00bfff;">return</span> <span style="color: #deb887;">'{} {}'</span>.<span style="color: #f08080;">format</span>(<span style="color: #00bfff;">self</span>.first, <span style="color: #00bfff;">self</span>.last)
+    <span style="color: #00bfff;">return</span> <span style="color: #deb887;">'{} {}'</span>.<span style="color: #f08080;">format</span>(<span style="color: #00bfff;">self</span>.first, <span style="color: #00bfff;">self</span>.last)
 
 <span style="color: #98f5ff;">@fullname.setter</span> <span style="color: #00bfff;">def</span> <span style="color: #daa520;">fullname</span>(<span style="color: #00bfff;">self</span>, name):
-<span style="background-color: #000000;"> </span>   <span style="color: #4eee94;">first</span>, <span style="color: #4eee94;">last</span> = name.split(<span style="color: #deb887;">' '</span>)
-<span style="background-color: #000000;"> </span>   <span style="color: #00bfff;">self</span>.first = first <span style="color: #00bfff;">self</span>.last = last
+    <span style="color: #4eee94;">first</span>, <span style="color: #4eee94;">last</span> = name.split(<span style="color: #deb887;">' '</span>)
+    <span style="color: #00bfff;">self</span>.first = first <span style="color: #00bfff;">self</span>.last = last
 
-<span style="background-color: #000000;"> </span><span style="color: #98f5ff;">@fullname.deleter</span> <span style="color: #00bfff;">def</span> <span style="color: #daa520;">fullname</span>(<span style="color: #00bfff;">self</span>, name):
-<span style="background-color: #000000;"> </span>   <span style="background-color: #000000;"> </span><span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'Delete name!'</span>)
-<span style="background-color: #000000;"> </span>   <span style="background-color: #000000;"> </span><span style="color: #00bfff;">self</span>.first = <span style="color: #a2cd5a;">None</span> <span style="color: #00bfff;">self</span>.last = <span style="color: #a2cd5a;">None</span> <span style="color: #00bfff;">del</span> emp1.fullname
+ <span style="color: #98f5ff;">@fullname.deleter</span> <span style="color: #00bfff;">def</span> <span style="color: #daa520;">fullname</span>(<span style="color: #00bfff;">self</span>, name):
+     <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'Delete name!'</span>)
+     <span style="color: #00bfff;">self</span>.first = <span style="color: #a2cd5a;">None</span> <span style="color: #00bfff;">self</span>.last = <span style="color: #a2cd5a;">None</span> <span style="color: #00bfff;">del</span> emp1.fullname
 </pre>
 </div>
 </div>
@@ -448,10 +448,10 @@ It's Easier to Ask Forgiveness then Permission<br  />
 <div class="org-src-container">
 
 <pre class="src src-python"><span style="color: #00bfff;">def</span> <span style="color: #daa520;">quack_and_fly</span>(thing):
-<span style="background-color: #000000;"> </span>   <span style="color: #00bfff;">try</span>:
+    <span style="color: #00bfff;">try</span>:
         thing.quack()
         thing.fly()
-<span style="background-color: #000000;"> </span>   <span style="color: #00bfff;">except</span> <span style="color: #98f5ff;">AttributeError</span> <span style="color: #00bfff;">as</span> e:
+    <span style="color: #00bfff;">except</span> <span style="color: #98f5ff;">AttributeError</span> <span style="color: #00bfff;">as</span> e:
         <span style="color: #00bfff;">print</span>(e)
 </pre>
 </div>
@@ -750,14 +750,16 @@ pyvenv-3.5 virtenv_name<br  />
 <p>
 <a href="blog.html">Blog</a> <a href="bash.html">Bash</a> <a href="baslangiclar.html">Başlangıç</a> <a href="muzik.html">Müzik</a> <a href="okunacaklar.html">Okunacaklar</a> <a href="notlar.html">Notlar</a> <a href="projeler.html">Projeler</a> <a href="sozler.html">Sözler</a> <a href="tatil_rotalari.html">Tatil Rotaları</a> <a href="emacs.html">Emacs</a> <a href="index.html">Ana Sayfa</a><br  />
 </p>
-<a href="#"><img src="img/yukari.png" width="2%" height="2%"></a>
+<a href="https://umtmu.wordpress.com/"><img src="img/wp.png" width="1.5%" height="1.5%"></a>&nbsp&nbsp
+<a href="#"><img src="img/yukari.png" width="2%" height="2%"></a>&nbsp&nbsp
+<a href="https://www.instagram.com/kalemiolanadam/"><img src="img/ins.png" width="1.5%" height="1.5%"></a>
 </center>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: umt</p>
-<p class="date">Created: 2017-04-13 Prş 01:31</p>
+<p class="date">Created: 2017-05-31 Çrş 22:11</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>

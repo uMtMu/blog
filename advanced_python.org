@@ -1,17 +1,4 @@
-#+OPTIONS: toc:nil
-#+OPTIONS: author:nil date:nil
-#+Title:
-#+LaTex_HEADER: \documentclass[10pt]{article}
-#+LaTeX_HEADER: \setlength{\parindent}{0cm} % Default is 15pt.
-#+LaTeX_HEADER: \setlength{\parskip}{1em}
-#+LaTeX_HEADER: \usepackage[a5paper, hmargin=2.0cm,vmargin=2.0cm]{geometry}
-#+LaTeX_HEADER: \usepackage{tocloft}
-#+LaTeX_HEADER: \setlength{\cftsubsecnumwidth}{3em}
-#+LaTeX_HEADER: \usepackage[turkish]{babel}
-#+LaTeX_HEADER: \usepackage{comment}
-#+LaTeX_HEADER: \usepackage{graphicx}
-
-\begin{document}
+#+INCLUDE: "baslik.org"
 * EAFP
   It's Easier to Ask Forgiveness then Permission
 
@@ -35,7 +22,7 @@
    issubclass(x, y)
 ** @classmethod instance metodlarında otomatik olarak ilk parametre instance olur. Bu decorator ile class gelir. def set_raise_amt(cls, amount):
        cls.raise_amt = amount
-** @staticmethod
+** TODOaticmethod
    Sınıfla ilgili ancak instance  ya da class referansına ihtiyaç duymayan metodlar.
    
    *(ÖRNEK)*
@@ -116,7 +103,7 @@
 ** with (resource)
 ** ignored (exception)
 ** lock (threading)
-* Magic Methods (__dunder__)
+* TODO Magic Methods (__dunder__)
    | Method         | Explanation |
    | =__init__=     |             |
    | =__repr__=     |             |
@@ -192,6 +179,40 @@
    A closure, unlike a plain function, allows the function to access those captured variable through the closure's reference to them, even when the function is invoked outside their scope.
 
 * Functools
+* Basic Tips
+  - Use list as function parameter with *
+    a = [1, 2, 3]
+    f = lambda x, y, z: x+y+z
+    f(*a)
+  - Compose Classes Using import
+    #utility.py
+    f = lambda x, y, z: x+y+z
 
+    #newclass.py
+    class Compose():
+        from utulity import f
 
+    Compose().f(1, 2, 3)
+* List/Dict/Set Comprehension
+  [ (e + f) ** 2 for e in range(20) for f in range(5)  if e % 2 == 0 and f % 3 == 0]
+  
+  | e ** 2                       | çıktı             |
+  | for e in range(20)           | iterasyon 1       |
+  | for f in range(5)            | iterasyon 2       |
+  | if e % 2 == 0 and f % 3 == 0 | kontrol (seçimli) |
+
+  - Multi dimension list
+    [ [ i for i in range(5) ] for j in range(6) ] 
+
+  ks = ['apple', 'grape', 'banana']
+  vs = [ 1, 2, 3]
+
+  - Dict Comprehension
+    {k:v for k, v in zip(ks, vs)}
+
+  - Set Comprehension
+    {q for q in 'apple'}
 \end{document}
+
+* Bağlantılar
+#+INCLUDE: "baglantilar.org"

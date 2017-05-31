@@ -1,0 +1,294 @@
+% Created 2017-05-25 Prş 14:46
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\documentclass[10pt]{article}
+\setlength{\parindent}{0cm} % Default is 15pt.
+\setlength{\parskip}{1em}
+\usepackage[a5paper, hmargin=2.0cm,vmargin=2.0cm]{geometry}
+\usepackage{tocloft}
+\setlength{\cftsubsecnumwidth}{3em}
+\usepackage[turkish, english]{babel}
+\usepackage{comment}
+\usepackage{graphicx}
+\date{}
+\title{}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs 24.5.1 (Org mode 8.2.10)}}
+\begin{document}
+
+\begin{document}
+\section{EAFP}
+\label{sec-1}
+It's Easier to Ask Forgiveness then Permission
+
+\begin{verbatim}
+def quack_and_fly(thing):
+    try:
+	thing.quack()
+	thing.fly()
+    except AttributeError as e:
+	print(e)
+\end{verbatim}
+\section{Python OOP}
+\label{sec-2}
+\subsection{}
+\label{sec-2-1}
+\begin{center}
+\begin{tabular}{lll}
+class &  & instance\\
+varible & X & variable\\
+selfsiz &  & selfli\\
+class.\_$_{\text{dict}}$\_\_ &  & instance.\_$_{\text{dict}}$\_\_\\
+classname.var &  & self.var\\
+\end{tabular}
+\end{center}
+\subsection{}
+\label{sec-2-2}
+isinstance(x, y)
+issubclass(x, y)
+\subsection{@classmethod instance metodlarında otomatik olarak ilk parametre instance olur. Bu decorator ile class gelir. def set$_{\text{raise}}$$_{\text{amt}}$(cls, amount):}
+\label{sec-2-3}
+cls.raise$_{\text{amt}}$ = amount
+\subsection{TODOaticmethod}
+\label{sec-2-4}
+Sınıfla ilgili ancak instance  ya da class referansına ihtiyaç duymayan metodlar.
+
+\textbf{(ÖRNEK)}
+\section{Property Decorators}
+\label{sec-3}
+\begin{verbatim}
+def decorator_function(orginal_function):
+    def wrapper_function():
+	print('Wrapper executed this before {}'.format(original_function.__name__))
+	return orginal_function()
+    return wrapper_function
+
+@decorator_function
+def display():
+    print('display function ran')
+\end{verbatim}
+Yukarıdaki decorator tanımlaması aşağıdaki gibi generik hale getirilebilir.
+
+\begin{verbatim}
+def decorator_function(orginal_function):
+    def wrapper_function(*args, **kwargs):
+	print('Wrapper executed this before {}'.format(original_function.__name__))
+	return orginal_function(*args, **kwargs)
+    return wrapper_function
+
+@decorator_function
+def display_info(name, age):
+    print('display function ran with args ({}, {})'.format(name, age))
+\end{verbatim}
+\begin{verbatim}
+@property 
+def fullname(self):
+    return '{} {}'.format(self.first, self.last)
+
+@fullname.setter 
+def fullname(self, name):
+    first, last = name.split(' ')
+    self.first = first self.last = last
+
+ @fullname.deleter 
+def fullname(self, name):
+     print('Delete name!')
+     self.first = None self.last = None del emp1.fullname
+\end{verbatim}
+
+Üst üste birden fazla decorator kullanılabilir.
+\begin{verbatim}
+@my_logger
+@my_timer
+def display():
+    pass
+\end{verbatim}
+\subsection{Wraps}
+\label{sec-3-1}
+Decorator yazdığımızda orijinal fonksiyonun ismi kaybolur. Bu nedenle otomatik docstring oluşturan uygulamalarda bu kayıp yaşanır bunu önlemek için wraps decoratorü kullanılır.
+\begin{verbatim}
+>>> from functools import wraps
+>>> def my_decorator(f):
+...     @wraps(f)
+...     def wrapper(*args, **kwds):
+...         print('Calling decorated function')
+...         return f(*args, **kwds)
+...     return wrapper
+...
+>>> @my_decorator
+... def example():
+...     """Docstring"""
+...     print('Called example function')
+...
+>>> example()
+Calling decorated function
+Called example function
+>>> example.__name__
+'example'
+>>> example.__doc__
+'Docstring'
+\end{verbatim}
+\section{Context Managers}
+\label{sec-4}
+Resides in contextlib module
+\subsection{with (resource)}
+\label{sec-4-1}
+\subsection{ignored (exception)}
+\label{sec-4-2}
+\subsection{lock (threading)}
+\label{sec-4-3}
+\section{{\bfseries\sffamily TODO} Magic Methods (\underline{\underline{dunder}})}
+\label{sec-5}
+\begin{center}
+\begin{tabular}{ll}
+Method & Explanation\\
+\texttt{\_\_init\_\_} & \\
+\texttt{\_\_repr\_\_} & \\
+\texttt{\_\_str\_\_} & \\
+\texttt{\_\_add\_\_} & \\
+\texttt{\_\_len\_\_} & \\
+\texttt{\_\_iter\_\_} & \\
+\texttt{\_\_next\_\_} & \\
+\texttt{\_\_reversed\_\_} & \\
+\texttt{\_\_getattr\_\_} & \\
+\texttt{\_\_setattr\_\_} & \\
+\texttt{\_\_delattr\_\_} & \\
+vs & \\
+\end{tabular}
+\end{center}
+
+\section{try/except}
+\label{sec-6}
+\begin{verbatim}
+try:
+    f = open('file.txt')
+except FileNotFoundError as e:
+    print(e)
+except Exception as e:
+    print(e)
+else:
+    print(f.read)
+    f.close()
+finally:
+    print('Executing Finally...')
+\end{verbatim}
+\section{Collections}
+\label{sec-7}
+\subsection{namedTuple}
+\label{sec-7-1}
+\begin{verbatim}
+from collections import namedtuple
+>>>Point = namedtuple('Point', ['x', 'y'], verbose=True)
+>>>p = Point(11, y=22)
+>>>p[0]+p[1]
+  33
+>>>p.x + p.y
+  33
+>>>x, y = p
+>>>x + y
+  33
+\end{verbatim}
+\subsection{deque (double ended queue)}
+\label{sec-7-2}
+\begin{verbatim}
+from collections import deque
+d = deque('ghi')
+for elem in d:
+    print(elem.upper())
+G
+H
+I
+d.append('j')
+d.appendleft('R')
+\end{verbatim}
+\begin{itemize}
+\item append/appendleft
+\item pop/popleft
+\end{itemize}
+\subsection{chainMap}
+\label{sec-7-3}
+Best way to merge dictionary without altering source dictionaries
+from collections import ChainMap
+\subsection{Python Closure}
+\label{sec-7-4}
+A closure is a record storing function together with an environment: a mapping associating each free variable of the function with the value or storage location to which the name was bound when the closure was created.
+\begin{verbatim}
+def html_tag(tag):
+    def wrap_text(msg):
+	print('<{0}>{1}</{0}>'.format(tag, msg))
+    return wrap_text
+print_h1 = html_tag('h1')
+print_h1('Test Headline!')
+
+print_p = html_tag('p')
+print_p('Test paragraph!')
+\end{verbatim}
+A closure, unlike a plain function, allows the function to access those captured variable through the closure's reference to them, even when the function is invoked outside their scope.
+
+\section{Functools}
+\label{sec-8}
+\section{Basic Tips}
+\label{sec-9}
+\begin{itemize}
+\item Use list as function parameter with *
+a = [1, 2, 3]
+f = lambda x, y, z: x+y+z
+f(*a)
+\item Compose Classes Using import
+\#utility.py
+f = lambda x, y, z: x+y+z
+
+\#newclass.py
+class Compose():
+    from utulity import f
+
+Compose().f(1, 2, 3)
+\end{itemize}
+\section{List/Dict/Set Comprehension}
+\label{sec-10}
+[ (e + f) ** 2 for e in range(20) for f in range(5)  if e \% 2 \texttt{= 0 and f \% 3 =} 0]
+
+\begin{center}
+\begin{tabular}{ll}
+e ** 2 & çıktı\\
+for e in range(20) & iterasyon 1\\
+for f in range(5) & iterasyon 2\\
+if e \% 2 \texttt{= 0 and f \% 3 =} 0 & kontrol (seçimli)\\
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+\item Multi dimension list
+[ [ i for i in range(5) ] for j in range(6) ]
+\end{itemize}
+
+ks = ['apple', 'grape', 'banana']
+vs = [ 1, 2, 3]
+
+\begin{itemize}
+\item Dict Comprehension
+\{k:v for k, v in zip(ks, vs)\}
+
+\item Set Comprehension
+\{q for q in 'apple'\}
+\end{itemize}
+\end{document}
+% Emacs 24.5.1 (Org mode 8.2.10)
+\end{document}

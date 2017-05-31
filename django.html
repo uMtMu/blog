@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>uMtMu</title>
-<!-- 2017-04-03 Pzt 10:59 -->
+<!-- 2017-05-31 Çrş 22:11 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="umt" />
@@ -275,7 +275,7 @@ Oluşan dizin yapısı polls/<br  />
 <div class="outline-text-4" id="text-1-1-6">
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="background-color: #000000;"> </span>   url(r<span style="color: #deb887;">'^$'</span>, views.index, name=<span style="color: #deb887;">'index'</span>),
+<pre class="src src-python">    url(r<span style="color: #deb887;">'^$'</span>, views.index, name=<span style="color: #deb887;">'index'</span>),
 ]
 </pre>
 </div>
@@ -286,7 +286,7 @@ Oluşan dizin yapısı polls/<br  />
 <div class="outline-text-4" id="text-1-1-7">
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="background-color: #000000;"> </span>   url(r<span style="color: #deb887;">'^polls/'</span>, include(<span style="color: #deb887;">'polls.urls'</span>)), url(r<span style="color: #deb887;">'^admin/'</span>, admin.site.urls),
+<pre class="src src-python">    url(r<span style="color: #deb887;">'^polls/'</span>, include(<span style="color: #deb887;">'polls.urls'</span>)), url(r<span style="color: #deb887;">'^admin/'</span>, admin.site.urls),
 ]
 </pre>
 </div>
@@ -554,14 +554,14 @@ polls/urls.py<br  />
 </p>
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="background-color: #000000;"> </span>   <span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">ex: /polls/</span>
-<span style="background-color: #000000;"> </span>   url(r<span style="color: #deb887;">'^$'</span>, views.index, name=<span style="color: #deb887;">'index'</span>),
-<span style="background-color: #000000;"> </span>   <span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">ex: /polls/5/</span>
-<span style="background-color: #000000;"> </span>   url(r<span style="color: #deb887;">'^(?P&lt;question_id&gt;[0-9]+)/$'</span>, views.detail, name=<span style="color: #deb887;">'detail'</span>),
-<span style="background-color: #000000;"> </span>   <span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">ex: /polls/5/results/</span>
-<span style="background-color: #000000;"> </span>   url(r<span style="color: #deb887;">'^(?P&lt;question_id&gt;[0-9]+)/results/$'</span>, views.results, name=<span style="color: #deb887;">'results'</span>),
-<span style="background-color: #000000;"> </span>   <span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">ex: /polls/5/vote/</span>
-<span style="background-color: #000000;"> </span>   url(r<span style="color: #deb887;">'^(?P&lt;question_id&gt;[0-9]+)/vote/$'</span>, views.vote, name=<span style="color: #deb887;">'vote'</span>),
+<pre class="src src-python">    <span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">ex: /polls/</span>
+    url(r<span style="color: #deb887;">'^$'</span>, views.index, name=<span style="color: #deb887;">'index'</span>),
+    <span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">ex: /polls/5/</span>
+    url(r<span style="color: #deb887;">'^(?P&lt;question_id&gt;[0-9]+)/$'</span>, views.detail, name=<span style="color: #deb887;">'detail'</span>),
+    <span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">ex: /polls/5/results/</span>
+    url(r<span style="color: #deb887;">'^(?P&lt;question_id&gt;[0-9]+)/results/$'</span>, views.results, name=<span style="color: #deb887;">'results'</span>),
+    <span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">ex: /polls/5/vote/</span>
+    url(r<span style="color: #deb887;">'^(?P&lt;question_id&gt;[0-9]+)/vote/$'</span>, views.vote, name=<span style="color: #deb887;">'vote'</span>),
 ]
 </pre>
 </div>
@@ -590,14 +590,14 @@ polls/templates/polls/index.html<br  />
 </p>
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="background-color: #000000;"> </span>{% <span style="color: #00bfff;">if</span> latest_question_list %}
-<span style="background-color: #000000;"> </span>   &lt;ul&gt;
-<span style="background-color: #000000;"> </span>   {% <span style="color: #00bfff;">for</span> question <span style="color: #00bfff;">in</span> latest_question_list %}
+<pre class="src src-python"> {% <span style="color: #00bfff;">if</span> latest_question_list %}
+    &lt;ul&gt;
+    {% <span style="color: #00bfff;">for</span> question <span style="color: #00bfff;">in</span> latest_question_list %}
         &lt;li&gt;&lt;a <span style="color: #4eee94;">href</span>=<span style="color: #deb887;">"/polls/{{ question.id }}/"</span>&gt;{{ question.question_text }}&lt;/a&gt;&lt;/li&gt;
-<span style="background-color: #000000;"> </span>   {% endfor %}
-<span style="background-color: #000000;"> </span>   &lt;/ul&gt;
+    {% endfor %}
+    &lt;/ul&gt;
 {% <span style="color: #00bfff;">else</span> %}
-<span style="background-color: #000000;"> </span>   &lt;p&gt;No polls are available.&lt;/p&gt;
+    &lt;p&gt;No polls are available.&lt;/p&gt;
 {% endif %}
 </pre>
 </div>
@@ -641,11 +641,11 @@ ve <b>HttpReponse</b> yerine sadece <b>render</b> import etmemiz yeterli oldu. A
 
 <pre class="src src-python"><span style="color: #00bfff;">from</span> django.shortcuts <span style="color: #00bfff;">import</span> render <span style="color: #00bfff;">from</span> .models <span style="color: #00bfff;">import</span> Question
 <span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">... def detail(request, question_id):</span>
-<span style="background-color: #000000;"> </span>   <span style="color: #00bfff;">try</span>:
+    <span style="color: #00bfff;">try</span>:
         <span style="color: #4eee94;">question</span> = Question.objects.get(pk=question_id)
-<span style="background-color: #000000;"> </span>   <span style="color: #00bfff;">except</span> Question.DoesNotExist:
+    <span style="color: #00bfff;">except</span> Question.DoesNotExist:
         <span style="color: #00bfff;">raise</span> Http404(<span style="color: #deb887;">"Question does not exist"</span>)
-<span style="background-color: #000000;"> </span>   <span style="color: #00bfff;">return</span> render(request, <span style="color: #deb887;">'polls/detail.html'</span>, {<span style="color: #deb887;">'question'</span>: question})
+    <span style="color: #00bfff;">return</span> render(request, <span style="color: #deb887;">'polls/detail.html'</span>, {<span style="color: #deb887;">'question'</span>: question})
 </pre>
 </div>
 
@@ -668,8 +668,8 @@ polls/views.py<br  />
 <div class="org-src-container">
 
 <pre class="src src-python"><span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">... def detail(request, question_id):</span>
-<span style="background-color: #000000;"> </span>   <span style="color: #4eee94;">question</span> = get_object_or_404(Question, pk=question_id)
-<span style="background-color: #000000;"> </span>   <span style="color: #00bfff;">return</span> render(request, <span style="color: #deb887;">'polls/detail.html'</span>, {<span style="color: #deb887;">'question'</span>: question})
+    <span style="color: #4eee94;">question</span> = get_object_or_404(Question, pk=question_id)
+    <span style="color: #00bfff;">return</span> render(request, <span style="color: #deb887;">'polls/detail.html'</span>, {<span style="color: #deb887;">'question'</span>: question})
 </pre>
 </div>
 </div>
@@ -681,8 +681,8 @@ polls/views.py<br  />
 
 <pre class="src src-python">&lt;h1&gt;{{ question.question_text }}&lt;/h1&gt;
 &lt;ul&gt;
-<span style="background-color: #000000;"> </span>{% <span style="color: #00bfff;">for</span> choice <span style="color: #00bfff;">in</span> question.choice_set.<span style="color: #f08080;">all</span> %}
-<span style="background-color: #000000;"> </span>   &lt;li&gt;{{ choice.choice_text }}&lt;/li&gt;
+ {% <span style="color: #00bfff;">for</span> choice <span style="color: #00bfff;">in</span> question.choice_set.<span style="color: #f08080;">all</span> %}
+    &lt;li&gt;{{ choice.choice_text }}&lt;/li&gt;
 {% endfor %}
 &lt;/ul&gt;
 </pre>
@@ -709,7 +709,7 @@ polls/views.py<br  />
 <div class="org-src-container">
 
 <pre class="src src-python"><span style="color: #4eee94;">urlpatterns</span> = [
-<span style="background-color: #000000;"> </span>   url(r<span style="color: #deb887;">'^$'</span>, views.index, name=<span style="color: #deb887;">'index'</span>), url(r<span style="color: #deb887;">'^(?P&lt;question_id&gt;[0-9]+)/$'</span>, views.detail, name=<span style="color: #deb887;">'detail'</span>), url(r<span style="color: #deb887;">'^(?P&lt;question_id&gt;[0-9]+)/results/$'</span>, views.results, name=<span style="color: #deb887;">'results'</span>), url(r<span style="color: #deb887;">'^(?P&lt;question_id&gt;[0-9]+)/vote/$'</span>, views.vote, name=<span style="color: #deb887;">'vote'</span>),
+    url(r<span style="color: #deb887;">'^$'</span>, views.index, name=<span style="color: #deb887;">'index'</span>), url(r<span style="color: #deb887;">'^(?P&lt;question_id&gt;[0-9]+)/$'</span>, views.detail, name=<span style="color: #deb887;">'detail'</span>), url(r<span style="color: #deb887;">'^(?P&lt;question_id&gt;[0-9]+)/results/$'</span>, views.results, name=<span style="color: #deb887;">'results'</span>), url(r<span style="color: #deb887;">'^(?P&lt;question_id&gt;[0-9]+)/vote/$'</span>, views.vote, name=<span style="color: #deb887;">'vote'</span>),
 ]
 </pre>
 </div>
@@ -744,8 +744,8 @@ polls/templates/polls/detail.html<br  />
 &lt;form <span style="color: #4eee94;">action</span>=<span style="color: #deb887;">"{% url 'polls:vote' question.id %}"</span> <span style="color: #4eee94;">method</span>=<span style="color: #deb887;">"post"</span>&gt;
 {% csrf_token %}
 {% <span style="color: #00bfff;">for</span> choice <span style="color: #00bfff;">in</span> question.choice_set.<span style="color: #f08080;">all</span> %}
-<span style="background-color: #000000;"> </span>   &lt;<span style="color: #f08080;">input</span> <span style="color: #f08080;">type</span>=<span style="color: #deb887;">"radio"</span> <span style="color: #4eee94;">name</span>=<span style="color: #deb887;">"choice"</span> <span style="color: #f08080;">id</span>=<span style="color: #deb887;">"choice{{ forloop.counter }}"</span> <span style="color: #4eee94;">value</span>=<span style="color: #deb887;">"{{ choice.id }}"</span> /&gt;
-<span style="background-color: #000000;"> </span>   &lt;label <span style="color: #00bfff;">for</span>=<span style="color: #deb887;">"choice{{ forloop.counter }}"</span>&gt;{{ choice.choice_text }}&lt;/label&gt;&lt;br /&gt;
+    &lt;<span style="color: #f08080;">input</span> <span style="color: #f08080;">type</span>=<span style="color: #deb887;">"radio"</span> <span style="color: #4eee94;">name</span>=<span style="color: #deb887;">"choice"</span> <span style="color: #f08080;">id</span>=<span style="color: #deb887;">"choice{{ forloop.counter }}"</span> <span style="color: #4eee94;">value</span>=<span style="color: #deb887;">"{{ choice.id }}"</span> /&gt;
+    &lt;label <span style="color: #00bfff;">for</span>=<span style="color: #deb887;">"choice{{ forloop.counter }}"</span>&gt;{{ choice.choice_text }}&lt;/label&gt;&lt;br /&gt;
 {% endfor %}
 &lt;<span style="color: #f08080;">input</span> <span style="color: #f08080;">type</span>=<span style="color: #deb887;">"submit"</span> <span style="color: #4eee94;">value</span>=<span style="color: #deb887;">"Vote"</span> /&gt;
 &lt;/form&gt;
@@ -758,15 +758,15 @@ polls/views.py<br  />
 <div class="org-src-container">
 
 <pre class="src src-python"><span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">... def vote(request, question_id):</span>
-<span style="background-color: #000000;"> </span>   <span style="color: #4eee94;">question</span> = get_object_or_404(Question, pk=question_id)
-<span style="background-color: #000000;"> </span>   <span style="color: #00bfff;">try</span>:
+    <span style="color: #4eee94;">question</span> = get_object_or_404(Question, pk=question_id)
+    <span style="color: #00bfff;">try</span>:
         <span style="color: #4eee94;">selected_choice</span> = question.choice_set.get(pk=request.POST[<span style="color: #deb887;">'choice'</span>])
-<span style="background-color: #000000;"> </span>   <span style="color: #00bfff;">except</span> (<span style="color: #98f5ff;">KeyError</span>, Choice.DoesNotExist):
+    <span style="color: #00bfff;">except</span> (<span style="color: #98f5ff;">KeyError</span>, Choice.DoesNotExist):
         <span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">Redisplay the question voting form. return render(request, 'polls/detail.html', {</span>
             <span style="color: #deb887;">'question'</span>: question,
             <span style="color: #deb887;">'error_message'</span>: <span style="color: #deb887;">"You didn't select a choice."</span>,
         })
-<span style="background-color: #000000;"> </span>   <span style="color: #00bfff;">else</span>:
+    <span style="color: #00bfff;">else</span>:
         <span style="color: #4eee94;">selected_choice.votes</span> += 1
         selected_choice.save()
         <span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">Always return an HttpResponseRedirect after successfully dealing</span>
@@ -791,7 +791,7 @@ polls/templates/polls/results.html<br  />
 
 &lt;ul&gt;
 {% <span style="color: #00bfff;">for</span> choice <span style="color: #00bfff;">in</span> question.choice_set.<span style="color: #f08080;">all</span> %}
-<span style="background-color: #000000;"> </span>   &lt;li&gt;{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}&lt;/li&gt;
+    &lt;li&gt;{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}&lt;/li&gt;
 {% endfor %}
 &lt;/ul&gt;
 
@@ -822,7 +822,7 @@ Because this is so common, Django provides a shortcut, called the “generic vie
 <div class="org-src-container">
 
 <pre class="src src-python"><span style="color: #4eee94;">urlpatterns</span> = [
-<span style="background-color: #000000;"> </span>   url(r<span style="color: #deb887;">'^$'</span>, views.IndexView.as_view(), name=<span style="color: #deb887;">'index'</span>), url(r<span style="color: #deb887;">'^(?P&lt;pk&gt;[0-9]+)/$'</span>, views.DetailView.as_view(), name=<span style="color: #deb887;">'detail'</span>), url(r<span style="color: #deb887;">'^(?P&lt;pk&gt;[0-9]+)/results/$'</span>, views.ResultsView.as_view(), name=<span style="color: #deb887;">'results'</span>), url(r<span style="color: #deb887;">'^(?P&lt;question_id&gt;[0-9]+)/vote/$'</span>, views.vote, name=<span style="color: #deb887;">'vote'</span>),
+    url(r<span style="color: #deb887;">'^$'</span>, views.IndexView.as_view(), name=<span style="color: #deb887;">'index'</span>), url(r<span style="color: #deb887;">'^(?P&lt;pk&gt;[0-9]+)/$'</span>, views.DetailView.as_view(), name=<span style="color: #deb887;">'detail'</span>), url(r<span style="color: #deb887;">'^(?P&lt;pk&gt;[0-9]+)/results/$'</span>, views.ResultsView.as_view(), name=<span style="color: #deb887;">'results'</span>), url(r<span style="color: #deb887;">'^(?P&lt;question_id&gt;[0-9]+)/vote/$'</span>, views.vote, name=<span style="color: #deb887;">'vote'</span>),
 ]
 </pre>
 </div>
@@ -1044,13 +1044,13 @@ polls/test.py<br  />
 <pre class="src src-python">{% load static %}
 &lt;img <span style="color: #4eee94;">src</span>=<span style="color: #deb887;">"{% static "</span>polls/survey.jpg<span style="color: #deb887;">" %}"</span> <span style="color: #4eee94;">alt</span>=<span style="color: #deb887;">"Oylar&#305; g&#246;relim"</span>/&gt;
 {% <span style="color: #00bfff;">if</span> latest_question_list %}
-<span style="background-color: #000000;"> </span>  &lt;ul&gt;
-<span style="background-color: #000000;"> </span>   <span style="background-color: #000000;"> </span>{% <span style="color: #00bfff;">for</span> question <span style="color: #00bfff;">in</span> latest_question_list %}
+   &lt;ul&gt;
+     {% <span style="color: #00bfff;">for</span> question <span style="color: #00bfff;">in</span> latest_question_list %}
            &lt;li&gt;&lt;a <span style="color: #4eee94;">href</span>=<span style="color: #deb887;">"{% url 'polls:detail' question.id %}"</span>&gt;{{ question.question_text }}&lt;/a&gt;&lt;/li&gt;
-<span style="background-color: #000000;"> </span>   <span style="background-color: #000000;"> </span>{% endfor %}
-<span style="background-color: #000000;"> </span>  &lt;/ul&gt;
+     {% endfor %}
+   &lt;/ul&gt;
 {% <span style="color: #00bfff;">else</span> %}
-<span style="background-color: #000000;"> </span>  &lt;p&gt;No polls are available.&lt;/p&gt;
+   &lt;p&gt;No polls are available.&lt;/p&gt;
 {% endif %}
 </pre>
 </div>
@@ -1217,7 +1217,7 @@ mydj_sites/mydj_sites/mydj_sites/settings.py<br  />
 <div class="org-src-container">
 
 <pre class="src src-python"><span style="color: #4eee94;">TEMPLATES</span> = [
-<span style="background-color: #000000;"> </span>   {
+    {
         <span style="color: #deb887;">'BACKEND'</span>: <span style="color: #deb887;">'django.template.backends.django.DjangoTemplates'</span>,
         <span style="color: #deb887;">'DIRS'</span>: [os.path.join(BASE_DIR, <span style="color: #deb887;">'templates'</span>)],
         <span style="color: #deb887;">'APP_DIRS'</span>: <span style="color: #a2cd5a;">True</span>,
@@ -1229,7 +1229,7 @@ mydj_sites/mydj_sites/mydj_sites/settings.py<br  />
                 <span style="color: #deb887;">'django.contrib.messages.context_processors.messages'</span>,
             ],
         },
-<span style="background-color: #000000;"> </span>   },
+    },
 ]
 </pre>
 </div>
@@ -1299,8 +1299,8 @@ dizisinde <b>django.middleware.locale.LocaleMiddleware</b> olup olmadığını k
 <div class="org-src-container">
 
 <pre class="src src-python"><span style="color: #00bfff;">from</span> django.http <span style="color: #00bfff;">import</span> HttpResponse <span style="color: #00bfff;">def</span> <span style="color: #daa520;">my_view</span>(request):
-<span style="background-color: #000000;"> </span>   <span style="color: #4eee94;">output</span> = _(<span style="color: #deb887;">"Welcome to my site."</span>)
-<span style="background-color: #000000;"> </span>   <span style="color: #00bfff;">return</span> HttpResponse(output)
+    <span style="color: #4eee94;">output</span> = _(<span style="color: #deb887;">"Welcome to my site."</span>)
+    <span style="color: #00bfff;">return</span> HttpResponse(output)
 </pre>
 </div>
 
@@ -1384,14 +1384,16 @@ msgstr ""
 <p>
 <a href="blog.html">Blog</a> <a href="bash.html">Bash</a> <a href="baslangiclar.html">Başlangıç</a> <a href="muzik.html">Müzik</a> <a href="okunacaklar.html">Okunacaklar</a> <a href="notlar.html">Notlar</a> <a href="projeler.html">Projeler</a> <a href="sozler.html">Sözler</a> <a href="tatil_rotalari.html">Tatil Rotaları</a> <a href="emacs.html">Emacs</a> <a href="index.html">Ana Sayfa</a><br  />
 </p>
-<a href="#"><img src="img/yukari.png" width="2%" height="2%"></a>
+<a href="https://umtmu.wordpress.com/"><img src="img/wp.png" width="1.5%" height="1.5%"></a>&nbsp&nbsp
+<a href="#"><img src="img/yukari.png" width="2%" height="2%"></a>&nbsp&nbsp
+<a href="https://www.instagram.com/kalemiolanadam/"><img src="img/ins.png" width="1.5%" height="1.5%"></a>
 </center>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: umt</p>
-<p class="date">Created: 2017-04-03 Pzt 10:59</p>
+<p class="date">Created: 2017-05-31 Çrş 22:11</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>

@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>uMtMu</title>
+<!-- 2017-05-31 Çrş 22:11 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="umt" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">uMtMu</h1>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script src="js/scripts.js"></script>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<div class="center">
+
+<div class="figure">
+<p><img src="img/ja2.png" alt="ja2.png" /><br  />
+</p>
+</div>
+</div>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. EAFP</a></li>
+<li><a href="#sec-2">2. Python OOP</a>
+<ul>
+<li><a href="#sec-2-1">2.1. </a></li>
+<li><a href="#sec-2-2">2.2. </a></li>
+<li><a href="#sec-2-3">2.3. @classmethod instance metodlarında otomatik olarak ilk parametre instance olur. Bu decorator ile class gelir. def set_raise_amt(cls, amount):</a></li>
+<li><a href="#sec-2-4">2.4. TODOaticmethod</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Property Decorators</a>
+<ul>
+<li><a href="#sec-3-1">3.1. Wraps</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Context Managers</a>
+<ul>
+<li><a href="#sec-4-1">4.1. with (resource)</a></li>
+<li><a href="#sec-4-2">4.2. ignored (exception)</a></li>
+<li><a href="#sec-4-3">4.3. lock (threading)</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. <span class="todo TODO">TODO</span> Magic Methods (<span class="underline"><span class="underline">dunder</span></span>)</a></li>
+<li><a href="#sec-6">6. try/except</a></li>
+<li><a href="#sec-7">7. Collections</a>
+<ul>
+<li><a href="#sec-7-1">7.1. namedTuple</a></li>
+<li><a href="#sec-7-2">7.2. deque (double ended queue)</a></li>
+<li><a href="#sec-7-3">7.3. chainMap</a></li>
+<li><a href="#sec-7-4">7.4. Python Closure</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8. Functools</a></li>
+<li><a href="#sec-9">9. Basic Tips</a></li>
+<li><a href="#sec-10">10. List/Dict/Set Comprehension</a></li>
+<li><a href="#sec-11">11. Bağlantılar</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> EAFP</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+It's Easier to Ask Forgiveness then Permission<br  />
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #00bfff;">def</span> <span style="color: #daa520;">quack_and_fly</span>(thing):
+    <span style="color: #00bfff;">try</span>:
+        thing.quack()
+        thing.fly()
+    <span style="color: #00bfff;">except</span> <span style="color: #98f5ff;">AttributeError</span> <span style="color: #00bfff;">as</span> e:
+        <span style="color: #00bfff;">print</span>(e)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Python OOP</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> </h3>
+<div class="outline-text-3" id="text-2-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">class</td>
+<td class="left">&#xa0;</td>
+<td class="left">instance</td>
+</tr>
+
+<tr>
+<td class="left">varible</td>
+<td class="left">X</td>
+<td class="left">variable</td>
+</tr>
+
+<tr>
+<td class="left">selfsiz</td>
+<td class="left">&#xa0;</td>
+<td class="left">selfli</td>
+</tr>
+
+<tr>
+<td class="left">class.__dict__</td>
+<td class="left">&#xa0;</td>
+<td class="left">instance.__dict__</td>
+</tr>
+
+<tr>
+<td class="left">classname.var</td>
+<td class="left">&#xa0;</td>
+<td class="left">self.var</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> </h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+isinstance(x, y)<br  />
+issubclass(x, y)<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> @classmethod instance metodlarında otomatik olarak ilk parametre instance olur. Bu decorator ile class gelir. def set_raise_amt(cls, amount):</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+cls.raise_amt = amount<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-4" class="outline-3">
+<h3 id="sec-2-4"><span class="section-number-3">2.4</span> TODOaticmethod</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Sınıfla ilgili ancak instance  ya da class referansına ihtiyaç duymayan metodlar.<br  />
+</p>
+
+<p>
+<b>(ÖRNEK)</b><br  />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Property Decorators</h2>
+<div class="outline-text-2" id="text-3">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #00bfff;">def</span> <span style="color: #daa520;">decorator_function</span>(orginal_function):
+    <span style="color: #00bfff;">def</span> <span style="color: #daa520;">wrapper_function</span>():
+        <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'Wrapper executed this before {}'</span>.<span style="color: #f08080;">format</span>(original_function.<span style="color: #f08080;">__name__</span>))
+        <span style="color: #00bfff;">return</span> orginal_function()
+    <span style="color: #00bfff;">return</span> wrapper_function
+
+<span style="color: #98f5ff;">@decorator_function</span>
+<span style="color: #00bfff;">def</span> <span style="color: #daa520;">display</span>():
+    <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'display function ran'</span>)
+</pre>
+</div>
+<p>
+Yukarıdaki decorator tanımlaması aşağıdaki gibi generik hale getirilebilir.<br  />
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #00bfff;">def</span> <span style="color: #daa520;">decorator_function</span>(orginal_function):
+    <span style="color: #00bfff;">def</span> <span style="color: #daa520;">wrapper_function</span>(*args, **kwargs):
+        <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'Wrapper executed this before {}'</span>.<span style="color: #f08080;">format</span>(original_function.<span style="color: #f08080;">__name__</span>))
+        <span style="color: #00bfff;">return</span> orginal_function(*args, **kwargs)
+    <span style="color: #00bfff;">return</span> wrapper_function
+
+<span style="color: #98f5ff;">@decorator_function</span>
+<span style="color: #00bfff;">def</span> <span style="color: #daa520;">display_info</span>(name, age):
+    <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'display function ran with args ({}, {})'</span>.<span style="color: #f08080;">format</span>(name, age))
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #98f5ff;">@property</span> 
+<span style="color: #00bfff;">def</span> <span style="color: #daa520;">fullname</span>(<span style="color: #00bfff;">self</span>):
+    <span style="color: #00bfff;">return</span> <span style="color: #deb887;">'{} {}'</span>.<span style="color: #f08080;">format</span>(<span style="color: #00bfff;">self</span>.first, <span style="color: #00bfff;">self</span>.last)
+
+<span style="color: #98f5ff;">@fullname.setter</span> 
+<span style="color: #00bfff;">def</span> <span style="color: #daa520;">fullname</span>(<span style="color: #00bfff;">self</span>, name):
+    <span style="color: #4eee94;">first</span>, <span style="color: #4eee94;">last</span> = name.split(<span style="color: #deb887;">' '</span>)
+    <span style="color: #00bfff;">self</span>.first = first <span style="color: #00bfff;">self</span>.last = last
+
+ <span style="color: #98f5ff;">@fullname.deleter</span> 
+<span style="color: #00bfff;">def</span> <span style="color: #daa520;">fullname</span>(<span style="color: #00bfff;">self</span>, name):
+     <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'Delete name!'</span>)
+     <span style="color: #00bfff;">self</span>.first = <span style="color: #a2cd5a;">None</span> <span style="color: #00bfff;">self</span>.last = <span style="color: #a2cd5a;">None</span> <span style="color: #00bfff;">del</span> emp1.fullname
+</pre>
+</div>
+
+<p>
+Üst üste birden fazla decorator kullanılabilir.<br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #98f5ff;">@my_logger</span>
+<span style="color: #98f5ff;">@my_timer</span>
+<span style="color: #00bfff;">def</span> <span style="color: #daa520;">display</span>():
+    <span style="color: #00bfff;">pass</span>
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Wraps</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Decorator yazdığımızda orijinal fonksiyonun ismi kaybolur. Bu nedenle otomatik docstring oluşturan uygulamalarda bu kayıp yaşanır bunu önlemek için wraps decoratorü kullanılır.<br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #00bfff;">from</span> functools <span style="color: #00bfff;">import</span> wraps
+&gt;&gt;&gt; <span style="color: #00bfff;">def</span> <span style="color: #daa520;">my_decorator</span>(f):
+...     @wraps(f)
+...     <span style="color: #00bfff;">def</span> <span style="color: #daa520;">wrapper</span>(*args, **kwds):
+...         <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'Calling decorated function'</span>)
+...         <span style="color: #00bfff;">return</span> f(*args, **kwds)
+...     <span style="color: #00bfff;">return</span> wrapper
+...
+&gt;&gt;&gt; @my_decorator
+... <span style="color: #00bfff;">def</span> <span style="color: #daa520;">example</span>():
+...     <span style="color: #deb887;">"""Docstring"""</span>
+...     <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'Called example function'</span>)
+...
+&gt;&gt;&gt; example()
+Calling decorated function
+Called example function
+&gt;&gt;&gt; example.<span style="color: #f08080;">__name__</span>
+<span style="color: #deb887;">'example'</span>
+&gt;&gt;&gt; example.<span style="color: #f08080;">__doc__</span>
+<span style="color: #deb887;">'Docstring'</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Context Managers</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Resides in contextlib module<br  />
+</p>
+</div>
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> with (resource)</h3>
+</div>
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> ignored (exception)</h3>
+</div>
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> lock (threading)</h3>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> <span class="todo TODO">TODO</span> Magic Methods (<span class="underline"><span class="underline">dunder</span></span>)</h2>
+<div class="outline-text-2" id="text-5">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">Method</td>
+<td class="left">Explanation</td>
+</tr>
+
+<tr>
+<td class="left"><code>__init__</code></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><code>__repr__</code></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><code>__str__</code></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><code>__add__</code></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><code>__len__</code></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><code>__iter__</code></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><code>__next__</code></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><code>__reversed__</code></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><code>__getattr__</code></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><code>__setattr__</code></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><code>__delattr__</code></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">vs</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> try/except</h2>
+<div class="outline-text-2" id="text-6">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #00bfff;">try</span>:
+    <span style="color: #4eee94;">f</span> = <span style="color: #f08080;">open</span>(<span style="color: #deb887;">'file.txt'</span>)
+<span style="color: #00bfff;">except</span> FileNotFoundError <span style="color: #00bfff;">as</span> e:
+    <span style="color: #00bfff;">print</span>(e)
+<span style="color: #00bfff;">except</span> <span style="color: #98f5ff;">Exception</span> <span style="color: #00bfff;">as</span> e:
+    <span style="color: #00bfff;">print</span>(e)
+<span style="color: #00bfff;">else</span>:
+    <span style="color: #00bfff;">print</span>(f.read)
+    f.close()
+<span style="color: #00bfff;">finally</span>:
+    <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'Executing Finally...'</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Collections</h2>
+<div class="outline-text-2" id="text-7">
+</div><div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> namedTuple</h3>
+<div class="outline-text-3" id="text-7-1">
+<pre class="example">
+from collections import namedtuple
+&gt;&gt;&gt;Point = namedtuple('Point', ['x', 'y'], verbose=True)
+&gt;&gt;&gt;p = Point(11, y=22)
+&gt;&gt;&gt;p[0]+p[1]
+  33
+&gt;&gt;&gt;p.x + p.y
+  33
+&gt;&gt;&gt;x, y = p
+&gt;&gt;&gt;x + y
+  33
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-7-2" class="outline-3">
+<h3 id="sec-7-2"><span class="section-number-3">7.2</span> deque (double ended queue)</h3>
+<div class="outline-text-3" id="text-7-2">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #00bfff;">from</span> collections <span style="color: #00bfff;">import</span> deque
+<span style="color: #4eee94;">d</span> = deque(<span style="color: #deb887;">'ghi'</span>)
+<span style="color: #00bfff;">for</span> elem <span style="color: #00bfff;">in</span> d:
+    <span style="color: #00bfff;">print</span>(elem.upper())
+G
+H
+I
+d.append(<span style="color: #deb887;">'j'</span>)
+d.appendleft(<span style="color: #deb887;">'R'</span>)
+</pre>
+</div>
+<ul class="org-ul">
+<li>append/appendleft<br  />
+</li>
+<li>pop/popleft<br  />
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7-3" class="outline-3">
+<h3 id="sec-7-3"><span class="section-number-3">7.3</span> chainMap</h3>
+<div class="outline-text-3" id="text-7-3">
+<p>
+Best way to merge dictionary without altering source dictionaries<br  />
+from collections import ChainMap<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-4" class="outline-3">
+<h3 id="sec-7-4"><span class="section-number-3">7.4</span> Python Closure</h3>
+<div class="outline-text-3" id="text-7-4">
+<p>
+A closure is a record storing function together with an environment: a mapping associating each free variable of the function with the value or storage location to which the name was bound when the closure was created.<br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #00bfff;">def</span> <span style="color: #daa520;">html_tag</span>(tag):
+    <span style="color: #00bfff;">def</span> <span style="color: #daa520;">wrap_text</span>(msg):
+        <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'&lt;{0}&gt;{1}&lt;/{0}&gt;'</span>.<span style="color: #f08080;">format</span>(tag, msg))
+    <span style="color: #00bfff;">return</span> wrap_text
+<span style="color: #4eee94;">print_h1</span> = html_tag(<span style="color: #deb887;">'h1'</span>)
+print_h1(<span style="color: #deb887;">'Test Headline!'</span>)
+
+<span style="color: #4eee94;">print_p</span> = html_tag(<span style="color: #deb887;">'p'</span>)
+print_p(<span style="color: #deb887;">'Test paragraph!'</span>)
+</pre>
+</div>
+<p>
+A closure, unlike a plain function, allows the function to access those captured variable through the closure's reference to them, even when the function is invoked outside their scope.<br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Functools</h2>
+</div>
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Basic Tips</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>Use list as function parameter with *<br  />
+a = [1, 2, 3]<br  />
+f = lambda x, y, z: x+y+z<br  />
+f(*a)<br  />
+</li>
+<li>Compose Classes Using import<br  />
+#utility.py<br  />
+f = lambda x, y, z: x+y+z<br  />
+
+<p>
+#newclass.py<br  />
+class Compose():<br  />
+    from utulity import f<br  />
+</p>
+
+<p>
+Compose().f(1, 2, 3)<br  />
+</p>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> List/Dict/Set Comprehension</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+[ (e + f) ** 2 for e in range(20) for f in range(5)  if e % 2 <code>= 0 and f % 3 =</code> 0]<br  />
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">e ** 2</td>
+<td class="left">çıktı</td>
+</tr>
+
+<tr>
+<td class="left">for e in range(20)</td>
+<td class="left">iterasyon 1</td>
+</tr>
+
+<tr>
+<td class="left">for f in range(5)</td>
+<td class="left">iterasyon 2</td>
+</tr>
+
+<tr>
+<td class="left">if e % 2 <code>= 0 and f % 3 =</code> 0</td>
+<td class="left">kontrol (seçimli)</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>Multi dimension list<br  />
+[ [ i for i in range(5) ] for j in range(6) ]<br  />
+</li>
+</ul>
+
+<p>
+ks = ['apple', 'grape', 'banana']<br  />
+vs = [ 1, 2, 3]<br  />
+</p>
+
+<ul class="org-ul">
+<li>Dict Comprehension<br  />
+{k:v for k, v in zip(ks, vs)}<br  />
+</li>
+
+<li>Set Comprehension<br  />
+{q for q in 'apple'}<br  />
+</li>
+</ul>
+<p>
+\end{document}<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Bağlantılar</h2>
+<div class="outline-text-2" id="text-11">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<center>
+<p>
+<a href="blog.html">Blog</a> <a href="bash.html">Bash</a> <a href="baslangiclar.html">Başlangıç</a> <a href="muzik.html">Müzik</a> <a href="okunacaklar.html">Okunacaklar</a> <a href="notlar.html">Notlar</a> <a href="projeler.html">Projeler</a> <a href="sozler.html">Sözler</a> <a href="tatil_rotalari.html">Tatil Rotaları</a> <a href="emacs.html">Emacs</a> <a href="index.html">Ana Sayfa</a><br  />
+</p>
+<a href="https://umtmu.wordpress.com/"><img src="img/wp.png" width="1.5%" height="1.5%"></a>&nbsp&nbsp
+<a href="#"><img src="img/yukari.png" width="2%" height="2%"></a>&nbsp&nbsp
+<a href="https://www.instagram.com/kalemiolanadam/"><img src="img/ins.png" width="1.5%" height="1.5%"></a>
+</center>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: umt</p>
+<p class="date">Created: 2017-05-31 Çrş 22:11</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
