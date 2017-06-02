@@ -1,7 +1,14 @@
 #+INCLUDE: "baslik.org"
 * Yazılar
+** Tuz
+   <2017-06-02 Cum 18:26>
+   
+   Tuzu bırakmak gibiydi ayrılık. Sevdiğin halde bırakmak. Aramak ama yine de kullanmamak.
+
 ** Cırcır böceği eğleniyor muydu?
+   <2017-05-30 Sal 18:27>
 ** Martı kanadı
+   <2017-05-30 Sal 18:27>
    Tutundum martının kanadına,
    Aldı götürdü bir balıkcı barınağına.
    Hoş beş sohbet ettik. Ağları diktik birlikte,
