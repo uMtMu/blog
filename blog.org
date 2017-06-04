@@ -1,9 +1,19 @@
 #+INCLUDE: "baslik.org"
 * Yazılar
+** Parti Kuralları
+   <2017-06-04 Paz 13:02>
+
+   Partiden sıkıldıysan,
+   - Ayrılma, balkona git, hava al.
+   - Kendine güzel bir içki al.
+   - Güzel bir kıza yaz.
+   - Partinin sensiz de devam edeceğini, ayrılmanın senin şansını azaltacağını düşün.
+   - Kendini tekrar konumlandır, acele etme.
+
 ** Tuz
    <2017-06-02 Cum 18:26>
    
-   Tuzu bırakmak gibiydi ayrılık. Sevdiğin halde bırakmak. Aramak ama yine de kullanmamak.
+   Tuzu bırakmak gibiydi ayrılık. Sevdiğin halde bırakmak. Aramak ama yine de kullanmamak
 
 ** Cırcır böceği eğleniyor muydu?
    <2017-05-30 Sal 18:27>
