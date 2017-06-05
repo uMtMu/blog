@@ -1,5 +1,11 @@
 #+INCLUDE: "baslik.org"
 * Yazılar
+** Hava gibiyim
+   <2017-06-05 Pzt 13:16>
+
+   Hava gibiyim.
+   Biraz kapalı ama gözleri dolmamış,
+   Hafif esintili ama henuz hırçınlaşmamış.
 ** Parti Kuralları
    <2017-06-04 Paz 13:02>
 
