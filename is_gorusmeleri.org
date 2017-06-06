@@ -1,5 +1,7 @@
 #+INCLUDE: "baslik.org"
 * Yazılar
+** Sorgu odası
+   İş görüşmelerinde sorgu odası hissi yaşamamak için ne yapabilirsiniz? Bunun sizin sorgunuz değil bir tanışma toplantısı olduğunu düşünün ve sorular sorun. Daha önceden hazırlayacağınız sorular sizi rahatlatacaktır. Beni rahatlattı açıkcası.
 ** Tutku ve Bilgi
    İş görüşmelerinde sadece tutku yetmez. Tutkuyla yaptığınız şeye karşı neden bu tutkuyu hissettiğinizi, bu tutkuyla neleri, neden yaptığınızı net bir şekilde bilmeli ve gerektiği kadar açıklamalısınız.
 ** İş görüşmesinde verilen sözler
