@@ -1,5 +1,6 @@
 #+INCLUDE: "baslik.org"
 * Yazılar
+** Sorumlulukların iyi anlaşılması
 ** Sorgu odası
    İş görüşmelerinde sorgu odası hissi yaşamamak için ne yapabilirsiniz? Bunun sizin sorgunuz değil bir tanışma toplantısı olduğunu düşünün ve sorular sorun. Daha önceden hazırlayacağınız sorular sizi rahatlatacaktır. Beni rahatlattı açıkcası.
 ** Tutku ve Bilgi
