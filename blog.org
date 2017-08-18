@@ -1,5 +1,9 @@
 #+INCLUDE: "baslik.org"
 * Yazılar
+** Zaman makinası
+   <2017-08-18 Cum 13:50>
+
+   Ikea'dan aldığı zaman makinasını nasıl birleştirileceğini tarif etmesi için usta çağıran yarı çıplak berber.
 ** Değişim
    <2017-08-17 Prş 15:51>
 
