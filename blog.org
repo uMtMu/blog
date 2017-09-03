@@ -1,6 +1,6 @@
 #+INCLUDE: "baslik.org"
 * Yazılar
-** Bagirma amk sigiri
+** Bağırma amk sığırı
    <2017-05-01 Mon 12:29>
 
    Yanımdaki sığır bağıra bağıra konuşuyor. 
