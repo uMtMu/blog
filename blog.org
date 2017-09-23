@@ -1,5 +1,7 @@
 #+INCLUDE: "baslik.org"
 * Yazılar
+** Çocuk gibi görünmek çocuk olduğun anlamına gelmez
+   <2017-08-30 Wed 09:29>
 ** Cansu Dere
    <2017-02-22 Çrş 00:51>
 
