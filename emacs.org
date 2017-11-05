@@ -1,4 +1,11 @@
 #+INCLUDE: "baslik.org"
+* orgmode hedefli dosya bağlantıları
+  #+BEGIN_EXAMPLE
+  [[file:~/code/main.c::255]]                 Find line 255
+  [[file:~/xx.org::My Target]]                Find ‘<<My Target>>’
+  [[file:~/xx.org::#my-custom-id]]            Find entry with custom id
+   #+END_EXAMPLE
+
 * GnuPG
   - Kurulum
     sudo apt-get install gnupg2
