@@ -222,6 +222,41 @@
 
 * VirtualEnv 
   pyvenv-3.5 virtenv_name
+* Yüklenebilir Python paketleri,  Egg dosyaları
+  #+BEGIN_SRC python
+    # my_math.py
+    def add(x, y):
+        return x + y
+
+
+    def subtract(x, y):
+        return x - y
+  #+END_SRC
+
+  #+BEGIN_SRC python
+    # main.py
+    import my_math
+
+    if __name__ == '__main__':
+         print my_math.add(10, 23)          
+  #+END_SRC
+
+  #+BEGIN_SRC python
+    # setup.py
+    from setuptools import setup, find_packages
+
+    setup(
+        name = "my_math",
+        version = "0.0.1",
+        packages = find_packages()
+    )
+  #+END_SRC
+
+  #+BEGIN_SRC
+  # egg dosyası dist dizini altında oluşturulacak
+  python setup.py bdist_egg
+  easy_install my_math-0.0.1-py2.7.egg
+  #+END_SRC
 * Blog https://pythondefterim.wordpress.com/
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"
