@@ -1,5 +1,11 @@
 #+INCLUDE: "baslik.org"
 * Yazılar
+** Hayat ara sıra yüzümü yıkadığım bir akarsu gibi
+   [2017-11-04 Sat 12:29]
+** Nereye varmak istiyorsun?
+   <2017-10-10 Sal 21:35>
+** Çocuk gibi görünmek çocuk olduğun anlamına gelmez
+   <2017-08-30 Wed 09:29>
 ** Cansu Dere
    <2017-02-22 Çrş 00:51>
 
