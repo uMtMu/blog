@@ -1,5 +1,8 @@
 #+INCLUDE: "baslik.org"
 * Yazılar
+** Karanlık
+   <2017-11-12 Sun 16:54>
+   Sadece gözleriyle görenenlerin üzerine karanlık çöker gün batımında. 
 ** Hayat ara sıra yüzümü yıkadığım bir akarsu gibi
    [2017-11-04 Sat 12:29]
 ** Nereye varmak istiyorsun?
