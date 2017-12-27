@@ -1,0 +1,5 @@
+#+TITLE: uMtMu
+#+HTML: <link rel="stylesheet" type="text/css" href="css/base_style.css" />
+#+BEGIN_CENTER
+  file:img/theduck.jpg
+#+END_CENTER
