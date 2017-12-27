@@ -1,5 +1,8 @@
 #+INCLUDE: "baslik.org"
 * Yazılar
+** Woke Up This Morning
+   <2017-12-27 Wed 16:01>
+      #+HTML: <iframe width="1280" height="720" src="https://www.youtube.com/embed/nW3LikcBL68" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 ** Karanlık
    <2017-11-12 Sun 16:54>
    Sadece gözleriyle görenenlerin üzerine karanlık çöker gün batımında. 
