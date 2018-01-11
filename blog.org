@@ -1,5 +1,7 @@
 #+INCLUDE: "baslik.org"
 * Yazılar
+** Çabalar bazen sonuç verir bazen vermez.
+   <2018-01-11 Thu 09:27>
 ** Woke Up This Morning
    <2017-12-27 Wed 16:01>
       #+HTML: <iframe width="560" height="315" src="https://www.youtube.com/embed/nW3LikcBL68" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
