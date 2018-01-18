@@ -1,5 +1,5 @@
 #+INCLUDE: "baslik.org"
-* Radyocu Kemal'in yeri
+* Radyocu Kemal'in yeri <2018-01-14 Paz>
 ** Ulaşım
    https://goo.gl/maps/LhHwQRSsjj42
 ** Maliyet
@@ -8,7 +8,7 @@
    - Menü gelmediği için neler var bilmiyorum ama alkol var. Ortam çok güzel. Dağın içinde gibi. Zaten oralarda her yer orman. Kafeslerinde on kadar çok güzel öten kuşları var. Ortada büyük bir soba var. 
 ** Yorum
    Gayet "otantik" bir yer. _Menü yok!_ Ortam köy evi gibi. 
-* Osman Aydın'ın yeri
+* Osman Aydın'ın yeri <2018-01-13 Cts>
 ** Ulaşım
    https://goo.gl/maps/rKZvsU31fKS2
 ** Maliyet
@@ -31,7 +31,7 @@
 ** Yorum
    Bayram tatili için yer yoktu.
 
-* The Beach Çeşme
+* The Beach Çeşme <2017-10-13 Cum 23:42>
 ** Ulaşım
    1. Fahrettin altay dağıtım merkezinden Çeşme seyahat geçiyor. Sanırım bilet 17,5 tl idi. Çeşme merkezde inilip pansiyona yerleşilir.
    2. Çeşme merkezde geçen Çiftlikköy - Altınkum dolmuşları ile The Beach'e gidilebilir. Dolmuşta 2.5 lira filan idi. 
@@ -43,7 +43,7 @@
 ** Yorum
    Ücretler fena değildi. Ortam temiz, çalışanlar ilgiliydi. Arkadaşlarla eğlenceli bir tatil oldu. 
 
-* Özdere Ege Üniversitesi Kampı
+* Özdere Ege Üniversitesi Kampı <2016-09-17 Sat>
 ** Ulaşım
    1. İzban Cumaovası İstasyonu
    2. Eshot 775
@@ -61,7 +61,7 @@
 ** Yorum
    Baya eğlenceli zaman geçirebilirsiniz. Deniz hızlı derinleşiyor. Genelde dalgasız. Alkol pahalı değil. Yemekler inanılmaz güzel ve doyurucu. 
 
-* <<<Hipo>>> Kamp - Gümüldür
+* <<<Hipo>>> Kamp - Gümüldür <2016-09-17 Sat>
 ** Ulaşım
    1. İzban Cumaovası İstasyonu
    2. Eshot 775
@@ -80,6 +80,7 @@
    Aslına bakarsanız pek çadır kampı sayılmaz. Kurulan çadırlar da iki oda 1
    salon şeklinde. Genellikle ailelerin kaldığı daha çok karavan kampı tarzında. Sincap görebilirsiniz, öyle bir artısı var :D
 * Muğla -> Datça -> <<<Çubucak>>> Orman Kampı <2016-09-17 Sat>
+  
 ** Ulaşım
    1. Otobüs ile Marmaris otogarına gidiş (47 TL - 4 saat civarı)
    2. Marmaris otogarından Hisarönü dolmuşları ile yolculuk (6.5 TL - 45 dk civarı)
