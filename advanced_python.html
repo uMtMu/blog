@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>uMtMu</title>
-<!-- 2017-05-31 Çrş 22:14 -->
+<!-- 2018-01-23 Tue 14:04 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="umt" />
@@ -181,7 +181,6 @@ for the JavaScript code in this tag.
 <div id="content">
 <h1 class="title">uMtMu</h1>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
-<script src="js/scripts.js"></script>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <div class="center">
 
@@ -241,12 +240,12 @@ It's Easier to Ask Forgiveness then Permission<br  />
 
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="color: #00bfff;">def</span> <span style="color: #daa520;">quack_and_fly</span>(thing):
-    <span style="color: #00bfff;">try</span>:
-        thing.quack()
-        thing.fly()
-    <span style="color: #00bfff;">except</span> <span style="color: #98f5ff;">AttributeError</span> <span style="color: #00bfff;">as</span> e:
-        <span style="color: #00bfff;">print</span>(e)
+<pre class="src src-python">def quack_and_fly(thing):
+    try:
+	thing.quack()
+	thing.fly()
+    except AttributeError as e:
+	print(e)
 </pre>
 </div>
 </div>
@@ -336,15 +335,15 @@ Sınıfla ilgili ancak instance  ya da class referansına ihtiyaç duymayan meto
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="color: #00bfff;">def</span> <span style="color: #daa520;">decorator_function</span>(orginal_function):
-    <span style="color: #00bfff;">def</span> <span style="color: #daa520;">wrapper_function</span>():
-        <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'Wrapper executed this before {}'</span>.<span style="color: #f08080;">format</span>(original_function.<span style="color: #f08080;">__name__</span>))
-        <span style="color: #00bfff;">return</span> orginal_function()
-    <span style="color: #00bfff;">return</span> wrapper_function
+<pre class="src src-python">def decorator_function(orginal_function):
+    def wrapper_function():
+	print('Wrapper executed this before {}'.format(original_function.__name__))
+	return orginal_function()
+    return wrapper_function
 
-<span style="color: #98f5ff;">@decorator_function</span>
-<span style="color: #00bfff;">def</span> <span style="color: #daa520;">display</span>():
-    <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'display function ran'</span>)
+@decorator_function
+def display():
+    print('display function ran')
 </pre>
 </div>
 <p>
@@ -353,32 +352,32 @@ Yukarıdaki decorator tanımlaması aşağıdaki gibi generik hale getirilebilir
 
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="color: #00bfff;">def</span> <span style="color: #daa520;">decorator_function</span>(orginal_function):
-    <span style="color: #00bfff;">def</span> <span style="color: #daa520;">wrapper_function</span>(*args, **kwargs):
-        <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'Wrapper executed this before {}'</span>.<span style="color: #f08080;">format</span>(original_function.<span style="color: #f08080;">__name__</span>))
-        <span style="color: #00bfff;">return</span> orginal_function(*args, **kwargs)
-    <span style="color: #00bfff;">return</span> wrapper_function
+<pre class="src src-python">def decorator_function(orginal_function):
+    def wrapper_function(*args, **kwargs):
+	print('Wrapper executed this before {}'.format(original_function.__name__))
+	return orginal_function(*args, **kwargs)
+    return wrapper_function
 
-<span style="color: #98f5ff;">@decorator_function</span>
-<span style="color: #00bfff;">def</span> <span style="color: #daa520;">display_info</span>(name, age):
-    <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'display function ran with args ({}, {})'</span>.<span style="color: #f08080;">format</span>(name, age))
+@decorator_function
+def display_info(name, age):
+    print('display function ran with args ({}, {})'.format(name, age))
 </pre>
 </div>
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="color: #98f5ff;">@property</span> 
-<span style="color: #00bfff;">def</span> <span style="color: #daa520;">fullname</span>(<span style="color: #00bfff;">self</span>):
-    <span style="color: #00bfff;">return</span> <span style="color: #deb887;">'{} {}'</span>.<span style="color: #f08080;">format</span>(<span style="color: #00bfff;">self</span>.first, <span style="color: #00bfff;">self</span>.last)
+<pre class="src src-python">@property 
+def fullname(self):
+    return '{} {}'.format(self.first, self.last)
 
-<span style="color: #98f5ff;">@fullname.setter</span> 
-<span style="color: #00bfff;">def</span> <span style="color: #daa520;">fullname</span>(<span style="color: #00bfff;">self</span>, name):
-    <span style="color: #4eee94;">first</span>, <span style="color: #4eee94;">last</span> = name.split(<span style="color: #deb887;">' '</span>)
-    <span style="color: #00bfff;">self</span>.first = first <span style="color: #00bfff;">self</span>.last = last
+@fullname.setter 
+def fullname(self, name):
+    first, last = name.split(' ')
+    self.first = first self.last = last
 
- <span style="color: #98f5ff;">@fullname.deleter</span> 
-<span style="color: #00bfff;">def</span> <span style="color: #daa520;">fullname</span>(<span style="color: #00bfff;">self</span>, name):
-     <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'Delete name!'</span>)
-     <span style="color: #00bfff;">self</span>.first = <span style="color: #a2cd5a;">None</span> <span style="color: #00bfff;">self</span>.last = <span style="color: #a2cd5a;">None</span> <span style="color: #00bfff;">del</span> emp1.fullname
+ @fullname.deleter 
+def fullname(self, name):
+     print('Delete name!')
+     self.first = None self.last = None del emp1.fullname
 </pre>
 </div>
 
@@ -387,10 +386,10 @@ Yukarıdaki decorator tanımlaması aşağıdaki gibi generik hale getirilebilir
 </p>
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="color: #98f5ff;">@my_logger</span>
-<span style="color: #98f5ff;">@my_timer</span>
-<span style="color: #00bfff;">def</span> <span style="color: #daa520;">display</span>():
-    <span style="color: #00bfff;">pass</span>
+<pre class="src src-python">@my_logger
+@my_timer
+def display():
+    pass
 </pre>
 </div>
 </div>
@@ -402,26 +401,26 @@ Decorator yazdığımızda orijinal fonksiyonun ismi kaybolur. Bu nedenle otomat
 </p>
 <div class="org-src-container">
 
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #00bfff;">from</span> functools <span style="color: #00bfff;">import</span> wraps
-&gt;&gt;&gt; <span style="color: #00bfff;">def</span> <span style="color: #daa520;">my_decorator</span>(f):
+<pre class="src src-python">&gt;&gt;&gt; from functools import wraps
+&gt;&gt;&gt; def my_decorator(f):
 ...     @wraps(f)
-...     <span style="color: #00bfff;">def</span> <span style="color: #daa520;">wrapper</span>(*args, **kwds):
-...         <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'Calling decorated function'</span>)
-...         <span style="color: #00bfff;">return</span> f(*args, **kwds)
-...     <span style="color: #00bfff;">return</span> wrapper
+...     def wrapper(*args, **kwds):
+...         print('Calling decorated function')
+...         return f(*args, **kwds)
+...     return wrapper
 ...
 &gt;&gt;&gt; @my_decorator
-... <span style="color: #00bfff;">def</span> <span style="color: #daa520;">example</span>():
-...     <span style="color: #deb887;">"""Docstring"""</span>
-...     <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'Called example function'</span>)
+... def example():
+...     """Docstring"""
+...     print('Called example function')
 ...
 &gt;&gt;&gt; example()
 Calling decorated function
 Called example function
-&gt;&gt;&gt; example.<span style="color: #f08080;">__name__</span>
-<span style="color: #deb887;">'example'</span>
-&gt;&gt;&gt; example.<span style="color: #f08080;">__doc__</span>
-<span style="color: #deb887;">'Docstring'</span>
+&gt;&gt;&gt; example.__name__
+'example'
+&gt;&gt;&gt; example.__doc__
+'Docstring'
 </pre>
 </div>
 </div>
@@ -530,17 +529,17 @@ Resides in contextlib module<br  />
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="color: #00bfff;">try</span>:
-    <span style="color: #4eee94;">f</span> = <span style="color: #f08080;">open</span>(<span style="color: #deb887;">'file.txt'</span>)
-<span style="color: #00bfff;">except</span> FileNotFoundError <span style="color: #00bfff;">as</span> e:
-    <span style="color: #00bfff;">print</span>(e)
-<span style="color: #00bfff;">except</span> <span style="color: #98f5ff;">Exception</span> <span style="color: #00bfff;">as</span> e:
-    <span style="color: #00bfff;">print</span>(e)
-<span style="color: #00bfff;">else</span>:
-    <span style="color: #00bfff;">print</span>(f.read)
+<pre class="src src-python">try:
+    f = open('file.txt')
+except FileNotFoundError as e:
+    print(e)
+except Exception as e:
+    print(e)
+else:
+    print(f.read)
     f.close()
-<span style="color: #00bfff;">finally</span>:
-    <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'Executing Finally...'</span>)
+finally:
+    print('Executing Finally...')
 </pre>
 </div>
 </div>
@@ -570,15 +569,15 @@ from collections import namedtuple
 <div class="outline-text-3" id="text-7-2">
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="color: #00bfff;">from</span> collections <span style="color: #00bfff;">import</span> deque
-<span style="color: #4eee94;">d</span> = deque(<span style="color: #deb887;">'ghi'</span>)
-<span style="color: #00bfff;">for</span> elem <span style="color: #00bfff;">in</span> d:
-    <span style="color: #00bfff;">print</span>(elem.upper())
+<pre class="src src-python">from collections import deque
+d = deque('ghi')
+for elem in d:
+    print(elem.upper())
 G
 H
 I
-d.append(<span style="color: #deb887;">'j'</span>)
-d.appendleft(<span style="color: #deb887;">'R'</span>)
+d.append('j')
+d.appendleft('R')
 </pre>
 </div>
 <ul class="org-ul">
@@ -606,15 +605,15 @@ A closure is a record storing function together with an environment: a mapping a
 </p>
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="color: #00bfff;">def</span> <span style="color: #daa520;">html_tag</span>(tag):
-    <span style="color: #00bfff;">def</span> <span style="color: #daa520;">wrap_text</span>(msg):
-        <span style="color: #00bfff;">print</span>(<span style="color: #deb887;">'&lt;{0}&gt;{1}&lt;/{0}&gt;'</span>.<span style="color: #f08080;">format</span>(tag, msg))
-    <span style="color: #00bfff;">return</span> wrap_text
-<span style="color: #4eee94;">print_h1</span> = html_tag(<span style="color: #deb887;">'h1'</span>)
-print_h1(<span style="color: #deb887;">'Test Headline!'</span>)
+<pre class="src src-python">def html_tag(tag):
+    def wrap_text(msg):
+	print('&lt;{0}&gt;{1}&lt;/{0}&gt;'.format(tag, msg))
+    return wrap_text
+print_h1 = html_tag('h1')
+print_h1('Test Headline!')
 
-<span style="color: #4eee94;">print_p</span> = html_tag(<span style="color: #deb887;">'p'</span>)
-print_p(<span style="color: #deb887;">'Test paragraph!'</span>)
+print_p = html_tag('p')
+print_p('Test paragraph!')
 </pre>
 </div>
 <p>
@@ -734,7 +733,7 @@ vs = [ 1, 2, 3]<br  />
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: umt</p>
-<p class="date">Created: 2017-05-31 Çrş 22:14</p>
+<p class="date">Created: 2018-01-23 Tue 14:04</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
