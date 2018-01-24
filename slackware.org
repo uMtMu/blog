@@ -1,5 +1,11 @@
 #+INCLUDE: "baslik.org"
 * Yaptıklarım
+** Vim yükleme
+   #+BEGIN_EXAMPLE
+   slackpkg install vim-7.4.1938-x86_64-1
+   slackpkg install perl
+   slackpkg install python-2.7.14-x86_64-1_slack14.2
+   #+END_EXAMPLE
 ** Kullanıcı oluşturma
    #+BEGIN_EXAMPLE
    useradd -m -g users -G wheel,floppy,audio,video,cdrom,plugdev,power,netdev,lp,scanner -s /bin/bash slacker
