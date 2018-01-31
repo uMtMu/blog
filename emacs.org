@@ -1,4 +1,9 @@
 #+INCLUDE: "baslik.org"
+* Okunacak
+  - http://wiki.c2.com/?GreatEmacsFeatures
+  - http://batsov.com/articles/2011/11/19/why-emacs/
+  - https://www.emacswiki.org/emacs/EmacsNiftyTricks
+  - https://www.masteringemacs.org/reading-guide
 * Artist mode - Ascii/Diagram çizimi
   #+BEGIN_EXAMPLE
   M-x artist-mode

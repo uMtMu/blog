@@ -1,0 +1,6 @@
+#+TITLE: uMtMu
+#+HTML: <link rel="stylesheet" type="text/css" href="css/base_style.css" />
+#+BEGIN_CENTER
+#+attr_html: :width 45%
+file:img/180115.jpg
+#+END_CENTER
