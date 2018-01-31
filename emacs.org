@@ -1,4 +1,10 @@
 #+INCLUDE: "baslik.org"
+* Artist mode - Ascii/Diagram çizimi
+  #+BEGIN_EXAMPLE
+  M-x artist-mode
+  #+END_EXAMPLE
+  
+  mouse tekerlek tuşu menüyü açıyor. gerisi anlaşılır zaten :D
 * orgmode hedefli dosya bağlantıları
   #+BEGIN_EXAMPLE
   [[file:~/code/main.c::255]]                 Find line 255
