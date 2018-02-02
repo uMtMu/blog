@@ -1,4 +1,91 @@
 #+INCLUDE: "baslik.org"
+* Elisp
+  [[https://www.youtube.com/watch?v=CH0RUrO_oww&t=68s][Kaynak]]
+** 1.ders
+  #+BEGIN_SRC emacs-lisp
+    (+ 2 5 34 32 (/ 22 3))
+
+    (defun add-nums (a b c)
+    (+ a b c)
+    )
+
+    (add-nums 10 23)
+
+    ;; test lib
+    (require 'ert)
+    (ert-deftest add-nums-pos () 
+      should (equal (add-nums-pos 11 10) 21))
+    ;; M - x ert
+
+  #+END_SRC
+** 2. ders
+   #+BEGIN_SRC emacs-lisp
+     (org-src-debug)
+     (setq a 10 b 32)
+     (+ a b)
+     (null nil)
+
+     '(1 2 3 4)
+     (equal nil '())
+     (setq my_list '(1 2 3 4))
+     (car my_list)
+     (cdr my_list)
+     (nth 0 my_list)
+     (member 4 my_list)
+     (defun does_exist (number my-list)
+       (
+        (member number my-list)))
+
+     (require 'ert)
+     (ert-deftest check-number
+         ((should (does_exist 1 '(1 2 3 4)) )
+          )
+       
+       (ert-deftest check-number
+           ((should (not (does_exist 5 '(1 2 3 4)) ))
+            )
+         )
+       
+       (ert-deftest check-number ()
+         (should (does_exist 1 '(1 2 3 4)))
+         (should (not (does_exist 5 '(1 2 3 4))))
+         )
+       
+   #+END_SRC
+** 3.ders
+   #+BEGIN_SRC emacs-lisp
+     (setq my_list '(1 2 3 4))
+     ;; loop through list and print even number
+     (dolist (elm my_list)
+       (when (= (mod elm 2) 0) 
+         (print elm) ;; writes to mini buffer
+         (message (number-to-string elm)) ;; durumu tam anlamadım
+         ))
+     (let (some-var) ;; sets scope, some-var will work only in let
+       (when (null some-var)
+         (message "var is null") 
+         ))
+
+     (let ((some-var 0)
+           (other-var 99))
+       (if (null some-var)
+           (message "null")
+         (message "not null")
+         ))
+
+     (defun sum-evens (some-list)
+       (let ((sum 0))
+         (dolist (elm some-list)
+           (when (= (mod 2 elm))
+             (setq sum (+ sum elm))))
+         (message (number-to-string sum))
+         ))
+     (sum-evens '(1 2 3 4))
+   #+END_SRC
+
+   #+RESULTS:
+   : 10
+
 * Okunacak
   - http://wiki.c2.com/?GreatEmacsFeatures
   - http://batsov.com/articles/2011/11/19/why-emacs/

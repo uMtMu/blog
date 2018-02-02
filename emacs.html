@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>uMtMu</title>
-<!-- 2018-01-31 Wed 14:33 -->
+<!-- 2018-02-02 Fri 09:08 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="umt" />
@@ -151,33 +151,162 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. Artist mode - Ascii/Diagram çizimi</a></li>
-<li><a href="#sec-2">2. orgmode hedefli dosya bağlantıları</a></li>
-<li><a href="#sec-3">3. GnuPG</a></li>
-<li><a href="#sec-4">4. MoveIt</a></li>
-<li><a href="#sec-5">5. SpacEmacs &amp; ErgoEmacs</a></li>
-<li><a href="#sec-6">6. orgmode easy templates</a></li>
-<li><a href="#sec-7">7. Orgmode metin stilleri</a></li>
-<li><a href="#sec-8">8. Elpy kısayollar</a></li>
-<li><a href="#sec-9">9. Kaydedilmemiş değişiklikler</a></li>
-<li><a href="#sec-10">10. multiple replace on fly&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Ara">Ara</span></span></a></li>
-<li><a href="#sec-11">11. .emacs</a></li>
-<li><a href="#sec-12">12. ipuçları</a>
+<li><a href="#sec-1">1. Elisp</a>
 <ul>
-<li><a href="#sec-12-1">12.1. List occurence</a></li>
-<li><a href="#sec-12-2">12.2. conf-mode</a></li>
-<li><a href="#sec-12-3">12.3. Template kısayolları</a></li>
-<li><a href="#sec-12-4">12.4. Registerlar</a></li>
+<li><a href="#sec-1-1">1.1. 1.ders</a></li>
+<li><a href="#sec-1-2">1.2. 2. ders</a></li>
+<li><a href="#sec-1-3">1.3. 3.ders</a></li>
 </ul>
 </li>
-<li><a href="#sec-13">13. ElPy</a></li>
-<li><a href="#sec-14">14. Bağlantılar</a></li>
+<li><a href="#sec-2">2. Okunacak</a></li>
+<li><a href="#sec-3">3. Artist mode - Ascii/Diagram çizimi</a></li>
+<li><a href="#sec-4">4. orgmode hedefli dosya bağlantıları</a></li>
+<li><a href="#sec-5">5. GnuPG</a></li>
+<li><a href="#sec-6">6. MoveIt</a></li>
+<li><a href="#sec-7">7. SpacEmacs &amp; ErgoEmacs</a></li>
+<li><a href="#sec-8">8. orgmode easy templates</a></li>
+<li><a href="#sec-9">9. Orgmode metin stilleri</a></li>
+<li><a href="#sec-10">10. Elpy kısayollar</a></li>
+<li><a href="#sec-11">11. Kaydedilmemiş değişiklikler</a></li>
+<li><a href="#sec-12">12. multiple replace on fly&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Ara">Ara</span></span></a></li>
+<li><a href="#sec-13">13. .emacs</a></li>
+<li><a href="#sec-14">14. ipuçları</a>
+<ul>
+<li><a href="#sec-14-1">14.1. List occurence</a></li>
+<li><a href="#sec-14-2">14.2. conf-mode</a></li>
+<li><a href="#sec-14-3">14.3. Template kısayolları</a></li>
+<li><a href="#sec-14-4">14.4. Registerlar</a></li>
+</ul>
+</li>
+<li><a href="#sec-15">15. ElPy</a></li>
+<li><a href="#sec-16">16. Bağlantılar</a></li>
 </ul>
 </div>
 </div>
 <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Artist mode - Ascii/Diagram çizimi</h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> Elisp</h2>
 <div class="outline-text-2" id="text-1">
+<p>
+<a href="https://www.youtube.com/watch?v=CH0RUrO_oww&t=68s">Kaynak</a><br  />
+</p>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 1.ders</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(+ 2 5 34 32 (/ 22 3))
+
+(defun add-nums (a b c)
+(+ a b c)
+)
+
+(add-nums 10 23)
+
+;; test lib
+(require 'ert)
+(ert-deftest add-nums-pos () 
+  should (equal (add-nums-pos 11 10) 21))
+;; M - x ert
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> 2. ders</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(org-src-debug)
+(setq a 10 b 32)
+(+ a b)
+(null nil)
+
+'(1 2 3 4)
+(equal nil '())
+(setq my_list '(1 2 3 4))
+(car my_list)
+(cdr my_list)
+(nth 0 my_list)
+(member 4 my_list)
+(defun does_exist (number my-list)
+  (
+   (member number my-list)))
+
+(require 'ert)
+(ert-deftest check-number
+    ((should (does_exist 1 '(1 2 3 4)) )
+     )
+
+  (ert-deftest check-number
+      ((should (not (does_exist 5 '(1 2 3 4)) ))
+       )
+    )
+
+  (ert-deftest check-number ()
+    (should (does_exist 1 '(1 2 3 4)))
+    (should (not (does_exist 5 '(1 2 3 4))))
+    )
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> 3.ders</h3>
+<div class="outline-text-3" id="text-1-3">
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(setq my_list '(1 2 3 4))
+;; loop through list and print even number
+(dolist (elm my_list)
+  (when (= (mod elm 2) 0) 
+    (print elm) ;; writes to mini buffer
+    (message (number-to-string elm)) ;; durumu tam anlamadım
+    ))
+(let (some-var) ;; sets scope, some-var will work only in let
+  (when (null some-var)
+    (message "var is null") 
+    ))
+
+(let ((some-var 0)
+      (other-var 99))
+  (if (null some-var)
+      (message "null")
+    (message "not null")
+    ))
+
+(defun sum-evens (some-list)
+  (let ((sum 0))
+    (dolist (elm some-list)
+      (when (= (mod 2 elm))
+	(setq sum (+ sum elm))))
+    (message (number-to-string sum))
+    ))
+(sum-evens '(1 2 3 4))
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Okunacak</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li><a href="http://wiki.c2.com/?GreatEmacsFeatures">http://wiki.c2.com/?GreatEmacsFeatures</a><br  />
+</li>
+<li><a href="http://batsov.com/articles/2011/11/19/why-emacs/">http://batsov.com/articles/2011/11/19/why-emacs/</a><br  />
+</li>
+<li><a href="https://www.emacswiki.org/emacs/EmacsNiftyTricks">https://www.emacswiki.org/emacs/EmacsNiftyTricks</a><br  />
+</li>
+<li><a href="https://www.masteringemacs.org/reading-guide">https://www.masteringemacs.org/reading-guide</a><br  />
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Artist mode - Ascii/Diagram çizimi</h2>
+<div class="outline-text-2" id="text-3">
 <pre class="example">
 M-x artist-mode
 </pre>
@@ -187,9 +316,9 @@ mouse tekerlek tuşu menüyü açıyor. gerisi anlaşılır zaten :D<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> orgmode hedefli dosya bağlantıları</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> orgmode hedefli dosya bağlantıları</h2>
+<div class="outline-text-2" id="text-4">
 <pre class="example">
 [[file:~/code/main.c::255]]                 Find line 255
 [[file:~/xx.org::My Target]]                Find ‘&lt;&lt;My Target&gt;&gt;’
@@ -198,9 +327,9 @@ mouse tekerlek tuşu menüyü açıyor. gerisi anlaşılır zaten :D<br  />
 </div>
 </div>
 
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> GnuPG</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> GnuPG</h2>
+<div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li>Kurulum<br  />
 sudo apt-get install gnupg2<br  />
@@ -228,9 +357,9 @@ gpg &#x2013;import mykey.asc<br  />
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> MoveIt</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> MoveIt</h2>
+<div class="outline-text-2" id="text-6">
 <p>
 Numerik tekrarlama<br  />
 (C|M)-Num Komut örneği C-5 C-f<br  />
@@ -323,18 +452,18 @@ Numerik tekrarlama<br  />
 </div>
 </div>
 
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> SpacEmacs &amp; ErgoEmacs</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> SpacEmacs &amp; ErgoEmacs</h2>
+<div class="outline-text-2" id="text-7">
 <p>
 Bana fazla karışık geldi. Sıfırdan kendin kurup neyin ne olduğunu bilmek daha güzel geliyor. Tabi ne var ne yok görmek için iyi oldu.<br  />
 <a href="https://github.com/syl20bnr/spacemacs">SpacEmacs</a> &amp; <a href="http://ergoemacs.org/">ErgoEmacs</a><br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6"><span class="section-number-2">6</span> orgmode easy templates</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> orgmode easy templates</h2>
+<div class="outline-text-2" id="text-8">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -434,9 +563,9 @@ Bana fazla karışık geldi. Sıfırdan kendin kurup neyin ne olduğunu bilmek d
 </div>
 </div>
 
-<div id="outline-container-sec-7" class="outline-2">
-<h2 id="sec-7"><span class="section-number-2">7</span> Orgmode metin stilleri</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Orgmode metin stilleri</h2>
+<div class="outline-text-2" id="text-9">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -475,9 +604,9 @@ Bana fazla karışık geldi. Sıfırdan kendin kurup neyin ne olduğunu bilmek d
 </div>
 </div>
 
-<div id="outline-container-sec-8" class="outline-2">
-<h2 id="sec-8"><span class="section-number-2">8</span> Elpy kısayollar</h2>
-<div class="outline-text-2" id="text-8">
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Elpy kısayollar</h2>
+<div class="outline-text-2" id="text-10">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -506,32 +635,32 @@ Bana fazla karışık geldi. Sıfırdan kendin kurup neyin ne olduğunu bilmek d
 </div>
 </div>
 
-<div id="outline-container-sec-9" class="outline-2">
-<h2 id="sec-9"><span class="section-number-2">9</span> Kaydedilmemiş değişiklikler</h2>
-<div class="outline-text-2" id="text-9">
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Kaydedilmemiş değişiklikler</h2>
+<div class="outline-text-2" id="text-11">
 <p>
 C-x s kombinasyonu ile toplu tampon kayıtlarında "d" tuşu ile değişiklikler<br  />
 görülebilir.<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-10" class="outline-2">
-<h2 id="sec-10"><span class="section-number-2">10</span> multiple replace on fly&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Ara">Ara</span></span></h2>
-<div class="outline-text-2" id="text-10">
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> multiple replace on fly&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Ara">Ara</span></span></h2>
+<div class="outline-text-2" id="text-12">
 <p>
 Değiştirilen kelimenin her bir kopyasının aynı anda güncellenmesi<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-11" class="outline-2">
-<h2 id="sec-11"><span class="section-number-2">11</span> .emacs</h2>
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> .emacs</h2>
 </div>
-<div id="outline-container-sec-12" class="outline-2">
-<h2 id="sec-12"><span class="section-number-2">12</span> ipuçları</h2>
-<div class="outline-text-2" id="text-12">
-</div><div id="outline-container-sec-12-1" class="outline-3">
-<h3 id="sec-12-1"><span class="section-number-3">12.1</span> List occurence</h3>
-<div class="outline-text-3" id="text-12-1">
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> ipuçları</h2>
+<div class="outline-text-2" id="text-14">
+</div><div id="outline-container-sec-14-1" class="outline-3">
+<h3 id="sec-14-1"><span class="section-number-3">14.1</span> List occurence</h3>
+<div class="outline-text-3" id="text-14-1">
 <p>
 M - s o -&gt; list occurence<br  />
 M - s o RET def RET -&gt; list functions<br  />
@@ -539,12 +668,12 @@ M - s o RET class RET -&gt; list classes<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-12-2" class="outline-3">
-<h3 id="sec-12-2"><span class="section-number-3">12.2</span> conf-mode</h3>
+<div id="outline-container-sec-14-2" class="outline-3">
+<h3 id="sec-14-2"><span class="section-number-3">14.2</span> conf-mode</h3>
 </div>
-<div id="outline-container-sec-12-3" class="outline-3">
-<h3 id="sec-12-3"><span class="section-number-3">12.3</span> Template kısayolları</h3>
-<div class="outline-text-3" id="text-12-3">
+<div id="outline-container-sec-14-3" class="outline-3">
+<h3 id="sec-14-3"><span class="section-number-3">14.3</span> Template kısayolları</h3>
+<div class="outline-text-3" id="text-14-3">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -659,9 +788,9 @@ M - s o RET class RET -&gt; list classes<br  />
 </table>
 </div>
 </div>
-<div id="outline-container-sec-12-4" class="outline-3">
-<h3 id="sec-12-4"><span class="section-number-3">12.4</span> Registerlar</h3>
-<div class="outline-text-3" id="text-12-4">
+<div id="outline-container-sec-14-4" class="outline-3">
+<h3 id="sec-14-4"><span class="section-number-3">14.4</span> Registerlar</h3>
+<div class="outline-text-3" id="text-14-4">
 <p>
 <b>C-x r s r</b><br  />
 Copy region into register r (copy-to-register).<br  />
@@ -685,9 +814,9 @@ Prepend region to text in register r.<br  />
 </div>
 </div>
 </div>
-<div id="outline-container-sec-13" class="outline-2">
-<h2 id="sec-13"><span class="section-number-2">13</span> ElPy</h2>
-<div class="outline-text-2" id="text-13">
+<div id="outline-container-sec-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> ElPy</h2>
+<div class="outline-text-2" id="text-15">
 <ol class="org-ol">
 <li>Reponun eklenmesi<br  />
 <div class="org-src-container">
@@ -715,9 +844,9 @@ M-x elpy-config RET<br  />
 </ol>
 </div>
 </div>
-<div id="outline-container-sec-14" class="outline-2">
-<h2 id="sec-14"><span class="section-number-2">14</span> Bağlantılar</h2>
-<div class="outline-text-2" id="text-14">
+<div id="outline-container-sec-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> Bağlantılar</h2>
+<div class="outline-text-2" id="text-16">
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <center>
 <p>
@@ -732,7 +861,7 @@ M-x elpy-config RET<br  />
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: umt</p>
-<p class="date">Created: 2018-01-31 Wed 14:33</p>
+<p class="date">Created: 2018-02-02 Fri 09:08</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
