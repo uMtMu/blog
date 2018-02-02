@@ -86,6 +86,36 @@
    #+RESULTS:
    : 10
 
+** 4.ders
+   #+BEGIN_SRC emacs-lisp
+     ;; C-h f get help for function
+     ;; C-h k get help for key
+     (defun cheap-count-words ()
+       (interactive)
+       (let ((words 0))
+         (save-excursion ;; imlecin son yerini hatırla
+           (goto-char (point-min)) ;; buffer'ın en başına gel
+           (while (forward-word) ;; bir kelime ilerle
+             (setq words (+ 1 words)))
+           (message (format "Words in buffer: %s" words))
+           words)) ;; sadece let çalıştığı zaman fonksiyon hata veriyor. words'ü de yazdırıyoruz ??
+       )
+
+
+     (require 'ert)
+     (ert-deftest count-words-test ()
+       (get-buffer-create "*test*") ;; bu isimli buffer yoksa oluştur
+       (with-current-buffer "*test*"
+         (erase-buffer)
+         (insert "Hello Worlds") ;; buffera yaz
+         (should (= (cheap-count-words) 2))
+         )
+       (kill-buffer "*test*")
+       )
+
+     ;; C-x C-e M-x ert 
+
+   #+END_SRC
 * Okunacak
   - http://wiki.c2.com/?GreatEmacsFeatures
   - http://batsov.com/articles/2011/11/19/why-emacs/

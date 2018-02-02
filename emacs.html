@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>uMtMu</title>
-<!-- 2018-02-02 Fri 09:08 -->
+<!-- 2018-02-02 Fri 10:17 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="umt" />
@@ -156,6 +156,7 @@ for the JavaScript code in this tag.
 <li><a href="#sec-1-1">1.1. 1.ders</a></li>
 <li><a href="#sec-1-2">1.2. 2. ders</a></li>
 <li><a href="#sec-1-3">1.3. 3.ders</a></li>
+<li><a href="#sec-1-4">1.4. 4.ders</a></li>
 </ul>
 </li>
 <li><a href="#sec-2">2. Okunacak</a></li>
@@ -287,8 +288,43 @@ for the JavaScript code in this tag.
 </div>
 </div>
 </div>
-</div>
 
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> 4.ders</h3>
+<div class="outline-text-3" id="text-1-4">
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">;; C-h f get help for function
+;; C-h k get help for key
+(defun cheap-count-words ()
+  (interactive)
+  (let ((words 0))
+    (save-excursion ;; imlecin son yerini hatırla
+      (goto-char (point-min)) ;; buffer'ın en başına gel
+      (while (forward-word) ;; bir kelime ilerle
+	(setq words (+ 1 words)))
+      (message (format "Words in buffer: %s" words))
+      words)) ;; sadece let çalıştığı zaman fonksiyon hata veriyor. words'ü de yazdırıyoruz ??
+  )
+
+
+(require 'ert)
+(ert-deftest count-words-test ()
+  (get-buffer-create "*test*") ;; bu isimli buffer yoksa oluştur
+  (with-current-buffer "*test*"
+    (erase-buffer)
+    (insert "Hello Worlds") ;; buffera yaz
+    (should (= (cheap-count-words) 2))
+    )
+  (kill-buffer "*test*")
+  )
+
+;; C-x C-e M-x ert
+</pre>
+</div>
+</div>
+</div>
+</div>
 <div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2"><span class="section-number-2">2</span> Okunacak</h2>
 <div class="outline-text-2" id="text-2">
@@ -861,7 +897,7 @@ M-x elpy-config RET<br  />
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: umt</p>
-<p class="date">Created: 2018-02-02 Fri 09:08</p>
+<p class="date">Created: 2018-02-02 Fri 10:17</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
