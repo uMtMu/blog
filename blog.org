@@ -1,6 +1,12 @@
 #+INCLUDE: "baslik.org"
 #+INCLUDE: "paginate.org"
 * Yazılar
+** Hayat çok garip
+   <2018-02-02 Fri 09:06>
+   
+   Hayat çok garip ya. Şu uğraştığım şeylere bak. Emacs kullanıyorum falan. Bi bakıyorsun ömür akıyor gidiyor. Sadece kullamıyorum sanırım. Yaşam tarzı haline getirmem, kişiselleştirmem emacsle zamanın daha farklı akmasına sebep oluyor.
+
+   Böyle şeyler işte.
 ** Çabalar bazen sonuç verir bazen vermez.
    <2018-01-11 Thu 09:27>
 ** Woke Up This Morning
