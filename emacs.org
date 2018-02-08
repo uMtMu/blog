@@ -116,6 +116,41 @@
      ;; C-x C-e M-x ert 
 
    #+END_SRC
+
+** 5.ders
+   #+BEGIN_SRC emacs-lisp
+     (defvar boolcase-mode-words '("true" "false")
+       "Words to capitalize"  
+       )
+
+     (defun boolcase-mode-check ()
+       "Check if we capitalize or not"
+       ;; iif it's "e"
+       (if (= last-command-event 101)
+           (boolcase-mode-fix)))
+
+     (defun boolcase-mode-fix ()
+       (save-excursion
+         (copy-region-as-kill (point) (progn (backward-sexp) (point)))
+         (when (member (current-kill 0) boolcase-mode-words)
+           (capitalize-word 1))
+         ;; Remove the element from kill ring
+         (setq kill-ring (cdr kill-ring))
+         )
+       )
+       
+
+     (define-minor-mode boolcase-mode
+       "Auto capitalize"
+       :lighter " BC"
+       (if boolcase-mode
+           (add-hook 'post-self-insert-hook
+                     'boolcase-mode-check nil t)
+         (remove-hook 'post-self-insert-hook
+                      'boolcase-mode-check t)
+         )
+       )
+   #+END_SRC
 * Okunacak
   - http://wiki.c2.com/?GreatEmacsFeatures
   - http://batsov.com/articles/2011/11/19/why-emacs/
