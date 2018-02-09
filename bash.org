@@ -80,7 +80,8 @@
 ** Küçük şeyler :)
 *** aranan dosyaların sonuna ekleme
     <2016-10-17 Mon 00:13>
-    #+BEGIN_SRC sh :shebang #!/bin/bash find ~ -name file_name | xargs sed -i '$a\line2add'
+    #+BEGIN_SRC sh
+      find ~ -name file_name | xargs sed -i '$a\line2add'
     #+END_SRC
 *** ~ altındaki tüm GIT repolarının statüsleri
     <2016-10-17 Mon 00:13>
