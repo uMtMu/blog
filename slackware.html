@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>uMtMu</title>
-<!-- 2018-01-23 Tue 15:35 -->
+<!-- 2018-02-11 Paz 16:26 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="umt" />
@@ -154,10 +154,11 @@ for the JavaScript code in this tag.
 <li><a href="#sec-1">1. Yaptıklarım</a>
 <ul>
 <li><a href="#sec-1-1">1.1. Vim yükleme</a></li>
-<li><a href="#sec-1-2">1.2. Kullanıcı oluşturma</a></li>
-<li><a href="#sec-1-3">1.3. DNS ayarlaması</a></li>
-<li><a href="#sec-1-4">1.4. Ağ yöneticisini elle başlatma</a></li>
-<li><a href="#sec-1-5">1.5. Ağ yöneticisini otomatik olarak başlatma</a></li>
+<li><a href="#sec-1-2">1.2. Slackpkg komutlar</a></li>
+<li><a href="#sec-1-3">1.3. Kullanıcı oluşturma</a></li>
+<li><a href="#sec-1-4">1.4. DNS ayarlaması</a></li>
+<li><a href="#sec-1-5">1.5. Ağ yöneticisini elle başlatma</a></li>
+<li><a href="#sec-1-6">1.6. Ağ yöneticisini otomatik olarak başlatma</a></li>
 </ul>
 </li>
 <li><a href="#sec-2">2. Bağlantılar</a></li>
@@ -178,32 +179,90 @@ slackpkg install python-2.7.14-x86_64-1_slack14.2
 </div>
 </div>
 <div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Kullanıcı oluşturma</h3>
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Slackpkg komutlar</h3>
 <div class="outline-text-3" id="text-1-2">
+<p>
+paket listesinin güncellenmesi<br  />
+</p>
+<pre class="example">
+slackpkg update
+</pre>
+
+<p>
+paket arama<br  />
+</p>
+<pre class="example">
+slackpkg search yaklaşık_paket_adı
+</pre>
+
+<p>
+dosyayı içeren paketi arama<br  />
+</p>
+<pre class="example">
+slackpkg file-search dosya_adı
+</pre>
+
+<p>
+paket işlemleri<br  />
+</p>
+<pre class="example">
+slackpkg info/install/remove/update/reinstall paket_adı
+</pre>
+
+<p>
+paketi kara listeye alma<br  />
+</p>
+<pre class="example">
+slackpkg blacklist paket_adı
+</pre>
+
+<p>
+çalışan sistemin yüklü paketleri için template oluşturma/kullanma (<i>etc/slackpkg/templates</i>)<br  />
+</p>
+<pre class="example">
+slackpkg generate-template template_adi
+slackpkg install-template template_adi
+</pre>
+
+<p>
+slackware upgrade akışı<br  />
+</p>
+<pre class="example">
+slackpkg update 
+slackpkg install-new 
+slackpkg upgrade-all 
+slackpkg clean-system
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Kullanıcı oluşturma</h3>
+<div class="outline-text-3" id="text-1-3">
 <pre class="example">
 useradd -m -g users -G wheel,floppy,audio,video,cdrom,plugdev,power,netdev,lp,scanner -s /bin/bash slacker
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> DNS ayarlaması</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> DNS ayarlaması</h3>
+<div class="outline-text-3" id="text-1-4">
 <pre class="example">
 echo "nameserver 8.8.8.8" &gt;&gt; /etc/resolv.conf
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Ağ yöneticisini elle başlatma</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Ağ yöneticisini elle başlatma</h3>
+<div class="outline-text-3" id="text-1-5">
 <pre class="example">
 /etc/rc.d/rc.networkmanager start
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Ağ yöneticisini otomatik olarak başlatma</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-sec-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Ağ yöneticisini otomatik olarak başlatma</h3>
+<div class="outline-text-3" id="text-1-6">
 <pre class="example">
 chmod +x /etc/rc.d/rc.networkmanager
 </pre>
@@ -227,7 +286,7 @@ chmod +x /etc/rc.d/rc.networkmanager
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: umt</p>
-<p class="date">Created: 2018-01-23 Tue 15:35</p>
+<p class="date">Created: 2018-02-11 Paz 16:26</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>

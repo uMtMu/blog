@@ -6,6 +6,46 @@
    slackpkg install perl
    slackpkg install python-2.7.14-x86_64-1_slack14.2
    #+END_EXAMPLE
+** Slackpkg komutlar
+   paket listesinin güncellenmesi
+   #+BEGIN_EXAMPLE
+   slackpkg update
+   #+END_EXAMPLE
+   
+   paket arama
+   #+BEGIN_EXAMPLE
+   slackpkg search yaklaşık_paket_adı
+   #+END_EXAMPLE
+
+   dosyayı içeren paketi arama
+   #+BEGIN_EXAMPLE
+   slackpkg file-search dosya_adı
+   #+END_EXAMPLE
+
+   paket işlemleri
+   #+BEGIN_EXAMPLE
+   slackpkg info/install/remove/update/reinstall paket_adı
+   #+END_EXAMPLE
+
+   paketi kara listeye alma 
+   #+BEGIN_EXAMPLE
+   slackpkg blacklist paket_adı
+   #+END_EXAMPLE
+
+   çalışan sistemin yüklü paketleri için template oluşturma/kullanma (/etc/slackpkg/templates/)
+   #+BEGIN_EXAMPLE
+   slackpkg generate-template template_adi
+   slackpkg install-template template_adi
+   #+END_EXAMPLE
+
+   slackware upgrade akışı
+   #+BEGIN_EXAMPLE
+   slackpkg update 
+   slackpkg install-new 
+   slackpkg upgrade-all 
+   slackpkg clean-system
+   #+END_EXAMPLE
+   
 ** Kullanıcı oluşturma
    #+BEGIN_EXAMPLE
    useradd -m -g users -G wheel,floppy,audio,video,cdrom,plugdev,power,netdev,lp,scanner -s /bin/bash slacker
