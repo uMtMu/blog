@@ -1,6 +1,6 @@
 #+INCLUDE: "baslik.org"
 * Sözler
-** Bazı hatalar, pişmanlığa sığmayacak kadar kötüdür.
+** Bazı hatalar, pişmanlığa sığmayacak kadar büyüktür.
    *???*
 ** Savunma planımızda büyük bir hedef belirlemişsek büyük bir enerjiyle ve gücümüzün son zerresine kadar bu hedefi izlemeliyiz
    /Savunma planımızda büyük bir hedef belirlemişsek (bir düşman kolunu imha etmek vb.) büyük bir enerjiyle ve gücümüzün son zerresine kadar bu hedefi izlemeliyiz. Çoğu durumda, saldırgan, başka bir noktadan kendi amaçlarını izleyecektir. Örneğin, onun sağ kanadına saldırdığınızda, o da sol kanadında kesin üstünlük kazanacaktır. Sonuç olarak, düşmandan önce yavaşlarsak   düşmandan daha az bir enerjiyle kendi amacımızı izlersek, düşman tümüyle üstünlük kazanırken, bizim kazancımız yarım olacaktır. Bu yüzden, düşman gücünün zirvesine ulaşacak ve zafer kazanacak, biz ise kısmen kazandığımız üstünlüklerimizi bile bırakmak zorunda kalacağız./
