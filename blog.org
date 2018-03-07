@@ -1,6 +1,10 @@
 #+INCLUDE: "baslik.org"
 #+INCLUDE: "paginate.org"
 * Yazılar
+** Sevince
+   <2018-03-07 Wed 17:58>
+   Hayat, sevince cidden daha farklı oluyor. Nazilli otogarı bile. 
+
 ** Yaşamak, ortaya kendimizi sürdüğümüz bir kumardır.
    <2018-02-20 Tue 09:29>
 ** Hayat çok garip
