@@ -1,6 +1,10 @@
 #+INCLUDE: "baslik.org"
 #+INCLUDE: "paginate.org"
 * Yazılar
+** Anlayış
+   <2018-03-09 Fri 13:45>
+   Seni anladığımda hep çok geç olacak.
+
 ** Sevince
    <2018-03-07 Wed 17:58>
    Hayat, sevince cidden daha farklı oluyor. Nazilli otogarı bile. 
