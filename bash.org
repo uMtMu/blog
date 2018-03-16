@@ -1,5 +1,10 @@
 #+INCLUDE: "baslik.org"
 * Yazılar
+** onthewire
+*** rot13
+    #+BEGIN_EXAMPLE
+    tr 'A-Za-z' 'N-ZA-Mn-za-m'
+    #+END_EXAMPLE
 ** [[https://cmdchallenge.com][CMD CHALLENGE]]
 *** hello_world/
     - echo "hello world"
@@ -85,11 +90,12 @@
     #+END_SRC
 *** ~ altındaki tüm GIT repolarının statüsleri
     <2016-10-17 Mon 00:13>
-    #+BEGIN_SRC sh :shebang #!/bin/bash find /home/ -name ".git" 2> /dev/null | sed 's/\/.git/\//g' | \
-    awk '{\
-         print "-------------------------\n\033[1;32mGit Repo:\033[0m " $1;\
-         system("git --git-dir="$1".git --work-tree="$1" status")\
-         }'
+    #+BEGIN_SRC sh :shebang 
+      /bin/bash find /home/ -name ".git" 2> /dev/null | sed 's/\/.git/\//g' | \
+	  awk '{\
+	       print "-------------------------\n\033[1;32mGit Repo:\033[0m " $1;\
+	       system("git --git-dir="$1".git --work-tree="$1" status")\
+	       }'
     #+END_SRC
 ** Komut: patch İncelenenecek
    <2015-11-27 Cum 11:27>
