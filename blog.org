@@ -1,6 +1,15 @@
 #+INCLUDE: "baslik.org"
 #+INCLUDE: "paginate.org"
 * Yazılar
+** Hayat her şeye rağmen hala güzel.
+   <2013-03-19 Tue>
+   Hayat her şeye rağmen hala güzel.
+   
+   Ne yaşadın diyebilirsin, kalp kırıklıkları yetmez mi? Boşa çıkan beklentiler. Er ya da geç insan anlıyor kimseden elinde olmayan bir şeyi alamayacağını. Sevgi saksıda yetişmiyor. Kalplere tohumu ekilemiyor aşkın.
+   
+   Aşk, bahçenizden özenle temizlediğiniz yabani otlar gibi. Bir anda bitiveriyor. Her şeye karşı yaşamaya çalışıyor. Diğerlerinden farklı. Her ne kadar beğenmesek de onu, sürekli tarlamızda arıyoruz.
+   
+   Aşk, meyvesinin ne işe yaradığını bilemediğimiz yabani bir ot. Belki de bir işe yarar diye umuyoruz sadece...
 ** Anlayış
    <2018-03-09 Fri 13:45>
    Seni anladığımda hep çok geç olacak.
