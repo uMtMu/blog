@@ -1,5 +1,35 @@
 #+INCLUDE: "baslik.org"
 * Sözler
+** İstediğini yap, bu dünya bir romandır ve çelişkilerden meydana gelir.
+   http://www.gailgastfield.com/blake3.html
+   *William Blake*
+** Eylemler dönüşmeyen arzu, ruh bozukluğuna yol açar.
+   http://www.gailgastfield.com/blake3.html
+   *William Blake*
+** Kendi düzenimi yaratmalıyım, aksi takdirde diğer insanların yarattığı düzenlerin kölesi olurum.
+   http://www.gailgastfield.com/blake3.html
+   *William Blake*
+** İnsan bir kere birine geç kalır ve bir daha hi. kimse için acele etmez.
+   *Yaşar Kemal*
+** Vücut bulmuş her ruh yalnızlığa mahkumdur.
+   *Aldous Huxley*
+** Ayrı ayrı birer ahlaksız olan insanlar, toplu oldukları zaman namuslu kişiler olurlar.
+   *Montesquieu*
+** Sadece bu
+   /Sana neden artık bu kadar güldüğünü  ya da neden işlerin daha düzgün gittiğini soranlara söyleyeceğin basit bir sebebin olabilmek isterdim. Seni sevmek değil, beni sevmen değil, sadece bu/
+
+   *???*
+** İnsanlara ne istediklerini sorsaydım, daha hızlı giden at üretirdim.
+   *Henry Ford*
+** Tüm belalar, yalnız kalma yeteneğimizin olmayışından gelir başımıza
+   *Jean De La Bruyere*
+
+** Şu an
+   Mutsuzsan geçmişte,
+   Kaygılıysan gelecekte,
+   Huzurluysan "şu anda" yaşıyorsun demektir.
+  
+   *Lao Tzu*
 ** Mutluluk
    /İnsanın kendini berbat hissetmesi, mutlu olup olmadığına önem verecek kadar boş zamanı olmasından ileri gelir./
 
