@@ -3,23 +3,30 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
+<!-- 2018-04-06 Fri 16:16 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>uMtMu</title>
-<!-- 2018-02-09 Fri 17:59 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="umt" />
+<meta name="generator" content="Org mode" />
+<meta name="author" content="umt" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -46,27 +53,111 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -86,6 +177,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <script type="text/javascript">
@@ -93,7 +185,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -134,58 +226,38 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
-<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
-<script type="text/javascript">
-<!--/*--><![CDATA[/*><!--*/
+<script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-        // Only one of the two following lines, depending on user settings
-        // First allows browser-native MathML display, second forces HTML/CSS
-        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
-            jax: ["input/TeX", "output/HTML-CSS"],
-        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
-                     "TeX/noUndefined.js"],
-        tex2jax: {
-            inlineMath: [ ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
-            skipTags: ["script","noscript","style","textarea","pre","code"],
-            ignoreClass: "tex2jax_ignore",
-            processEscapes: false,
-            processEnvironments: true,
-            preview: "TeX"
-        },
-        showProcessingMessages: true,
         displayAlign: "center",
-        displayIndent: "2em",
+        displayIndent: "0em",
 
-        "HTML-CSS": {
-             scale: 100,
-             availableFonts: ["STIX","TeX"],
-             preferredFont: "TeX",
-             webFont: "TeX",
-             imageFont: "TeX",
-             showMathMenu: true,
-        },
-        MMLorHTML: {
-             prefer: {
-                 MSIE:    "MML",
-                 Firefox: "MML",
-                 Opera:   "HTML",
-                 other:   "HTML"
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
              }
-        }
-    });
-/*]]>*///-->
+});
 </script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
 <h1 class="title">uMtMu</h1>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<div class="center">
+<div class="org-center">
 
 <div class="figure">
-<p><img src="img/ja2.png" alt="ja2.png" /><br  />
+<p><img src="img/ja2.png" alt="ja2.png" /><br />
 </p>
 </div>
 </div>
@@ -193,498 +265,461 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. Yazılar</a>
+<li><a href="#org70eb40d">1. Yazılar</a>
 <ul>
-<li><a href="#sec-1-1">1.1. CMD CHALLENGE</a></li>
-<li><a href="#sec-1-2">1.2. Küçük şeyler :)</a></li>
-<li><a href="#sec-1-3">1.3. Komut: patch İncelenenecek</a></li>
-<li><a href="#sec-1-4">1.4. Komut: cp cp -R ~/files ~/files-backup # tüm dizin alt yapısını ve içeriğini kopyala cp -s ~/myfiles/file*.txt ~/myfiles2 # tüm file*.txt dosyalarının sembolik bağlantılarını ~/myfiles2 dizini altına oluşturur. Sembolik bağlantılar,</a></li>
-<li><a href="#sec-1-5">1.5. Komut: &gt; ve 2&gt;</a></li>
-<li><a href="#sec-1-6">1.6. Komut: alias</a></li>
-<li><a href="#sec-1-7">1.7. Komut: cd cd -  #bir önceki çalışılan dizine geri döner cd ~  #kullanici adi  adının ev dizinine gider</a></li>
-<li><a href="#sec-1-8">1.8. Komut: ls ls ~ /usr #birden fazla dizinin içi listelenebilir</a></li>
-<li><a href="#sec-1-9">1.9. Komut: chmod chmod g+s directory #alt dizinlerinin grubunu sabitleme</a></li>
-<li><a href="#sec-1-10">1.10. ızin ve sahiplik bilgilerini koruyarak dosya transferi</a></li>
-<li><a href="#sec-1-11">1.11. Veri içindeki eşsiz satırları ve sayılarını bulmak sort data | uniq -u #Eşsiz satırlar sort data | uniq -c #Satırların tekrar sayıları</a></li>
+<li><a href="#org9b2b9ac">1.1. onthewire</a></li>
+<li><a href="#org897a420">1.2. CMD CHALLENGE</a></li>
+<li><a href="#org744868f">1.3. Küçük şeyler :)</a></li>
+<li><a href="#org161eba0">1.4. Komut: patch İncelenenecek</a></li>
+<li><a href="#orgdd64dc6">1.5. Komut: cp cp -R ~/files ~/files-backup # tüm dizin alt yapısını ve içeriğini kopyala cp -s ~/myfiles/file*.txt ~/myfiles2 # tüm file*.txt dosyalarının sembolik bağlantılarını ~/myfiles2 dizini altına oluşturur. Sembolik bağlantılar,</a></li>
+<li><a href="#org203b542">1.6. Komut: &gt; ve 2&gt;</a></li>
+<li><a href="#org1a0b64b">1.7. Komut: alias</a></li>
+<li><a href="#orgcd9fc70">1.8. Komut: cd cd -  #bir önceki çalışılan dizine geri döner cd ~  #kullanici adi  adının ev dizinine gider</a></li>
+<li><a href="#org83479bc">1.9. Komut: ls ls ~ /usr #birden fazla dizinin içi listelenebilir</a></li>
+<li><a href="#orga891d34">1.10. Komut: chmod chmod g+s directory #alt dizinlerinin grubunu sabitleme</a></li>
+<li><a href="#orge5944c4">1.11. ızin ve sahiplik bilgilerini koruyarak dosya transferi</a></li>
+<li><a href="#org81d9855">1.12. Veri içindeki eşsiz satırları ve sayılarını bulmak sort data | uniq -u #Eşsiz satırlar sort data | uniq -c #Satırların tekrar sayıları</a></li>
 </ul>
 </li>
-<li><a href="#sec-2">2. Bağlantılar</a></li>
+<li><a href="#org1fb384b">2. Bağlantılar</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Yazılar</h2>
+<div id="outline-container-org70eb40d" class="outline-2">
+<h2 id="org70eb40d"><span class="section-number-2">1</span> Yazılar</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> <a href="https://cmdchallenge.com">CMD CHALLENGE</a></h3>
+</div>
+<div id="outline-container-org9b2b9ac" class="outline-3">
+<h3 id="org9b2b9ac"><span class="section-number-3">1.1</span> onthewire</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-sec-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> hello_world/</h4>
+</div>
+<div id="outline-container-orga9e46d5" class="outline-4">
+<h4 id="orga9e46d5"><span class="section-number-4">1.1.1</span> rot13</h4>
 <div class="outline-text-4" id="text-1-1-1">
-<ul class="org-ul">
-<li>echo "hello world"<br  />
-</li>
-<li>echo 'hello world'<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-2" class="outline-4">
-<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> current_working_directory</h4>
-<div class="outline-text-4" id="text-1-1-2">
-<ul class="org-ul">
-<li>pwd<br  />
-</li>
-<li>pwd<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-3" class="outline-4">
-<h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> list_files</h4>
-<div class="outline-text-4" id="text-1-1-3">
-<ul class="org-ul">
-<li>ls<br  />
-</li>
-<li>ls<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-4" class="outline-4">
-<h4 id="sec-1-1-4"><span class="section-number-4">1.1.4</span> list_files_adv</h4>
-<div class="outline-text-4" id="text-1-1-4">
-<ul class="org-ul">
-<li>ls -aF<br  />
-</li>
-<li>ls -laF -C1<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-5" class="outline-4">
-<h4 id="sec-1-1-5"><span class="section-number-4">1.1.5</span> nested_dirs</h4>
-<div class="outline-text-4" id="text-1-1-5">
-<ul class="org-ul">
-<li>find . -name -exec cat {} \;<br  />
-</li>
-<li>cat ./&#x2026;/\ \ /.\ .the\ flag.txt<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-6" class="outline-4">
-<h4 id="sec-1-1-6"><span class="section-number-4">1.1.6</span> print_file_contents</h4>
-<div class="outline-text-4" id="text-1-1-6">
-<ul class="org-ul">
-<li>cat access.log<br  />
-</li>
-<li>cat access.log<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-7" class="outline-4">
-<h4 id="sec-1-1-7"><span class="section-number-4">1.1.7</span> last_lines</h4>
-<div class="outline-text-4" id="text-1-1-7">
-<ul class="org-ul">
-<li>tail -n 5 access.log<br  />
-</li>
-<li>tail -n 5 access.log<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-8" class="outline-4">
-<h4 id="sec-1-1-8"><span class="section-number-4">1.1.8</span> find_string_in_a_file</h4>
-<div class="outline-text-4" id="text-1-1-8">
-<ul class="org-ul">
-<li>grep GET access.log<br  />
-</li>
-<li>grep 'GET' access.log<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-9" class="outline-4">
-<h4 id="sec-1-1-9"><span class="section-number-4">1.1.9</span> find_tabs_in_a_file</h4>
-<div class="outline-text-4" id="text-1-1-9">
-<ul class="org-ul">
-<li>grep -P "\t" file-with-tabs.txt | wc -l<br  />
-</li>
-<li>grep -P '\t' file-with-tabs.txt | wc -l<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-10" class="outline-4">
-<h4 id="sec-1-1-10"><span class="section-number-4">1.1.10</span> seach_for_file_containing_string</h4>
-<div class="outline-text-4" id="text-1-1-10">
-<ul class="org-ul">
-<li>grep 500 * | cut -d':' -f1 | uniq<br  />
-</li>
-<li>grep -l 500<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-11" class="outline-4">
-<h4 id="sec-1-1-11"><span class="section-number-4">1.1.11</span> search_by_file_extension</h4>
-<div class="outline-text-4" id="text-1-1-11">
-<ul class="org-ul">
-<li>ls access.log*<br  />
-</li>
-<li>find . -name 'access.log*'<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-12" class="outline-4">
-<h4 id="sec-1-1-12"><span class="section-number-4">1.1.12</span> search_for_string_in_files_recursive</h4>
-<div class="outline-text-4" id="text-1-1-12">
-<ul class="org-ul">
-<li>grep -r "class" | grep me.py | cut -d':' -f2<br  />
-</li>
-<li>grep -h 500 <b>*/access.log</b><br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-13" class="outline-4">
-<h4 id="sec-1-1-13"><span class="section-number-4">1.1.13</span> extract_ip_address</h4>
-<div class="outline-text-4" id="text-1-1-13">
-<ul class="org-ul">
-<li>find . -name 'access.log*' -exec cat {} + | cut -d' ' -f1<br  />
-</li>
-<li>grep -Pho '^\d+\.\d+\.\d+\.\d+' <b>*/access.log</b><br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-14" class="outline-4">
-<h4 id="sec-1-1-14"><span class="section-number-4">1.1.14</span> delete_files</h4>
-<div class="outline-text-4" id="text-1-1-14">
-<ul class="org-ul">
-<li>find . -exec rm -rf {} +<br  />
-</li>
-<li>find . -delete<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-15" class="outline-4">
-<h4 id="sec-1-1-15"><span class="section-number-4">1.1.15</span> count_files</h4>
-<div class="outline-text-4" id="text-1-1-15">
-<ul class="org-ul">
-<li>ls | wc -l<br  />
-</li>
-<li>ls | wc -l<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-16" class="outline-4">
-<h4 id="sec-1-1-16"><span class="section-number-4">1.1.16</span> simple_sort</h4>
-<div class="outline-text-4" id="text-1-1-16">
-<ul class="org-ul">
-<li>cat access.log | sort<br  />
-</li>
-<li>sort access.log<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-17" class="outline-4">
-<h4 id="sec-1-1-17"><span class="section-number-4">1.1.17</span> count_string_in_line</h4>
-<div class="outline-text-4" id="text-1-1-17">
-<ul class="org-ul">
-<li>grep "GET" access.log | wc -l<br  />
-</li>
-<li>grep -c "GET" access.log<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-18" class="outline-4">
-<h4 id="sec-1-1-18"><span class="section-number-4">1.1.18</span> split_on_a_char</h4>
-<div class="outline-text-4" id="text-1-1-18">
-<ul class="org-ul">
-<li>awk '{ split($0,a,";"); } END {for(k in a) {print k}}' split-me.txt | sort -n<br  />
-</li>
-<li>tr ';' '\n' &lt; split-me.txt<br  />
-<a href="http://www.thegeekstuff.com/2012/12/linux-tr-command">tr command</a><br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-19" class="outline-4">
-<h4 id="sec-1-1-19"><span class="section-number-4">1.1.19</span> print_number_sequence</h4>
-<div class="outline-text-4" id="text-1-1-19">
-<ul class="org-ul">
-<li>seq 1 100 | tr '\n' ' '<br  />
-</li>
-<li>echo $(seq 1 100)<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-20" class="outline-4">
-<h4 id="sec-1-1-20"><span class="section-number-4">1.1.20</span> remove_files_with_a_dash</h4>
-<div class="outline-text-4" id="text-1-1-20">
-<ul class="org-ul">
-<li>find . -name '<b>-</b>' -delete<br  />
-</li>
-<li>rm ./-*<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-21" class="outline-4">
-<h4 id="sec-1-1-21"><span class="section-number-4">1.1.21</span> remove_files_with_extension</h4>
-<div class="outline-text-4" id="text-1-1-21">
-<ul class="org-ul">
-<li>rm -rf <b>*/</b>.doc<br  />
-</li>
-<li>rm <b>*/</b>.doc<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-22" class="outline-4">
-<h4 id="sec-1-1-22"><span class="section-number-4">1.1.22</span> remove_files_without_extension</h4>
-<div class="outline-text-4" id="text-1-1-22">
-<ul class="org-ul">
-<li>find . ! -name '*.txt' -a ! -name '*.exe' -delete<br  />
-</li>
-<li>find . -type f -regextype posix-extended ! -regex ".*(\.txt|\.exe)$" -exec rm {} +<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-23" class="outline-4">
-<h4 id="sec-1-1-23"><span class="section-number-4">1.1.23</span> replace_text_in_files</h4>
-<div class="outline-text-4" id="text-1-1-23">
-<ul class="org-ul">
-<li>find -name '*.txt' -exec sed -i 's/challenges are difficult//gp' {} +<br  />
-</li>
-<li>sed -i 's/challenges are difficult//g' <b>*/</b>.txt<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-24" class="outline-4">
-<h4 id="sec-1-1-24"><span class="section-number-4">1.1.24</span> sum_all_numbers</h4>
-<div class="outline-text-4" id="text-1-1-24">
-<ul class="org-ul">
-<li>cat sum-me.txt | paste -sd+ | bc<br  />
-</li>
-<li>paste -sd+ sum-me.txt | bc<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-1-25" class="outline-4">
-<h4 id="sec-1-1-25"><span class="section-number-4">1.1.25</span> just_files</h4>
-<div class="outline-text-4" id="text-1-1-25">
-<ul class="org-ul">
-<li>find . -type f | rev | cut -d'/' -f1 | rev # find . -type f | awk -F'/' '{print $NF}'<br  />
-</li>
-<li>find -type f -printf '%f\n'<br  />
-</li>
-</ul>
+<pre class="example">
+tr 'A-Za-z' 'N-ZA-Mn-za-m'
+</pre>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Küçük şeyler :)</h3>
+<div id="outline-container-org897a420" class="outline-3">
+<h3 id="org897a420"><span class="section-number-3">1.2</span> <a href="https://cmdchallenge.com/">CMD CHALLENGE</a></h3>
 <div class="outline-text-3" id="text-1-2">
-</div><div id="outline-container-sec-1-2-1" class="outline-4">
-<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> aranan dosyaların sonuna ekleme</h4>
+</div>
+<div id="outline-container-org729c334" class="outline-4">
+<h4 id="org729c334"><span class="section-number-4">1.2.1</span> hello_world/</h4>
 <div class="outline-text-4" id="text-1-2-1">
-<p>
-<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-10-17 Mon 00:13&gt;</span></span><br  />
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">find ~ -name file_name | xargs sed -i '$a\line2add'
-</pre>
+<ul class="org-ul">
+<li>echo "hello world"<br /></li>
+<li>echo 'hello world'<br /></li>
+</ul>
 </div>
 </div>
-</div>
-<div id="outline-container-sec-1-2-2" class="outline-4">
-<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> ~ altındaki tüm GIT repolarının statüsleri</h4>
+<div id="outline-container-org8b0ddc2" class="outline-4">
+<h4 id="org8b0ddc2"><span class="section-number-4">1.2.2</span> current_working_directory</h4>
 <div class="outline-text-4" id="text-1-2-2">
+<ul class="org-ul">
+<li>pwd<br /></li>
+<li>pwd<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org19b5abe" class="outline-4">
+<h4 id="org19b5abe"><span class="section-number-4">1.2.3</span> list_files</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<ul class="org-ul">
+<li>ls<br /></li>
+<li>ls<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5f5c47e" class="outline-4">
+<h4 id="org5f5c47e"><span class="section-number-4">1.2.4</span> list_files_adv</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<ul class="org-ul">
+<li>ls -aF<br /></li>
+<li>ls -laF -C1<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org638a5e7" class="outline-4">
+<h4 id="org638a5e7"><span class="section-number-4">1.2.5</span> nested_dirs</h4>
+<div class="outline-text-4" id="text-1-2-5">
+<ul class="org-ul">
+<li>find . -name -exec cat {} \;<br /></li>
+<li>cat ./&#x2026;/\ \ /.\ .the\ flag.txt<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4ade296" class="outline-4">
+<h4 id="org4ade296"><span class="section-number-4">1.2.6</span> print_file_contents</h4>
+<div class="outline-text-4" id="text-1-2-6">
+<ul class="org-ul">
+<li>cat access.log<br /></li>
+<li>cat access.log<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbfcf019" class="outline-4">
+<h4 id="orgbfcf019"><span class="section-number-4">1.2.7</span> last_lines</h4>
+<div class="outline-text-4" id="text-1-2-7">
+<ul class="org-ul">
+<li>tail -n 5 access.log<br /></li>
+<li>tail -n 5 access.log<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org866de7f" class="outline-4">
+<h4 id="org866de7f"><span class="section-number-4">1.2.8</span> find_string_in_a_file</h4>
+<div class="outline-text-4" id="text-1-2-8">
+<ul class="org-ul">
+<li>grep GET access.log<br /></li>
+<li>grep 'GET' access.log<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org616e1ae" class="outline-4">
+<h4 id="org616e1ae"><span class="section-number-4">1.2.9</span> find_tabs_in_a_file</h4>
+<div class="outline-text-4" id="text-1-2-9">
+<ul class="org-ul">
+<li>grep -P "\t" file-with-tabs.txt | wc -l<br /></li>
+<li>grep -P '\t' file-with-tabs.txt | wc -l<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfd27794" class="outline-4">
+<h4 id="orgfd27794"><span class="section-number-4">1.2.10</span> seach_for_file_containing_string</h4>
+<div class="outline-text-4" id="text-1-2-10">
+<ul class="org-ul">
+<li>grep 500 * | cut -d':' -f1 | uniq<br /></li>
+<li>grep -l 500<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfca4b3e" class="outline-4">
+<h4 id="orgfca4b3e"><span class="section-number-4">1.2.11</span> search_by_file_extension</h4>
+<div class="outline-text-4" id="text-1-2-11">
+<ul class="org-ul">
+<li>ls access.log*<br /></li>
+<li>find . -name 'access.log*'<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org77ec6d2" class="outline-4">
+<h4 id="org77ec6d2"><span class="section-number-4">1.2.12</span> search_for_string_in_files_recursive</h4>
+<div class="outline-text-4" id="text-1-2-12">
+<ul class="org-ul">
+<li>grep -r "class" | grep me.py | cut -d':' -f2<br /></li>
+<li>grep -h 500 <b>*/access.log</b><br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org54aa38c" class="outline-4">
+<h4 id="org54aa38c"><span class="section-number-4">1.2.13</span> extract_ip_address</h4>
+<div class="outline-text-4" id="text-1-2-13">
+<ul class="org-ul">
+<li>find . -name 'access.log*' -exec cat {} + | cut -d' ' -f1<br /></li>
+<li>grep -Pho '^\d+\.\d+\.\d+\.\d+' <b>*/access.log</b><br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org51ef012" class="outline-4">
+<h4 id="org51ef012"><span class="section-number-4">1.2.14</span> delete_files</h4>
+<div class="outline-text-4" id="text-1-2-14">
+<ul class="org-ul">
+<li>find . -exec rm -rf {} +<br /></li>
+<li>find . -delete<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0596361" class="outline-4">
+<h4 id="org0596361"><span class="section-number-4">1.2.15</span> count_files</h4>
+<div class="outline-text-4" id="text-1-2-15">
+<ul class="org-ul">
+<li>ls | wc -l<br /></li>
+<li>ls | wc -l<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgddbcf05" class="outline-4">
+<h4 id="orgddbcf05"><span class="section-number-4">1.2.16</span> simple_sort</h4>
+<div class="outline-text-4" id="text-1-2-16">
+<ul class="org-ul">
+<li>cat access.log | sort<br /></li>
+<li>sort access.log<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7601b90" class="outline-4">
+<h4 id="org7601b90"><span class="section-number-4">1.2.17</span> count_string_in_line</h4>
+<div class="outline-text-4" id="text-1-2-17">
+<ul class="org-ul">
+<li>grep "GET" access.log | wc -l<br /></li>
+<li>grep -c "GET" access.log<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgddf1cbc" class="outline-4">
+<h4 id="orgddf1cbc"><span class="section-number-4">1.2.18</span> split_on_a_char</h4>
+<div class="outline-text-4" id="text-1-2-18">
+<ul class="org-ul">
+<li>awk '{ split($0,a,";"); } END {for(k in a) {print k}}' split-me.txt | sort -n<br /></li>
+<li>tr ';' '\n' &lt; split-me.txt<br />
+<a href="http://www.thegeekstuff.com/2012/12/linux-tr-command">tr command</a><br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge997abf" class="outline-4">
+<h4 id="orge997abf"><span class="section-number-4">1.2.19</span> print_number_sequence</h4>
+<div class="outline-text-4" id="text-1-2-19">
+<ul class="org-ul">
+<li>seq 1 100 | tr '\n' ' '<br /></li>
+<li>echo $(seq 1 100)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8861aef" class="outline-4">
+<h4 id="org8861aef"><span class="section-number-4">1.2.20</span> remove_files_with_a_dash</h4>
+<div class="outline-text-4" id="text-1-2-20">
+<ul class="org-ul">
+<li>find . -name '<b>-</b>' -delete<br /></li>
+<li>rm ./-*<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org255e9d3" class="outline-4">
+<h4 id="org255e9d3"><span class="section-number-4">1.2.21</span> remove_files_with_extension</h4>
+<div class="outline-text-4" id="text-1-2-21">
+<ul class="org-ul">
+<li>rm -rf <b>*/</b>.doc<br /></li>
+<li>rm <b>*/</b>.doc<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org46e7857" class="outline-4">
+<h4 id="org46e7857"><span class="section-number-4">1.2.22</span> remove_files_without_extension</h4>
+<div class="outline-text-4" id="text-1-2-22">
+<ul class="org-ul">
+<li>find . ! -name '<b>.txt' -a ! -name '</b>.exe' -delete<br /></li>
+<li>find . -type f -regextype posix-extended ! -regex ".*(\.txt|\.exe)$" -exec rm {} +<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4d5c0f3" class="outline-4">
+<h4 id="org4d5c0f3"><span class="section-number-4">1.2.23</span> replace_text_in_files</h4>
+<div class="outline-text-4" id="text-1-2-23">
+<ul class="org-ul">
+<li>find -name '*.txt' -exec sed -i 's/challenges are difficult//gp' {} +<br /></li>
+<li>sed -i 's/challenges are difficult//g' <b>*/</b>.txt<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org41ae648" class="outline-4">
+<h4 id="org41ae648"><span class="section-number-4">1.2.24</span> sum_all_numbers</h4>
+<div class="outline-text-4" id="text-1-2-24">
+<ul class="org-ul">
+<li>cat sum-me.txt | paste -sd+ | bc<br /></li>
+<li>paste -sd+ sum-me.txt | bc<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org07a21de" class="outline-4">
+<h4 id="org07a21de"><span class="section-number-4">1.2.25</span> just_files</h4>
+<div class="outline-text-4" id="text-1-2-25">
+<ul class="org-ul">
+<li>find . -type f | rev | cut -d'<i>' -f1 | rev # find . -type f | awk -F'</i>' '{print $NF}'<br /></li>
+<li>find -type f -printf '%f\n'<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org744868f" class="outline-3">
+<h3 id="org744868f"><span class="section-number-3">1.3</span> Küçük şeyler :)</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-orgc7ce1ce" class="outline-4">
+<h4 id="orgc7ce1ce"><span class="section-number-4">1.3.1</span> aranan dosyaların sonuna ekleme</h4>
+<div class="outline-text-4" id="text-1-3-1">
 <p>
-<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-10-17 Mon 00:13&gt;</span></span><br  />
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-10-17 Mon 00:13&gt;</span></span><br />
 </p>
 <div class="org-src-container">
-
-<pre class="src src-sh">awk '{\
-     print "-------------------------\n\033[1;32mGit Repo:\033[0m " $1;\
-     system("git --git-dir="$1".git --work-tree="$1" status")\
-     }'
+<pre class="src src-sh">find ~ -name file_name | xargs sed -i <span style="color: #ffa07a;">'$a\line2add'</span>
 </pre>
 </div>
 </div>
 </div>
-</div>
-<div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Komut: patch İncelenenecek</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-org36db622" class="outline-4">
+<h4 id="org36db622"><span class="section-number-4">1.3.2</span> ~ altındaki tüm GIT repolarının statüsleri</h4>
+<div class="outline-text-4" id="text-1-3-2">
 <p>
-<span class="timestamp-wrapper"><span class="timestamp">&lt;2015-11-27 Cum 11:27&gt;</span></span><br  />
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-10-17 Mon 00:13&gt;</span></span><br />
 </p>
+<pre class="example">
+/bin/bash find /home/ -name ".git" 2&gt; /dev/null | sed 's/\/.git/\//g' | \
+    awk '{\
+	 print "-------------------------\n\033[1;32mGit Repo:\033[0m " $1;\
+	 system("git --git-dir="$1".git --work-tree="$1" status")\
+	 }'
+</pre>
 </div>
 </div>
-<div id="outline-container-sec-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Komut: cp cp -R ~/files ~/files-backup # tüm dizin alt yapısını ve içeriğini kopyala cp -s ~/myfiles/file*.txt ~/myfiles2 # tüm file*.txt dosyalarının sembolik bağlantılarını ~/myfiles2 dizini altına oluşturur. Sembolik bağlantılar,</h3>
+</div>
+<div id="outline-container-org161eba0" class="outline-3">
+<h3 id="org161eba0"><span class="section-number-3">1.4</span> Komut: patch İncelenenecek</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
-Windowstaki kısayollar gibidir cp -R -s ~/myfiles ~/myfiles2 # tüm dizinleri oluşturur ve içindeki tüm dosyaların sembolik bağlantılarını oluşturur cp -u * bak # Dizindeki dosyaları eğer kaynak daha yeni ise günceller cp -v *.txt dir # kopyalama işleminin durumunu gösterir cp -p file.txt file.txt.bak # sahiplik ve izin bilgileri ile kopyalar<br  />
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2015-11-27 Fri 11:27&gt;</span></span><br />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Komut: &gt; ve 2&gt;</h3>
+<div id="outline-container-orgdd64dc6" class="outline-3">
+<h3 id="orgdd64dc6"><span class="section-number-3">1.5</span> Komut: cp cp -R ~/files ~/files-backup # tüm dizin alt yapısını ve içeriğini kopyala cp -s ~/myfiles/file*.txt ~/myfiles2 # tüm file*.txt dosyalarının sembolik bağlantılarını ~/myfiles2 dizini altına oluşturur. Sembolik bağlantılar,</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
-&gt;  # stdout<br  />
-</p>
-
-<p>
-2&gt; # stderr<br  />
+Windowstaki kısayollar gibidir cp -R -s ~/myfiles ~/myfiles2 # tüm dizinleri oluşturur ve içindeki tüm dosyaların sembolik bağlantılarını oluşturur cp -u * bak # Dizindeki dosyaları eğer kaynak daha yeni ise günceller cp -v *.txt dir # kopyalama işleminin durumunu gösterir cp -p file.txt file.txt.bak # sahiplik ve izin bilgileri ile kopyalar<br />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-1-6" class="outline-3">
-<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Komut: alias</h3>
+<div id="outline-container-org203b542" class="outline-3">
+<h3 id="org203b542"><span class="section-number-3">1.6</span> Komut: &gt; ve 2&gt;</h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
-#Kullanışlı kısa Ubuntu aliasları alias e='exit'<br  />
+&gt;  # stdout<br />
 </p>
 
 <p>
-alias c='clear'<br  />
-</p>
-
-<p>
-alias 1.='cd ..'<br  />
-</p>
-
-<p>
-alias 2.='1.; 1.'<br  />
-</p>
-
-<p>
-alias 3.='1.;2.'<br  />
-</p>
-
-<p>
-alias ag='sudo apt-get'<br  />
-</p>
-
-<p>
-alias agi='ag install'<br  />
-</p>
-
-<p>
-alias agu='ag update'<br  />
-</p>
-
-<p>
-alias agr='ag remove -purge'<br  />
+2&gt; # stderr<br />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-1-7" class="outline-3">
-<h3 id="sec-1-7"><span class="section-number-3">1.7</span> Komut: cd cd -  #bir önceki çalışılan dizine geri döner cd ~  #kullanici adi  adının ev dizinine gider</h3>
+<div id="outline-container-org1a0b64b" class="outline-3">
+<h3 id="org1a0b64b"><span class="section-number-3">1.7</span> Komut: alias</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+#Kullanışlı kısa Ubuntu aliasları alias e='exit'<br />
+</p>
+
+<p>
+alias c='clear'<br />
+</p>
+
+<p>
+alias 1.='cd ..'<br />
+</p>
+
+<p>
+alias 2.='1.; 1.'<br />
+</p>
+
+<p>
+alias 3.='1.;2.'<br />
+</p>
+
+<p>
+alias ag='sudo apt-get'<br />
+</p>
+
+<p>
+alias agi='ag install'<br />
+</p>
+
+<p>
+alias agu='ag update'<br />
+</p>
+
+<p>
+alias agr='ag remove -purge'<br />
+</p>
 </div>
-<div id="outline-container-sec-1-8" class="outline-3">
-<h3 id="sec-1-8"><span class="section-number-3">1.8</span> Komut: ls ls ~ /usr #birden fazla dizinin içi listelenebilir</h3>
-<div class="outline-text-3" id="text-1-8">
+</div>
+<div id="outline-container-orgcd9fc70" class="outline-3">
+<h3 id="orgcd9fc70"><span class="section-number-3">1.8</span> Komut: cd cd -  #bir önceki çalışılan dizine geri döner cd ~  #kullanici adi  adının ev dizinine gider</h3>
+</div>
+<div id="outline-container-org83479bc" class="outline-3">
+<h3 id="org83479bc"><span class="section-number-3">1.9</span> Komut: ls ls ~ /usr #birden fazla dizinin içi listelenebilir</h3>
+<div class="outline-text-3" id="text-1-9">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <tbody>
 <tr>
-<td class="left">-a</td>
-<td class="left">&#x2013;all</td>
-<td class="left">tümünü listele</td>
+<td class="org-left">-a</td>
+<td class="org-left">&#x2013;all</td>
+<td class="org-left">tümünü listele</td>
 </tr>
 
 <tr>
-<td class="left">-r</td>
-<td class="left">-reverse</td>
-<td class="left">sıralamayı ters yap</td>
+<td class="org-left">-r</td>
+<td class="org-left">-reverse</td>
+<td class="org-left">sıralamayı ters yap</td>
 </tr>
 
 <tr>
-<td class="left">-d</td>
-<td class="left">-directory</td>
-<td class="left">dizinin kendisini işaret eder</td>
+<td class="org-left">-d</td>
+<td class="org-left">-directory</td>
+<td class="org-left">dizinin kendisini işaret eder</td>
 </tr>
 
 <tr>
-<td class="left">-F</td>
-<td class="left">-classify</td>
-<td class="left">dizinlerin başına slash işareti koyar</td>
+<td class="org-left">-F</td>
+<td class="org-left">-classify</td>
+<td class="org-left">dizinlerin başına slash işareti koyar</td>
 </tr>
 
 <tr>
-<td class="left">-h</td>
-<td class="left">-human-readable</td>
-<td class="left">&#xa0;</td>
+<td class="org-left">-h</td>
+<td class="org-left">-human-readable</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left">-t</td>
-<td class="left">&#xa0;</td>
-<td class="left">zamana göre sıralar</td>
+<td class="org-left">-t</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">zamana göre sıralar</td>
 </tr>
 
 <tr>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 
-<div id="outline-container-sec-1-9" class="outline-3">
-<h3 id="sec-1-9"><span class="section-number-3">1.9</span> Komut: chmod chmod g+s directory #alt dizinlerinin grubunu sabitleme</h3>
+<div id="outline-container-orga891d34" class="outline-3">
+<h3 id="orga891d34"><span class="section-number-3">1.10</span> Komut: chmod chmod g+s directory #alt dizinlerinin grubunu sabitleme</h3>
 </div>
-<div id="outline-container-sec-1-10" class="outline-3">
-<h3 id="sec-1-10"><span class="section-number-3">1.10</span> ızin ve sahiplik bilgilerini koruyarak dosya transferi</h3>
-<div class="outline-text-3" id="text-1-10">
+<div id="outline-container-orge5944c4" class="outline-3">
+<h3 id="orge5944c4"><span class="section-number-3">1.11</span> ızin ve sahiplik bilgilerini koruyarak dosya transferi</h3>
+<div class="outline-text-3" id="text-1-11">
 <ol class="org-ol">
-<li>tar czf - | ssh user@host "cd; tar xzf -"<br  />
-</li>
-<li>scp -rp sourcedir user@dest:/dir<br  />
-</li>
+<li>tar czf - | ssh user@host "cd; tar xzf -"<br /></li>
+<li>scp -rp sourcedir user@dest:/dir<br /></li>
 </ol>
 </div>
 </div>
-<div id="outline-container-sec-1-11" class="outline-3">
-<h3 id="sec-1-11"><span class="section-number-3">1.11</span> Veri içindeki eşsiz satırları ve sayılarını bulmak sort data | uniq -u #Eşsiz satırlar sort data | uniq -c #Satırların tekrar sayıları</h3>
+<div id="outline-container-org81d9855" class="outline-3">
+<h3 id="org81d9855"><span class="section-number-3">1.12</span> Veri içindeki eşsiz satırları ve sayılarını bulmak sort data | uniq -u #Eşsiz satırlar sort data | uniq -c #Satırların tekrar sayıları</h3>
 </div>
 </div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Bağlantılar</h2>
+<div id="outline-container-org1fb384b" class="outline-2">
+<h2 id="org1fb384b"><span class="section-number-2">2</span> Bağlantılar</h2>
 <div class="outline-text-2" id="text-2">
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <center>
 <p>
-<a href="blog.html">Blog</a> <a href="bash.html">Bash</a> <a href="baslangiclar.html">Başlangıç</a> <a href="muzik.html">Müzik</a> <a href="okunacaklar.html">Okunacaklar</a> <a href="notlar.html">Notlar</a> <a href="projeler.html">Projeler</a> <a href="sozler.html">Sözler</a> <a href="tatil_rotalari.html">Tatil Rotaları</a> <a href="emacs.html">Emacs</a> <a href="index.html">Ana Sayfa</a><br  />
+<a href="blog.html">Blog</a> <a href="bash.html">Bash</a> <a href="baslangiclar.html">Başlangıç</a> <a href="muzik.html">Müzik</a> <a href="okunacaklar.html">Okunacaklar</a> <a href="notlar.html">Notlar</a> <a href="projeler.html">Projeler</a> <a href="sozler.html">Sözler</a> <a href="tatil_rotalari.html">Tatil Rotaları</a> <a href="emacs.html">Emacs</a> <a href="index.html">Ana Sayfa</a><br />
 </p>
 <a href="https://umtmu.wordpress.com/"><img src="img/wp.png" width="2%" height="2%"></a>&nbsp&nbsp
 <a href="#"><img src="img/yukari.png" width="2%" height="2%"></a>&nbsp&nbsp
@@ -695,8 +730,7 @@ alias agr='ag remove -purge'<br  />
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: umt</p>
-<p class="date">Created: 2018-02-09 Fri 17:59</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="date">Created: 2018-04-06 Fri 16:16</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
