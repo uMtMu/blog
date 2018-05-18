@@ -1,5 +1,16 @@
 #+INCLUDE: "baslik.org"
 * Yaptıklarım
+** SalixOS-1
+*** Bağımlılık işleyen paket yöneticisi (GUI)
+    sudo gslapt
+*** SlackBuilds arayüzü (GUI)
+    sudo sourcery
+*** Multimedia codec yükleme
+    Menü -> multimedia -> install multimedia codecs
+*** Dotnew yapılandırma yöneticisi
+    Yeni yapılandırma dosyalarını görme işleme için uygulama
+*** sudo keyboardsetup
+*** sudo servicesetup
 ** Vim yükleme
    #+BEGIN_EXAMPLE
    slackpkg install vim-7.4.1938-x86_64-1
