@@ -1,6 +1,10 @@
 #+INCLUDE: "baslik.org"
 #+INCLUDE: "paginate.org"
 * Yazılar
+** İnsanların çok konuşması üzerine
+   <2018-05-21 Mon>
+
+   Susun amk!!
 ** Hayat her şeye rağmen hala güzel.
    <2013-03-19 Tue>
    Hayat her şeye rağmen hala güzel.
