@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-18 Fri 15:49 -->
+<!-- 2018-05-31 Thu 08:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>uMtMu</title>
@@ -243,71 +243,80 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgaa963bc">1. Yaptıklarım</a>
+<li><a href="#org137211c">1. Yaptıklarım</a>
 <ul>
-<li><a href="#orga7a6c10">1.1. SalixOS-1</a></li>
-<li><a href="#orgb73360b">1.2. Vim yükleme</a></li>
-<li><a href="#orgda7d7c1">1.3. Slackpkg komutlar</a></li>
-<li><a href="#org352064f">1.4. Kullanıcı oluşturma</a></li>
-<li><a href="#org0edfc23">1.5. DNS ayarlaması</a></li>
-<li><a href="#org07a3e15">1.6. Ağ yöneticisini elle başlatma</a></li>
-<li><a href="#org6754fb5">1.7. Ağ yöneticisini otomatik olarak başlatma</a></li>
+<li><a href="#orgef9b9f4">1.1. Bağımlılık kontrolü için kullanılabilir</a></li>
+<li><a href="#orga9056ae">1.2. SalixOS-1</a></li>
+<li><a href="#org7c2cc1c">1.3. Vim yükleme</a></li>
+<li><a href="#orgba72b9f">1.4. Slackpkg komutlar</a></li>
+<li><a href="#org7e0df4f">1.5. Kullanıcı oluşturma</a></li>
+<li><a href="#orgeb13076">1.6. DNS ayarlaması</a></li>
+<li><a href="#orga46e9ea">1.7. Ağ yöneticisini elle başlatma</a></li>
+<li><a href="#org42de258">1.8. Ağ yöneticisini otomatik olarak başlatma</a></li>
 </ul>
 </li>
-<li><a href="#org9263a44">2. Bağlantılar</a></li>
+<li><a href="#org6b62130">2. Bağlantılar</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgaa963bc" class="outline-2">
-<h2 id="orgaa963bc"><span class="section-number-2">1</span> Yaptıklarım</h2>
+<div id="outline-container-org137211c" class="outline-2">
+<h2 id="org137211c"><span class="section-number-2">1</span> Yaptıklarım</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orga7a6c10" class="outline-3">
-<h3 id="orga7a6c10"><span class="section-number-3">1.1</span> SalixOS-1</h3>
+<div id="outline-container-orgef9b9f4" class="outline-3">
+<h3 id="orgef9b9f4"><span class="section-number-3">1.1</span> Bağımlılık kontrolü için kullanılabilir</h3>
 <div class="outline-text-3" id="text-1-1">
+<pre class="example">
+curl -s ftp://ftp.linux.org.tr/slackware/slackware64-14.2/PACKAGES.TXT | grep -n libgpg-error
+</pre>
 </div>
-<div id="outline-container-org415a149" class="outline-4">
-<h4 id="org415a149"><span class="section-number-4">1.1.1</span> Bağımlılık işleyen paket yöneticisi (GUI)</h4>
-<div class="outline-text-4" id="text-1-1-1">
+</div>
+<div id="outline-container-orga9056ae" class="outline-3">
+<h3 id="orga9056ae"><span class="section-number-3">1.2</span> SalixOS-1</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org6bddd43" class="outline-4">
+<h4 id="org6bddd43"><span class="section-number-4">1.2.1</span> Bağımlılık işleyen paket yöneticisi (GUI)</h4>
+<div class="outline-text-4" id="text-1-2-1">
 <p>
 sudo gslapt<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org2e38bba" class="outline-4">
-<h4 id="org2e38bba"><span class="section-number-4">1.1.2</span> SlackBuilds arayüzü (GUI)</h4>
-<div class="outline-text-4" id="text-1-1-2">
+<div id="outline-container-orge8665ee" class="outline-4">
+<h4 id="orge8665ee"><span class="section-number-4">1.2.2</span> SlackBuilds arayüzü (GUI)</h4>
+<div class="outline-text-4" id="text-1-2-2">
 <p>
 sudo sourcery<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org79e917a" class="outline-4">
-<h4 id="org79e917a"><span class="section-number-4">1.1.3</span> Multimedia codec yükleme</h4>
-<div class="outline-text-4" id="text-1-1-3">
+<div id="outline-container-orge4ee635" class="outline-4">
+<h4 id="orge4ee635"><span class="section-number-4">1.2.3</span> Multimedia codec yükleme</h4>
+<div class="outline-text-4" id="text-1-2-3">
 <p>
 Menü -&gt; multimedia -&gt; install multimedia codecs<br />
 </p>
 </div>
 </div>
-<div id="outline-container-orgc5f9fa0" class="outline-4">
-<h4 id="orgc5f9fa0"><span class="section-number-4">1.1.4</span> Dotnew yapılandırma yöneticisi</h4>
-<div class="outline-text-4" id="text-1-1-4">
+<div id="outline-container-orgebf3b67" class="outline-4">
+<h4 id="orgebf3b67"><span class="section-number-4">1.2.4</span> Dotnew yapılandırma yöneticisi</h4>
+<div class="outline-text-4" id="text-1-2-4">
 <p>
 Yeni yapılandırma dosyalarını görme işleme için uygulama<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org055e377" class="outline-4">
-<h4 id="org055e377"><span class="section-number-4">1.1.5</span> sudo keyboardsetup</h4>
+<div id="outline-container-orgb94d494" class="outline-4">
+<h4 id="orgb94d494"><span class="section-number-4">1.2.5</span> sudo keyboardsetup</h4>
 </div>
-<div id="outline-container-orgf35d48e" class="outline-4">
-<h4 id="orgf35d48e"><span class="section-number-4">1.1.6</span> sudo servicesetup</h4>
+<div id="outline-container-org6bc19d7" class="outline-4">
+<h4 id="org6bc19d7"><span class="section-number-4">1.2.6</span> sudo servicesetup</h4>
 </div>
 </div>
-<div id="outline-container-orgb73360b" class="outline-3">
-<h3 id="orgb73360b"><span class="section-number-3">1.2</span> Vim yükleme</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-org7c2cc1c" class="outline-3">
+<h3 id="org7c2cc1c"><span class="section-number-3">1.3</span> Vim yükleme</h3>
+<div class="outline-text-3" id="text-1-3">
 <pre class="example">
 slackpkg install vim-7.4.1938-x86_64-1
 slackpkg install perl
@@ -315,9 +324,9 @@ slackpkg install python-2.7.14-x86_64-1_slack14.2
 </pre>
 </div>
 </div>
-<div id="outline-container-orgda7d7c1" class="outline-3">
-<h3 id="orgda7d7c1"><span class="section-number-3">1.3</span> Slackpkg komutlar</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-orgba72b9f" class="outline-3">
+<h3 id="orgba72b9f"><span class="section-number-3">1.4</span> Slackpkg komutlar</h3>
+<div class="outline-text-3" id="text-1-4">
 <p>
 paket listesinin güncellenmesi<br />
 </p>
@@ -373,41 +382,41 @@ slackpkg clean-system
 </div>
 </div>
 
-<div id="outline-container-org352064f" class="outline-3">
-<h3 id="org352064f"><span class="section-number-3">1.4</span> Kullanıcı oluşturma</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-org7e0df4f" class="outline-3">
+<h3 id="org7e0df4f"><span class="section-number-3">1.5</span> Kullanıcı oluşturma</h3>
+<div class="outline-text-3" id="text-1-5">
 <pre class="example">
 useradd -m -g users -G wheel,floppy,audio,video,cdrom,plugdev,power,netdev,lp,scanner -s /bin/bash slacker
 </pre>
 </div>
 </div>
-<div id="outline-container-org0edfc23" class="outline-3">
-<h3 id="org0edfc23"><span class="section-number-3">1.5</span> DNS ayarlaması</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-orgeb13076" class="outline-3">
+<h3 id="orgeb13076"><span class="section-number-3">1.6</span> DNS ayarlaması</h3>
+<div class="outline-text-3" id="text-1-6">
 <pre class="example">
 echo "nameserver 8.8.8.8" &gt;&gt; /etc/resolv.conf
 </pre>
 </div>
 </div>
-<div id="outline-container-org07a3e15" class="outline-3">
-<h3 id="org07a3e15"><span class="section-number-3">1.6</span> Ağ yöneticisini elle başlatma</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-orga46e9ea" class="outline-3">
+<h3 id="orga46e9ea"><span class="section-number-3">1.7</span> Ağ yöneticisini elle başlatma</h3>
+<div class="outline-text-3" id="text-1-7">
 <pre class="example">
 /etc/rc.d/rc.networkmanager start
 </pre>
 </div>
 </div>
-<div id="outline-container-org6754fb5" class="outline-3">
-<h3 id="org6754fb5"><span class="section-number-3">1.7</span> Ağ yöneticisini otomatik olarak başlatma</h3>
-<div class="outline-text-3" id="text-1-7">
+<div id="outline-container-org42de258" class="outline-3">
+<h3 id="org42de258"><span class="section-number-3">1.8</span> Ağ yöneticisini otomatik olarak başlatma</h3>
+<div class="outline-text-3" id="text-1-8">
 <pre class="example">
 chmod +x /etc/rc.d/rc.networkmanager
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org9263a44" class="outline-2">
-<h2 id="org9263a44"><span class="section-number-2">2</span> Bağlantılar</h2>
+<div id="outline-container-org6b62130" class="outline-2">
+<h2 id="org6b62130"><span class="section-number-2">2</span> Bağlantılar</h2>
 <div class="outline-text-2" id="text-2">
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <center>
@@ -423,7 +432,7 @@ chmod +x /etc/rc.d/rc.networkmanager
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: umt</p>
-<p class="date">Created: 2018-05-18 Fri 15:49</p>
+<p class="date">Created: 2018-05-31 Thu 08:50</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

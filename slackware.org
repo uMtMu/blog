@@ -1,5 +1,9 @@
 #+INCLUDE: "baslik.org"
 * Yaptıklarım
+** Bağımlılık kontrolü için kullanılabilir
+   #+BEGIN_EXAMPLE
+   curl -s ftp://ftp.linux.org.tr/slackware/slackware64-14.2/PACKAGES.TXT | grep -n libgpg-error
+   #+END_EXAMPLE
 ** SalixOS-1
 *** Bağımlılık işleyen paket yöneticisi (GUI)
     sudo gslapt
