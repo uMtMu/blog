@@ -3,23 +3,30 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
+<!-- 2018-06-05 Tue 14:11 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>uMtMu</title>
-<!-- 2018-01-23 Tue 14:04 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="umt" />
+<meta name="generator" content="Org mode" />
+<meta name="author" content="umt" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -46,27 +53,111 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -86,6 +177,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <script type="text/javascript">
@@ -93,7 +185,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -140,10 +232,10 @@ for the JavaScript code in this tag.
 <h1 class="title">uMtMu</h1>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<div class="center">
+<div class="org-center">
 
 <div class="figure">
-<p><img src="img/ja2.png" alt="ja2.png" /><br  />
+<p><img src="img/ja2.png" alt="ja2.png" /><br />
 </p>
 </div>
 </div>
@@ -151,627 +243,599 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. Notlarım</a>
+<li><a href="#org30fbaac">1. What is class and metaclass?</a></li>
+<li><a href="#org649709f">2. Notlarım</a>
 <ul>
-<li><a href="#sec-1-1">1.1. 7 simple tricks to write better Python</a></li>
-<li><a href="#sec-1-2">1.2. Python OOP</a></li>
-<li><a href="#sec-1-3">1.3. Property Decorators</a></li>
-<li><a href="#sec-1-4">1.4. Special (Magic/Dunder) Methods</a></li>
-<li><a href="#sec-1-5">1.5. try/except</a></li>
-<li><a href="#sec-1-6">1.6. namedtuple</a></li>
-<li><a href="#sec-1-7">1.7. EAFP</a></li>
-<li><a href="#sec-1-8">1.8. Context Managers</a></li>
-<li><a href="#sec-1-9">1.9. ChainMap</a></li>
-<li><a href="#sec-1-10">1.10. Python Closure</a></li>
+<li><a href="#orgeb1308c">2.1. 7 simple tricks to write better Python</a></li>
+<li><a href="#orgd757f56">2.2. Python OOP</a></li>
+<li><a href="#orgfef8212">2.3. Property Decorators</a></li>
+<li><a href="#orgf2bd00d">2.4. Special (Magic/Dunder) Methods</a></li>
+<li><a href="#org5b54a3b">2.5. try/except</a></li>
+<li><a href="#org3f7220f">2.6. namedtuple</a></li>
+<li><a href="#orgb602500">2.7. EAFP</a></li>
+<li><a href="#orga50ca75">2.8. Context Managers</a></li>
+<li><a href="#orgbb1a9c7">2.9. ChainMap</a></li>
+<li><a href="#orgacea107">2.10. Python Closure</a></li>
 </ul>
 </li>
-<li><a href="#sec-2">2. Best Practice</a>
+<li><a href="#org18eac26">3. Best Practice</a>
 <ul>
-<li><a href="#sec-2-1">2.1. Kaynak</a></li>
-<li><a href="#sec-2-2">2.2. Values</a></li>
-<li><a href="#sec-2-3">2.3. General Development Guide</a></li>
-<li><a href="#sec-2-4">2.4. Naming</a></li>
-<li><a href="#sec-2-5">2.5. Documentation</a></li>
+<li><a href="#org8fe398a">3.1. Kaynak</a></li>
+<li><a href="#org8561773">3.2. Values</a></li>
+<li><a href="#org3dce443">3.3. General Development Guide</a></li>
+<li><a href="#orge1309ce">3.4. Naming</a></li>
+<li><a href="#org514f716">3.5. Documentation</a></li>
 </ul>
 </li>
-<li><a href="#sec-3">3. VirtualEnv</a></li>
-<li><a href="#sec-4">4. Yüklenebilir Python paketleri,  Egg dosyaları</a></li>
-<li><a href="#sec-5">5. Blog </a></li>
-<li><a href="#sec-6">6. Bağlantılar</a></li>
+<li><a href="#org6739793">4. VirtualEnv</a></li>
+<li><a href="#org5f52231">5. Yüklenebilir Python paketleri,  Egg dosyaları</a></li>
+<li><a href="#orgea91d46">6. Blog https://pythondefterim.wordpress.com/</a></li>
+<li><a href="#org70f6d6e">7. Bağlantılar</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Notlarım</h2>
+<div id="outline-container-org30fbaac" class="outline-2">
+<h2 id="org30fbaac"><span class="section-number-2">1</span> What is class and metaclass?</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 7 simple tricks to write better Python</h3>
-<div class="outline-text-3" id="text-1-1">
+<p>
+<a href="https://stackoverflow.com/questions/100003/what-are-metaclasses-in-python">https://stackoverflow.com/questions/100003/what-are-metaclasses-in-python</a><br />
+</p>
+</div>
+</div>
+<div id="outline-container-org649709f" class="outline-2">
+<h2 id="org649709f"><span class="section-number-2">2</span> Notlarım</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgeb1308c" class="outline-3">
+<h3 id="orgeb1308c"><span class="section-number-3">2.1</span> 7 simple tricks to write better Python</h3>
+<div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
-<li>dict.get(key, if_not_exists)<br  />
-</li>
-<li>for else -&gt; bitirdiysen çalıştır<br  />
-</li>
-<li>with -&gt; context managers<br  />
-</li>
-<li>try:<br  />
-except:<br  />
-else:<br  />
-</li>
+<li>dict.get(key, if_not_exists)<br /></li>
+<li>for else -&gt; bitirdiysen çalıştır<br /></li>
+<li>with -&gt; context managers<br /></li>
+<li>try:<br />
+except:<br />
+else:<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Python OOP</h3>
-<div class="outline-text-3" id="text-1-2">
-</div><div id="outline-container-sec-1-2-1" class="outline-4">
-<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> </h4>
-<div class="outline-text-4" id="text-1-2-1">
+<div id="outline-container-orgd757f56" class="outline-3">
+<h3 id="orgd757f56"><span class="section-number-3">2.2</span> Python OOP</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-orgf54f02d" class="outline-4">
+<h4 id="orgf54f02d"><span class="section-number-4">2.2.1</span> </h4>
+<div class="outline-text-4" id="text-2-2-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <tbody>
 <tr>
-<td class="left">class</td>
-<td class="left">&#xa0;</td>
-<td class="left">instance</td>
+<td class="org-left">class</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">instance</td>
 </tr>
 
 <tr>
-<td class="left">varible</td>
-<td class="left">X</td>
-<td class="left">variable</td>
+<td class="org-left">varible</td>
+<td class="org-left">X</td>
+<td class="org-left">variable</td>
 </tr>
 
 <tr>
-<td class="left">selfsiz</td>
-<td class="left">&#xa0;</td>
-<td class="left">selfli</td>
+<td class="org-left">selfsiz</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">selfli</td>
 </tr>
 
 <tr>
-<td class="left">class.__dict__</td>
-<td class="left">&#xa0;</td>
-<td class="left">instance.__dict__</td>
+<td class="org-left">class.__dict__</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">instance.__dict__</td>
 </tr>
 
 <tr>
-<td class="left">classname.var</td>
-<td class="left">&#xa0;</td>
-<td class="left">self.var</td>
+<td class="org-left">classname.var</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">self.var</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div id="outline-container-sec-1-2-2" class="outline-4">
-<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> </h4>
-<div class="outline-text-4" id="text-1-2-2">
+<div id="outline-container-org9049633" class="outline-4">
+<h4 id="org9049633"><span class="section-number-4">2.2.2</span> </h4>
+<div class="outline-text-4" id="text-2-2-2">
 <p>
-isinstance(x, y)<br  />
-issubclass(x, y)<br  />
+isinstance(x, y)<br />
+issubclass(x, y)<br />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-1-2-3" class="outline-4">
-<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> @classmethod instance metodlarında otomatik olarak ilk parametre instance olur. Bu decorator ile class gelir. def set_raise_amt(cls, amount):</h4>
-<div class="outline-text-4" id="text-1-2-3">
+<div id="outline-container-org941f37d" class="outline-4">
+<h4 id="org941f37d"><span class="section-number-4">2.2.3</span> @classmethod instance metodlarında otomatik olarak ilk parametre instance olur. Bu decorator ile class gelir. def set_raise_amt(cls, amount):</h4>
+<div class="outline-text-4" id="text-2-2-3">
 <p>
-cls.raise_amt = amount<br  />
+cls.raise_amt = amount<br />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-1-2-4" class="outline-4">
-<h4 id="sec-1-2-4"><span class="section-number-4">1.2.4</span> @staticmethod</h4>
-<div class="outline-text-4" id="text-1-2-4">
+<div id="outline-container-orgf0cbd6b" class="outline-4">
+<h4 id="orgf0cbd6b"><span class="section-number-4">2.2.4</span> @staticmethod</h4>
+<div class="outline-text-4" id="text-2-2-4">
 <p>
-Sınıfla ilgili ancak instance  ya da class referansına ihtiyaç duymayan metodlar.<br  />
+Sınıfla ilgili ancak instance  ya da class referansına ihtiyaç duymayan metodlar.<br />
 </p>
 
 <p>
-<b>(ÖRNEK)</b><br  />
+<b>(ÖRNEK)</b><br />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Property Decorators</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-orgfef8212" class="outline-3">
+<h3 id="orgfef8212"><span class="section-number-3">2.3</span> Property Decorators</h3>
+<div class="outline-text-3" id="text-2-3">
 <div class="org-src-container">
+<pre class="src src-python"><span style="color: #20b2aa; font-weight: bold;">def</span> <span style="color: #00ff7f;">decorator_function</span>(orginal_function):
+    <span style="color: #20b2aa; font-weight: bold;">def</span> <span style="color: #00ff7f;">wrapper_function</span>():
+        <span style="color: #20b2aa; font-weight: bold;">print</span>(<span style="color: #ffa07a;">'Wrapper executed this before {}'</span>.<span style="color: #76ee00;">format</span>(original_function.<span style="color: #76ee00;">__name__</span>))
+        <span style="color: #20b2aa; font-weight: bold;">return</span> orginal_function()
+    <span style="color: #20b2aa; font-weight: bold;">return</span> wrapper_function
 
-<pre class="src src-python">def decorator_function(orginal_function):
-    def wrapper_function():
-	print('Wrapper executed this before {}'.format(original_function.__name__))
-	return orginal_function()
-    return wrapper_function
-
-@decorator_function
-def display():
-    print('display function ran')
+<span style="color: #9370db;">@decorator_function</span>
+<span style="color: #20b2aa; font-weight: bold;">def</span> <span style="color: #00ff7f;">display</span>():
+    <span style="color: #20b2aa; font-weight: bold;">print</span>(<span style="color: #ffa07a;">'display function ran'</span>)
 </pre>
 </div>
 <p>
-Yukarıdaki decorator tanımlaması aşağıdaki gibi generik hale getirilebilir.<br  />
-Aşağıda anlamadığım bir nokta var.<br  />
+Yukarıdaki decorator tanımlaması aşağıdaki gibi generik hale getirilebilir.<br />
+Aşağıda anlamadığım bir nokta var.<br />
 </p>
 <div class="org-src-container">
+<pre class="src src-python"><span style="color: #20b2aa; font-weight: bold;">def</span> <span style="color: #00ff7f;">decorator_function</span>(orginal_function):
+    <span style="color: #20b2aa; font-weight: bold;">def</span> <span style="color: #00ff7f;">wrapper_function</span>(*args, **kwargs):
+        <span style="color: #20b2aa; font-weight: bold;">print</span>(<span style="color: #ffa07a;">'Wrapper executed this before {}'</span>.<span style="color: #76ee00;">format</span>(original_function.<span style="color: #76ee00;">__name__</span>))
+        <span style="color: #20b2aa; font-weight: bold;">return</span> orginal_function(*args, **kwargs)
+    <span style="color: #20b2aa; font-weight: bold;">return</span> wrapper_function
 
-<pre class="src src-python">def decorator_function(orginal_function):
-    def wrapper_function(*args, **kwargs):
-	print('Wrapper executed this before {}'.format(original_function.__name__))
-	return orginal_function(*args, **kwargs)
-    return wrapper_function
-
-@decorator_function
-def display():
-    print('display function ran')
+<span style="color: #9370db;">@decorator_function</span>
+<span style="color: #20b2aa; font-weight: bold;">def</span> <span style="color: #00ff7f;">display</span>():
+    <span style="color: #20b2aa; font-weight: bold;">print</span>(<span style="color: #ffa07a;">'display function ran'</span>)
 </pre>
 </div>
 <div class="org-src-container">
+<pre class="src src-python"><span style="color: #9370db;">@property</span> <span style="color: #20b2aa; font-weight: bold;">def</span> <span style="color: #00ff7f;">fullname</span>(<span style="color: #20b2aa; font-weight: bold;">self</span>):
+    <span style="color: #20b2aa; font-weight: bold;">return</span> <span style="color: #ffa07a;">'{} {}'</span>.<span style="color: #76ee00;">format</span>(<span style="color: #20b2aa; font-weight: bold;">self</span>.first, <span style="color: #20b2aa; font-weight: bold;">self</span>.last)
 
-<pre class="src src-python">@property def fullname(self):
-    return '{} {}'.format(self.first, self.last)
+<span style="color: #9370db;">@fullname.setter</span> <span style="color: #20b2aa; font-weight: bold;">def</span> <span style="color: #00ff7f;">fullname</span>(<span style="color: #20b2aa; font-weight: bold;">self</span>, name):
+    <span style="color: #9acd32;">first</span>, <span style="color: #9acd32;">last</span> = name.split(<span style="color: #ffa07a;">' '</span>)
+    <span style="color: #20b2aa; font-weight: bold;">self</span>.first = first <span style="color: #20b2aa; font-weight: bold;">self</span>.last = last
 
-@fullname.setter def fullname(self, name):
-    first, last = name.split(' ')
-    self.first = first self.last = last
-
- @fullname.deleter def fullname(self, name):
-     print('Delete name!')
-     self.first = None self.last = None del emp1.fullname
+ <span style="color: #9370db;">@fullname.deleter</span> <span style="color: #20b2aa; font-weight: bold;">def</span> <span style="color: #00ff7f;">fullname</span>(<span style="color: #20b2aa; font-weight: bold;">self</span>, name):
+     <span style="color: #20b2aa; font-weight: bold;">print</span>(<span style="color: #ffa07a;">'Delete name!'</span>)
+     <span style="color: #20b2aa; font-weight: bold;">self</span>.first = <span style="color: #1e90ff;">None</span> <span style="color: #20b2aa; font-weight: bold;">self</span>.last = <span style="color: #1e90ff;">None</span> <span style="color: #20b2aa; font-weight: bold;">del</span> emp1.fullname
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Special (Magic/Dunder) Methods</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-orgf2bd00d" class="outline-3">
+<h3 id="orgf2bd00d"><span class="section-number-3">2.4</span> Special (Magic/Dunder) Methods</h3>
+<div class="outline-text-3" id="text-2-4">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <tbody>
 <tr>
-<td class="left">Method</td>
-<td class="left">Explanation</td>
+<td class="org-left">Method</td>
+<td class="org-left">Explanation</td>
 </tr>
 
 <tr>
-<td class="left"><code>__init__</code></td>
-<td class="left">&#xa0;</td>
+<td class="org-left"><code>__init__</code></td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left"><code>__repr__</code></td>
-<td class="left">&#xa0;</td>
+<td class="org-left"><code>__repr__</code></td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left"><code>__str__</code></td>
-<td class="left">&#xa0;</td>
+<td class="org-left"><code>__str__</code></td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left"><code>__add__</code></td>
-<td class="left">&#xa0;</td>
+<td class="org-left"><code>__add__</code></td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left"><code>__len__</code></td>
-<td class="left">&#xa0;</td>
+<td class="org-left"><code>__len__</code></td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left"><code>__iter__</code></td>
-<td class="left">&#xa0;</td>
+<td class="org-left"><code>__iter__</code></td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left"><code>__next__</code></td>
-<td class="left">&#xa0;</td>
+<td class="org-left"><code>__next__</code></td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left"><code>__reversed__</code></td>
-<td class="left">&#xa0;</td>
+<td class="org-left"><code>__reversed__</code></td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left"><code>__getattr__</code></td>
-<td class="left">&#xa0;</td>
+<td class="org-left"><code>__getattr__</code></td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left"><code>__setattr__</code></td>
-<td class="left">&#xa0;</td>
+<td class="org-left"><code>__setattr__</code></td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left"><code>__delattr__</code></td>
-<td class="left">&#xa0;</td>
+<td class="org-left"><code>__delattr__</code></td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="left">vs</td>
-<td class="left">&#xa0;</td>
+<td class="org-left">vs</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div id="outline-container-sec-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> try/except</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-org5b54a3b" class="outline-3">
+<h3 id="org5b54a3b"><span class="section-number-3">2.5</span> try/except</h3>
+<div class="outline-text-3" id="text-2-5">
 <div class="org-src-container">
-
-<pre class="src src-nillangnilswitchesnilflags">nilbody
+<pre class="src src-python">    <span style="color: #9acd32;">f</span> = <span style="color: #76ee00;">open</span>(<span style="color: #ffa07a;">'file.txt'</span>)
+<span style="color: #20b2aa; font-weight: bold;">except</span> FileNotFoundError <span style="color: #20b2aa; font-weight: bold;">as</span> e:
+    <span style="color: #20b2aa; font-weight: bold;">print</span>(e)
+<span style="color: #20b2aa; font-weight: bold;">except</span> <span style="color: #9370db;">Exception</span> <span style="color: #20b2aa; font-weight: bold;">as</span> e:
+    <span style="color: #20b2aa; font-weight: bold;">print</span>(e)
+<span style="color: #20b2aa; font-weight: bold;">else</span>:
+    <span style="color: #20b2aa; font-weight: bold;">print</span>(f.read())
+    f.close()
+<span style="color: #20b2aa; font-weight: bold;">finally</span>:
+    <span style="color: #20b2aa; font-weight: bold;">print</span>(<span style="color: #ffa07a;">'Executing finally!'</span>)
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-1-6" class="outline-3">
-<h3 id="sec-1-6"><span class="section-number-3">1.6</span> namedtuple</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-org3f7220f" class="outline-3">
+<h3 id="org3f7220f"><span class="section-number-3">2.6</span> namedtuple</h3>
+<div class="outline-text-3" id="text-2-6">
 <div class="org-src-container">
+<pre class="src src-python">
 
-<pre class="src src-python">&gt;&gt;&gt; Point = namedtuple('Point', ['x', 'y'], verbose=True)
-&gt;&gt;&gt; p = Point(11, y=22)
+&gt;&gt;&gt; <span style="color: #9acd32;">Point</span> = namedtuple(<span style="color: #ffa07a;">'Point'</span>, [<span style="color: #ffa07a;">'x'</span>, <span style="color: #ffa07a;">'y'</span>], verbose=<span style="color: #1e90ff;">True</span>)
+&gt;&gt;&gt; <span style="color: #9acd32;">p</span> = Point(11, y=22)
 &gt;&gt;&gt; p[0] + p[1]
 33
 &gt;&gt;&gt; p.x + p.y
 333
-&gt;&gt;&gt; x, y = p
+&gt;&gt;&gt; <span style="color: #9acd32;">x</span>, <span style="color: #9acd32;">y</span> = p
 &gt;&gt;&gt; x + y
 33
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-1-7" class="outline-3">
-<h3 id="sec-1-7"><span class="section-number-3">1.7</span> EAFP</h3>
-<div class="outline-text-3" id="text-1-7">
+<div id="outline-container-orgb602500" class="outline-3">
+<h3 id="orgb602500"><span class="section-number-3">2.7</span> EAFP</h3>
+<div class="outline-text-3" id="text-2-7">
 <p>
-It's Easier to Ask Forgiveness then Permission<br  />
+It's Easier to Ask Forgiveness then Permission<br />
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-python">def quack_and_fly(thing):
-    try:
-	thing.quack()
-	thing.fly()
-    except AttributeError as e:
-	print(e)
+<pre class="src src-python"><span style="color: #20b2aa; font-weight: bold;">def</span> <span style="color: #00ff7f;">quack_and_fly</span>(thing):
+    <span style="color: #20b2aa; font-weight: bold;">try</span>:
+        thing.quack()
+        thing.fly()
+    <span style="color: #20b2aa; font-weight: bold;">except</span> <span style="color: #9370db;">AttributeError</span> <span style="color: #20b2aa; font-weight: bold;">as</span> e:
+        <span style="color: #20b2aa; font-weight: bold;">print</span>(e)
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-1-8" class="outline-3">
-<h3 id="sec-1-8"><span class="section-number-3">1.8</span> Context Managers</h3>
-<div class="outline-text-3" id="text-1-8">
+<div id="outline-container-orga50ca75" class="outline-3">
+<h3 id="orga50ca75"><span class="section-number-3">2.8</span> Context Managers</h3>
+<div class="outline-text-3" id="text-2-8">
 <ul class="org-ul">
-<li>contextlib<br  />
-</li>
-<li>with (resource)<br  />
-</li>
-<li>ignored (exception)<br  />
-</li>
-<li>lock (threading)<br  />
-</li>
+<li>contextlib<br /></li>
+<li>with (resource)<br /></li>
+<li>ignored (exception)<br /></li>
+<li>lock (threading)<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1-9" class="outline-3">
-<h3 id="sec-1-9"><span class="section-number-3">1.9</span> ChainMap</h3>
-<div class="outline-text-3" id="text-1-9">
+<div id="outline-container-orgbb1a9c7" class="outline-3">
+<h3 id="orgbb1a9c7"><span class="section-number-3">2.9</span> ChainMap</h3>
+<div class="outline-text-3" id="text-2-9">
 <p>
-Best way to merge dictionary without altering source dictionaries<br  />
-from collections import ChainMap<br  />
+Best way to merge dictionary without altering source dictionaries<br />
+from collections import ChainMap<br />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-1-10" class="outline-3">
-<h3 id="sec-1-10"><span class="section-number-3">1.10</span> Python Closure</h3>
-<div class="outline-text-3" id="text-1-10">
+<div id="outline-container-orgacea107" class="outline-3">
+<h3 id="orgacea107"><span class="section-number-3">2.10</span> Python Closure</h3>
+<div class="outline-text-3" id="text-2-10">
 <p>
-A closure is a record storing function together with an environment: a mapping associating each free variable of the function with the value or storage location to which the name was bound when the closure was created.<br  />
-A closure, unlike a plain function, allows the function to access those captured variable through the closure's reference to them, even when the function is invoked outside their scope.<br  />
+A closure is a record storing function together with an environment: a mapping associating each free variable of the function with the value or storage location to which the name was bound when the closure was created.<br />
+A closure, unlike a plain function, allows the function to access those captured variable through the closure's reference to them, even when the function is invoked outside their scope.<br />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Best Practice</h2>
-<div class="outline-text-2" id="text-2">
-</div><div id="outline-container-sec-2-1" class="outline-3">
-<h3 id="sec-2-1"><span class="section-number-3">2.1</span> <a href="https://gist.github.com/sloria/7001839">Kaynak</a></h3>
-</div>
-
-<div id="outline-container-sec-2-2" class="outline-3">
-<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Values</h3>
-<div class="outline-text-3" id="text-2-2">
-<ul class="org-ul">
-<li>"Build tools for others that you want to be built for you." - Kenneth Reitz<br  />
-</li>
-<li>"Simplicity is alway better than functionality." - Pieter Hintjens<br  />
-</li>
-<li>"Fit the 90% use-case. Ignore the nay sayers." - Kenneth Reitz<br  />
-</li>
-<li>"Beautiful is better than ugly." - PEP 20<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-2-3" class="outline-3">
-<h3 id="sec-2-3"><span class="section-number-3">2.3</span> General Development Guide</h3>
-<div class="outline-text-3" id="text-2-3">
-<ul class="org-ul">
-<li>"Explicit is better than implicit" - PEP 20<br  />
-</li>
-<li>"Readability counts." - PEP 20<br  />
-</li>
-<li>"Anybody can fix anything." - Khan Academy Development Docs<br  />
-</li>
-<li>Fix each broken window (bad design, wrong decision, or poor code) as soon as it is discovered.<br  />
-</li>
-<li>"Now is better than never." - PEP 20<br  />
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-2-4" class="outline-3">
-<h3 id="sec-2-4"><span class="section-number-3">2.4</span> Naming</h3>
-<div class="outline-text-3" id="text-2-4">
-<ul class="org-ul">
-<li>Variables, functions, methods, packages, modules<br  />
-<ul class="org-ul">
-<li>lower_case_with_underscores<br  />
-</li>
-</ul>
-</li>
-<li>Classes and Exceptions<br  />
-<ul class="org-ul">
-<li>CapWords<br  />
-</li>
-</ul>
-</li>
-<li>Protected methods and internal functions<br  />
-<ul class="org-ul">
-<li>_single_leading_underscore(self, &#x2026;)<br  />
-</li>
-</ul>
-</li>
-<li>Private methods<br  />
-<ul class="org-ul">
-<li>__double_leading_underscore(self, &#x2026;)<br  />
-</li>
-</ul>
-</li>
-<li>Constants<br  />
-<ul class="org-ul">
-<li>ALL_CAPS_WITH_UNDERSCORES<br  />
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<div id="outline-container-sec-2-4-1" class="outline-4">
-<h4 id="sec-2-4-1"><span class="section-number-4">2.4.1</span> Mindset</h4>
-<div class="outline-text-4" id="text-2-4-1">
-</div><ol class="org-ol"><li><a id="sec-2-4-1-1" name="sec-2-4-1-1"></a><br  /><div class="outline-text-5" id="text-2-4-1-1">
-<ul class="org-ul">
-<li>Fine<br  />
-
-<ul class="org-ul">
-<li>for e in elements:<br  />
-  e.mutate()<br  />
-Avoid redundant labeling.<br  />
-</li>
-</ul>
-</li>
-
-<li>Yes<br  />
-
-<ul class="org-ul">
-<li>import audio core = audio.Core()<br  />
-controller = audio.Controller()<br  />
-</li>
-</ul>
-</li>
-<li>No<br  />
-
-<ul class="org-ul">
-<li>import audio core = audio.AudioCore()<br  />
-controller = audio.AudioController()<br  />
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</li>
-<li><a id="sec-2-4-1-2" name="sec-2-4-1-2"></a>Prefer ReverseNotation<br  /><div class="outline-text-5" id="text-2-4-1-2">
-<ul class="org-ul">
-<li>Yes<br  />
-
-<ul class="org-ul">
-<li>elements = &#x2026; elements_active = &#x2026; elements_defunct = &#x2026;<br  />
-</li>
-</ul>
-</li>
-
-<li>No<br  />
-
-<ul class="org-ul">
-<li>elements = &#x2026; active_elements = &#x2026; defunct_elements &#x2026;<br  />
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</li>
-<li><a id="sec-2-4-1-3" name="sec-2-4-1-3"></a>Avoid getter and setter methods.<br  /><div class="outline-text-5" id="text-2-4-1-3">
-<ul class="org-ul">
-<li>Yes<br  />
-<ul class="org-ul">
-<li>person.age = 42<br  />
-</li>
-</ul>
-</li>
-<li>No<br  />
-<ul class="org-ul">
-<li>person.set_age(42)<br  />
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</li></ol>
-</div>
-<div id="outline-container-sec-2-4-2" class="outline-4">
-<h4 id="sec-2-4-2"><span class="section-number-4">2.4.2</span> Imports</h4>
-<div class="outline-text-4" id="text-2-4-2">
-<ul class="org-ul">
-<li>Yes<br  />
-
-<ul class="org-ul">
-<li>import canteen import canteen.sessions from canteen import sessions<br  />
-</li>
-</ul>
-</li>
-<li>No<br  />
-
-<ul class="org-ul">
-<li>from canteen import get_user  # Symbol from canteen/__init__.py from canteen.sessions import get_session  # Symbol from canteen/sessions.py<br  />
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-2-5" class="outline-3">
-<h3 id="sec-2-5"><span class="section-number-3">2.5</span> Documentation</h3>
-<div class="outline-text-3" id="text-2-5">
-</div><div id="outline-container-sec-2-5-1" class="outline-4">
-<h4 id="sec-2-5-1"><span class="section-number-4">2.5.1</span> Multi Line</h4>
-<div class="outline-text-4" id="text-2-5-1">
-<ul class="org-ul">
-<li>Summary line<br  />
-</li>
-<li>Use case, if appropriate<br  />
-</li>
-<li>Args<br  />
-</li>
-<li>Return type and semantics, unless None is returned<br  />
-
-<p>
-"""Train a model to classify Foos and Bars.<br  />
-Usage::<br  />
-</p>
-
-<p>
-&gt;&gt;&gt; import klassify<br  />
-&gt;&gt;&gt; data = [("green", "foo"), ("orange", "bar")]<br  />
-&gt;&gt;&gt; classifier = klassify.train(data)<br  />
-</p>
-
-<p>
-:param train_data: A list of tuples of the form ``(color, label)``.<br  />
-</p>
-
-<p>
-:rtype:    A :class:`Classifier &lt;Classifier&gt;`<br  />
-"""<br  />
-</p>
-</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-sec-2-5-2" class="outline-4">
-<h4 id="sec-2-5-2"><span class="section-number-4">2.5.2</span> On comment</h4>
-<div class="outline-text-4" id="text-2-5-2">
-<ul class="org-ul">
-<li>No<br  />
-
-<ul class="org-ul">
-<li># If the sign is a stop sign if sign.color <code>= 'red' and sign.sides =</code> 8:<br  />
-stop()<br  />
-</li>
-</ul>
-</li>
-<li>Yes<br  />
-
-<ul class="org-ul">
-<li>def is_stop_sign(sign):<br  />
-return sign.color <code>= 'red' and sign.sides =</code> 8<br  />
-
-<p>
-if is_stop_sign(sign):<br  />
-    stop()<br  />
-</p>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> VirtualEnv</h2>
+<div id="outline-container-org18eac26" class="outline-2">
+<h2 id="org18eac26"><span class="section-number-2">3</span> Best Practice</h2>
 <div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org8fe398a" class="outline-3">
+<h3 id="org8fe398a"><span class="section-number-3">3.1</span> <a href="https://gist.github.com/sloria/7001839">Kaynak</a></h3>
+</div>
+
+<div id="outline-container-org8561773" class="outline-3">
+<h3 id="org8561773"><span class="section-number-3">3.2</span> Values</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>"Build tools for others that you want to be built for you." - Kenneth Reitz<br /></li>
+<li>"Simplicity is alway better than functionality." - Pieter Hintjens<br /></li>
+<li>"Fit the 90% use-case. Ignore the nay sayers." - Kenneth Reitz<br /></li>
+<li>"Beautiful is better than ugly." - PEP 20<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3dce443" class="outline-3">
+<h3 id="org3dce443"><span class="section-number-3">3.3</span> General Development Guide</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>"Explicit is better than implicit" - PEP 20<br /></li>
+<li>"Readability counts." - PEP 20<br /></li>
+<li>"Anybody can fix anything." - Khan Academy Development Docs<br /></li>
+<li>Fix each broken window (bad design, wrong decision, or poor code) as soon as it is discovered.<br /></li>
+<li>"Now is better than never." - PEP 20<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge1309ce" class="outline-3">
+<h3 id="orge1309ce"><span class="section-number-3">3.4</span> Naming</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>Variables, functions, methods, packages, modules<br />
+<ul class="org-ul">
+<li>lower_case_with_underscores<br /></li>
+</ul></li>
+<li>Classes and Exceptions<br />
+<ul class="org-ul">
+<li>CapWords<br /></li>
+</ul></li>
+<li>Protected methods and internal functions<br />
+<ul class="org-ul">
+<li>_single_leading_underscore(self, &#x2026;)<br /></li>
+</ul></li>
+<li>Private methods<br />
+<ul class="org-ul">
+<li>__double_leading_underscore(self, &#x2026;)<br /></li>
+</ul></li>
+<li>Constants<br />
+<ul class="org-ul">
+<li>ALL_CAPS_WITH_UNDERSCORES<br /></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org2796c0c" class="outline-4">
+<h4 id="org2796c0c"><span class="section-number-4">3.4.1</span> Mindset</h4>
+<div class="outline-text-4" id="text-3-4-1">
+</div>
+<ol class="org-ol">
+<li><a id="orgc59b3f4"></a><br />
+<div class="outline-text-5" id="text-3-4-1-1">
+<ul class="org-ul">
+<li>Fine<br />
+
+<ul class="org-ul">
+<li>for e in elements:<br />
+  e.mutate()<br />
+Avoid redundant labeling.<br /></li>
+</ul></li>
+
+<li>Yes<br />
+
+<ul class="org-ul">
+<li>import audio core = audio.Core()<br />
+controller = audio.Controller()<br /></li>
+</ul></li>
+<li>No<br />
+
+<ul class="org-ul">
+<li>import audio core = audio.AudioCore()<br />
+controller = audio.AudioController()<br /></li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org54f731e"></a>Prefer ReverseNotation<br />
+<div class="outline-text-5" id="text-3-4-1-2">
+<ul class="org-ul">
+<li>Yes<br />
+
+<ul class="org-ul">
+<li>elements = &#x2026; elements_active = &#x2026; elements_defunct = &#x2026;<br /></li>
+</ul></li>
+
+<li>No<br />
+
+<ul class="org-ul">
+<li>elements = &#x2026; active_elements = &#x2026; defunct_elements &#x2026;<br /></li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="orgf6f6181"></a>Avoid getter and setter methods.<br />
+<div class="outline-text-5" id="text-3-4-1-3">
+<ul class="org-ul">
+<li>Yes<br />
+<ul class="org-ul">
+<li>person.age = 42<br /></li>
+</ul></li>
+<li>No<br />
+<ul class="org-ul">
+<li>person.set_age(42)<br /></li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org16fe5fe" class="outline-4">
+<h4 id="org16fe5fe"><span class="section-number-4">3.4.2</span> Imports</h4>
+<div class="outline-text-4" id="text-3-4-2">
+<ul class="org-ul">
+<li>Yes<br />
+
+<ul class="org-ul">
+<li>import canteen import canteen.sessions from canteen import sessions<br /></li>
+</ul></li>
+<li>No<br />
+
+<ul class="org-ul">
+<li>from canteen import get_user  # Symbol from canteen/__init__.py from canteen.sessions import get_session  # Symbol from canteen/sessions.py<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org514f716" class="outline-3">
+<h3 id="org514f716"><span class="section-number-3">3.5</span> Documentation</h3>
+<div class="outline-text-3" id="text-3-5">
+</div>
+<div id="outline-container-org2e4e207" class="outline-4">
+<h4 id="org2e4e207"><span class="section-number-4">3.5.1</span> Multi Line</h4>
+<div class="outline-text-4" id="text-3-5-1">
+<ul class="org-ul">
+<li>Summary line<br /></li>
+<li>Use case, if appropriate<br /></li>
+<li>Args<br /></li>
+<li><p>
+Return type and semantics, unless None is returned<br />
+</p>
+
 <p>
-pyvenv-3.5 virtenv_name<br  />
+"""Train a model to classify Foos and Bars.<br />
+Usage::<br />
+</p>
+
+<p>
+&gt;&gt;&gt; import klassify<br />
+&gt;&gt;&gt; data = [("green", "foo"), ("orange", "bar")]<br />
+&gt;&gt;&gt; classifier = klassify.train(data)<br />
+</p>
+
+<p>
+:param train_data: A list of tuples of the form ``(color, label)``.<br />
+</p>
+
+<p>
+:rtype:    A :class:`Classifier &lt;Classifier&gt;`<br />
+"""<br />
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org58e97bf" class="outline-4">
+<h4 id="org58e97bf"><span class="section-number-4">3.5.2</span> On comment</h4>
+<div class="outline-text-4" id="text-3-5-2">
+<ul class="org-ul">
+<li>No<br />
+
+<ul class="org-ul">
+<li># If the sign is a stop sign if sign.color <code>= 'red' and sign.sides =</code> 8:<br />
+stop()<br /></li>
+</ul></li>
+<li>Yes<br />
+
+<ul class="org-ul">
+<li><p>
+def is_stop_sign(sign):<br />
+return sign.color <code>= 'red' and sign.sides =</code> 8<br />
+</p>
+
+<p>
+if is_stop_sign(sign):<br />
+    stop()<br />
+</p></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6739793" class="outline-2">
+<h2 id="org6739793"><span class="section-number-2">4</span> VirtualEnv</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+pyvenv-3.5 virtenv_name<br />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> Yüklenebilir Python paketleri,  Egg dosyaları</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-org5f52231" class="outline-2">
+<h2 id="org5f52231"><span class="section-number-2">5</span> Yüklenebilir Python paketleri,  Egg dosyaları</h2>
+<div class="outline-text-2" id="text-5">
 <div class="org-src-container">
+<pre class="src src-python"><span style="color: #cd853f;"># </span><span style="color: #cd853f;">my_math.py</span>
+<span style="color: #20b2aa; font-weight: bold;">def</span> <span style="color: #00ff7f;">add</span>(x, y):
+    <span style="color: #20b2aa; font-weight: bold;">return</span> x + y
 
-<pre class="src src-python"># my_math.py
-def add(x, y):
-    return x + y
 
-
-def subtract(x, y):
-    return x - y
+<span style="color: #20b2aa; font-weight: bold;">def</span> <span style="color: #00ff7f;">subtract</span>(x, y):
+    <span style="color: #20b2aa; font-weight: bold;">return</span> x - y
 </pre>
 </div>
 
 <div class="org-src-container">
+<pre class="src src-python"><span style="color: #cd853f;"># </span><span style="color: #cd853f;">main.py</span>
+<span style="color: #20b2aa; font-weight: bold;">import</span> my_math
 
-<pre class="src src-python"># main.py
-import my_math
-
-if __name__ == '__main__':
-     print my_math.add(10, 23)
+<span style="color: #20b2aa; font-weight: bold;">if</span> <span style="color: #76ee00;">__name__</span> == <span style="color: #ffa07a;">'__main__'</span>:
+     <span style="color: #20b2aa; font-weight: bold;">print</span> my_math.add(10, 23)          
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-python"># setup.py
-from setuptools import setup, find_packages
+<pre class="src src-python"><span style="color: #cd853f;"># </span><span style="color: #cd853f;">setup.py</span>
+<span style="color: #20b2aa; font-weight: bold;">from</span> setuptools <span style="color: #20b2aa; font-weight: bold;">import</span> setup, find_packages
 
 setup(
-    name = "my_math",
-    version = "0.0.1",
+    name = <span style="color: #ffa07a;">"my_math"</span>,
+    version = <span style="color: #ffa07a;">"0.0.1"</span>,
     packages = find_packages()
 )
 </pre>
@@ -784,16 +848,16 @@ easy_install my_math-0.0.1-py2.7.egg
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> Blog <a href="https://pythondefterim.wordpress.com/">https://pythondefterim.wordpress.com/</a></h2>
+<div id="outline-container-orgea91d46" class="outline-2">
+<h2 id="orgea91d46"><span class="section-number-2">6</span> Blog <a href="https://pythondefterim.wordpress.com/">https://pythondefterim.wordpress.com/</a></h2>
 </div>
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6"><span class="section-number-2">6</span> Bağlantılar</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-org70f6d6e" class="outline-2">
+<h2 id="org70f6d6e"><span class="section-number-2">7</span> Bağlantılar</h2>
+<div class="outline-text-2" id="text-7">
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <center>
 <p>
-<a href="blog.html">Blog</a> <a href="bash.html">Bash</a> <a href="baslangiclar.html">Başlangıç</a> <a href="muzik.html">Müzik</a> <a href="okunacaklar.html">Okunacaklar</a> <a href="notlar.html">Notlar</a> <a href="projeler.html">Projeler</a> <a href="sozler.html">Sözler</a> <a href="tatil_rotalari.html">Tatil Rotaları</a> <a href="emacs.html">Emacs</a> <a href="index.html">Ana Sayfa</a><br  />
+<a href="blog.html">Blog</a> <a href="bash.html">Bash</a> <a href="baslangiclar.html">Başlangıç</a> <a href="muzik.html">Müzik</a> <a href="okunacaklar.html">Okunacaklar</a> <a href="notlar.html">Notlar</a> <a href="projeler.html">Projeler</a> <a href="sozler.html">Sözler</a> <a href="tatil_rotalari.html">Tatil Rotaları</a> <a href="emacs.html">Emacs</a> <a href="index.html">Ana Sayfa</a><br />
 </p>
 <a href="https://umtmu.wordpress.com/"><img src="img/wp.png" width="2%" height="2%"></a>&nbsp&nbsp
 <a href="#"><img src="img/yukari.png" width="2%" height="2%"></a>&nbsp&nbsp
@@ -804,8 +868,7 @@ easy_install my_math-0.0.1-py2.7.egg
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: umt</p>
-<p class="date">Created: 2018-01-23 Tue 14:04</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="date">Created: 2018-06-05 Tue 14:11</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

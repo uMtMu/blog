@@ -1,4 +1,6 @@
 #+INCLUDE: "baslik.org"
+* What is class and metaclass?
+  https://stackoverflow.com/questions/100003/what-are-metaclasses-in-python
 * Notlarım
 ** 7 simple tricks to write better Python
    - dict.get(key, if_not_exists)
