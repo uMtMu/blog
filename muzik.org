@@ -1,4 +1,11 @@
 #+INCLUDE: "baslik.org"
+
+* The Cranberries & Dolores O'riordan
+  - The Promises
+  - Don't Analyze
+  - Stars
+  - When you're gone :'(
+  - The Journey
 * Hoş
 ** Nouela - The Sound of Silence
    [[https://www.youtube.com/watch?v=Q4oInT79CUk][Nouela - The Sound of Silence]]
