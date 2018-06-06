@@ -1,0 +1,7 @@
+#+INCLUDE: "baslik.org"
+
+* Zatoichi
+  [[http://www.antivizyon.com/zatoichi][Tüm filmler]]
+
+* Bağlantılar
+#+INCLUDE: "baglantilar.org"
