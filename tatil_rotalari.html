@@ -3,23 +3,30 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
+<!-- 2018-06-18 Mon 14:09 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>uMtMu</title>
-<!-- 2018-01-23 Tue 14:03 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="umt" />
+<meta name="generator" content="Org mode" />
+<meta name="author" content="umt" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -46,27 +53,111 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -86,6 +177,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <script type="text/javascript">
@@ -93,7 +185,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -140,10 +232,10 @@ for the JavaScript code in this tag.
 <h1 class="title">uMtMu</h1>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<div class="center">
+<div class="org-center">
 
 <div class="figure">
-<p><img src="img/ja2.png" alt="ja2.png" /><br  />
+<p><img src="img/ja2.png" alt="ja2.png" /><br />
 </p>
 </div>
 </div>
@@ -151,478 +243,502 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. Radyocu Kemal'in yeri <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-01-14 Paz&gt;</span></span></a>
+<li><a href="#org7a505c6">1. Kalemlik Orman Kampı <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-06-14 Thu&gt;</span></span></a>
 <ul>
-<li><a href="#sec-1-1">1.1. Ulaşım</a></li>
-<li><a href="#sec-1-2">1.2. Maliyet</a></li>
-<li><a href="#sec-1-3">1.3. İmkanlar</a></li>
-<li><a href="#sec-1-4">1.4. Yorum</a></li>
+<li><a href="#org4b1024f">1.1. Ulaşım</a></li>
+<li><a href="#orgc155cff">1.2. Konaklama ve Maliyet</a></li>
+<li><a href="#orga4302d3">1.3. İmkanlar</a></li>
+<li><a href="#org54f0b8c">1.4. İletişim</a></li>
+<li><a href="#orga7b4f00">1.5. Yorum</a></li>
 </ul>
 </li>
-<li><a href="#sec-2">2. Osman Aydın'ın yeri <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-01-13 Cts&gt;</span></span></a>
+<li><a href="#org061dac7">2. Radyocu Kemal'in yeri <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-01-14 Sun&gt;</span></span></a>
 <ul>
-<li><a href="#sec-2-1">2.1. Ulaşım</a></li>
-<li><a href="#sec-2-2">2.2. Maliyet</a></li>
-<li><a href="#sec-2-3">2.3. İmkanlar</a></li>
-<li><a href="#sec-2-4">2.4. Yorum</a></li>
+<li><a href="#orgc04ff41">2.1. Ulaşım</a></li>
+<li><a href="#org6dfef08">2.2. Maliyet</a></li>
+<li><a href="#org0f237b3">2.3. İmkanlar</a></li>
+<li><a href="#org693e9fc">2.4. Yorum</a></li>
 </ul>
 </li>
-<li><a href="#sec-3">3. Sazlıca - Foça (0232) 825 13 13 DENENMEDİ!</a>
+<li><a href="#org2984d5a">3. Osman Aydın'ın yeri <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-01-13 Sat&gt;</span></span></a>
 <ul>
-<li><a href="#sec-3-1">3.1. Ulaşım</a></li>
-<li><a href="#sec-3-2">3.2. Konaklama ve Maliyet</a></li>
-<li><a href="#sec-3-3">3.3. İmkanlar</a></li>
-<li><a href="#sec-3-4">3.4. Yorum</a></li>
+<li><a href="#orgbbc4747">3.1. Ulaşım</a></li>
+<li><a href="#orgc844556">3.2. Maliyet</a></li>
+<li><a href="#orgc59674b">3.3. İmkanlar</a></li>
+<li><a href="#org4f3aeb3">3.4. Yorum</a></li>
 </ul>
 </li>
-<li><a href="#sec-4">4. The Beach Çeşme <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-10-13 Cum 23:42&gt;</span></span></a>
+<li><a href="#orgb9ccf69">4. Sazlıca - Foça (0232) 825 13 13 DENENMEDİ!</a>
 <ul>
-<li><a href="#sec-4-1">4.1. Ulaşım</a></li>
-<li><a href="#sec-4-2">4.2. Konaklama ve Maliyet</a></li>
-<li><a href="#sec-4-3">4.3. İmkanlar</a></li>
-<li><a href="#sec-4-4">4.4. Yorum</a></li>
+<li><a href="#org550cf00">4.1. Ulaşım</a></li>
+<li><a href="#org9043f69">4.2. Konaklama ve Maliyet</a></li>
+<li><a href="#org148daed">4.3. İmkanlar</a></li>
+<li><a href="#org5d428dd">4.4. Yorum</a></li>
 </ul>
 </li>
-<li><a href="#sec-5">5. Özdere Ege Üniversitesi Kampı <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-09-17 Sat&gt;</span></span></a>
+<li><a href="#orgf0cf22e">5. The Beach Çeşme <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-10-13 Fri 23:42&gt;</span></span></a>
 <ul>
-<li><a href="#sec-5-1">5.1. Ulaşım</a></li>
-<li><a href="#sec-5-2">5.2. Konaklama ve Maliyet</a></li>
-<li><a href="#sec-5-3">5.3. İmkanlar</a></li>
-<li><a href="#sec-5-4">5.4. Yorum</a></li>
+<li><a href="#org99f7a0a">5.1. Ulaşım</a></li>
+<li><a href="#orgf835aab">5.2. Konaklama ve Maliyet</a></li>
+<li><a href="#org3b7b0b4">5.3. İmkanlar</a></li>
+<li><a href="#orgd2d7030">5.4. Yorum</a></li>
 </ul>
 </li>
-<li><a href="#sec-6">6. Hipo Kamp - Gümüldür <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-09-17 Sat&gt;</span></span></a>
+<li><a href="#orgbb1eacc">6. Özdere Ege Üniversitesi Kampı <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-09-17 Sat&gt;</span></span></a>
 <ul>
-<li><a href="#sec-6-1">6.1. Ulaşım</a></li>
-<li><a href="#sec-6-2">6.2. Konaklama ve Maliyet</a></li>
-<li><a href="#sec-6-3">6.3. İmkanlar</a></li>
-<li><a href="#sec-6-4">6.4. Yorum</a></li>
+<li><a href="#org1246db7">6.1. Ulaşım</a></li>
+<li><a href="#org658db55">6.2. Konaklama ve Maliyet</a></li>
+<li><a href="#orge544c6d">6.3. İmkanlar</a></li>
+<li><a href="#orgce20b0a">6.4. Yorum</a></li>
 </ul>
 </li>
-<li><a href="#sec-7">7. Muğla -&gt; Datça -&gt; Çubucak Orman Kampı <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-09-17 Sat&gt;</span></span></a>
+<li><a href="#org4c90806">7. Hipo Kamp - Gümüldür <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-09-17 Sat&gt;</span></span></a>
 <ul>
-<li><a href="#sec-7-1">7.1. Ulaşım</a></li>
-<li><a href="#sec-7-2">7.2. Konaklama ve Maliyet</a></li>
-<li><a href="#sec-7-3">7.3. İmkanlar</a></li>
-<li><a href="#sec-7-4">7.4. Yorum</a></li>
-<li><a href="#sec-7-5">7.5. Tecrübe</a></li>
+<li><a href="#org06e1946">7.1. Ulaşım</a></li>
+<li><a href="#orgb3da297">7.2. Konaklama ve Maliyet</a></li>
+<li><a href="#org07a84de">7.3. İmkanlar</a></li>
+<li><a href="#org2ad2628">7.4. Yorum</a></li>
 </ul>
 </li>
-<li><a href="#sec-8">8. Akyaka orman kampı (0551 448 70 34) DENENMEDİ!</a>
+<li><a href="#org14ca9c3">8. Muğla -&gt; Datça -&gt; Çubucak Orman Kampı <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-09-17 Sat&gt;</span></span></a>
 <ul>
-<li><a href="#sec-8-1">8.1. Ulaşım</a></li>
-<li><a href="#sec-8-2">8.2. Konaklama</a></li>
-<li><a href="#sec-8-3">8.3. İmkanlar</a></li>
-<li><a href="#sec-8-4">8.4. Yorum</a></li>
+<li><a href="#org920ad40">8.1. Ulaşım</a></li>
+<li><a href="#orgde0231d">8.2. Konaklama ve Maliyet</a></li>
+<li><a href="#org048496f">8.3. İmkanlar</a></li>
+<li><a href="#org62854e0">8.4. Yorum</a></li>
+<li><a href="#org91cad32">8.5. Tecrübe</a></li>
 </ul>
 </li>
-<li><a href="#sec-9">9. Eklenmesi istediğiniz rotaları umut1010@gmail.com adresine üstteki formata uygun gönderebilirsiniz.</a></li>
-<li><a href="#sec-10">10. Bağlantılar</a></li>
+<li><a href="#org9b91412">9. Akyaka orman kampı (0551 448 70 34) DENENMEDİ!</a>
+<ul>
+<li><a href="#orgb31c19a">9.1. Ulaşım</a></li>
+<li><a href="#orge506885">9.2. Konaklama</a></li>
+<li><a href="#org8c6a8a5">9.3. İmkanlar</a></li>
+<li><a href="#orgae91f94">9.4. Yorum</a></li>
+</ul>
+</li>
+<li><a href="#org39729fe">10. Eklenmesi istediğiniz rotaları umut1010@gmail.com adresine üstteki formata uygun gönderebilirsiniz.</a></li>
+<li><a href="#org2817d60">11. Bağlantılar</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Radyocu Kemal'in yeri <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-01-14 Paz&gt;</span></span></h2>
+<div id="outline-container-org7a505c6" class="outline-2">
+<h2 id="org7a505c6"><span class="section-number-2">1</span> Kalemlik Orman Kampı <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-06-14 Thu&gt;</span></span></h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Ulaşım</h3>
+</div>
+<div id="outline-container-org4b1024f" class="outline-3">
+<h3 id="org4b1024f"><span class="section-number-3">1.1</span> Ulaşım</h3>
 <div class="outline-text-3" id="text-1-1">
-<p>
-<a href="https://goo.gl/maps/LhHwQRSsjj42">https://goo.gl/maps/LhHwQRSsjj42</a><br  />
-</p>
+<ol class="org-ol">
+<li>İzban ile Cumaovasına git<br /></li>
+<li>Eshot 775<br /></li>
+<li>Kalemlik durağında in. Jandarmanın karşısındaki sokaktan gir. Yılmaz Restaurant tabelalarını takip et.<br /></li>
+</ol>
 </div>
 </div>
-<div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Maliyet</h3>
+<div id="outline-container-orgc155cff" class="outline-3">
+<h3 id="orgc155cff"><span class="section-number-3">1.2</span> Konaklama ve Maliyet</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
-<li>Ekşili tavuk yedik. Bütün tavuk 4 kişilik. Salata, mezeler, ana yemek, kabak tatlısı 35 tl tuttu.<br  />
-</li>
+<li>12.5 TL giriş ücreti. Günlük çadır alanı 45 TL<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> İmkanlar</h3>
+<div id="outline-container-orga4302d3" class="outline-3">
+<h3 id="orga4302d3"><span class="section-number-3">1.3</span> İmkanlar</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
-<li>Menü gelmediği için neler var bilmiyorum ama alkol var. Ortam çok güzel. Dağın içinde gibi. Zaten oralarda her yer orman. Kafeslerinde on kadar çok güzel öten kuşları var. Ortada büyük bir soba var.<br  />
-</li>
+<li>Duş, tuvalet, masa, sandalye, aydınlatma bedava, market, kafeterya, restaurant<br /></li>
+<li>Kamp alanına yakın yerde A101 ve Şok vardı.<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Yorum</h3>
+<div id="outline-container-org54f0b8c" class="outline-3">
+<h3 id="org54f0b8c"><span class="section-number-3">1.4</span> İletişim</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
-Gayet "otantik" bir yer. <span class="underline">Menü yok!</span> Ortam köy evi gibi.<br  />
+Erhan çadır - 0 536 267 83 05<br />
 </p>
 </div>
 </div>
+<div id="outline-container-orga7b4f00" class="outline-3">
+<h3 id="orga7b4f00"><span class="section-number-3">1.5</span> Yorum</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>Tuvaletler kötü. Bayanlar tuvaleti bi nebze daha iyi görünüyordu. Erkekler için 10 tuvalet, 1 lavabo var.<br /></li>
+<li>Market fiyatları çok uygundu. Bomonti 11 TLydi. Restaurant biraz pahalıydı. 25 lira besi çuprası. Çadır yerleri nizami ama sıkışık. Çadır yanında ateş yakmak yasak değil sanırım. Mutfak yok.<br /></li>
+</ul>
 </div>
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Osman Aydın'ın yeri <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-01-13 Cts&gt;</span></span></h2>
+</div>
+</div>
+
+<div id="outline-container-org061dac7" class="outline-2">
+<h2 id="org061dac7"><span class="section-number-2">2</span> Radyocu Kemal'in yeri <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-01-14 Sun&gt;</span></span></h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-sec-2-1" class="outline-3">
-<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Ulaşım</h3>
+</div>
+<div id="outline-container-orgc04ff41" class="outline-3">
+<h3 id="orgc04ff41"><span class="section-number-3">2.1</span> Ulaşım</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
-<a href="https://goo.gl/maps/rKZvsU31fKS2">https://goo.gl/maps/rKZvsU31fKS2</a><br  />
+<a href="https://goo.gl/maps/LhHwQRSsjj42">https://goo.gl/maps/LhHwQRSsjj42</a><br />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-2" class="outline-3">
-<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Maliyet</h3>
+<div id="outline-container-org6dfef08" class="outline-3">
+<h3 id="org6dfef08"><span class="section-number-3">2.2</span> Maliyet</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
-<li>Kuru fasulye 10 liraydı. Diğer yemekler de uygun fiyatlıydı<br  />
-</li>
+<li>Ekşili tavuk yedik. Bütün tavuk 4 kişilik. Salata, mezeler, ana yemek, kabak tatlısı 35 tl tuttu.<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-2-3" class="outline-3">
-<h3 id="sec-2-3"><span class="section-number-3">2.3</span> İmkanlar</h3>
+<div id="outline-container-org0f237b3" class="outline-3">
+<h3 id="org0f237b3"><span class="section-number-3">2.3</span> İmkanlar</h3>
 <div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
-<li>Çorba, kuru fasulya, tavuk, et, pide, tatlı vs<br  />
-</li>
+<li>Menü gelmediği için neler var bilmiyorum ama alkol var. Ortam çok güzel. Dağın içinde gibi. Zaten oralarda her yer orman. Kafeslerinde on kadar çok güzel öten kuşları var. Ortada büyük bir soba var.<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-2-4" class="outline-3">
-<h3 id="sec-2-4"><span class="section-number-3">2.4</span> Yorum</h3>
+<div id="outline-container-org693e9fc" class="outline-3">
+<h3 id="org693e9fc"><span class="section-number-3">2.4</span> Yorum</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
-Gayet güzel bir yer. Lezzetli. Salata ikram. 4 kişiye 1 kıymalı pide getirdiler. Belki kalabalık olduğumuz için ikram yapmışlardır.<br  />
+Gayet "otantik" bir yer. <span class="underline">Menü yok!</span> Ortam köy evi gibi.<br />
 </p>
 </div>
 </div>
 </div>
-
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Sazlıca - Foça (0232) 825 13 13 DENENMEDİ!</h2>
+<div id="outline-container-org2984d5a" class="outline-2">
+<h2 id="org2984d5a"><span class="section-number-2">3</span> Osman Aydın'ın yeri <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-01-13 Sat&gt;</span></span></h2>
 <div class="outline-text-2" id="text-3">
-</div><div id="outline-container-sec-3-1" class="outline-3">
-<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Ulaşım</h3>
+</div>
+<div id="outline-container-orgbbc4747" class="outline-3">
+<h3 id="orgbbc4747"><span class="section-number-3">3.1</span> Ulaşım</h3>
 <div class="outline-text-3" id="text-3-1">
-<ol class="org-ol">
-<li>İzban ile Biçerovaya git<br  />
-</li>
-<li>Foça otobüsüne bin. Yeni Foçada in.<br  />
-</li>
-<li>Yeni foçadan Eski foça dolmuşa bin. Sazlıca plajı de ve in.<br  />
-</li>
-</ol>
+<p>
+<a href="https://goo.gl/maps/rKZvsU31fKS2">https://goo.gl/maps/rKZvsU31fKS2</a><br />
+</p>
 </div>
 </div>
-
-<div id="outline-container-sec-3-2" class="outline-3">
-<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Konaklama ve Maliyet</h3>
+<div id="outline-container-orgc844556" class="outline-3">
+<h3 id="orgc844556"><span class="section-number-3">3.2</span> Maliyet</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
-<li>Kişi başı 20 TL, 5 lira günlük elektrik<br  />
-</li>
+<li>Kuru fasulye 10 liraydı. Diğer yemekler de uygun fiyatlıydı<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-3-3" class="outline-3">
-<h3 id="sec-3-3"><span class="section-number-3">3.3</span> İmkanlar</h3>
+<div id="outline-container-orgc59674b" class="outline-3">
+<h3 id="orgc59674b"><span class="section-number-3">3.3</span> İmkanlar</h3>
 <div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
-<li>Şezlong, şemsiye, duş, tuvalet, masa, sandalye, aydınlatma bedava<br  />
-</li>
+<li>Çorba, kuru fasulya, tavuk, et, pide, tatlı vs<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-3-4" class="outline-3">
-<h3 id="sec-3-4"><span class="section-number-3">3.4</span> Yorum</h3>
+<div id="outline-container-org4f3aeb3" class="outline-3">
+<h3 id="org4f3aeb3"><span class="section-number-3">3.4</span> Yorum</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
-Bayram tatili için yer yoktu.<br  />
+Gayet güzel bir yer. Lezzetli. Salata ikram. 4 kişiye 1 kıymalı pide getirdiler. Belki kalabalık olduğumuz için ikram yapmışlardır.<br />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> The Beach Çeşme <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-10-13 Cum 23:42&gt;</span></span></h2>
+<div id="outline-container-orgb9ccf69" class="outline-2">
+<h2 id="orgb9ccf69"><span class="section-number-2">4</span> Sazlıca - Foça (0232) 825 13 13 DENENMEDİ!</h2>
 <div class="outline-text-2" id="text-4">
-</div><div id="outline-container-sec-4-1" class="outline-3">
-<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Ulaşım</h3>
+</div>
+<div id="outline-container-org550cf00" class="outline-3">
+<h3 id="org550cf00"><span class="section-number-3">4.1</span> Ulaşım</h3>
 <div class="outline-text-3" id="text-4-1">
 <ol class="org-ol">
-<li>Fahrettin altay dağıtım merkezinden Çeşme seyahat geçiyor. Sanırım bilet 17,5 tl idi. Çeşme merkezde inilip pansiyona yerleşilir.<br  />
-</li>
-<li>Çeşme merkezde geçen Çiftlikköy - Altınkum dolmuşları ile The Beach'e gidilebilir. Dolmuşta 2.5 lira filan idi.<br  />
-</li>
+<li>İzban ile Biçerovaya git<br /></li>
+<li>Foça otobüsüne bin. Yeni Foçada in.<br /></li>
+<li>Yeni foçadan Eski foça dolmuşa bin. Sazlıca plajı de ve in.<br /></li>
 </ol>
 </div>
 </div>
 
-<div id="outline-container-sec-4-2" class="outline-3">
-<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Konaklama ve Maliyet</h3>
+<div id="outline-container-org9043f69" class="outline-3">
+<h3 id="org9043f69"><span class="section-number-3">4.2</span> Konaklama ve Maliyet</h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
-<li>Pansiyonda (Çeşme merkezinde) yarım pansiyon kaldık. Açık büfe kahvaltı güzel ve yeterliydi.<br  />
-</li>
+<li>Kişi başı 20 TL, 5 lira günlük elektrik<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-4-3" class="outline-3">
-<h3 id="sec-4-3"><span class="section-number-3">4.3</span> İmkanlar</h3>
+<div id="outline-container-org148daed" class="outline-3">
+<h3 id="org148daed"><span class="section-number-3">4.3</span> İmkanlar</h3>
 <div class="outline-text-3" id="text-4-3">
 <ul class="org-ul">
-<li>The beachte şezlong, şemsiye çadır 35 TL idi. Deniz güzeldi. İki noktada duş ve 1 noktada soyunma kabini ve tuvaletler vardı.<br  />
-</li>
+<li>Şezlong, şemsiye, duş, tuvalet, masa, sandalye, aydınlatma bedava<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-4-4" class="outline-3">
-<h3 id="sec-4-4"><span class="section-number-3">4.4</span> Yorum</h3>
+<div id="outline-container-org5d428dd" class="outline-3">
+<h3 id="org5d428dd"><span class="section-number-3">4.4</span> Yorum</h3>
 <div class="outline-text-3" id="text-4-4">
 <p>
-Ücretler fena değildi. Ortam temiz, çalışanlar ilgiliydi. Arkadaşlarla eğlenceli bir tatil oldu.<br  />
+Bayram tatili için yer yoktu.<br />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> Özdere Ege Üniversitesi Kampı <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-09-17 Sat&gt;</span></span></h2>
+<div id="outline-container-orgf0cf22e" class="outline-2">
+<h2 id="orgf0cf22e"><span class="section-number-2">5</span> The Beach Çeşme <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-10-13 Fri 23:42&gt;</span></span></h2>
 <div class="outline-text-2" id="text-5">
-</div><div id="outline-container-sec-5-1" class="outline-3">
-<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Ulaşım</h3>
+</div>
+<div id="outline-container-org99f7a0a" class="outline-3">
+<h3 id="org99f7a0a"><span class="section-number-3">5.1</span> Ulaşım</h3>
 <div class="outline-text-3" id="text-5-1">
 <ol class="org-ol">
-<li>İzban Cumaovası İstasyonu<br  />
-</li>
-<li>Eshot 775<br  />
-</li>
-<li>Karafırın durağından sonra Mina durağı var. Sağda Migrosu görünce durağa bakmaya başlayın. Öğleden önce gidişte şöförün arkası, Öğleden sonra gidişte diğer sıra güneşsiz.<br  />
-</li>
+<li>Fahrettin altay dağıtım merkezinden Çeşme seyahat geçiyor. Sanırım bilet 17,5 tl idi. Çeşme merkezde inilip pansiyona yerleşilir.<br /></li>
+<li>Çeşme merkezde geçen Çiftlikköy - Altınkum dolmuşları ile The Beach'e gidilebilir. Dolmuşta 2.5 lira filan idi.<br /></li>
 </ol>
 </div>
 </div>
-<div id="outline-container-sec-5-2" class="outline-3">
-<h3 id="sec-5-2"><span class="section-number-3">5.2</span> Konaklama ve Maliyet</h3>
+
+<div id="outline-container-orgf835aab" class="outline-3">
+<h3 id="orgf835aab"><span class="section-number-3">5.2</span> Konaklama ve Maliyet</h3>
 <div class="outline-text-3" id="text-5-2">
 <ul class="org-ul">
-<li>Bugalovlarlar gecelik indirimsiz 90 lira. 3 ögün dahil.<br  />
-</li>
-<li>Sanırım Ege üniversitesi öğrencilerine 55 liraydı.<br  />
-</li>
-<li>Günü birlik giriş<br  />
-<ul class="org-ul">
-<li>Ege üniversitesi mensubuna 14 lira<br  />
-</li>
-<li>Dışarıdan 16 lira<br  />
-</li>
-<li>Öğün herkese 12 lira<br  />
-</li>
-</ul>
-</li>
+<li>Pansiyonda (Çeşme merkezinde) yarım pansiyon kaldık. Açık büfe kahvaltı güzel ve yeterliydi.<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-5-3" class="outline-3">
-<h3 id="sec-5-3"><span class="section-number-3">5.3</span> İmkanlar</h3>
+<div id="outline-container-org3b7b0b4" class="outline-3">
+<h3 id="org3b7b0b4"><span class="section-number-3">5.3</span> İmkanlar</h3>
 <div class="outline-text-3" id="text-5-3">
 <ul class="org-ul">
-<li>Masa tenisi(iyi durumda)<br  />
-</li>
-<li>Voleybol sahası(Sabah ve ikindi :) )<br  />
-</li>
+<li>The beachte şezlong, şemsiye çadır 35 TL idi. Deniz güzeldi. İki noktada duş ve 1 noktada soyunma kabini ve tuvaletler vardı.<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-5-4" class="outline-3">
-<h3 id="sec-5-4"><span class="section-number-3">5.4</span> Yorum</h3>
+<div id="outline-container-orgd2d7030" class="outline-3">
+<h3 id="orgd2d7030"><span class="section-number-3">5.4</span> Yorum</h3>
 <div class="outline-text-3" id="text-5-4">
 <p>
-Baya eğlenceli zaman geçirebilirsiniz. Deniz hızlı derinleşiyor. Genelde dalgasız. Alkol pahalı değil. Yemekler inanılmaz güzel ve doyurucu.<br  />
+Ücretler fena değildi. Ortam temiz, çalışanlar ilgiliydi. Arkadaşlarla eğlenceli bir tatil oldu.<br />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6"><span class="section-number-2">6</span> <a id="Hipo" name="Hipo">Hipo</a> Kamp - Gümüldür <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-09-17 Sat&gt;</span></span></h2>
+<div id="outline-container-orgbb1eacc" class="outline-2">
+<h2 id="orgbb1eacc"><span class="section-number-2">6</span> Özdere Ege Üniversitesi Kampı <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-09-17 Sat&gt;</span></span></h2>
 <div class="outline-text-2" id="text-6">
-</div><div id="outline-container-sec-6-1" class="outline-3">
-<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Ulaşım</h3>
+</div>
+<div id="outline-container-org1246db7" class="outline-3">
+<h3 id="org1246db7"><span class="section-number-3">6.1</span> Ulaşım</h3>
 <div class="outline-text-3" id="text-6-1">
 <ol class="org-ol">
-<li>İzban Cumaovası İstasyonu<br  />
-</li>
-<li>Eshot 775<br  />
-</li>
-<li>Mina durağından sonra Sönmez durağında inilecek. Sağda Migrosu görünce durağa bakmaya başlayın. Öğleden önce gidişte şöförün arkası, Öğleden sonra gidişte diğer sıra güneşsiz.<br  />
-
-<p>
-Sönmez durağında indikten sonra aynı ana yolu 500 mt kadar takip ettiğinizde sol tarafınızda <a href="#Hipo">Hipo</a> Kamp :D<br  />
-</p>
-</li>
+<li>İzban Cumaovası İstasyonu<br /></li>
+<li>Eshot 775<br /></li>
+<li>Karafırın durağından sonra Mina durağı var. Sağda Migrosu görünce durağa bakmaya başlayın. Öğleden önce gidişte şöförün arkası, Öğleden sonra gidişte diğer sıra güneşsiz.<br /></li>
 </ol>
 </div>
 </div>
-<div id="outline-container-sec-6-2" class="outline-3">
-<h3 id="sec-6-2"><span class="section-number-3">6.2</span> Konaklama ve Maliyet</h3>
+<div id="outline-container-org658db55" class="outline-3">
+<h3 id="org658db55"><span class="section-number-3">6.2</span> Konaklama ve Maliyet</h3>
 <div class="outline-text-3" id="text-6-2">
 <ul class="org-ul">
-<li>Çadır alanı 16.5 TL<br  />
-</li>
-<li>Kişi başı ücret 22 TL<br  />
-</li>
+<li>Bugalovlarlar gecelik indirimsiz 90 lira. 3 ögün dahil.<br /></li>
+<li>Sanırım Ege üniversitesi öğrencilerine 55 liraydı.<br /></li>
+<li>Günü birlik giriş<br />
+<ul class="org-ul">
+<li>Ege üniversitesi mensubuna 14 lira<br /></li>
+<li>Dışarıdan 16 lira<br /></li>
+<li>Öğün herkese 12 lira<br /></li>
+</ul></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-6-3" class="outline-3">
-<h3 id="sec-6-3"><span class="section-number-3">6.3</span> İmkanlar</h3>
+<div id="outline-container-orge544c6d" class="outline-3">
+<h3 id="orge544c6d"><span class="section-number-3">6.3</span> İmkanlar</h3>
 <div class="outline-text-3" id="text-6-3">
 <ul class="org-ul">
-<li>Duş, tuvalet, soyunma kabini var.<br  />
-</li>
-<li>Kamp alanına gelene kadar Migros ve A101 bulunuyor. Gıda ihtiyacı buradan karşılanabilir. Ayrıca kamp içerisinde bira, su ve bakliyat, ekmek vs satılan bir kantin var. Günde 3 saat aralığında açık oluyor.<br  />
-
-<p>
-Aldığınız şeyleri pişirmek için kap kacağınız varsa bir mutfağı ve buluşık yıkabilecek alanı var.<br  />
-</p>
-</li>
+<li>Masa tenisi(iyi durumda)<br /></li>
+<li>Voleybol sahası(Sabah ve ikindi :) )<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-6-4" class="outline-3">
-<h3 id="sec-6-4"><span class="section-number-3">6.4</span> Yorum</h3>
+<div id="outline-container-orgce20b0a" class="outline-3">
+<h3 id="orgce20b0a"><span class="section-number-3">6.4</span> Yorum</h3>
 <div class="outline-text-3" id="text-6-4">
 <p>
-Aslına bakarsanız pek çadır kampı sayılmaz. Kurulan çadırlar da iki oda 1<br  />
-salon şeklinde. Genellikle ailelerin kaldığı daha çok karavan kampı tarzında. Sincap görebilirsiniz, öyle bir artısı var :D<br  />
+Baya eğlenceli zaman geçirebilirsiniz. Deniz hızlı derinleşiyor. Genelde dalgasız. Alkol pahalı değil. Yemekler inanılmaz güzel ve doyurucu.<br />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-7" class="outline-2">
-<h2 id="sec-7"><span class="section-number-2">7</span> Muğla -&gt; Datça -&gt; <a id="ubucak" name="ubucak">Çubucak</a> Orman Kampı <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-09-17 Sat&gt;</span></span></h2>
+
+<div id="outline-container-org4c90806" class="outline-2">
+<h2 id="org4c90806"><span class="section-number-2">7</span> <a id="org2895329">Hipo</a> Kamp - Gümüldür <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-09-17 Sat&gt;</span></span></h2>
 <div class="outline-text-2" id="text-7">
-</div><div id="outline-container-sec-7-1" class="outline-3">
-<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Ulaşım</h3>
+</div>
+<div id="outline-container-org06e1946" class="outline-3">
+<h3 id="org06e1946"><span class="section-number-3">7.1</span> Ulaşım</h3>
 <div class="outline-text-3" id="text-7-1">
 <ol class="org-ol">
-<li>Otobüs ile Marmaris otogarına gidiş (47 TL - 4 saat civarı)<br  />
-</li>
-<li>Marmaris otogarından Hisarönü dolmuşları ile yolculuk (6.5 TL - 45 dk civarı)<br  />
-</li>
-<li>Hisarönü dolmuşunun son durağı <a href="#ubucak">Çubucak</a> Orman Kampı<br  />
-</li>
+<li>İzban Cumaovası İstasyonu<br /></li>
+<li>Eshot 775<br /></li>
+<li><p>
+Mina durağından sonra Sönmez durağında inilecek. Sağda Migrosu görünce durağa bakmaya başlayın. Öğleden önce gidişte şöförün arkası, Öğleden sonra gidişte diğer sıra güneşsiz.<br />
+</p>
+
+<p>
+Sönmez durağında indikten sonra aynı ana yolu 500 mt kadar takip ettiğinizde sol tarafınızda <a href="#org2895329">Hipo</a> Kamp :D<br />
+</p></li>
 </ol>
 </div>
 </div>
-<div id="outline-container-sec-7-2" class="outline-3">
-<h3 id="sec-7-2"><span class="section-number-3">7.2</span> Konaklama ve Maliyet</h3>
+<div id="outline-container-orgb3da297" class="outline-3">
+<h3 id="orgb3da297"><span class="section-number-3">7.2</span> Konaklama ve Maliyet</h3>
 <div class="outline-text-3" id="text-7-2">
 <ul class="org-ul">
-<li>Kendi çadırınız ile gittiğinizde 4 kişiye kadar 34.5 TL. Bu ücret içinde duş, giyinme kabinleri, şezlonglar (boş bulabilirseniz), çamaşır ve bulaşık yıkama alanı içinde.<br  />
-</li>
-<li>Kendi çadırınız yoksa 65 TL diye duydum. Eğer masa, sandalye vs istiyorsanız 100 TLye kadar çıkıyor.<br  />
-</li>
+<li>Çadır alanı 16.5 TL<br /></li>
+<li>Kişi başı ücret 22 TL<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-7-3" class="outline-3">
-<h3 id="sec-7-3"><span class="section-number-3">7.3</span> İmkanlar</h3>
+<div id="outline-container-org07a84de" class="outline-3">
+<h3 id="org07a84de"><span class="section-number-3">7.3</span> İmkanlar</h3>
 <div class="outline-text-3" id="text-7-3">
 <ul class="org-ul">
-<li>Marketinde ne gerekiyorsa var. Mangal malzemeleri, deniz malzemeleri, kuru bakliyat, <b>alkol</b> vs vs.<br  />
-</li>
-<li>Kafetaryası çok pahalı değil.<br  />
-</li>
-<li>Her gün mü hatırlamıyorum ama sabah 0700'de kampın giriş kapısının karşısında köy pazarı kuruluyor.<br  />
-</li>
+<li>Duş, tuvalet, soyunma kabini var.<br /></li>
+<li><p>
+Kamp alanına gelene kadar Migros ve A101 bulunuyor. Gıda ihtiyacı buradan karşılanabilir. Ayrıca kamp içerisinde bira, su ve bakliyat, ekmek vs satılan bir kantin var. Günde 3 saat aralığında açık oluyor.<br />
+</p>
+
+<p>
+Aldığınız şeyleri pişirmek için kap kacağınız varsa bir mutfağı ve buluşık yıkabilecek alanı var.<br />
+</p></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-7-4" class="outline-3">
-<h3 id="sec-7-4"><span class="section-number-3">7.4</span> Yorum</h3>
+<div id="outline-container-org2ad2628" class="outline-3">
+<h3 id="org2ad2628"><span class="section-number-3">7.4</span> Yorum</h3>
 <div class="outline-text-3" id="text-7-4">
 <p>
-Kurban bayramı tatilinde gitmiş olmamıza rağmen nispeten sakindi. Büyük bir kamp alanı var. Uzun süreli kamp kuranları ayrı bölgelere yerleştirmişler. Ortam çok temiz ve sakin.<br  />
-Kamp kurduğumuz bölümde tavuklar serbest bir şekilde dolaşıyordu. Sincap da gördük ama <a href="#Hipo">Hipo</a> kamp alanındaki gibi insancıl değillerdi.<br  />
+Aslına bakarsanız pek çadır kampı sayılmaz. Kurulan çadırlar da iki oda 1<br />
+salon şeklinde. Genellikle ailelerin kaldığı daha çok karavan kampı tarzında. Sincap görebilirsiniz, öyle bir artısı var :D<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org14ca9c3" class="outline-2">
+<h2 id="org14ca9c3"><span class="section-number-2">8</span> Muğla -&gt; Datça -&gt; <a id="orgc61a0bd">Çubucak</a> Orman Kampı <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-09-17 Sat&gt;</span></span></h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-org920ad40" class="outline-3">
+<h3 id="org920ad40"><span class="section-number-3">8.1</span> Ulaşım</h3>
+<div class="outline-text-3" id="text-8-1">
+<ol class="org-ol">
+<li>Otobüs ile Marmaris otogarına gidiş (47 TL - 4 saat civarı)<br /></li>
+<li>Marmaris otogarından Hisarönü dolmuşları ile yolculuk (6.5 TL - 45 dk civarı)<br /></li>
+<li>Hisarönü dolmuşunun son durağı <a href="#orgc61a0bd">Çubucak</a> Orman Kampı<br /></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgde0231d" class="outline-3">
+<h3 id="orgde0231d"><span class="section-number-3">8.2</span> Konaklama ve Maliyet</h3>
+<div class="outline-text-3" id="text-8-2">
+<ul class="org-ul">
+<li>Kendi çadırınız ile gittiğinizde 4 kişiye kadar 34.5 TL. Bu ücret içinde duş, giyinme kabinleri, şezlonglar (boş bulabilirseniz), çamaşır ve bulaşık yıkama alanı içinde.<br /></li>
+<li>Kendi çadırınız yoksa 65 TL diye duydum. Eğer masa, sandalye vs istiyorsanız 100 TLye kadar çıkıyor.<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org048496f" class="outline-3">
+<h3 id="org048496f"><span class="section-number-3">8.3</span> İmkanlar</h3>
+<div class="outline-text-3" id="text-8-3">
+<ul class="org-ul">
+<li>Marketinde ne gerekiyorsa var. Mangal malzemeleri, deniz malzemeleri, kuru bakliyat, <b>alkol</b> vs vs.<br /></li>
+<li>Kafetaryası çok pahalı değil.<br /></li>
+<li>Her gün mü hatırlamıyorum ama sabah 0700'de kampın giriş kapısının karşısında köy pazarı kuruluyor.<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org62854e0" class="outline-3">
+<h3 id="org62854e0"><span class="section-number-3">8.4</span> Yorum</h3>
+<div class="outline-text-3" id="text-8-4">
+<p>
+Kurban bayramı tatilinde gitmiş olmamıza rağmen nispeten sakindi. Büyük bir kamp alanı var. Uzun süreli kamp kuranları ayrı bölgelere yerleştirmişler. Ortam çok temiz ve sakin.<br />
+Kamp kurduğumuz bölümde tavuklar serbest bir şekilde dolaşıyordu. Sincap da gördük ama <a href="#org2895329">Hipo</a> kamp alanındaki gibi insancıl değillerdi.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-7-5" class="outline-3">
-<h3 id="sec-7-5"><span class="section-number-3">7.5</span> Tecrübe</h3>
-<div class="outline-text-3" id="text-7-5">
+<div id="outline-container-org91cad32" class="outline-3">
+<h3 id="org91cad32"><span class="section-number-3">8.5</span> Tecrübe</h3>
+<div class="outline-text-3" id="text-8-5">
 <ul class="org-ul">
-<li>Kamp alanında elektrik var diyorsa minik bir su ısıtıcı götürülebilir.<br  />
-Akla yatkın örnek<br  />
-<a href="img/su_isitici.jpg">Su ısıtıcı</a><br  />
-Abartılı örnek<br  />
-<a href="img/su_isitici_rezistans.jpg">Su ısıtıcı rezistans</a><br  />
-</li>
-<li>Ateş yakılmasına izin veriliyorsa,<br  />
+<li>Kamp alanında elektrik var diyorsa minik bir su ısıtıcı götürülebilir.<br />
+Akla yatkın örnek<br />
+<a href="img/su_isitici.jpg">Su ısıtıcı</a><br />
+Abartılı örnek<br />
+<a href="img/su_isitici_rezistans.jpg">Su ısıtıcı rezistans</a><br /></li>
+<li>Ateş yakılmasına izin veriliyorsa,<br />
 <ul class="org-ul">
-<li>Portatif bir mangal alınabilir.<br  />
-</li>
-<li>Su ısıtmak için daha önceden güvenli bir ortamda test yapmak kaydı ile mor mangal tutuşturucu jeller ile konserve kutularından küçük bir ocak yapılabilir.<br  />
-</li>
-</ul>
-</li>
-<li>Çamaşır ip ya da ip işe yarayabilir.<br  />
-</li>
+<li>Portatif bir mangal alınabilir.<br /></li>
+<li>Su ısıtmak için daha önceden güvenli bir ortamda test yapmak kaydı ile mor mangal tutuşturucu jeller ile konserve kutularından küçük bir ocak yapılabilir.<br /></li>
+</ul></li>
+<li>Çamaşır ip ya da ip işe yarayabilir.<br /></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-8" class="outline-2">
-<h2 id="sec-8"><span class="section-number-2">8</span> Akyaka orman kampı (0551 448 70 34) DENENMEDİ!</h2>
-<div class="outline-text-2" id="text-8">
-</div><div id="outline-container-sec-8-1" class="outline-3">
-<h3 id="sec-8-1"><span class="section-number-3">8.1</span> Ulaşım</h3>
-<div class="outline-text-3" id="text-8-1">
+<div id="outline-container-org9b91412" class="outline-2">
+<h2 id="org9b91412"><span class="section-number-2">9</span> Akyaka orman kampı (0551 448 70 34) DENENMEDİ!</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-orgb31c19a" class="outline-3">
+<h3 id="orgb31c19a"><span class="section-number-3">9.1</span> Ulaşım</h3>
+<div class="outline-text-3" id="text-9-1">
 <ol class="org-ol">
-<li>Marmaris otobüsüne bin. Pamukkale ve Kamil Koç'un özel servisleri var. Akyaka inmek istediğini söyle onlar getiriyor.<br  />
-</li>
+<li>Marmaris otobüsüne bin. Pamukkale ve Kamil Koç'un özel servisleri var. Akyaka inmek istediğini söyle onlar getiriyor.<br /></li>
 </ol>
 </div>
 </div>
-<div id="outline-container-sec-8-2" class="outline-3">
-<h3 id="sec-8-2"><span class="section-number-3">8.2</span> Konaklama</h3>
-<div class="outline-text-3" id="text-8-2">
+<div id="outline-container-orge506885" class="outline-3">
+<h3 id="orge506885"><span class="section-number-3">9.2</span> Konaklama</h3>
+<div class="outline-text-3" id="text-9-2">
 <ul class="org-ul">
-<li>Çadır alanı günlük 35 TL kendi çadırımız, kişi başı ücret yok.<br  />
-</li>
+<li>Çadır alanı günlük 35 TL kendi çadırımız, kişi başı ücret yok.<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-8-3" class="outline-3">
-<h3 id="sec-8-3"><span class="section-number-3">8.3</span> İmkanlar</h3>
-<div class="outline-text-3" id="text-8-3">
+<div id="outline-container-org8c6a8a5" class="outline-3">
+<h3 id="org8c6a8a5"><span class="section-number-3">9.3</span> İmkanlar</h3>
+<div class="outline-text-3" id="text-9-3">
 <ul class="org-ul">
-<li>WC, duş, kafeterya, elektrik var.<br  />
-</li>
+<li>WC, duş, kafeterya, elektrik var.<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-8-4" class="outline-3">
-<h3 id="sec-8-4"><span class="section-number-3">8.4</span> Yorum</h3>
-<div class="outline-text-3" id="text-8-4">
+<div id="outline-container-orgae91f94" class="outline-3">
+<h3 id="orgae91f94"><span class="section-number-3">9.4</span> Yorum</h3>
+<div class="outline-text-3" id="text-9-4">
 <p>
-Normal durumlarda rezervasyon gerekmediği ancak bayram gibi özel durumlarda gelmesen 2 gün önceden aramak gerektiğini söylediler.<br  />
+Normal durumlarda rezervasyon gerekmediği ancak bayram gibi özel durumlarda gelmesen 2 gün önceden aramak gerektiğini söylediler.<br />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-9" class="outline-2">
-<h2 id="sec-9"><span class="section-number-2">9</span> Eklenmesi istediğiniz rotaları umut1010@gmail.com adresine üstteki formata uygun gönderebilirsiniz.</h2>
+<div id="outline-container-org39729fe" class="outline-2">
+<h2 id="org39729fe"><span class="section-number-2">10</span> Eklenmesi istediğiniz rotaları umut1010@gmail.com adresine üstteki formata uygun gönderebilirsiniz.</h2>
 </div>
-<div id="outline-container-sec-10" class="outline-2">
-<h2 id="sec-10"><span class="section-number-2">10</span> Bağlantılar</h2>
-<div class="outline-text-2" id="text-10">
+<div id="outline-container-org2817d60" class="outline-2">
+<h2 id="org2817d60"><span class="section-number-2">11</span> Bağlantılar</h2>
+<div class="outline-text-2" id="text-11">
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <center>
 <p>
-<a href="blog.html">Blog</a> <a href="bash.html">Bash</a> <a href="baslangiclar.html">Başlangıç</a> <a href="muzik.html">Müzik</a> <a href="okunacaklar.html">Okunacaklar</a> <a href="notlar.html">Notlar</a> <a href="projeler.html">Projeler</a> <a href="sozler.html">Sözler</a> <a href="tatil_rotalari.html">Tatil Rotaları</a> <a href="emacs.html">Emacs</a> <a href="index.html">Ana Sayfa</a><br  />
+<a href="blog.html">Blog</a> <a href="bash.html">Bash</a> <a href="baslangiclar.html">Başlangıç</a> <a href="muzik.html">Müzik</a> <a href="okunacaklar.html">Okunacaklar</a> <a href="notlar.html">Notlar</a> <a href="projeler.html">Projeler</a> <a href="sozler.html">Sözler</a> <a href="tatil_rotalari.html">Tatil Rotaları</a> <a href="emacs.html">Emacs</a> <a href="index.html">Ana Sayfa</a><br />
 </p>
 <a href="https://umtmu.wordpress.com/"><img src="img/wp.png" width="2%" height="2%"></a>&nbsp&nbsp
 <a href="#"><img src="img/yukari.png" width="2%" height="2%"></a>&nbsp&nbsp
@@ -633,8 +749,7 @@ Normal durumlarda rezervasyon gerekmediği ancak bayram gibi özel durumlarda ge
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: umt</p>
-<p class="date">Created: 2018-01-23 Tue 14:03</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="date">Created: 2018-06-18 Mon 14:09</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
