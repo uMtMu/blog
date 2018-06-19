@@ -1,0 +1,551 @@
+Meanings of some Japanese Go Terms
+In the West we use a number of Japanese terms for some of the technical concepts involved in playing Go, for historic reasons. Only a few of them are important to know when playing. Some more are listed on our British Go Journal Glossary [1]. Sensei's Library [2] provides more information about these and the Chinese and Korean equivalents.
+TEN VERY COMMON GO TERMS, for which there is no exact English word
+Atari      Dame       Go        Gote      Hane
+Ko         Komi       Moyo      Seki      Sente
+TEN MORE COMMONLY USED GO TERMS, for which (ditto)
+Dango      Fuseki    Joseki    Kakari     Miai
+Ponnuki    Shimari   Tenuki    Tesuji
+FIVE COMMON GO TOURNAMENT TERMS
+Byo-yomi   Dan       Komi      Kyu       Nigiri
+
+
+Aji (taste):
+          Latent threats or possibilities existing in a situation.
+
+Ajikeshi (aji erasure):
+          A play which removes aji.
+
+Aji ga warui (bad aji):
+          A position which leaves aji for the opponent to use.
+
+Aki-san-kaku (empty triangle):
+          The shape of the three Black stones, the elbow point being
+          vacant. Generally bad shape, see guzumi.
+
+Amarigatachi:
+          Play where one feels one has made good  moves, when in
+          fact one has accomplished little.
+
+Ate (Atari):
+          An immediate threat to capture; a single liberty
+          remains. A verbal warning is often issued when placing
+          an opponent into ate.
+
+Atekomi (aim inside):
+          Uncertain, but seems related to a peeping move.
+
+Atsumi (thickness):
+          Strong formation of stones facing the center or  facing
+          along a side.
+
+Basami:   Pincer (same as hasami).
+   ikken basami:  1-step pincer (on 3rd line); taka-basami (4th line)
+  nikken basami:  2-step pincer (on 3rd line)      "           "
+  sangen basami:  3-step pincer (on 3rd line)      "           "
+
+Bata-bata:
+          A tesuji connection.
+
+-bane, -basami, -biraki
+          See hane, hasami, hiraki.
+
+Boshi (hat):
+          A capping move.
+
+Botsugi:  A connection which forms a wall of three stones.
+
+Byo-yomi: Extra count-down time after regular clock time has elapsed.
+
+Chosen:   Eternal life; a rare position involving repetitive capture.
+
+Chuban[sen]:
+          The middle game.
+
+Daidaigeima (very large knight's move):
+          Four across and one vertically (or vice versa).
+
+Dame (useless):
+          A neutral point, territory for neither; a liberty.
+
+Damezumari:
+          Shortage of liberties.
+
+Dan:      Advanced grade.
+
+Dango (dumpling shape):
+          A solid mass of stones; a very inefficient shape.
+
+De (go between):
+          A move which pushes between two enemy stones.
+
+Degiri:   A sequence of two moves which push and cut.
+
+Fukure:   Swell outward.
+
+Furikawari:
+          Exchange (of territories).
+
+Fuseki:   The opening moves of the game where influence and territory
+          outlines are formed (literally: 'no stones').
+
+Geta:
+          A method of capturing an enemy stone; a net trap. The
+          shape of the stones resembles a wooden clog.
+
+Gote:     Defensive play, loss of initiative (literally: 'lower hand').
+
+Gote no sente:
+          Gote move with sente potential.
+
+Guru guru mawashi:
+          "spinning around (into dango)". A series of attacks
+          leading to a loose ladder and capture.
+
+Guzumi:   A good empty triangle.
+
+Hai:      Crawl.
+
+Hamari:   Fall into a trap.
+
+Hamete:   A trap.
+
+Hana-tsuke:
+          Nose attachment.
+
+Hane:     A diagonal move played in contact with an enemy stone.
+
+    Hane-dashi:   Outer hane.
+
+    Hane-kaeshi:  Counter-hane.
+
+    Hane-komi:    Hane between two stones.
+
+    Hane-tsuki:   Belly attack.
+
+    Shita-hane:   Hane underneath.
+
+Hanami ko ('flower-viewing ko'):
+          Ko where one player stands to lose a lot, but the other
+          only a tiny amount.
+
+Hara-tsuke:
+          Belly attack.
+
+Hasami (pincer play):
+          A play that attacks by preventing the opponent's extension
+          down either side (see Basami).
+
+Hasami-tsuke:
+          Pincer attachment.
+
+Hazama:   Balance point.
+
+Hazama-tobi:
+          One point diagonal jump.
+
+Hiki:     Draw back.
+
+Hikkuri-kaeshi:
+          Self-reversing sequence.
+
+Hiraki:   3rd or 4th line extension.
+
+Honte:    The proper move.
+
+Horikomi (throw-in):
+          A single stone played as a sacrifice.
+
+Hoshi:    ('star point') the 4-4 point.
+
+Ichi ban: A win by ten points or less.
+
+Ichigo-masu:
+          Carpenter's square.
+
+Igo:      An alternative name for Go.
+
+Ikken-tobi:
+          One point extension.
+
+Insei:    Student professional.
+
+Ippoji:   One large area.
+
+Ishi-no-shita:
+          Under the stones (a particular tesuji).
+
+Ishi:     Stone.
+
+Ji Dori Go:
+          Derisive term for 'ground-taking go'.
+
+Jigo:     Drawn game (by equal territory).
+
+Jingasa:  Double empty triangle (4 in a "T").
+
+Joseki (established stones):
+          Known sequences of moves near the corner which result
+          in near-equal positions for white and black.
+
+Jun Kan Ko:
+          A very rare position involving repetitive capture.
+
+Kado:     Angle.
+
+Kagame:   False eye.
+
+Kakae:    Grip.
+
+Kakari (approach):
+          A move that attacks a single enemy corner stone.
+          Prevented by shimari.
+
+Karami:   Splitting.
+
+Kata-sente:
+          One-sided sente.
+
+Katatsuki (shoulder hit):
+          A play on a diagonal of the opponent's stone.
+
+Katatsugi:
+          A solid connection.
+
+Kake:     Press down.
+
+Kaketsugi (hanging connection):
+          A open connection. An example is three stones surrounding
+          an empty point. Promise for eye shape, but can be attacked.
+
+Katachi:  The shape of the stones.
+
+     Sabaki:   Quick development, light shape.
+
+     Karui:    Single move basic to formation of flexible shape.
+
+     Omoi:     Heavy, clumped shape.
+
+Keima:    Knight's move extension.
+
+Keima-tsugi:
+          Knight's move connection.
+
+Keima-watari:
+          Connection at edge of board by keima.
+
+Keshi:    Erasure.
+
+Kikashi:  A forcing move, usually made outside the main
+          flow of play. Often answered, then ignored, to be used
+          later in the game.
+
+Kiri:     Cut.
+
+Kiri-chigae:
+          Cross-cut.
+
+Kiri-nobi:
+          Cut then extend.
+
+Ko:       Repetitive capture (literally 'eternity')
+
+Ko threat:
+          Intervening move (that one hopes will force a reply)
+          before a ko can be recaptured.
+
+-komi:    To go into.
+
+Komi:     Score adjustment usually penalising black for playing
+          first. Often 6.5 points.
+
+Komoku:   ('small point') 3-4 point.
+
+Korigatachi(frozen shape):
+          Inefficient or ugly shape.
+
+Kosumi:   A diagonal play next to one's own stone.
+
+Kosumi-tsuke:
+          A kosumi which is also a tsuke.
+
+Kyu:      Learner grade.
+
+Leg:      Term used by James Davies for a jogged end of a group.
+          Weak leg refers to a diagonal extension.
+
+Magari (turn):
+          A play which turns a group, forming a corner.
+
+Mane Go:  Mirror go. White playing symmetrically opposite black.
+
+Mannen Ko:
+          "10,000 year ko" (a special formation where whoever
+          starts the attack must find the first ko-threat).
+
+Me:       Eye or point.
+
+Me ari me nashi:
+          A semeai in which one player has one eye.
+
+Miai:     Two points which accomplish the same result; if
+          deprived of one, the other must be played.
+
+Mochi-komi:
+          Botched invasion.
+
+Modori:   Fall back.
+
+Moku:     Same as 'me'.
+
+Mokuhazushi ('point-detached'):
+          3-5 point.
+
+Motare:   Roundabout attack.
+
+Moyo:     Large potential territory.
+
+Mukai-komoku:
+          Symmetrically opposite komoku played in fuseki.
+
+Mushobu:  Literally "no-win-loss".
+          Abandoned game (due to triple ko or similar).
+
+Nadare:   Avalanche joseki.
+
+Naka-de:  Central placement.
+
+Nakade:   Unsettled eye shape.
+
+Naka oshi gatchi:
+          Early victory by a large margin.
+
+Narabi:   Adjacent extension from a non-contact point.
+
+Nidan bane (double hane):
+          Two successive hane plays by one player.
+
+Nidan osae (double osae):
+          Two successive blocks by one player.
+
+Nigiri:   Equivalent of coin-toss to decide who starts. One grabs
+          a handful of stones; the other guesses odd or even.
+
+Ni ren sei:
+          Fuseki with two adjacent star points.
+
+Nobi (Stretch):
+          An extension away from an opponent's tsuke, cross-cut, etc.
+
+Nobi-komi:Extend into the enemy's territory.
+
+Nozoki:   A peeping move which threatens to cut.
+
+Nuki:     Capture.
+
+Nurui:    Lukewarm.
+
+Oba:      Large fuseki point.
+
+Ogeima (large knight's move):
+          Three across and one vertically (or vice versa).
+
+Oiotoshi: A method of capture where stones are sacrificed to destroy
+          the enemy's eye shape. (Literally "robber's attack)
+
+Oki:      Placement. Playing on a vital spot (to kill eyes).
+
+Onadare:  Large avalanche joseki.
+
+Osae:     A blocking move which prevents extension along a line.
+
+Oshi:     Push.
+
+Oshi-tsubuki:
+          Squashing move.
+
+Oyose:    Large end-game plays.
+
+Ozaru:    Monkey jump.
+
+Pintsugi: Connect between.
+
+Ponnuki:  Space between four stones after capture.
+
+Ryo:      Double.
+
+Sabaki:   Light play; disposable stones.
+
+Sagari:   To descend straight toward the edge of the board.
+
+San-ba-garosu:
+          'Three crows'. Corner enclosure by 5-3, 4-4, 3-5 points.
+
+Sangen:   Three point interval.
+
+San ren sei:
+          Fuseki with three adjacent star points.
+
+San-san:  3-3 point.
+
+Saru-suberi:
+          Monkey jump.
+
+Sashikomi:
+          Insert.
+
+Sei moku (Star points):
+          Handicap points.
+
+Seki:     A situation where neither player may place the other in
+          ate without placing himself in ate. Stalemate, with no
+          territory awarded.
+
+Seki-to:  "Stone tower". Sacrifice of two stones at edge of board.
+
+Semeai:   Race to capture.
+
+Sente:    Threat forcing direct response, creates initiative.
+          The right to choose where to play next.
+          Opposite to gote (literally: 'upper hand').
+
+Shibori:  Squeeze play.
+
+Shicho:   Ladder play.
+
+Shicho-atari:
+          Ladder breaker. A stone played in the path of a
+          potential shicho, threatening to make it fail.
+
+Shimari (corner enclosure):
+          A two-stone  corner  formation. May not secure the
+          corner, but attacker is at a disadvantage. Opposite of
+          kakari.
+
+     Kogeima shimari (small knight's enclosure):
+            The 3-4 and 5-3 points.
+
+     Ikken shimari (one-point enclosure):
+            The 3-4 and 5-4 points.
+
+     Ogeima shimari (large knight's enclosure):
+            The 3-4 and 6-3 points.
+
+Shin fuseki:
+          A revolutionary 1930's strategy. Now blended with
+          traditional strategy to form the modern style.
+
+Shinogi:  Eye-forming sequence.
+
+Shita-hane:
+          Hane underneath.
+
+Shita-tsuke:
+          Attach underneath.
+
+Soto:     Outwards.
+
+Suberi:   Sliding under.
+
+Suji:     Style; skilfulness.
+
+Susoaki:  Open skirt.
+
+Sute ishi:
+          Sacrifice stone.
+
+Tachi:    Extension adjacent to centre.
+
+Taisha:   A joseki arising from an ignored low kakari to 4-3 point.
+
+Takamoku: ('high point') 4-5 point.
+
+Take-fu:  Bamboo joint.
+
+Tasuki fuseki:
+          Black playing the same in opposite corners.
+
+Tedo-mari:
+          The last valuable end-game points.
+
+Ten gen:  The centre point of the board.
+
+Tenuki:   Ignoring opponent's last move to play elsewhere.
+
+Te okure: Wasted move.
+
+Tesuji ('strong hand'):
+          The best play in a local position; skilful tactical move.
+
+Tetchu (steel post):
+          Two stones placed in line vertically and near the edge.
+
+Tewari:
+          Analysing by removing irrelevant stones.
+
+Tobi:     Jump.
+
+     Tobi-dashi:   Jump out.
+
+     Tobi-komi:    Jump into enemy space.
+
+     Tobi-magari:  Jump at right angle.
+
+     Tobi-tsuke:   Jumping attachment.
+
+Torazu San Moku:
+          A very rare position in the corner, where either side
+          may capture first, but would lose points to do so.
+
+Tsugi:    Connection.
+
+Tsuke:    Attach. A play made in contact with an enemy stone,
+          but not in contact with any friendly stones.
+
+     Tsuke-atari:  Bang against (head-on).
+
+     Tsuke-giri:   Attach then cut.
+
+     Tsuke-kaeshi: Counter-attach.
+
+     Tsuke-koshi:  Attach at keima waist.
+
+     Tsuke-nobi:   Attach and extend (handicap joseki).
+
+Tsume:    Extension preventing an enemy extension.
+
+Tsume-go: Life and death problems.
+
+Tsuppari: Slap against (sideways).
+
+Uchi:     Inwards.
+
+Uchikaki: Sacrifice on first line to make an eye false.
+
+Uchikomi: Playing to invade enemy territory.
+
+Uttegaeshi:
+          Snap-back.
+
+Warikomi: Wedge between two stones.
+
+Wariuchi: A wedging move which has room for expansion in either
+          direction.
+
+Watari:   To connect underneath.
+
+Wei Chi:  The Chinese name for Go (literally: "game of encirclement").
+
+Yose:     End game.
+
+Yose-ko:  A ko of little value.
+
+Yosu miru:
+          Probe; to see opponent's response. May be sacrificed.
+
+Yurumi:   Loose.
+
+Zoku-suji:
+          False or vulgar style.
+
+https://www.britgo.org/print/750
