@@ -1,9 +1,13 @@
 #+INCLUDE: "baslik.org"
 * Sozluk
+** Neden bu kadar güzel kadın olması
+   <2018-07-11 Wed 16:00>
+   Güzel kadınların göz önünde olması, göz önünde olan kadınların da çok güzelleştirilmesi sonucu olan nnm
+
 ** Dünyanın anlamsız olduğu gerçeği
    <2016-10-21 Fri 00:25>
    Acı ama gerçek. Dünyanın herhangi bir anlamı yok. Çünkü anlam tanım olarak insan zihninde bulunur ve şeyler ile ilişkilendirilir.
-   [[top][Yukarı]]
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"
+
 
