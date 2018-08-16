@@ -28,6 +28,73 @@
      config.vm.network :forwarded_port, guest: 80, host: 8080
    end
    #+END_EXAMPLE
+** Vagrantfile - Multiple VM
+   #+NAME: VagrantfileMultipleVM
+   #+BEGIN_EXAMPLE
+   Vagrant.configure("2") do |config|
+ 
+   config.vm.define "lb" do |lb|
+    lb.vm.box = "ubuntu/bionic64"
+    lb.vm.host_name = "lb"
+    lb.vm.network "private_network", ip: "192.168.0.20"
+    lb.vm.network :forwarded_port, guest: 22, host: 2220, id: "ssh", auto_correct: true
+    config.vm.provider :virtualbox do |vb|
+      vb.customize ["modifyvm", :id, "--memory", "512"]
+    end
+   end
+ 
+  config.vm.define "i1" do |i1|
+    i1.vm.box = "ubuntu/bionic64"
+    i1.vm.host_name = "i1"
+    i1.vm.network "private_network", ip: "192.168.0.21"
+    i1.vm.network :forwarded_port, guest: 22, host: 2221, id: "ssh", auto_correct: true
+    config.vm.provider :virtualbox do |vb|
+      vb.customize ["modifyvm", :id, "--memory", "1024"]
+    end
+  end
+ 
+  config.vm.define "i2" do |i2|
+    i2.vm.box = "ubuntu/bionic64"
+    i2.vm.host_name = "i2"
+    i2.vm.network "private_network", ip: "192.168.0.22"
+    i2.vm.network :forwarded_port, guest: 22, host: 2222, id: "ssh", auto_correct: true
+    config.vm.provider :virtualbox do |vb|
+      vb.customize ["modifyvm", :id, "--memory", "1024"]
+    end
+  end
+ 
+  config.vm.define "i3" do |i3|
+    i3.vm.box = "ubuntu/bionic64"
+    i3.vm.host_name = "i3"
+    i3.vm.network "private_network", ip: "192.168.0.23"
+    i3.vm.network :forwarded_port, guest: 22, host: 2223, id: "ssh", auto_correct: true
+    config.vm.provider :virtualbox do |vb|
+      vb.customize ["modifyvm", :id, "--memory", "1024"]
+    end
+  end
+ 
+  config.vm.define "i4" do |i4|
+    i4.vm.box = "ubuntu/bionic64"
+    i4.vm.host_name = "i4"
+    i4.vm.network "private_network", ip: "192.168.0.24"
+    i4.vm.network :forwarded_port, guest: 22, host: 2224, id: "ssh", auto_correct: true
+    config.vm.provider :virtualbox do |vb|
+      vb.customize ["modifyvm", :id, "--memory", "1024"]
+    end
+  end
+ 
+  config.vm.define "i5" do |i5|
+    i5.vm.box = "ubuntu/bionic64"
+    i5.vm.host_name = "i5"
+    i5.vm.network "private_network", ip: "192.168.0.25"
+    i5.vm.network :forwarded_port, guest: 22, host: 2225, id: "ssh", auto_correct: true
+    config.vm.provider :virtualbox do |vb|
+      vb.customize ["modifyvm", :id, "--memory", "1024"]
+    end
+  end
+ 
+end
 
+   #+END_EXAMPLE
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"
