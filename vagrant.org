@@ -1,33 +1,33 @@
 #+INCLUDE: "baslik.org"
 * Scratch
-  - vagrant box add box_name box_url
-  vagrant box add precise64 http://files.vagrantup.com/precise64.box
-  - vagrant init [box_name]
-  vagrant init precise64
-
-  #+NAME: Vagrantfile
-  #+BEGIN_EXAMPLE
-  Vagrant.configure("2") do |config|
-    config.vm.box = box_name
-    config.vm.hostname = hostname
-    config.vm.network "public_network", ip: "aaa.bbb.ccc.ddd", bridge: "enp0s25"
+** vagrant box add box_name box_url
+   vagrant box add precise64 http://files.vagrantup.com/precise64.box
+** vagrant init [box_name]
+   vagrant init precise64
+** Vagrantfile
+   #+NAME: Vagrantfile
+   #+BEGIN_EXAMPLE
+   Vagrant.configure("2") do |config|
+     config.vm.box = box_name
+     config.vm.hostname = hostname
+     config.vm.network "public_network", ip: "aaa.bbb.ccc.ddd", bridge: "enp0s25"
     
-    # default router
-    config.vm.provision "shell",
-      run: "always",
-      inline: "route add default gw aaa.bbb.ccc.ddd"
+     # default router
+     config.vm.provision "shell",
+       run: "always",
+       inline: "route add default gw aaa.bbb.ccc.ddd"
 
-    # delete default gw on eth0
-    # Not running as wanted. I can write static code
-    # Static code didn't run as wanted. I think there is a problem in "inline"
-    config.vm.provision "shell",
-      run: "always",
-      inline: "route del default gw aaa.bbb.ccc.ddd"
+     # delete default gw on eth0
+     # Not running as wanted. I can write static code
+     # Static code didn't run as wanted. I think there is a problem in "inline"
+     config.vm.provision "shell",
+       run: "always",
+       inline: "route del default gw aaa.bbb.ccc.ddd"
     
-    # port forwarding
-    config.vm.network :forwarded_port, guest: 80, host: 8080
-  end
-  #+END_EXAMPLE
+     # port forwarding
+     config.vm.network :forwarded_port, guest: 80, host: 8080
+   end
+   #+END_EXAMPLE
 
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"
