@@ -1,100 +1,181 @@
 #+INCLUDE: "baslik.org"
 * Scratch
-** vagrant box add box_name box_url
-   vagrant box add precise64 http://files.vagrantup.com/precise64.box
-** vagrant init [box_name]
-   vagrant init precise64
+** komutlar - box image
+*** vagrant box add box_name box_url
+    vagrant box add precise64 http://files.vagrantup.com/precise64.box
+** komutlar - instance
+*** vagrant init [box_name]
+    *precise64* imajı ile bir box oluştur. Vagrantfile yaz.
+    #+BEGIN_EXAMPLE
+    vagrant init precise64
+    #+END_EXAMPLE
+*** vagrant ssh [id|name]
+*** vagrant up [id|name] 
+*** vagrant delete [id|name]
+** komutlar - genel
+*** vagrant global-status
 ** Vagrantfile
-   #+NAME: Vagrantfile
-   #+BEGIN_EXAMPLE
-   Vagrant.configure("2") do |config|
-     config.vm.box = box_name
-     config.vm.hostname = hostname
-     config.vm.network "public_network", ip: "aaa.bbb.ccc.ddd", bridge: "enp0s25"
+*** Example
+    #+NAME: Vagrantfile
+    #+BEGIN_SRC ruby
+    Vagrant.configure("2") do |config|
+      config.vm.box = box_name
+      config.vm.hostname = hostname
+      config.vm.network "public_network", ip: "aaa.bbb.ccc.ddd", bridge: "enp0s25"
     
-     # default router
-     config.vm.provision "shell",
-       run: "always",
-       inline: "route add default gw aaa.bbb.ccc.ddd"
+      # default router
+      config.vm.provision "shell",
+	run: "always",
+	inline: "route add default gw aaa.bbb.ccc.ddd"
 
-     # delete default gw on eth0
-     # Not running as wanted. I can write static code
-     # Static code didn't run as wanted. I think there is a problem in "inline"
-     config.vm.provision "shell",
-       run: "always",
-       inline: "route del default gw aaa.bbb.ccc.ddd"
+      # delete default gw on eth0
+      # Not running as wanted. I can write static code
+      # Static code didn't run as wanted. I think there is a problem in "inline"
+      config.vm.provision "shell",
+	run: "always",
+	inline: "route del default gw aaa.bbb.ccc.ddd"
     
-     # port forwarding
-     config.vm.network :forwarded_port, guest: 80, host: 8080
-   end
-   #+END_EXAMPLE
-** Vagrantfile - Multiple VM
-   #+NAME: VagrantfileMultipleVM
-   #+BEGIN_EXAMPLE
-   Vagrant.configure("2") do |config|
- 
-   config.vm.define "lb" do |lb|
-    lb.vm.box = "ubuntu/bionic64"
-    lb.vm.host_name = "lb"
-    lb.vm.network "private_network", ip: "192.168.0.20"
-    lb.vm.network :forwarded_port, guest: 22, host: 2220, id: "ssh", auto_correct: true
-    config.vm.provider :virtualbox do |vb|
-      vb.customize ["modifyvm", :id, "--memory", "512"]
+      # port forwarding
+      config.vm.network :forwarded_port, guest: 80, host: 8080
     end
-   end
- 
-  config.vm.define "i1" do |i1|
-    i1.vm.box = "ubuntu/bionic64"
-    i1.vm.host_name = "i1"
-    i1.vm.network "private_network", ip: "192.168.0.21"
-    i1.vm.network :forwarded_port, guest: 22, host: 2221, id: "ssh", auto_correct: true
-    config.vm.provider :virtualbox do |vb|
-      vb.customize ["modifyvm", :id, "--memory", "1024"]
-    end
-  end
- 
-  config.vm.define "i2" do |i2|
-    i2.vm.box = "ubuntu/bionic64"
-    i2.vm.host_name = "i2"
-    i2.vm.network "private_network", ip: "192.168.0.22"
-    i2.vm.network :forwarded_port, guest: 22, host: 2222, id: "ssh", auto_correct: true
-    config.vm.provider :virtualbox do |vb|
-      vb.customize ["modifyvm", :id, "--memory", "1024"]
-    end
-  end
- 
-  config.vm.define "i3" do |i3|
-    i3.vm.box = "ubuntu/bionic64"
-    i3.vm.host_name = "i3"
-    i3.vm.network "private_network", ip: "192.168.0.23"
-    i3.vm.network :forwarded_port, guest: 22, host: 2223, id: "ssh", auto_correct: true
-    config.vm.provider :virtualbox do |vb|
-      vb.customize ["modifyvm", :id, "--memory", "1024"]
-    end
-  end
- 
-  config.vm.define "i4" do |i4|
-    i4.vm.box = "ubuntu/bionic64"
-    i4.vm.host_name = "i4"
-    i4.vm.network "private_network", ip: "192.168.0.24"
-    i4.vm.network :forwarded_port, guest: 22, host: 2224, id: "ssh", auto_correct: true
-    config.vm.provider :virtualbox do |vb|
-      vb.customize ["modifyvm", :id, "--memory", "1024"]
-    end
-  end
- 
-  config.vm.define "i5" do |i5|
-    i5.vm.box = "ubuntu/bionic64"
-    i5.vm.host_name = "i5"
-    i5.vm.network "private_network", ip: "192.168.0.25"
-    i5.vm.network :forwarded_port, guest: 22, host: 2225, id: "ssh", auto_correct: true
-    config.vm.provider :virtualbox do |vb|
-      vb.customize ["modifyvm", :id, "--memory", "1024"]
-    end
-  end
- 
-end
+    #+END_SRC
+*** Configure RAM/CPU
+    #+BEGIN_EXAMPLE
+    config.vm.customize ["modifyvm", :id, "--memory", 2048]
+    config.vm.customize ["modifyvm", :id, "--cpus", 2]
+    #+END_EXAMPLE
+*** Example - Provision - Salt
+    #+BEGIN_SRC ruby
+      # -*- mode: ruby -*-
+      # vi: set ft=ruby :
 
-   #+END_EXAMPLE
+      Vagrant.configure("2") do |config|
+	config.vm.box = "precise64"
+	config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+	config.ssh.forward_agent = true
+
+	# Deployment instance salt master
+	config.vm.define :salt do |salt|
+	  salt.vm.network :private_network, ip: "10.10.10.2"
+	  salt.vm.hostname = 'master'
+
+	  salt.vm.synced_folder "salt/roots/", "/srv/"
+	  salt.vm.synced_folder "salt/key/", "/etc/salt/keys"
+	  salt.vm.network :forwarded_port, guest: 22, host: 2220, auto_correct: true
+
+	  salt.vm.provider "virtualbox" do |v|
+	    v.name = "salt"
+	    v.customize ["modifyvm", :id, "--memory", "1024"]
+	  end
+
+	  salt.vm.provision :salt do |config|
+	    config.minion_config = "salt/minion"
+	    config.master_config = "salt/master"
+	    config.minion_key = "salt/key/minion.pem"
+	    config.minion_pub = "salt/key/minion.pub"
+	    config.master_key = "salt/key/master.pem"
+	    config.master_pub = "salt/key/master.pub"
+	    config.install_master = true
+	    config.seed_master = {salt: "salt/key/master.pub", app0: "salt/key/minion.pub"}
+	    config.run_highstate = false
+	    config.accept_keys = true
+	    config.verbose = true
+	    config.bootstrap_options = "-D"
+	    config.temp_config_dir = "/tmp"
+	  end
+	end
+
+
+	# appX instance salt ninion
+	config.vm.define :app0 do |app0|
+	  app0.vm.network :private_network, ip: "10.10.10.3"
+	  app0.vm.hostname = "app0"
+
+	  app0.vm.synced_folder "salt/key/", "/etc/salt/keys"
+	  app0.vm.network :forwarded_port, guest: 22, host: 2221, auto_correct: true
+
+	  app0.vm.provider "virtualbox" do |v|
+	    v.name = "app0"
+	    v.customize ["modifyvm", :id, "--memory", "1024"]
+	  end
+
+	  app0.vm.provision :salt do |config|
+	    config.minion_config = "salt/minion"
+	    config.minion_key = "salt/key/minion.pem"
+	    config.minion_pub = "salt/key/minion.pub"
+	    config.verbose = true
+	    config.bootstrap_options = "-D"
+	    config.temp_config_dir = "/tmp"
+	  end
+	end
+      end
+    #+END_SRC
+*** Example - Multiple VM
+    #+NAME: VagrantfileMultipleVM
+    #+BEGIN_SRC ruby
+      Vagrant.configure("2") do |config|
+
+	config.vm.define "lb" do |lb|
+	  lb.vm.box = "ubuntu/bionic64"
+	  lb.vm.host_name = "lb"
+	  lb.vm.network "private_network", ip: "192.168.0.20"
+	  lb.vm.network :forwarded_port, guest: 22, host: 2220, id: "ssh", auto_correct: true
+	  config.vm.provider :virtualbox do |vb|
+	    vb.customize ["modifyvm", :id, "--memory", "512"]
+	  end
+	end
+
+	config.vm.define "i1" do |i1|
+	  i1.vm.box = "ubuntu/bionic64"
+	  i1.vm.host_name = "i1"
+	  i1.vm.network "private_network", ip: "192.168.0.21"
+	  i1.vm.network :forwarded_port, guest: 22, host: 2221, id: "ssh", auto_correct: true
+	  config.vm.provider :virtualbox do |vb|
+	    vb.customize ["modifyvm", :id, "--memory", "1024"]
+	  end
+	end
+
+	config.vm.define "i2" do |i2|
+	  i2.vm.box = "ubuntu/bionic64"
+	  i2.vm.host_name = "i2"
+	  i2.vm.network "private_network", ip: "192.168.0.22"
+	  i2.vm.network :forwarded_port, guest: 22, host: 2222, id: "ssh", auto_correct: true
+	  config.vm.provider :virtualbox do |vb|
+	    vb.customize ["modifyvm", :id, "--memory", "1024"]
+	  end
+	end
+
+	config.vm.define "i3" do |i3|
+	  i3.vm.box = "ubuntu/bionic64"
+	  i3.vm.host_name = "i3"
+	  i3.vm.network "private_network", ip: "192.168.0.23"
+	  i3.vm.network :forwarded_port, guest: 22, host: 2223, id: "ssh", auto_correct: true
+	  config.vm.provider :virtualbox do |vb|
+	    vb.customize ["modifyvm", :id, "--memory", "1024"]
+	  end
+	end
+
+	config.vm.define "i4" do |i4|
+	  i4.vm.box = "ubuntu/bionic64"
+	  i4.vm.host_name = "i4"
+	  i4.vm.network "private_network", ip: "192.168.0.24"
+	  i4.vm.network :forwarded_port, guest: 22, host: 2224, id: "ssh", auto_correct: true
+	  config.vm.provider :virtualbox do |vb|
+	    vb.customize ["modifyvm", :id, "--memory", "1024"]
+	  end
+	end
+
+	config.vm.define "i5" do |i5|
+	  i5.vm.box = "ubuntu/bionic64"
+	  i5.vm.host_name = "i5"
+	  i5.vm.network "private_network", ip: "192.168.0.25"
+	  i5.vm.network :forwarded_port, guest: 22, host: 2225, id: "ssh", auto_correct: true
+	  config.vm.provider :virtualbox do |vb|
+	    vb.customize ["modifyvm", :id, "--memory", "1024"]
+	  end
+	end
+
+      end
+    #+END_SRC
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"
