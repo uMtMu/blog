@@ -1,0 +1,254 @@
+#+INCLUDE: "baslik.org"
+* SaltStack HowTo
+** Fundamentals
+*** Install
+**** Master
+    #+BEGIN_SRC shell
+    curl -L https://bootstrap.saltstack.com -o install_salt.sh
+    sudo sh install_salt.sh -M
+    #+END_SRC
+    *-M* master'ı belirtiyor. 
+**** Slave
+    #+BEGIN_SRC shell
+    curl -L https://bootstrap.saltstack.com -o install_salt.sh
+    sudo sh install_salt.sh
+    #+END_SRC
+   
+    Eğer /etc/hosts dosyasında salt isimiyle tanımlanmış bir girdi varsa slaveler bu girdiyi master adresi olarak kabul edip keylerini gönderiyor. Yoksa 
+   
+    #+NAME: /etc/salt/minion
+    #+BEGIN_SRC shell
+    master: 192.168.0.50
+    #+END_SRC
+*** Slavelerin kaydedilmesi
+   #+BEGIN_SRC shell
+   sudo salt-keys --list-all
+   sudo salt-keys --accept-all
+   #+END_SRC
+  
+   =--list-all= komutu ile çıkan listede değişiklik görülecektir.
+*** Slavelerde komut çalıştırılması
+**** test edilmesi
+    *Not:* Master makinada 512MB ram varken salt'ın worker üretemediği görüldü. Ram 2GB olarak ayarlandı.
+    #+BEGIN_SRC shell
+    sudo salt '*' test.ping
+    #+END_SRC
+**** shell komutlarının çalıştırılması
+    #+BEGIN_SRC shell
+    salt '*' cmd.run 'ls -l /etc'
+    #+END_SRC
+**** salt komutlarının çalıştırılması
+    #+BEGIN_SRC shell
+    salt '*' disk.usage
+    #+END_SRC
+    #+BEGIN_SRC shell
+    salt '*' pkg.install cowsay
+    #+END_SRC
+    #+BEGIN_SRC shell
+    salt '*' network.interfaces
+    #+END_SRC
+    #+BEGIN_SRC shell
+    salt '*' service.restart salt-minion
+    #+END_SRC
+*** Minion seçimi ve GRAINS
+   #+BEGIN_SRC shell
+   salt 'minion1' disk.usage # tek hedef
+   salt 'minion*' disk.usage # GLOBBING
+   salt -G 'os:Ubuntu' test.ping # GRAINS
+   salt -E 'minion[0-9]' test.ping # REGEX
+   salt -L 'minion1,minion2' test.ping # Liste
+   salt -C 'G@os:Ubuntu and minion* or S@192.168.50.*' test.ping # Multiple parameter logical operation
+   #+END_SRC
+**** GRAINS
+    Grains are static information SaltStack collects about the underlying managed system. SaltStack collects grains for the operating system, domain name, IP address, kernel, OS type, memory, and many other system properties.
+   
+    You can add your own grains to a Salt minion by placing them in the /etc/salt/grains file on the Salt master, or in the Salt minion configuration file under the grains section. For example, many users add a custom grain called role to each Salt minion to describe the function of the system.
+   
+    You can use the *grains.ls* command to list all of the grains on a Salt minion. *grains.items* to get key value pairs.
+   
+    #+BEGIN_EXAMPLE
+    salt 'i2' grains.ls
+    salt 'i2' grains.items
+    salt 'i2' grains.get 'roles'
+    #+END_EXAMPLE
+
+    https://docs.saltstack.com/en/latest/topics/grains/
+*** State File
+   salt master'ın /srv/salt dizininde nettools.sls dosyasının bulunması gerekiyor. İstenirse aşağıdaki gibi Vagrant dosyasında paylaşım yapılıp dosya local makinada tutulabilir. Önemli nokta *.sls dosyalarının master makinanın /srv/salt dizini altında tutulmasıdır.
+
+   Vagrantfile
+   #+BEGIN_SRC ruby
+   config.vm.synced_folder "salt_states", "/srv/salt"
+   #+END_SRC
+   nettools.sls
+   #+BEGIN_SRC yaml
+   install_network_packages:
+     pkg.installed:
+       - pkgs:
+         - rsync
+         - lftp
+         - curl
+  
+   #+END_SRC
+
+   Aşağıdaki komut ile ilgili minionda pkg.installed komutuna rsync, lftp, curl parametreleri verilerek çalıştırılmış ve kontrol edilmiş olur.
+   #+BEGIN_SRC bash
+   salt 'minion2' state.apply nettools
+   #+END_SRC
+
+   Çıktı
+   #+BEGIN_SRC text
+   ----------
+             ID: install_network_packages
+       Function: pkg.installed
+         Result: True
+	Comment: The following packages were installed/updated: lftp
+                 The following packages were already installed: rsync, curl
+	Started: 11:20:33.574487
+       Duration: 12420.049 ms
+	Changes:   
+                 ----------
+                 lftp:
+                     ----------
+                     new:
+                         4.8.1-1ubuntu0.1
+                     old:
+  
+   Summary for i1
+   ------------
+   Succeeded: 1 (changed=1)
+   Failed:    0
+   ------------
+   Total states run:     1
+   Total run time:  12.420 s
+   #+END_SRC
+*** Top File
+   Top dosyası(top.sls) statelerin birleştirilerek kullanıldığı, anladığım kadarıyla sistemin olması gereken halini anlatan bir dosya. 'sudo salt "*" state.apply' komutu verildiğinde bütün minionlar master'ın /srv/salt dizini altındaki top.sls dosyasını çekip kendilerinde çalıştırırlar. Bu dosyanın içinde hangi hedefte hangi statelerin çalıştırılacağı bulunur. 
+   "The Top file is used to apply multiple state files to your Salt minions during a highstate. The states that are applied to each system are determined by the targets that are specified in the Top file."
+
+** Configuration Management
+   https://docs.saltstack.com/en/getstarted/config/functions.html
+*** State Function
+    state file syntax
+    #+BEGIN_SRC text
+      ID_UNIQUE:
+	 module.function
+	   - name: name
+	   - argument: value
+	   - argument:
+             - value1
+             - value2
+    #+END_SRC
+   
+    *!!!*: file.managed, file.directory, cmd.run, pkg.installed, git.latest, service.running, host.present, module.run
+*** Pillar
+    Salt pillar is a system that lets you define secure data that are ‘assigned’ to one or more minions using targets. Salt pillar data stores values such as ports, file paths, configuration parameters, and passwords.
+   
+    saltstack/pillar/top.sls
+    #+BEGIN_EXAMPLE
+    base:
+      '*':
+	- default
+    #+END_EXAMPLE
+   
+    saltstack/pillar/default.sls
+    #+BEGIN_EXAMPLE
+    editor: vim
+    ftpusername: me
+    ftppassword: oxfm4@8t5gglu^h^&
+    #+END_EXAMPLE
+   
+    refresh salt pillar on all minions
+    #+BEGIN_SRC shell
+    salt '*' saltutil.refresh_pillar
+    #+END_SRC
+
+    state example
+    #+BEGIN_EXAMPLE
+    vim installed:
+      pkg.installed:
+	- name: {{ pillar['editor'] }}
+    sync directory using lftp:
+      cmd.run:
+	- name: lftp -c "open -u {{ pillar['ftpusername'] }},{{ pillar['ftppassword'] }} -p 22 sftp://example.com;mirror -c -R /local /remote"
+    #+END_EXAMPLE
+
+    salt pillar in command line
+    #+BEGIN_SRC shell
+    salt '*' state.apply ftpsync pillar='{"ftpusername": "test", "ftppassword": "0ydyfww3giq8"}'
+    #+END_SRC
+*** Include state
+    srv/salt/lftp.sls
+    #+BEGIN_EXAMPLE
+    install lftp:
+      pkg.installed:
+	- name: lftp
+    #+END_EXAMPLE
+   
+    srv/salt/dir-sync.sls
+    #+BEGIN_EXAMPLE
+    include:
+      - lftp
+     
+    sync directory using lftp:
+      cmd.run:
+	- name: lftp -c "open -u {{ pillar['ftpusername'] }},{{ pillar['ftppassword'] }} -p 22 sftp://example.com;mirror -c -R /local /remote"
+    #+END_EXAMPLE
+*** Ordering & Requisites
+    By default, each ID in a Salt state file is executed in the order it appears in the file. Additionally, in the Top file, each Salt state file is applied in the order listed. *require* keywork in state.
+*** Jinja
+    Template language that can be used in static files that should be temple :D
+   
+    Example pillar file
+    #+BEGIN_EXAMPLE
+    {% if grains['os_family'] == 'RedHat' %}
+    apache: httpd
+    git: git
+    {% elif grains['os_family'] == 'Debian' %}
+    apache: apache2
+    git: git-core
+    {% endif %}
+    #+END_EXAMPLE
+
+    #+BEGIN_SRC shell
+      salt '*' saltutil.refresh_pillar
+      salt '*' pillar.items
+    #+END_SRC
+
+    Usage in state file
+    #+BEGIN_EXAMPLE
+    install apache:
+      pkg.installed:
+	- name: {{ pillar['apache'] }}
+    #+END_EXAMPLE
+*** Manage files !!
+    *SALT://*
+    Minion can reach masters /srv/salt directory using salt:// url
+    
+    #+BEGIN_EXAMPLE
+    deploy the http.conf file:
+      file.managed:
+	- name: /etc/http/conf/http.conf
+	- source: salt://apache/http.conf
+
+    copy some files to the web server:
+      file.recurse:
+	- name: /var/www
+	- source: salt://apache/www
+    #+END_EXAMPLE
+** Diff Files Across Salt Minions
+   #+BEGIN_EXAMPLE
+   salt-run survey.diff 'web*' cmd.run 'cat /etc/ntp.conf'
+   #+END_EXAMPLE
+** Resource
+   - Modules
+     https://docs.saltstack.com/en/latest/ref/modules/all/index.html (IMPORTANT)
+   - Runners
+     https://docs.saltstack.com/en/latest/ref/runners/all/
+   - Minion Configuration
+     https://docs.saltstack.com/en/latest/ref/configuration/minion.html
+** Further Readings
+   - https://github.com/saltstack-formulas
+
+* Bağlantılar
+#+INCLUDE: "baglantilar.org"
