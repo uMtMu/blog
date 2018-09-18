@@ -1,6 +1,11 @@
 #+INCLUDE: "baslik.org"
 #+INCLUDE: "paginate.org"
 * Yazılar
+** Tren
+   <2018-09-18 Tue>
+   
+   Hayaller, arkasında hüzünle el salladığımız, yolcularına gıpta ettiğimiz bir trendi.
+   Binemedik .mına kodumun trenine.
 ** İnsanların çok konuşması üzerine
    <2018-05-21 Mon>
 
