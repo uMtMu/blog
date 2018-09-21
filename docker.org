@@ -144,7 +144,6 @@
        *CMD* curl -f http://localhost/ || exit 1
 
 * Docker networking
-
 ** Komutlar
    - docker *network* ls
      Bu komut ile aşağıdaki gibi docker ile kullanılabilecek networkler listelenir.
@@ -165,5 +164,8 @@
 
    - docker *run* --network=<NETWORK>
      Komutu ile imaj istenilen network ile bağlı başlatılabilir.
+
+   - docker *run* --network=host
+     Komutu ile container host makinanın bağlı olduğu networke bağlanır ve IP alır
 * Bağlantılar
 #+INCLUDE: "baglantilar.org"
