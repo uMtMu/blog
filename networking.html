@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-10-30 Tue 11:53 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="umt" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgde23c3a">1. Bonding - Ubuntu</a>
+<ul>
+<li><a href="#orgabd8452">1.1. Setting up bonding</a></li>
+<li><a href="#orgba1224c">1.2. Checking the bonding interface</a></li>
+<li><a href="#org68cd8ab">1.3. Bringing up/down bonding interface</a></li>
+<li><a href="#orgcc79aaf">1.4. Bonding modes</a>
+<ul>
+<li><a href="#orgcb8f35d">1.4.1. Mode 0 (balance-rr)</a></li>
+<li><a href="#orgcc1a245">1.4.2. Mode 1 (active-backup)</a></li>
+<li><a href="#org61bf64f">1.4.3. Mode 2 (balance-xor)</a></li>
+<li><a href="#org9b24a4e">1.4.4. Mode 3 (broadcast)</a></li>
+<li><a href="#org7ae36bf">1.4.5. Mode 4 (802.3ad)</a></li>
+<li><a href="#org6323624">1.4.6. Mode 5 (balance-tlb)</a></li>
+<li><a href="#org16ca3bf">1.4.7. Mode 6 (balance-alb)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgde23c3a" class="outline-2">
+<h2 id="orgde23c3a"><span class="section-number-2">1</span> Bonding - Ubuntu</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Bonding, also called port trunking or link aggregation means combining several network interfaces (NICs) to a single link, providing either high-availability, load-balancing, maximum throughput, or a combination of these. See Wikipedia for details.
+</p>
+
+<pre class="example">
+sudo apt-get install ifenslave
+</pre>
+</div>
+
+<div id="outline-container-orgabd8452" class="outline-3">
+<h3 id="orgabd8452"><span class="section-number-3">1.1</span> Setting up bonding</h3>
+<div class="outline-text-3" id="text-1-1">
+<ol class="org-ol">
+<li>Ensure kernel support
+Check if "bonding" exists in /etc/modules</li>
+<li>Configure network interfaces
+<ul class="org-ul">
+<li><p>
+stop networking service
+</p>
+<pre class="example">
+sudo stop networking
+</pre></li>
+<li><p>
+load bonding kernel module
+</p>
+<pre class="example">
+sudo modprobe bonding
+</pre></li>
+<li><p>
+configure network interfaces
+</p>
+<pre class="example" id="/etc/network/interface - For example, to combine eth0 and eth1 as slaves to the bonding interface bond0 using a simple active-backup setup, with eth0 being the primary interface">
+# eth0 is manually configured, and slave to the "bond0" bonded NIC
+auto eth0
+iface eth0 inet manual
+bond-master bond0
+bond-primary eth0
+
+# eth1 ditto, thus creating a 2-link bond.
+auto eth1
+iface eth1 inet manual
+bond-master bond0
+
+# bond0 is the bonding NIC and can be used like any other normal NIC.
+# bond0 is configured using static network information.
+auto bond0
+iface bond0 inet static
+address 192.168.1.10
+gateway 192.168.1.1
+netmask 255.255.255.0
+bond-mode active-backup
+bond-miimon 100
+bond-slaves none
+</pre>
+
+<pre class="example" id="/etc/network/interface - Combine eth0 and eth1 using the IEEE 802.3ad LACP bonding protocol">
+# eth0 is manually configured, and slave to the "bond0" bonded NIC
+auto eth0
+iface eth0 inet manual
+bond-master bond0
+
+# eth1 ditto, thus creating a 2-link bond.
+auto eth1
+iface eth1 inet manual
+bond-master bond0
+
+# bond0 is the bonded NIC and can be used like any other normal NIC.
+# bond0 is configured using static network information.
+auto bond0
+iface bond0 inet static
+address 192.168.1.10
+gateway 192.168.1.1
+netmask 255.255.255.0
+
+# bond0 uses standard IEEE 802.3ad LACP bonding protocol
+bond-mode 4
+bond-miimon 100
+bond-lacp-rate 1
+bond-slaves eth0 eth1
+</pre></li>
+<li><p>
+start network
+</p>
+<pre class="example">
+sudo start networking
+</pre></li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgba1224c" class="outline-3">
+<h3 id="orgba1224c"><span class="section-number-3">1.2</span> Checking the bonding interface</h3>
+<div class="outline-text-3" id="text-1-2">
+<pre class="example" id="/proc/net/bonding/bond0">
+# eth0 is manually configured, and slave to the "bond0" bonded NIC
+auto eth0
+iface eth0 inet manual
+bond-master bond0
+
+# eth1 ditto, thus creating a 2-link bond.
+auto eth1
+iface eth1 inet manual
+bond-master bond0
+
+# bond0 is the bonded NIC and can be used like any other normal NIC.
+# bond0 is configured using static network information.
+auto bond0
+iface bond0 inet static
+address 192.168.1.10
+gateway 192.168.1.1
+netmask 255.255.255.0
+
+# bond0 uses standard IEEE 802.3ad LACP bonding protocol
+bond-mode 4
+bond-miimon 100
+bond-lacp-rate 1
+bond-slaves eth0 eth1
+</pre>
+</div>
+</div>
+<div id="outline-container-org68cd8ab" class="outline-3">
+<h3 id="org68cd8ab"><span class="section-number-3">1.3</span> Bringing up/down bonding interface</h3>
+<div class="outline-text-3" id="text-1-3">
+<pre class="example">
+ifup bond0
+ifdown bond0
+</pre>
+</div>
+</div>
+<div id="outline-container-orgcc79aaf" class="outline-3">
+<h3 id="orgcc79aaf"><span class="section-number-3">1.4</span> Bonding modes</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-orgcb8f35d" class="outline-4">
+<h4 id="orgcb8f35d"><span class="section-number-4">1.4.1</span> Mode 0 (balance-rr)</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+Round Robin
+</p>
+</div>
+</div>
+<div id="outline-container-orgcc1a245" class="outline-4">
+<h4 id="orgcc1a245"><span class="section-number-4">1.4.2</span> Mode 1 (active-backup)</h4>
+</div>
+<div id="outline-container-org61bf64f" class="outline-4">
+<h4 id="org61bf64f"><span class="section-number-4">1.4.3</span> Mode 2 (balance-xor)</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<p>
+XOR policy: Transmit based on selectable hashing algorithm. The default policy is a simple source+destination MAC address algorithm. Alternate transmit policies may be selected via the xmit<sub>hash</sub><sub>policy</sub> option, described below. This mode provides load balancing and fault tolerance.
+</p>
+</div>
+</div>
+<div id="outline-container-org9b24a4e" class="outline-4">
+<h4 id="org9b24a4e"><span class="section-number-4">1.4.4</span> Mode 3 (broadcast)</h4>
+<div class="outline-text-4" id="text-1-4-4">
+<p>
+transmits everything on all slave interfaces. This mode provides fault tolerance. 
+</p>
+</div>
+</div>
+<div id="outline-container-org7ae36bf" class="outline-4">
+<h4 id="org7ae36bf"><span class="section-number-4">1.4.5</span> Mode 4 (802.3ad)</h4>
+<div class="outline-text-4" id="text-1-4-5">
+<p>
+IEEE 802.3ad Dynamic link aggregation. Creates aggregation groups that share the same speed and duplex settings. Utilizes all slaves in the active aggregator according to the 802.3ad specification.
+</p>
+
+<p>
+Prerequisites:
+    Ethtool support in the base drivers for retrieving the speed and duplex of each slave.
+    A switch that supports IEEE 802.3ad Dynamic link aggregation. Most switches will require some type of configuration to enable 802.3ad mode.
+</p>
+</div>
+</div>
+<div id="outline-container-org6323624" class="outline-4">
+<h4 id="org6323624"><span class="section-number-4">1.4.6</span> Mode 5 (balance-tlb)</h4>
+<div class="outline-text-4" id="text-1-4-6">
+<p>
+Adaptive transmit load balancing: channel bonding that does not require any special switch support. The outgoing traffic is distributed according to the current load (computed relative to the speed) on each slave. Incoming traffic is received by the current slave. If the receiving slave fails, another slave takes over the MAC address of the failed receiving slave.
+</p>
+
+<p>
+Prerequisites:
+    Ethtool support in the base drivers for retrieving the speed of each slave.
+</p>
+</div>
+</div>
+<div id="outline-container-org16ca3bf" class="outline-4">
+<h4 id="org16ca3bf"><span class="section-number-4">1.4.7</span> Mode 6 (balance-alb)</h4>
+<div class="outline-text-4" id="text-1-4-7">
+<p>
+Adaptive load balancing: includes balance-tlb plus receive load balancing (rlb) for IPV4 traffic, and does not require any special switch support. The receive load balancing is achieved by ARP negotiation. The bonding driver intercepts the ARP Replies sent by the local system on their way out and overwrites the source hardware address with the unique hardware address of one of the slaves in the bond such that different peers use different hardware addresses for the server. 
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: umt</p>
+<p class="date">Created: 2018-10-30 Tue 11:53</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

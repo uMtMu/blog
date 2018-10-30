@@ -1,0 +1,128 @@
+* Bonding - Ubuntu
+  Bonding, also called port trunking or link aggregation means combining several network interfaces (NICs) to a single link, providing either high-availability, load-balancing, maximum throughput, or a combination of these. See Wikipedia for details.
+  
+  #+BEGIN_EXAMPLE
+  sudo apt-get install ifenslave
+  #+END_EXAMPLE
+
+** Setting up bonding
+   1. Ensure kernel support
+      Check if "bonding" exists in /etc/modules
+   2. Configure network interfaces
+      - stop networking service
+	#+BEGIN_EXAMPLE
+	sudo stop networking
+	#+END_EXAMPLE
+      - load bonding kernel module
+	#+BEGIN_EXAMPLE
+	sudo modprobe bonding
+	#+END_EXAMPLE
+      - configure network interfaces
+	#+NAME: /etc/network/interface - For example, to combine eth0 and eth1 as slaves to the bonding interface bond0 using a simple active-backup setup, with eth0 being the primary interface
+	#+BEGIN_EXAMPLE
+	# eth0 is manually configured, and slave to the "bond0" bonded NIC
+	auto eth0
+	iface eth0 inet manual
+	bond-master bond0
+	bond-primary eth0
+       
+	# eth1 ditto, thus creating a 2-link bond.
+	auto eth1
+	iface eth1 inet manual
+	bond-master bond0
+       
+	# bond0 is the bonding NIC and can be used like any other normal NIC.
+	# bond0 is configured using static network information.
+	auto bond0
+	iface bond0 inet static
+	address 192.168.1.10
+	gateway 192.168.1.1
+	netmask 255.255.255.0
+	bond-mode active-backup
+	bond-miimon 100
+	bond-slaves none
+	#+END_EXAMPLE
+
+	#+NAME: /etc/network/interface - Combine eth0 and eth1 using the IEEE 802.3ad LACP bonding protocol
+	#+BEGIN_EXAMPLE
+	# eth0 is manually configured, and slave to the "bond0" bonded NIC
+	auto eth0
+	iface eth0 inet manual
+	bond-master bond0
+       
+	# eth1 ditto, thus creating a 2-link bond.
+	auto eth1
+	iface eth1 inet manual
+	bond-master bond0
+       
+	# bond0 is the bonded NIC and can be used like any other normal NIC.
+	# bond0 is configured using static network information.
+	auto bond0
+	iface bond0 inet static
+	address 192.168.1.10
+	gateway 192.168.1.1
+	netmask 255.255.255.0
+       
+	# bond0 uses standard IEEE 802.3ad LACP bonding protocol
+	bond-mode 4
+	bond-miimon 100
+	bond-lacp-rate 1
+	bond-slaves eth0 eth1
+	#+END_EXAMPLE
+      - start network
+	#+BEGIN_EXAMPLE
+	sudo start networking
+	#+END_EXAMPLE
+** Checking the bonding interface
+   #+NAME: /proc/net/bonding/bond0
+   #+BEGIN_EXAMPLE
+   # eth0 is manually configured, and slave to the "bond0" bonded NIC
+   auto eth0
+   iface eth0 inet manual
+   bond-master bond0
+   
+   # eth1 ditto, thus creating a 2-link bond.
+   auto eth1
+   iface eth1 inet manual
+   bond-master bond0
+   
+   # bond0 is the bonded NIC and can be used like any other normal NIC.
+   # bond0 is configured using static network information.
+   auto bond0
+   iface bond0 inet static
+   address 192.168.1.10
+   gateway 192.168.1.1
+   netmask 255.255.255.0
+   
+   # bond0 uses standard IEEE 802.3ad LACP bonding protocol
+   bond-mode 4
+   bond-miimon 100
+   bond-lacp-rate 1
+   bond-slaves eth0 eth1
+      #+END_EXAMPLE
+** Bringing up/down bonding interface
+   #+BEGIN_EXAMPLE
+   ifup bond0
+   ifdown bond0
+   #+END_EXAMPLE
+** Bonding modes
+*** Mode 0 (balance-rr) 
+    Round Robin
+*** Mode 1 (active-backup)
+*** Mode 2 (balance-xor)
+    XOR policy: Transmit based on selectable hashing algorithm. The default policy is a simple source+destination MAC address algorithm. Alternate transmit policies may be selected via the xmit_hash_policy option, described below. This mode provides load balancing and fault tolerance.
+*** Mode 3 (broadcast)
+    transmits everything on all slave interfaces. This mode provides fault tolerance. 
+*** Mode 4 (802.3ad)
+    IEEE 802.3ad Dynamic link aggregation. Creates aggregation groups that share the same speed and duplex settings. Utilizes all slaves in the active aggregator according to the 802.3ad specification.
+
+    Prerequisites:
+        Ethtool support in the base drivers for retrieving the speed and duplex of each slave.
+        A switch that supports IEEE 802.3ad Dynamic link aggregation. Most switches will require some type of configuration to enable 802.3ad mode.
+*** Mode 5 (balance-tlb)
+    Adaptive transmit load balancing: channel bonding that does not require any special switch support. The outgoing traffic is distributed according to the current load (computed relative to the speed) on each slave. Incoming traffic is received by the current slave. If the receiving slave fails, another slave takes over the MAC address of the failed receiving slave.
+
+    Prerequisites:
+        Ethtool support in the base drivers for retrieving the speed of each slave.
+*** Mode 6 (balance-alb)
+    Adaptive load balancing: includes balance-tlb plus receive load balancing (rlb) for IPV4 traffic, and does not require any special switch support. The receive load balancing is achieved by ARP negotiation. The bonding driver intercepts the ARP Replies sent by the local system on their way out and overwrites the source hardware address with the unique hardware address of one of the slaves in the bond such that different peers use different hardware addresses for the server. 
