@@ -1,6 +1,8 @@
 #+INCLUDE: "baslik.org"
 #+INCLUDE: "paginate.org"
 * Yazılar
+** Acaba havanın açık ya da kapalı olması doğuştan kör insanları nasıl etkiliyor?
+   <2019-05-05 Paz>
 ** Reyhan güzel ottur
    <2019-05-05 Paz>
    Tek başımıza bir dikili taş gibi dimdik mi yoksa kırılıp dökülerek çöl kumları gibi ayaklar altında mı olacağız?
